@@ -1,0 +1,249 @@
+import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:utils_vardytests/src/func/function.dart';
+import '../model/device_and_tracking/model/tracking_event.dart';
+import '../model/login/request/login_request.dart';
+import '../model/login/response/item_login_response.dart';
+import '../model/login/response/login_response.dart';
+import '../model/user/item_response.dart';
+import '../remote_auth.dart';
+import '../request/change_pass_request.dart';
+import '../request/register_request.dart';
+import 'auth_repository.dart';
+import 'package:utils_vardytests/src/services/logging/log_manager.dart';
+
+class AuthRepositoryImpl extends AuthRepository {
+  final RemoteAuth ref;
+  AuthRepositoryImpl({required this.ref});
+
+  @override
+  Future<FResult<FUser>> getAnotherUserInfo(int uid,
+      {required String brandUrl, required String authKey}) async {
+    return tryCatchResult<FUser>(
+        func: () async {
+          final userResponse = await ref.getAnotherUserInfo(uid,
+              authKey: authKey, brandUrl: brandUrl);
+          return userResponse.data!;
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<String>> register(
+      {required String username,
+      required String password,
+      required String email,
+      required String brandUrl}) async {
+    return tryCatchResult<String>(
+        func: () async {
+          await ref.register(RegisterRequest(
+              brandUrl: brandUrl,
+              password: password,
+              username: username,
+              email: email));
+          return 'success-register';
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<LoginResponse>> login(
+      {required String username,
+      required String password,
+      required String brandUrl}) async {
+    return tryCatchResult(
+        func: () async {
+          final fetchResponse = await ref.login(LoginRequest(
+            brandUrl: brandUrl,
+            password: password,
+            username: username,
+          ));
+          return fetchResponse;
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<FUser>> getUserInformation(
+      {required String username,
+      required String brandUrl,
+      required String authKey}) async {
+    // return tryCatchResult<FUser>(
+    // func: () async {
+    final userInformationResponse =
+        await ref.getUserInform(username, brandUrl: brandUrl, authKey: authKey);
+    return FResult.success(FUser.fromJson(userInformationResponse.data!));
+    // },
+    // logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<FUser>> getUserInfoById(
+      {required int uid,
+      required String brandUrl,
+      required String authKey}) async {
+    return tryCatchResult<FUser>(
+        func: () async {
+          final userProfileResponse = await Future.value(ref
+              .getUserInforByUserId(uid, brandUrl: brandUrl, authKey: authKey));
+          final user = userProfileResponse.data!;
+          return user;
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<String>> forgotPassword(
+      {required String email,
+      required String brandUrl,
+      required String resetPasswordLink}) async {
+    return tryCatchResult(
+        func: () async {
+          return await ref.forgotPassword(resetObject: {
+            'brandUrl': brandUrl,
+            'email': email,
+            'resetPasswordLink': resetPasswordLink,
+          });
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<String>> changePassword(
+      {required String oldPass,
+      required String newPass,
+      required String authKey}) async {
+    return tryCatchResult<String>(
+        func: () async {
+          final changePassRequest = ChangePassRequest(
+            oldPassword: oldPass,
+            newPassword: newPass,
+          );
+          await ref.changePassword(
+              authKey: authKey, changePassRequest: changePassRequest);
+
+          return 'success-change-password';
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<FUser>> updateUserProfile(String username,
+      {required updateUserInformation,
+      required String brandUrl,
+      required String authKey}) async {
+    return tryCatchResult<FUser>(
+        func: () async {
+          final userResult = await ref.updateProfile(username,
+              authKey: authKey,
+              userInformationUpdate: updateUserInformation,
+              brandUrl: brandUrl);
+          return FUser.fromJson(userResult.data!);
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<String>> addActivity(
+      Map<String, dynamic> activityRequest) async {
+    return tryCatchResult<String>(
+        func: () async {
+          await ref.addActivites(activityRequest);
+          return 'sucess-add-activity';
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<int>> addDeviceAndGetDeviceId(
+      Map<String, dynamic> deviceRequest) async {
+    return tryCatchResult(
+        func: () async {
+          final result =
+              await ref.addNewDevice(addNewDeviceRequest: deviceRequest);
+          return result.data['id'];
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<List<Map<String, dynamic>>>> getDevices(
+      {required int uid, String? deviceIdentifier}) {
+    return tryCatchResult<List<Map<String, dynamic>>>(
+        func: () async {
+          final devices = await ref.getDevices(
+              uid: uid, deviceIdentifier: deviceIdentifier);
+          final result = (devices.data as List)
+              .map((e) => e as Map<String, dynamic>)
+              .toList();
+          return result;
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<List<TrackingEvent>>> getTrackingEvents() {
+    return tryCatchResult<List<TrackingEvent>>(
+        func: () async {
+          final eventsResponse = await ref.getTrackingEvents();
+          return (eventsResponse.data as List)
+              .map((e) => TrackingEvent.fromJson(e))
+              .toList();
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<FUser>> getInfoAnotherUserByCode(String code,
+      {required String brandUrl, required String authKey}) {
+    return tryCatchResult<FUser>(
+        func: () async {
+          final userProfileResponse = await Future.value(ref
+              .getUserInfoByCode(code, brandUrl: brandUrl, authKey: authKey));
+          final user = userProfileResponse.data!;
+          return user;
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<ItemLoginResponse>> loginSocialGoogle(
+      {required String brandUrl,
+      required String accessToken,
+      required String idToken}) {
+    return tryCatchResult(func: () async {
+      final loginResponse = await ref.loginSocialGoogle(
+          brandUrl: brandUrl, idToken: idToken, accessToken: accessToken);
+      return ItemLoginResponse.fromJson(loginResponse.data);
+    });
+  }
+
+  @override
+  Future<FResult<String>> deleteAccount({required int uid}) {
+    return tryCatchResult(func: () async {
+      await ref.deleteUser(uid);
+      return logI.sucessStr('Deleted account successfully',
+          tag: runtimeType.toString());
+    });
+  }
+
+  @override
+  Future<FResult<ItemLoginResponse>> loginSocialApple(
+      {required String brandUrl,
+      required String authorizationCode,
+      required String userIdentifier,
+      required String? firstName,
+      required String? lastName,
+      required String idToken}) {
+    return tryCatchResult(func: () async {
+      final loginResponse = await ref.loginSocialApple(
+        brandUrl: brandUrl,
+        idToken: idToken,
+        code: authorizationCode,
+        firstName: firstName,
+        lastName: lastName,
+        userIdentifier: userIdentifier,
+      );
+      return ItemLoginResponse.fromJson(loginResponse.data);
+    });
+  }
+}
