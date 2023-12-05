@@ -11,7 +11,8 @@ abstract class RemoteBilling {
   Future<FetchResponse> getPrices();
 
   @GET('/packages')
-  Future<FetchResponse> getPackages();
+  Future<FetchResponse> getPackages(
+      {@Query('brandId') required String brandId});
 
   @GET('/prices/{id}/checkout-link')
   Future<FetchResponse> getCheckoutLink(@Path('id') int id);
@@ -26,4 +27,8 @@ abstract class RemoteBilling {
     @Query('authKey') required String authKey,
     @Query('licenseKey') required String licenseKey,
   });
+
+  @POST('/payments/registration')
+  Future<FetchResponse> registerServerSideAfterPayment(
+      @Body() dynamic registerPaymentRequest);
 }

@@ -40,11 +40,10 @@ abstract class $ConfigAppCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'isShowNewVersionAnnoucement')
-          bool isShowNewVersionAnnoucement,
-      @JsonKey(name: 'minVersion')
-          String minVersion,
+      bool isShowNewVersionAnnoucement,
+      @JsonKey(name: 'minVersion') String minVersion,
       @JsonKey(name: 'isForceUpdateLatestVersionApp')
-          bool isForceUpdateLatestVersionApp});
+      bool isForceUpdateLatestVersionApp});
 }
 
 /// @nodoc
@@ -82,27 +81,27 @@ class _$ConfigAppCopyWithImpl<$Res, $Val extends ConfigApp>
 }
 
 /// @nodoc
-abstract class _$$_ConfigAppCopyWith<$Res> implements $ConfigAppCopyWith<$Res> {
-  factory _$$_ConfigAppCopyWith(
-          _$_ConfigApp value, $Res Function(_$_ConfigApp) then) =
-      __$$_ConfigAppCopyWithImpl<$Res>;
+abstract class _$$ConfigAppImplCopyWith<$Res>
+    implements $ConfigAppCopyWith<$Res> {
+  factory _$$ConfigAppImplCopyWith(
+          _$ConfigAppImpl value, $Res Function(_$ConfigAppImpl) then) =
+      __$$ConfigAppImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {@JsonKey(name: 'isShowNewVersionAnnoucement')
-          bool isShowNewVersionAnnoucement,
-      @JsonKey(name: 'minVersion')
-          String minVersion,
+      bool isShowNewVersionAnnoucement,
+      @JsonKey(name: 'minVersion') String minVersion,
       @JsonKey(name: 'isForceUpdateLatestVersionApp')
-          bool isForceUpdateLatestVersionApp});
+      bool isForceUpdateLatestVersionApp});
 }
 
 /// @nodoc
-class __$$_ConfigAppCopyWithImpl<$Res>
-    extends _$ConfigAppCopyWithImpl<$Res, _$_ConfigApp>
-    implements _$$_ConfigAppCopyWith<$Res> {
-  __$$_ConfigAppCopyWithImpl(
-      _$_ConfigApp _value, $Res Function(_$_ConfigApp) _then)
+class __$$ConfigAppImplCopyWithImpl<$Res>
+    extends _$ConfigAppCopyWithImpl<$Res, _$ConfigAppImpl>
+    implements _$$ConfigAppImplCopyWith<$Res> {
+  __$$ConfigAppImplCopyWithImpl(
+      _$ConfigAppImpl _value, $Res Function(_$ConfigAppImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +111,7 @@ class __$$_ConfigAppCopyWithImpl<$Res>
     Object? minVersion = null,
     Object? isForceUpdateLatestVersionApp = null,
   }) {
-    return _then(_$_ConfigApp(
+    return _then(_$ConfigAppImpl(
       isShowNewVersionAnnoucement: null == isShowNewVersionAnnoucement
           ? _value.isShowNewVersionAnnoucement
           : isShowNewVersionAnnoucement // ignore: cast_nullable_to_non_nullable
@@ -131,17 +130,16 @@ class __$$_ConfigAppCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ConfigApp implements _ConfigApp {
-  _$_ConfigApp(
+class _$ConfigAppImpl implements _ConfigApp {
+  _$ConfigAppImpl(
       {@JsonKey(name: 'isShowNewVersionAnnoucement')
-          required this.isShowNewVersionAnnoucement,
-      @JsonKey(name: 'minVersion')
-          required this.minVersion,
+      required this.isShowNewVersionAnnoucement,
+      @JsonKey(name: 'minVersion') required this.minVersion,
       @JsonKey(name: 'isForceUpdateLatestVersionApp')
-          required this.isForceUpdateLatestVersionApp});
+      required this.isForceUpdateLatestVersionApp});
 
-  factory _$_ConfigApp.fromJson(Map<String, dynamic> json) =>
-      _$$_ConfigAppFromJson(json);
+  factory _$ConfigAppImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConfigAppImplFromJson(json);
 
   @override
   @JsonKey(name: 'isShowNewVersionAnnoucement')
@@ -162,7 +160,7 @@ class _$_ConfigApp implements _ConfigApp {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ConfigApp &&
+            other is _$ConfigAppImpl &&
             (identical(other.isShowNewVersionAnnoucement,
                     isShowNewVersionAnnoucement) ||
                 other.isShowNewVersionAnnoucement ==
@@ -183,12 +181,12 @@ class _$_ConfigApp implements _ConfigApp {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ConfigAppCopyWith<_$_ConfigApp> get copyWith =>
-      __$$_ConfigAppCopyWithImpl<_$_ConfigApp>(this, _$identity);
+  _$$ConfigAppImplCopyWith<_$ConfigAppImpl> get copyWith =>
+      __$$ConfigAppImplCopyWithImpl<_$ConfigAppImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ConfigAppToJson(
+    return _$$ConfigAppImplToJson(
       this,
     );
   }
@@ -197,14 +195,13 @@ class _$_ConfigApp implements _ConfigApp {
 abstract class _ConfigApp implements ConfigApp {
   factory _ConfigApp(
       {@JsonKey(name: 'isShowNewVersionAnnoucement')
-          required final bool isShowNewVersionAnnoucement,
-      @JsonKey(name: 'minVersion')
-          required final String minVersion,
+      required final bool isShowNewVersionAnnoucement,
+      @JsonKey(name: 'minVersion') required final String minVersion,
       @JsonKey(name: 'isForceUpdateLatestVersionApp')
-          required final bool isForceUpdateLatestVersionApp}) = _$_ConfigApp;
+      required final bool isForceUpdateLatestVersionApp}) = _$ConfigAppImpl;
 
   factory _ConfigApp.fromJson(Map<String, dynamic> json) =
-      _$_ConfigApp.fromJson;
+      _$ConfigAppImpl.fromJson;
 
   @override
   @JsonKey(name: 'isShowNewVersionAnnoucement')
@@ -217,6 +214,6 @@ abstract class _ConfigApp implements ConfigApp {
   bool get isForceUpdateLatestVersionApp;
   @override
   @JsonKey(ignore: true)
-  _$$_ConfigAppCopyWith<_$_ConfigApp> get copyWith =>
+  _$$ConfigAppImplCopyWith<_$ConfigAppImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
