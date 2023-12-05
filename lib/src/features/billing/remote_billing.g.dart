@@ -46,9 +46,9 @@ class _RemoteBilling implements RemoteBilling {
   }
 
   @override
-  Future<FetchResponse> getPackages() async {
+  Future<FetchResponse> getPackages({required String brandId}) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'brandId': brandId};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
@@ -149,6 +149,34 @@ class _RemoteBilling implements RemoteBilling {
             .compose(
               _dio.options,
               '/licenses/apply',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> registerServerSideAfterPayment(
+      dynamic registerPaymentRequest) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = registerPaymentRequest;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/payments/registration',
               queryParameters: queryParameters,
               data: _data,
             )

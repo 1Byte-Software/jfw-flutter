@@ -6,8 +6,8 @@ part of 'notification.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MNotification _$$_MNotificationFromJson(Map<String, dynamic> json) =>
-    _$_MNotification(
+_$MNotificationImpl _$$MNotificationImplFromJson(Map<String, dynamic> json) =>
+    _$MNotificationImpl(
       id: json['id'] as int,
       emailSubject: json['emailSubject'] as String,
       supportCode: json['supportCode'] as String,
@@ -16,7 +16,7 @@ _$_MNotification _$$_MNotificationFromJson(Map<String, dynamic> json) =>
       userReadStatus: json['userReadStatus'] as int,
     );
 
-Map<String, dynamic> _$$_MNotificationToJson(_$_MNotification instance) =>
+Map<String, dynamic> _$$MNotificationImplToJson(_$MNotificationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'emailSubject': instance.emailSubject,

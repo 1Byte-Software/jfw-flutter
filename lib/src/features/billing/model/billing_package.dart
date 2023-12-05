@@ -9,31 +9,6 @@ enum BillingPackageEnum {
   free,
   standard,
   premium;
-
-  int toPackageId() {
-    switch (this) {
-      case BillingPackageEnum.free:
-        return 1;
-      case BillingPackageEnum.standard:
-        return 2;
-      case BillingPackageEnum.premium:
-        return 3;
-    }
-  }
-
-  static BillingPackageEnum fromPackageId(int? packageId) {
-    switch (packageId) {
-      case 2:
-        return BillingPackageEnum.standard;
-      case 3:
-        return BillingPackageEnum.premium;
-      case 0:
-      case 1:
-      case 4:
-      default:
-        return BillingPackageEnum.free;
-    }
-  }
 }
 
 @freezed

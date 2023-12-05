@@ -6,14 +6,14 @@ part of 'time_zone.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TokenResponse _$$_TokenResponseFromJson(Map<String, dynamic> json) =>
-    _$_TokenResponse(
+_$TokenResponseImpl _$$TokenResponseImplFromJson(Map<String, dynamic> json) =>
+    _$TokenResponseImpl(
       id: json['id'] as int,
       value: json['value'] as String,
       identifier: json['identifier'] as String,
     );
 
-Map<String, dynamic> _$$_TokenResponseToJson(_$_TokenResponse instance) =>
+Map<String, dynamic> _$$TokenResponseImplToJson(_$TokenResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'value': instance.value,

@@ -8,14 +8,24 @@ import '../remote_billing.dart';
 
 abstract class BillingRepository {
   Future<FResult<List<PackagePrice>>> getPrices();
-  Future<FResult<List<BillingPackage>>> getPackages();
+  Future<FResult<List<BillingPackage>>> getPackages({required int brandId});
   Future<FResult<String>> getCheckoutLink(int id);
-  Future<FResult<bool>> applyLicense({
-    required String license,
-    required String authKey,
-    required String brandUrl,
-  });
+  Future<FResult<bool>> applyLicense(
+      {required String license,
+      required String authKey,
+      required String brandUrl});
   Future<FResult<bool>> getStatusValidLicense(String license);
+  Future<FResult<dynamic>> registerApplePaymentRegister({
+    required String email,
+    required String brandUrl,
+    required String priceCode,
+    required String transactionId,
+    required double amount,
+    required double amountFee,
+    required String idAddress,
+    required String currency,
+    required String notes,
+  });
 }
 
 class BillingRepositoryImpl extends BillingRepository {
@@ -71,14 +81,45 @@ class BillingRepositoryImpl extends BillingRepository {
   }
 
   @override
-  Future<FResult<List<BillingPackage>>> getPackages() {
+  Future<FResult<List<BillingPackage>>> getPackages({required int brandId}) {
     return tryCatchResult(
         func: () async {
-          final packagesResponse = await ref.getPackages();
+          final packagesResponse =
+              await ref.getPackages(brandId: brandId.toString());
           return (packagesResponse.data as List)
               .map((e) => BillingPackage.fromJson(e))
               .toList();
         },
         logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult> registerApplePaymentRegister(
+      {required String email,
+      required String brandUrl,
+      required String priceCode,
+      required String transactionId,
+      required double amount,
+      required double amountFee,
+      required String idAddress,
+      required String currency,
+      required String notes}) {
+    return tryCatchResult(func: () async {
+      final registerPaymentRequest = {
+        "email": email,
+        "brandUrl": brandUrl,
+        "priceCode": priceCode,
+        "transactionId": transactionId,
+        "amount": amount,
+        "amountFee": amountFee,
+        "ipAddress": idAddress,
+        "notes": notes,
+        "currency": currency
+      };
+      final result =
+          await ref.registerServerSideAfterPayment(registerPaymentRequest);
+      logI.i(result, tag: runtimeType);
+      return result.data;
+    });
   }
 }

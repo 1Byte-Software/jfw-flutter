@@ -6,14 +6,15 @@ part of 'config_app.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ConfigApp _$$_ConfigAppFromJson(Map<String, dynamic> json) => _$_ConfigApp(
+_$ConfigAppImpl _$$ConfigAppImplFromJson(Map<String, dynamic> json) =>
+    _$ConfigAppImpl(
       isShowNewVersionAnnoucement: json['isShowNewVersionAnnoucement'] as bool,
       minVersion: json['minVersion'] as String,
       isForceUpdateLatestVersionApp:
           json['isForceUpdateLatestVersionApp'] as bool,
     );
 
-Map<String, dynamic> _$$_ConfigAppToJson(_$_ConfigApp instance) =>
+Map<String, dynamic> _$$ConfigAppImplToJson(_$ConfigAppImpl instance) =>
     <String, dynamic>{
       'isShowNewVersionAnnoucement': instance.isShowNewVersionAnnoucement,
       'minVersion': instance.minVersion,

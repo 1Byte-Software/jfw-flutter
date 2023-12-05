@@ -6,7 +6,8 @@ part of 'billing_package.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Package _$$_PackageFromJson(Map<String, dynamic> json) => _$_Package(
+_$PackageImpl _$$PackageImplFromJson(Map<String, dynamic> json) =>
+    _$PackageImpl(
       id: json['id'] as int,
       key: json['key'] as int?,
       features: (json['features'] as List<dynamic>)
@@ -18,7 +19,7 @@ _$_Package _$$_PackageFromJson(Map<String, dynamic> json) => _$_Package(
       code: json['code'] as String,
     );
 
-Map<String, dynamic> _$$_PackageToJson(_$_Package instance) =>
+Map<String, dynamic> _$$PackageImplToJson(_$PackageImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'key': instance.key,

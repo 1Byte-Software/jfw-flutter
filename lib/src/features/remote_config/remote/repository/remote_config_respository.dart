@@ -1,18 +1,22 @@
 import 'dart:convert';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/func/function.dart';
 import 'package:utils_vardytests/src/services/logging/log_manager.dart';
+import 'package:utils_vardytests/src/func/function.dart';
+import 'package:utils_vardytests/src/model/fresult.dart';
+
 import '../model/config_app.dart';
+import '../model/config_debug_mode.dart';
 import '../remote_config_app.dart';
 
-abstract class ConfigRepository {
+abstract class RemoteConfigRepository {
   Future<FResult<bool>> getIsMaintaining();
   Future<FResult<ConfigApp>> getConfigApp();
+  Future<FResult<ConfigDebugMode>> getConfigDebugMode();
   Future<FResult<String>> getIntroductionUrl();
-  Future<FResult<int>> getuidShowLogs();
+  Future<FResult<String>> getLatestVersionJFWPort();
+  Future<FResult<String>> getLatestVersionVardyTestsPort();
 }
 
-class RemoteConfigRepositoryImpl extends ConfigRepository {
+class RemoteConfigRepositoryImpl extends RemoteConfigRepository {
   final RemoteFirebaseRemoteConfig ref;
 
   RemoteConfigRepositoryImpl({required this.ref});
@@ -26,17 +30,6 @@ class RemoteConfigRepositoryImpl extends ConfigRepository {
         },
         logErr: (ex) => logI.e(ex));
     return isMaintainingResult;
-  }
-
-  @override
-  Future<FResult<int>> getuidShowLogs() async {
-    final uidShowLogsResult = await tryCatchResult(
-        func: () async {
-          final uidShowLogs = ref.getuidShowLogs();
-          return uidShowLogs;
-        },
-        logErr: (ex) => logI.e(ex));
-    return uidShowLogsResult;
   }
 
   @override
@@ -57,6 +50,38 @@ class RemoteConfigRepositoryImpl extends ConfigRepository {
           final configAppStr = ref.getConfigApp()?.asString();
           if (configAppStr == null) throw 'ERROR-get-config-app';
           return ConfigApp.fromJson(jsonDecode(configAppStr));
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<String>> getLatestVersionJFWPort() {
+    return tryCatchResult(
+        func: () async {
+          final latestVersionJFWPort = ref.getLatestVersionJFWPort();
+          return latestVersionJFWPort;
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<String>> getLatestVersionVardyTestsPort() {
+    return tryCatchResult(
+        func: () async {
+          final latestVersionVardyTestsPort =
+              ref.getLatestVersionVardyTestsPort();
+          return latestVersionVardyTestsPort;
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<ConfigDebugMode>> getConfigDebugMode() {
+    return tryCatchResult(
+        func: () async {
+          final configAppStr = ref.getConfigDebugMode()?.asString();
+          if (configAppStr == null) throw 'Get config debug mode failed';
+          return ConfigDebugMode.fromJson(jsonDecode(configAppStr));
         },
         logErr: (ex) => logI.e(ex));
   }

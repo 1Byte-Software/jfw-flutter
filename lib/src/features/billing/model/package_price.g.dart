@@ -6,8 +6,8 @@ part of 'package_price.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PackagePrice _$$_PackagePriceFromJson(Map<String, dynamic> json) =>
-    _$_PackagePrice(
+_$PackagePriceImpl _$$PackagePriceImplFromJson(Map<String, dynamic> json) =>
+    _$PackagePriceImpl(
       id: json['id'] as int,
       packageID: json['packageId'] as int,
       code: json['code'] as String,
@@ -16,7 +16,7 @@ _$_PackagePrice _$$_PackagePriceFromJson(Map<String, dynamic> json) =>
       currency: json['currency'] as String,
     );
 
-Map<String, dynamic> _$$_PackagePriceToJson(_$_PackagePrice instance) =>
+Map<String, dynamic> _$$PackagePriceImplToJson(_$PackagePriceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'packageId': instance.packageID,

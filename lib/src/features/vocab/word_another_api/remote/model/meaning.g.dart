@@ -6,14 +6,15 @@ part of 'meaning.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Meaning _$$_MeaningFromJson(Map<String, dynamic> json) => _$_Meaning(
+_$MeaningImpl _$$MeaningImplFromJson(Map<String, dynamic> json) =>
+    _$MeaningImpl(
       definitions: (json['definitions'] as List<dynamic>?)
           ?.map((e) => Definition.fromJson(e as Map<String, dynamic>))
           .toList(),
       partOfSpeech: json['partOfSpeech'] as String?,
     );
 
-Map<String, dynamic> _$$_MeaningToJson(_$_Meaning instance) =>
+Map<String, dynamic> _$$MeaningImplToJson(_$MeaningImpl instance) =>
     <String, dynamic>{
       'definitions': instance.definitions,
       'partOfSpeech': instance.partOfSpeech,

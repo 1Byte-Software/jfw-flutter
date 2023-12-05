@@ -1,6 +1,6 @@
 name: remote_vardytests
 description: A new Flutter package project.
-version: 0.0.1
+version: 0.10.27
 homepage: null
 
 environment:
@@ -11,6 +11,7 @@ dependencies:
   dio: ^5.3.3
   flutter:
     sdk: flutter
+  freezed: ^2.3.2
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
   firebase_remote_config: ^4.2.6
@@ -24,6 +25,8 @@ dependencies:
   
 
 dev_dependencies:
+  built_value_generator: ^8.4.0
+
   build_runner: ^2.4.6
   flutter_lints: ^2.0.0
   flutter_test:

@@ -104,11 +104,11 @@ class _$MNotificationCopyWithImpl<$Res, $Val extends MNotification>
 }
 
 /// @nodoc
-abstract class _$$_MNotificationCopyWith<$Res>
+abstract class _$$MNotificationImplCopyWith<$Res>
     implements $MNotificationCopyWith<$Res> {
-  factory _$$_MNotificationCopyWith(
-          _$_MNotification value, $Res Function(_$_MNotification) then) =
-      __$$_MNotificationCopyWithImpl<$Res>;
+  factory _$$MNotificationImplCopyWith(
+          _$MNotificationImpl value, $Res Function(_$MNotificationImpl) then) =
+      __$$MNotificationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -121,11 +121,11 @@ abstract class _$$_MNotificationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MNotificationCopyWithImpl<$Res>
-    extends _$MNotificationCopyWithImpl<$Res, _$_MNotification>
-    implements _$$_MNotificationCopyWith<$Res> {
-  __$$_MNotificationCopyWithImpl(
-      _$_MNotification _value, $Res Function(_$_MNotification) _then)
+class __$$MNotificationImplCopyWithImpl<$Res>
+    extends _$MNotificationCopyWithImpl<$Res, _$MNotificationImpl>
+    implements _$$MNotificationImplCopyWith<$Res> {
+  __$$MNotificationImplCopyWithImpl(
+      _$MNotificationImpl _value, $Res Function(_$MNotificationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -138,7 +138,7 @@ class __$$_MNotificationCopyWithImpl<$Res>
     Object? createdDate = null,
     Object? userReadStatus = null,
   }) {
-    return _then(_$_MNotification(
+    return _then(_$MNotificationImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -169,8 +169,8 @@ class __$$_MNotificationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MNotification extends _MNotification {
-  _$_MNotification(
+class _$MNotificationImpl extends _MNotification {
+  _$MNotificationImpl(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'emailSubject') required this.emailSubject,
       @JsonKey(name: 'supportCode') required this.supportCode,
@@ -179,8 +179,8 @@ class _$_MNotification extends _MNotification {
       @JsonKey(name: 'userReadStatus') required this.userReadStatus})
       : super._();
 
-  factory _$_MNotification.fromJson(Map<String, dynamic> json) =>
-      _$$_MNotificationFromJson(json);
+  factory _$MNotificationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MNotificationImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -210,7 +210,7 @@ class _$_MNotification extends _MNotification {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MNotification &&
+            other is _$MNotificationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.emailSubject, emailSubject) ||
                 other.emailSubject == emailSubject) &&
@@ -232,12 +232,12 @@ class _$_MNotification extends _MNotification {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MNotificationCopyWith<_$_MNotification> get copyWith =>
-      __$$_MNotificationCopyWithImpl<_$_MNotification>(this, _$identity);
+  _$$MNotificationImplCopyWith<_$MNotificationImpl> get copyWith =>
+      __$$MNotificationImplCopyWithImpl<_$MNotificationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MNotificationToJson(
+    return _$$MNotificationImplToJson(
       this,
     );
   }
@@ -251,11 +251,11 @@ abstract class _MNotification extends MNotification {
           @JsonKey(name: 'emailBody') required final String emailBody,
           @JsonKey(name: 'createdDate') required final String createdDate,
           @JsonKey(name: 'userReadStatus') required final int userReadStatus}) =
-      _$_MNotification;
+      _$MNotificationImpl;
   _MNotification._() : super._();
 
   factory _MNotification.fromJson(Map<String, dynamic> json) =
-      _$_MNotification.fromJson;
+      _$MNotificationImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -277,6 +277,6 @@ abstract class _MNotification extends MNotification {
   int get userReadStatus;
   @override
   @JsonKey(ignore: true)
-  _$$_MNotificationCopyWith<_$_MNotification> get copyWith =>
+  _$$MNotificationImplCopyWith<_$MNotificationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

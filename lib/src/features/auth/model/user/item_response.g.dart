@@ -6,7 +6,7 @@ part of 'item_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FUser _$$_FUserFromJson(Map<String, dynamic> json) => _$_FUser(
+_$FUserImpl _$$FUserImplFromJson(Map<String, dynamic> json) => _$FUserImpl(
       id: json['id'] as int?,
       key: json['key'] as int?,
       username: json['username'] as String?,
@@ -37,7 +37,8 @@ _$_FUser _$$_FUserFromJson(Map<String, dynamic> json) => _$_FUser(
       role: json['role'] as String?,
     );
 
-Map<String, dynamic> _$$_FUserToJson(_$_FUser instance) => <String, dynamic>{
+Map<String, dynamic> _$$FUserImplToJson(_$FUserImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'key': instance.key,
       'username': instance.username,

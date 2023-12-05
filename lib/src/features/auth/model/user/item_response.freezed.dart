@@ -254,9 +254,10 @@ class _$FUserCopyWithImpl<$Res, $Val extends FUser>
 }
 
 /// @nodoc
-abstract class _$$_FUserCopyWith<$Res> implements $FUserCopyWith<$Res> {
-  factory _$$_FUserCopyWith(_$_FUser value, $Res Function(_$_FUser) then) =
-      __$$_FUserCopyWithImpl<$Res>;
+abstract class _$$FUserImplCopyWith<$Res> implements $FUserCopyWith<$Res> {
+  factory _$$FUserImplCopyWith(
+          _$FUserImpl value, $Res Function(_$FUserImpl) then) =
+      __$$FUserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -288,9 +289,11 @@ abstract class _$$_FUserCopyWith<$Res> implements $FUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_FUserCopyWithImpl<$Res> extends _$FUserCopyWithImpl<$Res, _$_FUser>
-    implements _$$_FUserCopyWith<$Res> {
-  __$$_FUserCopyWithImpl(_$_FUser _value, $Res Function(_$_FUser) _then)
+class __$$FUserImplCopyWithImpl<$Res>
+    extends _$FUserCopyWithImpl<$Res, _$FUserImpl>
+    implements _$$FUserImplCopyWith<$Res> {
+  __$$FUserImplCopyWithImpl(
+      _$FUserImpl _value, $Res Function(_$FUserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -322,7 +325,7 @@ class __$$_FUserCopyWithImpl<$Res> extends _$FUserCopyWithImpl<$Res, _$_FUser>
     Object? dateOfJoin = freezed,
     Object? role = freezed,
   }) {
-    return _then(_$_FUser(
+    return _then(_$FUserImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -429,8 +432,8 @@ class __$$_FUserCopyWithImpl<$Res> extends _$FUserCopyWithImpl<$Res, _$_FUser>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FUser extends _FUser {
-  _$_FUser(
+class _$FUserImpl extends _FUser {
+  _$FUserImpl(
       {@JsonKey(name: 'id') this.id,
       @JsonKey(name: 'key') this.key,
       @JsonKey(name: 'username') this.username,
@@ -460,8 +463,8 @@ class _$_FUser extends _FUser {
         _roles = roles,
         super._();
 
-  factory _$_FUser.fromJson(Map<String, dynamic> json) =>
-      _$$_FUserFromJson(json);
+  factory _$FUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FUserImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -564,7 +567,7 @@ class _$_FUser extends _FUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FUser &&
+            other is _$FUserImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.username, username) ||
@@ -645,12 +648,12 @@ class _$_FUser extends _FUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FUserCopyWith<_$_FUser> get copyWith =>
-      __$$_FUserCopyWithImpl<_$_FUser>(this, _$identity);
+  _$$FUserImplCopyWith<_$FUserImpl> get copyWith =>
+      __$$FUserImplCopyWithImpl<_$FUserImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FUserToJson(
+    return _$$FUserImplToJson(
       this,
     );
   }
@@ -682,10 +685,10 @@ abstract class _FUser extends FUser {
       @JsonKey(name: 'modifiedDate') final String? modifiedDate,
       @JsonKey(name: 'createdDate') final String? createdDate,
       @JsonKey(name: 'dateOfJoin') final String? dateOfJoin,
-      @JsonKey(name: 'role') final String? role}) = _$_FUser;
+      @JsonKey(name: 'role') final String? role}) = _$FUserImpl;
   _FUser._() : super._();
 
-  factory _FUser.fromJson(Map<String, dynamic> json) = _$_FUser.fromJson;
+  factory _FUser.fromJson(Map<String, dynamic> json) = _$FUserImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -764,6 +767,6 @@ abstract class _FUser extends FUser {
   String? get role;
   @override
   @JsonKey(ignore: true)
-  _$$_FUserCopyWith<_$_FUser> get copyWith =>
+  _$$FUserImplCopyWith<_$FUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
