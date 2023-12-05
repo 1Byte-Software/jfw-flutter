@@ -6,7 +6,7 @@ part of 'm_word.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MWord _$$_MWordFromJson(Map<String, dynamic> json) => _$_MWord(
+_$MWordImpl _$$MWordImplFromJson(Map<String, dynamic> json) => _$MWordImpl(
       word: json['word'] as String,
       phonetics: (json['phonetics'] as List<dynamic>)
           .map((e) => Phonetic.fromJson(e as Map<String, dynamic>))
@@ -16,7 +16,8 @@ _$_MWord _$$_MWordFromJson(Map<String, dynamic> json) => _$_MWord(
           .toList(),
     );
 
-Map<String, dynamic> _$$_MWordToJson(_$_MWord instance) => <String, dynamic>{
+Map<String, dynamic> _$$MWordImplToJson(_$MWordImpl instance) =>
+    <String, dynamic>{
       'word': instance.word,
       'phonetics': instance.phonetics,
       'meanings': instance.meanings,

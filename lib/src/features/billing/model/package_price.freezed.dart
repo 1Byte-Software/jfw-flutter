@@ -104,11 +104,11 @@ class _$PackagePriceCopyWithImpl<$Res, $Val extends PackagePrice>
 }
 
 /// @nodoc
-abstract class _$$_PackagePriceCopyWith<$Res>
+abstract class _$$PackagePriceImplCopyWith<$Res>
     implements $PackagePriceCopyWith<$Res> {
-  factory _$$_PackagePriceCopyWith(
-          _$_PackagePrice value, $Res Function(_$_PackagePrice) then) =
-      __$$_PackagePriceCopyWithImpl<$Res>;
+  factory _$$PackagePriceImplCopyWith(
+          _$PackagePriceImpl value, $Res Function(_$PackagePriceImpl) then) =
+      __$$PackagePriceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -121,11 +121,11 @@ abstract class _$$_PackagePriceCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PackagePriceCopyWithImpl<$Res>
-    extends _$PackagePriceCopyWithImpl<$Res, _$_PackagePrice>
-    implements _$$_PackagePriceCopyWith<$Res> {
-  __$$_PackagePriceCopyWithImpl(
-      _$_PackagePrice _value, $Res Function(_$_PackagePrice) _then)
+class __$$PackagePriceImplCopyWithImpl<$Res>
+    extends _$PackagePriceCopyWithImpl<$Res, _$PackagePriceImpl>
+    implements _$$PackagePriceImplCopyWith<$Res> {
+  __$$PackagePriceImplCopyWithImpl(
+      _$PackagePriceImpl _value, $Res Function(_$PackagePriceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -138,7 +138,7 @@ class __$$_PackagePriceCopyWithImpl<$Res>
     Object? amount = null,
     Object? currency = null,
   }) {
-    return _then(_$_PackagePrice(
+    return _then(_$PackagePriceImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -169,8 +169,8 @@ class __$$_PackagePriceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PackagePrice extends _PackagePrice {
-  const _$_PackagePrice(
+class _$PackagePriceImpl extends _PackagePrice {
+  const _$PackagePriceImpl(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'packageId') required this.packageID,
       @JsonKey(name: 'code') required this.code,
@@ -179,8 +179,8 @@ class _$_PackagePrice extends _PackagePrice {
       @JsonKey(name: 'currency') required this.currency})
       : super._();
 
-  factory _$_PackagePrice.fromJson(Map<String, dynamic> json) =>
-      _$$_PackagePriceFromJson(json);
+  factory _$PackagePriceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PackagePriceImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -210,7 +210,7 @@ class _$_PackagePrice extends _PackagePrice {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PackagePrice &&
+            other is _$PackagePriceImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.packageID, packageID) ||
                 other.packageID == packageID) &&
@@ -229,12 +229,12 @@ class _$_PackagePrice extends _PackagePrice {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PackagePriceCopyWith<_$_PackagePrice> get copyWith =>
-      __$$_PackagePriceCopyWithImpl<_$_PackagePrice>(this, _$identity);
+  _$$PackagePriceImplCopyWith<_$PackagePriceImpl> get copyWith =>
+      __$$PackagePriceImplCopyWithImpl<_$PackagePriceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackagePriceToJson(
+    return _$$PackagePriceImplToJson(
       this,
     );
   }
@@ -248,11 +248,11 @@ abstract class _PackagePrice extends PackagePrice {
           @JsonKey(name: 'name') required final String name,
           @JsonKey(name: 'amount') required final num amount,
           @JsonKey(name: 'currency') required final String currency}) =
-      _$_PackagePrice;
+      _$PackagePriceImpl;
   const _PackagePrice._() : super._();
 
   factory _PackagePrice.fromJson(Map<String, dynamic> json) =
-      _$_PackagePrice.fromJson;
+      _$PackagePriceImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -274,6 +274,6 @@ abstract class _PackagePrice extends PackagePrice {
   String get currency;
   @override
   @JsonKey(ignore: true)
-  _$$_PackagePriceCopyWith<_$_PackagePrice> get copyWith =>
+  _$$PackagePriceImplCopyWith<_$PackagePriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

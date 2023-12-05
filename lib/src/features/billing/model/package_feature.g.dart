@@ -6,18 +6,21 @@ part of 'package_feature.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PackageFeature _$$_PackageFeatureFromJson(Map<String, dynamic> json) =>
-    _$_PackageFeature(
+_$PackageFeatureImpl _$$PackageFeatureImplFromJson(Map<String, dynamic> json) =>
+    _$PackageFeatureImpl(
       id: json['id'] as int,
       key: json['key'] as int?,
       value: json['featureValue'] as int,
+      description: json['description'] as String? ?? '',
       code: json['code'] as String,
     );
 
-Map<String, dynamic> _$$_PackageFeatureToJson(_$_PackageFeature instance) =>
+Map<String, dynamic> _$$PackageFeatureImplToJson(
+        _$PackageFeatureImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'key': instance.key,
       'featureValue': instance.value,
+      'description': instance.description,
       'code': instance.code,
     };

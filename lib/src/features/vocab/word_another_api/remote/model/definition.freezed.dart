@@ -68,22 +68,22 @@ class _$DefinitionCopyWithImpl<$Res, $Val extends Definition>
 }
 
 /// @nodoc
-abstract class _$$_DefinitionCopyWith<$Res>
+abstract class _$$DefinitionImplCopyWith<$Res>
     implements $DefinitionCopyWith<$Res> {
-  factory _$$_DefinitionCopyWith(
-          _$_Definition value, $Res Function(_$_Definition) then) =
-      __$$_DefinitionCopyWithImpl<$Res>;
+  factory _$$DefinitionImplCopyWith(
+          _$DefinitionImpl value, $Res Function(_$DefinitionImpl) then) =
+      __$$DefinitionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? definition, String? example});
 }
 
 /// @nodoc
-class __$$_DefinitionCopyWithImpl<$Res>
-    extends _$DefinitionCopyWithImpl<$Res, _$_Definition>
-    implements _$$_DefinitionCopyWith<$Res> {
-  __$$_DefinitionCopyWithImpl(
-      _$_Definition _value, $Res Function(_$_Definition) _then)
+class __$$DefinitionImplCopyWithImpl<$Res>
+    extends _$DefinitionCopyWithImpl<$Res, _$DefinitionImpl>
+    implements _$$DefinitionImplCopyWith<$Res> {
+  __$$DefinitionImplCopyWithImpl(
+      _$DefinitionImpl _value, $Res Function(_$DefinitionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_DefinitionCopyWithImpl<$Res>
     Object? definition = freezed,
     Object? example = freezed,
   }) {
-    return _then(_$_Definition(
+    return _then(_$DefinitionImpl(
       definition: freezed == definition
           ? _value.definition
           : definition // ignore: cast_nullable_to_non_nullable
@@ -107,11 +107,11 @@ class __$$_DefinitionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Definition implements _Definition {
-  _$_Definition({this.definition, this.example});
+class _$DefinitionImpl implements _Definition {
+  _$DefinitionImpl({this.definition, this.example});
 
-  factory _$_Definition.fromJson(Map<String, dynamic> json) =>
-      _$$_DefinitionFromJson(json);
+  factory _$DefinitionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DefinitionImplFromJson(json);
 
   @override
   final String? definition;
@@ -127,7 +127,7 @@ class _$_Definition implements _Definition {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Definition &&
+            other is _$DefinitionImpl &&
             (identical(other.definition, definition) ||
                 other.definition == definition) &&
             (identical(other.example, example) || other.example == example));
@@ -140,12 +140,12 @@ class _$_Definition implements _Definition {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DefinitionCopyWith<_$_Definition> get copyWith =>
-      __$$_DefinitionCopyWithImpl<_$_Definition>(this, _$identity);
+  _$$DefinitionImplCopyWith<_$DefinitionImpl> get copyWith =>
+      __$$DefinitionImplCopyWithImpl<_$DefinitionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefinitionToJson(
+    return _$$DefinitionImplToJson(
       this,
     );
   }
@@ -153,10 +153,10 @@ class _$_Definition implements _Definition {
 
 abstract class _Definition implements Definition {
   factory _Definition({final String? definition, final String? example}) =
-      _$_Definition;
+      _$DefinitionImpl;
 
   factory _Definition.fromJson(Map<String, dynamic> json) =
-      _$_Definition.fromJson;
+      _$DefinitionImpl.fromJson;
 
   @override
   String? get definition;
@@ -164,6 +164,6 @@ abstract class _Definition implements Definition {
   String? get example;
   @override
   @JsonKey(ignore: true)
-  _$$_DefinitionCopyWith<_$_Definition> get copyWith =>
+  _$$DefinitionImplCopyWith<_$DefinitionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

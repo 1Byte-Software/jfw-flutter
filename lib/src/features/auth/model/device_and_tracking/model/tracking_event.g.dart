@@ -6,13 +6,13 @@ part of 'tracking_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TrackingEvent _$$_TrackingEventFromJson(Map<String, dynamic> json) =>
-    _$_TrackingEvent(
+_$TrackingEventImpl _$$TrackingEventImplFromJson(Map<String, dynamic> json) =>
+    _$TrackingEventImpl(
       id: json['id'] as int,
       code: json['code'] as String,
     );
 
-Map<String, dynamic> _$$_TrackingEventToJson(_$_TrackingEvent instance) =>
+Map<String, dynamic> _$$TrackingEventImplToJson(_$TrackingEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,

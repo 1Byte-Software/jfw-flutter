@@ -26,6 +26,8 @@ mixin _$PackageFeature {
   int? get key => throw _privateConstructorUsedError;
   @JsonKey(name: 'featureValue')
   int get value => throw _privateConstructorUsedError;
+  @JsonKey(name: 'description', defaultValue: '')
+  String get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'code')
   String get code => throw _privateConstructorUsedError;
 
@@ -45,6 +47,7 @@ abstract class $PackageFeatureCopyWith<$Res> {
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'key') int? key,
       @JsonKey(name: 'featureValue') int value,
+      @JsonKey(name: 'description', defaultValue: '') String description,
       @JsonKey(name: 'code') String code});
 }
 
@@ -64,6 +67,7 @@ class _$PackageFeatureCopyWithImpl<$Res, $Val extends PackageFeature>
     Object? id = null,
     Object? key = freezed,
     Object? value = null,
+    Object? description = null,
     Object? code = null,
   }) {
     return _then(_value.copyWith(
@@ -79,6 +83,10 @@ class _$PackageFeatureCopyWithImpl<$Res, $Val extends PackageFeature>
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as int,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -88,26 +96,27 @@ class _$PackageFeatureCopyWithImpl<$Res, $Val extends PackageFeature>
 }
 
 /// @nodoc
-abstract class _$$_PackageFeatureCopyWith<$Res>
+abstract class _$$PackageFeatureImplCopyWith<$Res>
     implements $PackageFeatureCopyWith<$Res> {
-  factory _$$_PackageFeatureCopyWith(
-          _$_PackageFeature value, $Res Function(_$_PackageFeature) then) =
-      __$$_PackageFeatureCopyWithImpl<$Res>;
+  factory _$$PackageFeatureImplCopyWith(_$PackageFeatureImpl value,
+          $Res Function(_$PackageFeatureImpl) then) =
+      __$$PackageFeatureImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'key') int? key,
       @JsonKey(name: 'featureValue') int value,
+      @JsonKey(name: 'description', defaultValue: '') String description,
       @JsonKey(name: 'code') String code});
 }
 
 /// @nodoc
-class __$$_PackageFeatureCopyWithImpl<$Res>
-    extends _$PackageFeatureCopyWithImpl<$Res, _$_PackageFeature>
-    implements _$$_PackageFeatureCopyWith<$Res> {
-  __$$_PackageFeatureCopyWithImpl(
-      _$_PackageFeature _value, $Res Function(_$_PackageFeature) _then)
+class __$$PackageFeatureImplCopyWithImpl<$Res>
+    extends _$PackageFeatureCopyWithImpl<$Res, _$PackageFeatureImpl>
+    implements _$$PackageFeatureImplCopyWith<$Res> {
+  __$$PackageFeatureImplCopyWithImpl(
+      _$PackageFeatureImpl _value, $Res Function(_$PackageFeatureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,9 +125,10 @@ class __$$_PackageFeatureCopyWithImpl<$Res>
     Object? id = null,
     Object? key = freezed,
     Object? value = null,
+    Object? description = null,
     Object? code = null,
   }) {
-    return _then(_$_PackageFeature(
+    return _then(_$PackageFeatureImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -131,6 +141,10 @@ class __$$_PackageFeatureCopyWithImpl<$Res>
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as int,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -141,15 +155,16 @@ class __$$_PackageFeatureCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PackageFeature implements _PackageFeature {
-  _$_PackageFeature(
+class _$PackageFeatureImpl implements _PackageFeature {
+  _$PackageFeatureImpl(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'key') this.key,
       @JsonKey(name: 'featureValue') required this.value,
+      @JsonKey(name: 'description', defaultValue: '') required this.description,
       @JsonKey(name: 'code') required this.code});
 
-  factory _$_PackageFeature.fromJson(Map<String, dynamic> json) =>
-      _$$_PackageFeatureFromJson(json);
+  factory _$PackageFeatureImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PackageFeatureImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -161,38 +176,45 @@ class _$_PackageFeature implements _PackageFeature {
   @JsonKey(name: 'featureValue')
   final int value;
   @override
+  @JsonKey(name: 'description', defaultValue: '')
+  final String description;
+  @override
   @JsonKey(name: 'code')
   final String code;
 
   @override
   String toString() {
-    return 'PackageFeature(id: $id, key: $key, value: $value, code: $code)';
+    return 'PackageFeature(id: $id, key: $key, value: $value, description: $description, code: $code)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PackageFeature &&
+            other is _$PackageFeatureImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.value, value) || other.value == value) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.code, code) || other.code == code));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, key, value, code);
+  int get hashCode =>
+      Object.hash(runtimeType, id, key, value, description, code);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PackageFeatureCopyWith<_$_PackageFeature> get copyWith =>
-      __$$_PackageFeatureCopyWithImpl<_$_PackageFeature>(this, _$identity);
+  _$$PackageFeatureImplCopyWith<_$PackageFeatureImpl> get copyWith =>
+      __$$PackageFeatureImplCopyWithImpl<_$PackageFeatureImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackageFeatureToJson(
+    return _$$PackageFeatureImplToJson(
       this,
     );
   }
@@ -200,13 +222,16 @@ class _$_PackageFeature implements _PackageFeature {
 
 abstract class _PackageFeature implements PackageFeature {
   factory _PackageFeature(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'key') final int? key,
-      @JsonKey(name: 'featureValue') required final int value,
-      @JsonKey(name: 'code') required final String code}) = _$_PackageFeature;
+          {@JsonKey(name: 'id') required final int id,
+          @JsonKey(name: 'key') final int? key,
+          @JsonKey(name: 'featureValue') required final int value,
+          @JsonKey(name: 'description', defaultValue: '')
+          required final String description,
+          @JsonKey(name: 'code') required final String code}) =
+      _$PackageFeatureImpl;
 
   factory _PackageFeature.fromJson(Map<String, dynamic> json) =
-      _$_PackageFeature.fromJson;
+      _$PackageFeatureImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -218,10 +243,13 @@ abstract class _PackageFeature implements PackageFeature {
   @JsonKey(name: 'featureValue')
   int get value;
   @override
+  @JsonKey(name: 'description', defaultValue: '')
+  String get description;
+  @override
   @JsonKey(name: 'code')
   String get code;
   @override
   @JsonKey(ignore: true)
-  _$$_PackageFeatureCopyWith<_$_PackageFeature> get copyWith =>
+  _$$PackageFeatureImplCopyWith<_$PackageFeatureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

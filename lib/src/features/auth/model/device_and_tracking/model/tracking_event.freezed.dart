@@ -70,22 +70,22 @@ class _$TrackingEventCopyWithImpl<$Res, $Val extends TrackingEvent>
 }
 
 /// @nodoc
-abstract class _$$_TrackingEventCopyWith<$Res>
+abstract class _$$TrackingEventImplCopyWith<$Res>
     implements $TrackingEventCopyWith<$Res> {
-  factory _$$_TrackingEventCopyWith(
-          _$_TrackingEvent value, $Res Function(_$_TrackingEvent) then) =
-      __$$_TrackingEventCopyWithImpl<$Res>;
+  factory _$$TrackingEventImplCopyWith(
+          _$TrackingEventImpl value, $Res Function(_$TrackingEventImpl) then) =
+      __$$TrackingEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'id') int id, @JsonKey(name: 'code') String code});
 }
 
 /// @nodoc
-class __$$_TrackingEventCopyWithImpl<$Res>
-    extends _$TrackingEventCopyWithImpl<$Res, _$_TrackingEvent>
-    implements _$$_TrackingEventCopyWith<$Res> {
-  __$$_TrackingEventCopyWithImpl(
-      _$_TrackingEvent _value, $Res Function(_$_TrackingEvent) _then)
+class __$$TrackingEventImplCopyWithImpl<$Res>
+    extends _$TrackingEventCopyWithImpl<$Res, _$TrackingEventImpl>
+    implements _$$TrackingEventImplCopyWith<$Res> {
+  __$$TrackingEventImplCopyWithImpl(
+      _$TrackingEventImpl _value, $Res Function(_$TrackingEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +94,7 @@ class __$$_TrackingEventCopyWithImpl<$Res>
     Object? id = null,
     Object? code = null,
   }) {
-    return _then(_$_TrackingEvent(
+    return _then(_$TrackingEventImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -109,13 +109,13 @@ class __$$_TrackingEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TrackingEvent implements _TrackingEvent {
-  _$_TrackingEvent(
+class _$TrackingEventImpl implements _TrackingEvent {
+  _$TrackingEventImpl(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'code') required this.code});
 
-  factory _$_TrackingEvent.fromJson(Map<String, dynamic> json) =>
-      _$$_TrackingEventFromJson(json);
+  factory _$TrackingEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TrackingEventImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -133,7 +133,7 @@ class _$_TrackingEvent implements _TrackingEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TrackingEvent &&
+            other is _$TrackingEventImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.code, code) || other.code == code));
   }
@@ -145,12 +145,12 @@ class _$_TrackingEvent implements _TrackingEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TrackingEventCopyWith<_$_TrackingEvent> get copyWith =>
-      __$$_TrackingEventCopyWithImpl<_$_TrackingEvent>(this, _$identity);
+  _$$TrackingEventImplCopyWith<_$TrackingEventImpl> get copyWith =>
+      __$$TrackingEventImplCopyWithImpl<_$TrackingEventImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TrackingEventToJson(
+    return _$$TrackingEventImplToJson(
       this,
     );
   }
@@ -159,10 +159,10 @@ class _$_TrackingEvent implements _TrackingEvent {
 abstract class _TrackingEvent implements TrackingEvent {
   factory _TrackingEvent(
       {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'code') required final String code}) = _$_TrackingEvent;
+      @JsonKey(name: 'code') required final String code}) = _$TrackingEventImpl;
 
   factory _TrackingEvent.fromJson(Map<String, dynamic> json) =
-      _$_TrackingEvent.fromJson;
+      _$TrackingEventImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -172,6 +172,6 @@ abstract class _TrackingEvent implements TrackingEvent {
   String get code;
   @override
   @JsonKey(ignore: true)
-  _$$_TrackingEventCopyWith<_$_TrackingEvent> get copyWith =>
+  _$$TrackingEventImplCopyWith<_$TrackingEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

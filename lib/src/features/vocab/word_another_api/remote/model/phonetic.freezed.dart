@@ -67,21 +67,22 @@ class _$PhoneticCopyWithImpl<$Res, $Val extends Phonetic>
 }
 
 /// @nodoc
-abstract class _$$_PhoneticCopyWith<$Res> implements $PhoneticCopyWith<$Res> {
-  factory _$$_PhoneticCopyWith(
-          _$_Phonetic value, $Res Function(_$_Phonetic) then) =
-      __$$_PhoneticCopyWithImpl<$Res>;
+abstract class _$$PhoneticImplCopyWith<$Res>
+    implements $PhoneticCopyWith<$Res> {
+  factory _$$PhoneticImplCopyWith(
+          _$PhoneticImpl value, $Res Function(_$PhoneticImpl) then) =
+      __$$PhoneticImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? text, String? audio});
 }
 
 /// @nodoc
-class __$$_PhoneticCopyWithImpl<$Res>
-    extends _$PhoneticCopyWithImpl<$Res, _$_Phonetic>
-    implements _$$_PhoneticCopyWith<$Res> {
-  __$$_PhoneticCopyWithImpl(
-      _$_Phonetic _value, $Res Function(_$_Phonetic) _then)
+class __$$PhoneticImplCopyWithImpl<$Res>
+    extends _$PhoneticCopyWithImpl<$Res, _$PhoneticImpl>
+    implements _$$PhoneticImplCopyWith<$Res> {
+  __$$PhoneticImplCopyWithImpl(
+      _$PhoneticImpl _value, $Res Function(_$PhoneticImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -90,7 +91,7 @@ class __$$_PhoneticCopyWithImpl<$Res>
     Object? text = freezed,
     Object? audio = freezed,
   }) {
-    return _then(_$_Phonetic(
+    return _then(_$PhoneticImpl(
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -105,11 +106,11 @@ class __$$_PhoneticCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Phonetic implements _Phonetic {
-  _$_Phonetic({this.text, this.audio});
+class _$PhoneticImpl implements _Phonetic {
+  _$PhoneticImpl({this.text, this.audio});
 
-  factory _$_Phonetic.fromJson(Map<String, dynamic> json) =>
-      _$$_PhoneticFromJson(json);
+  factory _$PhoneticImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PhoneticImplFromJson(json);
 
   @override
   final String? text;
@@ -125,7 +126,7 @@ class _$_Phonetic implements _Phonetic {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Phonetic &&
+            other is _$PhoneticImpl &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.audio, audio) || other.audio == audio));
   }
@@ -137,21 +138,22 @@ class _$_Phonetic implements _Phonetic {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PhoneticCopyWith<_$_Phonetic> get copyWith =>
-      __$$_PhoneticCopyWithImpl<_$_Phonetic>(this, _$identity);
+  _$$PhoneticImplCopyWith<_$PhoneticImpl> get copyWith =>
+      __$$PhoneticImplCopyWithImpl<_$PhoneticImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PhoneticToJson(
+    return _$$PhoneticImplToJson(
       this,
     );
   }
 }
 
 abstract class _Phonetic implements Phonetic {
-  factory _Phonetic({final String? text, final String? audio}) = _$_Phonetic;
+  factory _Phonetic({final String? text, final String? audio}) = _$PhoneticImpl;
 
-  factory _Phonetic.fromJson(Map<String, dynamic> json) = _$_Phonetic.fromJson;
+  factory _Phonetic.fromJson(Map<String, dynamic> json) =
+      _$PhoneticImpl.fromJson;
 
   @override
   String? get text;
@@ -159,6 +161,6 @@ abstract class _Phonetic implements Phonetic {
   String? get audio;
   @override
   @JsonKey(ignore: true)
-  _$$_PhoneticCopyWith<_$_Phonetic> get copyWith =>
+  _$$PhoneticImplCopyWith<_$PhoneticImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -78,9 +78,10 @@ class _$MWordCopyWithImpl<$Res, $Val extends MWord>
 }
 
 /// @nodoc
-abstract class _$$_MWordCopyWith<$Res> implements $MWordCopyWith<$Res> {
-  factory _$$_MWordCopyWith(_$_MWord value, $Res Function(_$_MWord) then) =
-      __$$_MWordCopyWithImpl<$Res>;
+abstract class _$$MWordImplCopyWith<$Res> implements $MWordCopyWith<$Res> {
+  factory _$$MWordImplCopyWith(
+          _$MWordImpl value, $Res Function(_$MWordImpl) then) =
+      __$$MWordImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -90,9 +91,11 @@ abstract class _$$_MWordCopyWith<$Res> implements $MWordCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MWordCopyWithImpl<$Res> extends _$MWordCopyWithImpl<$Res, _$_MWord>
-    implements _$$_MWordCopyWith<$Res> {
-  __$$_MWordCopyWithImpl(_$_MWord _value, $Res Function(_$_MWord) _then)
+class __$$MWordImplCopyWithImpl<$Res>
+    extends _$MWordCopyWithImpl<$Res, _$MWordImpl>
+    implements _$$MWordImplCopyWith<$Res> {
+  __$$MWordImplCopyWithImpl(
+      _$MWordImpl _value, $Res Function(_$MWordImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +105,7 @@ class __$$_MWordCopyWithImpl<$Res> extends _$MWordCopyWithImpl<$Res, _$_MWord>
     Object? phonetics = null,
     Object? meanings = freezed,
   }) {
-    return _then(_$_MWord(
+    return _then(_$MWordImpl(
       word: null == word
           ? _value.word
           : word // ignore: cast_nullable_to_non_nullable
@@ -121,16 +124,16 @@ class __$$_MWordCopyWithImpl<$Res> extends _$MWordCopyWithImpl<$Res, _$_MWord>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MWord implements _MWord {
-  _$_MWord(
+class _$MWordImpl implements _MWord {
+  _$MWordImpl(
       {@JsonKey(name: 'word') required this.word,
       @JsonKey(name: 'phonetics') required final List<Phonetic> phonetics,
       @JsonKey(name: 'meanings') required final List<Meaning>? meanings})
       : _phonetics = phonetics,
         _meanings = meanings;
 
-  factory _$_MWord.fromJson(Map<String, dynamic> json) =>
-      _$$_MWordFromJson(json);
+  factory _$MWordImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MWordImplFromJson(json);
 
   @override
   @JsonKey(name: 'word')
@@ -164,7 +167,7 @@ class _$_MWord implements _MWord {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MWord &&
+            other is _$MWordImpl &&
             (identical(other.word, word) || other.word == word) &&
             const DeepCollectionEquality()
                 .equals(other._phonetics, _phonetics) &&
@@ -182,12 +185,12 @@ class _$_MWord implements _MWord {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MWordCopyWith<_$_MWord> get copyWith =>
-      __$$_MWordCopyWithImpl<_$_MWord>(this, _$identity);
+  _$$MWordImplCopyWith<_$MWordImpl> get copyWith =>
+      __$$MWordImplCopyWithImpl<_$MWordImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MWordToJson(
+    return _$$MWordImplToJson(
       this,
     );
   }
@@ -198,9 +201,9 @@ abstract class _MWord implements MWord {
           {@JsonKey(name: 'word') required final String word,
           @JsonKey(name: 'phonetics') required final List<Phonetic> phonetics,
           @JsonKey(name: 'meanings') required final List<Meaning>? meanings}) =
-      _$_MWord;
+      _$MWordImpl;
 
-  factory _MWord.fromJson(Map<String, dynamic> json) = _$_MWord.fromJson;
+  factory _MWord.fromJson(Map<String, dynamic> json) = _$MWordImpl.fromJson;
 
   @override
   @JsonKey(name: 'word')
@@ -213,6 +216,6 @@ abstract class _MWord implements MWord {
   List<Meaning>? get meanings;
   @override
   @JsonKey(ignore: true)
-  _$$_MWordCopyWith<_$_MWord> get copyWith =>
+  _$$MWordImplCopyWith<_$MWordImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
