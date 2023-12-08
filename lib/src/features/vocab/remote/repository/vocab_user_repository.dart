@@ -1,6 +1,6 @@
-import 'package:remote_vardytests/src/utils/remote/parsed_page_model.dart';
+import 'package:utils_vardytests/src/model/parsed_page_model.dart';
 import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:remote_vardytests/src/utils/remote/model/page_model.dart';
+import 'package:utils_vardytests/src/model/page_model.dart';
 
 import 'package:utils_vardytests/src/services/logging/log_manager.dart';
 import 'package:utils_vardytests/src/func/function.dart';

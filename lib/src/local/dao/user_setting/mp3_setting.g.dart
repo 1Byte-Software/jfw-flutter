@@ -6,8 +6,8 @@ part of 'mp3_setting.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MP3Setting _$$_MP3SettingFromJson(Map<String, dynamic> json) =>
-    _$_MP3Setting(
+_$MP3SettingImpl _$$MP3SettingImplFromJson(Map<String, dynamic> json) =>
+    _$MP3SettingImpl(
       isShuffle: json['IS-SHUFFLE'] as bool,
       delaySec: json['DELAY-SEC'] as int,
       loopTime: json['LOOP-TIME'] as int,
@@ -15,7 +15,7 @@ _$_MP3Setting _$$_MP3SettingFromJson(Map<String, dynamic> json) =>
       dateTime: DateTime.parse(json['DATE-TIME'] as String),
     );
 
-Map<String, dynamic> _$$_MP3SettingToJson(_$_MP3Setting instance) =>
+Map<String, dynamic> _$$MP3SettingImplToJson(_$MP3SettingImpl instance) =>
     <String, dynamic>{
       'IS-SHUFFLE': instance.isShuffle,
       'DELAY-SEC': instance.delaySec,

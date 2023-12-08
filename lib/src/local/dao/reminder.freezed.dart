@@ -90,10 +90,11 @@ class _$ReminderCopyWithImpl<$Res, $Val extends Reminder>
 }
 
 /// @nodoc
-abstract class _$$_ReminderCopyWith<$Res> implements $ReminderCopyWith<$Res> {
-  factory _$$_ReminderCopyWith(
-          _$_Reminder value, $Res Function(_$_Reminder) then) =
-      __$$_ReminderCopyWithImpl<$Res>;
+abstract class _$$ReminderImplCopyWith<$Res>
+    implements $ReminderCopyWith<$Res> {
+  factory _$$ReminderImplCopyWith(
+          _$ReminderImpl value, $Res Function(_$ReminderImpl) then) =
+      __$$ReminderImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -105,11 +106,11 @@ abstract class _$$_ReminderCopyWith<$Res> implements $ReminderCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ReminderCopyWithImpl<$Res>
-    extends _$ReminderCopyWithImpl<$Res, _$_Reminder>
-    implements _$$_ReminderCopyWith<$Res> {
-  __$$_ReminderCopyWithImpl(
-      _$_Reminder _value, $Res Function(_$_Reminder) _then)
+class __$$ReminderImplCopyWithImpl<$Res>
+    extends _$ReminderCopyWithImpl<$Res, _$ReminderImpl>
+    implements _$$ReminderImplCopyWith<$Res> {
+  __$$ReminderImplCopyWithImpl(
+      _$ReminderImpl _value, $Res Function(_$ReminderImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -121,7 +122,7 @@ class __$$_ReminderCopyWithImpl<$Res>
     Object? days = null,
     Object? time = null,
   }) {
-    return _then(_$_Reminder(
+    return _then(_$ReminderImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -148,8 +149,8 @@ class __$$_ReminderCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Reminder implements _Reminder {
-  _$_Reminder(
+class _$ReminderImpl implements _Reminder {
+  _$ReminderImpl(
       {this.id,
       required this.isEnabled,
       required this.uid,
@@ -157,8 +158,8 @@ class _$_Reminder implements _Reminder {
       required this.time})
       : _days = days;
 
-  factory _$_Reminder.fromJson(Map<String, dynamic> json) =>
-      _$$_ReminderFromJson(json);
+  factory _$ReminderImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReminderImplFromJson(json);
 
   @override
   final int? id;
@@ -186,7 +187,7 @@ class _$_Reminder implements _Reminder {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Reminder &&
+            other is _$ReminderImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
@@ -203,12 +204,12 @@ class _$_Reminder implements _Reminder {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReminderCopyWith<_$_Reminder> get copyWith =>
-      __$$_ReminderCopyWithImpl<_$_Reminder>(this, _$identity);
+  _$$ReminderImplCopyWith<_$ReminderImpl> get copyWith =>
+      __$$ReminderImplCopyWithImpl<_$ReminderImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ReminderToJson(
+    return _$$ReminderImplToJson(
       this,
     );
   }
@@ -220,9 +221,10 @@ abstract class _Reminder implements Reminder {
       required final bool isEnabled,
       required final int uid,
       required final List<DayOfWeekEnum> days,
-      required final String time}) = _$_Reminder;
+      required final String time}) = _$ReminderImpl;
 
-  factory _Reminder.fromJson(Map<String, dynamic> json) = _$_Reminder.fromJson;
+  factory _Reminder.fromJson(Map<String, dynamic> json) =
+      _$ReminderImpl.fromJson;
 
   @override
   int? get id;
@@ -236,6 +238,6 @@ abstract class _Reminder implements Reminder {
   String get time;
   @override
   @JsonKey(ignore: true)
-  _$$_ReminderCopyWith<_$_Reminder> get copyWith =>
+  _$$ReminderImplCopyWith<_$ReminderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

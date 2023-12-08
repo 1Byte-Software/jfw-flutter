@@ -85,11 +85,11 @@ class _$UserSettingCopyWithImpl<$Res, $Val extends UserSetting>
 }
 
 /// @nodoc
-abstract class _$$_UserSettingCopyWith<$Res>
+abstract class _$$UserSettingImplCopyWith<$Res>
     implements $UserSettingCopyWith<$Res> {
-  factory _$$_UserSettingCopyWith(
-          _$_UserSetting value, $Res Function(_$_UserSetting) then) =
-      __$$_UserSettingCopyWithImpl<$Res>;
+  factory _$$UserSettingImplCopyWith(
+          _$UserSettingImpl value, $Res Function(_$UserSettingImpl) then) =
+      __$$UserSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -100,11 +100,11 @@ abstract class _$$_UserSettingCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserSettingCopyWithImpl<$Res>
-    extends _$UserSettingCopyWithImpl<$Res, _$_UserSetting>
-    implements _$$_UserSettingCopyWith<$Res> {
-  __$$_UserSettingCopyWithImpl(
-      _$_UserSetting _value, $Res Function(_$_UserSetting) _then)
+class __$$UserSettingImplCopyWithImpl<$Res>
+    extends _$UserSettingCopyWithImpl<$Res, _$UserSettingImpl>
+    implements _$$UserSettingImplCopyWith<$Res> {
+  __$$UserSettingImplCopyWithImpl(
+      _$UserSettingImpl _value, $Res Function(_$UserSettingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,7 +115,7 @@ class __$$_UserSettingCopyWithImpl<$Res>
     Object? groups = null,
     Object? dateTime = null,
   }) {
-    return _then(_$_UserSetting(
+    return _then(_$UserSettingImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -138,8 +138,8 @@ class __$$_UserSettingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserSetting implements _UserSetting {
-  _$_UserSetting(
+class _$UserSettingImpl implements _UserSetting {
+  _$UserSettingImpl(
       {this.id,
       required this.uid,
       required final Map<UserSettingConfigGroupEnum, Map<String, String>>
@@ -147,8 +147,8 @@ class _$_UserSetting implements _UserSetting {
       required this.dateTime})
       : _groups = groups;
 
-  factory _$_UserSetting.fromJson(Map<String, dynamic> json) =>
-      _$$_UserSettingFromJson(json);
+  factory _$UserSettingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserSettingImplFromJson(json);
 
   @override
   final int? id;
@@ -174,7 +174,7 @@ class _$_UserSetting implements _UserSetting {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserSetting &&
+            other is _$UserSettingImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.uid, uid) || other.uid == uid) &&
             const DeepCollectionEquality().equals(other._groups, _groups) &&
@@ -190,12 +190,12 @@ class _$_UserSetting implements _UserSetting {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserSettingCopyWith<_$_UserSetting> get copyWith =>
-      __$$_UserSettingCopyWithImpl<_$_UserSetting>(this, _$identity);
+  _$$UserSettingImplCopyWith<_$UserSettingImpl> get copyWith =>
+      __$$UserSettingImplCopyWithImpl<_$UserSettingImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserSettingToJson(
+    return _$$UserSettingImplToJson(
       this,
     );
   }
@@ -207,10 +207,10 @@ abstract class _UserSetting implements UserSetting {
       required final int uid,
       required final Map<UserSettingConfigGroupEnum, Map<String, String>>
           groups,
-      required final String dateTime}) = _$_UserSetting;
+      required final String dateTime}) = _$UserSettingImpl;
 
   factory _UserSetting.fromJson(Map<String, dynamic> json) =
-      _$_UserSetting.fromJson;
+      _$UserSettingImpl.fromJson;
 
   @override
   int? get id;
@@ -222,6 +222,6 @@ abstract class _UserSetting implements UserSetting {
   String get dateTime;
   @override
   @JsonKey(ignore: true)
-  _$$_UserSettingCopyWith<_$_UserSetting> get copyWith =>
+  _$$UserSettingImplCopyWith<_$UserSettingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

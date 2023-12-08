@@ -6,8 +6,8 @@ part of 'user_setting.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserSetting _$$_UserSettingFromJson(Map<String, dynamic> json) =>
-    _$_UserSetting(
+_$UserSettingImpl _$$UserSettingImplFromJson(Map<String, dynamic> json) =>
+    _$UserSettingImpl(
       id: json['id'] as int?,
       uid: json['uid'] as int,
       groups: (json['groups'] as Map<String, dynamic>).map(
@@ -17,7 +17,7 @@ _$_UserSetting _$$_UserSettingFromJson(Map<String, dynamic> json) =>
       dateTime: json['dateTime'] as String,
     );
 
-Map<String, dynamic> _$$_UserSettingToJson(_$_UserSetting instance) =>
+Map<String, dynamic> _$$UserSettingImplToJson(_$UserSettingImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'uid': instance.uid,

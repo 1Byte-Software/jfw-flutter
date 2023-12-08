@@ -96,11 +96,11 @@ class _$MP3SettingCopyWithImpl<$Res, $Val extends MP3Setting>
 }
 
 /// @nodoc
-abstract class _$$_MP3SettingCopyWith<$Res>
+abstract class _$$MP3SettingImplCopyWith<$Res>
     implements $MP3SettingCopyWith<$Res> {
-  factory _$$_MP3SettingCopyWith(
-          _$_MP3Setting value, $Res Function(_$_MP3Setting) then) =
-      __$$_MP3SettingCopyWithImpl<$Res>;
+  factory _$$MP3SettingImplCopyWith(
+          _$MP3SettingImpl value, $Res Function(_$MP3SettingImpl) then) =
+      __$$MP3SettingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +112,11 @@ abstract class _$$_MP3SettingCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MP3SettingCopyWithImpl<$Res>
-    extends _$MP3SettingCopyWithImpl<$Res, _$_MP3Setting>
-    implements _$$_MP3SettingCopyWith<$Res> {
-  __$$_MP3SettingCopyWithImpl(
-      _$_MP3Setting _value, $Res Function(_$_MP3Setting) _then)
+class __$$MP3SettingImplCopyWithImpl<$Res>
+    extends _$MP3SettingCopyWithImpl<$Res, _$MP3SettingImpl>
+    implements _$$MP3SettingImplCopyWith<$Res> {
+  __$$MP3SettingImplCopyWithImpl(
+      _$MP3SettingImpl _value, $Res Function(_$MP3SettingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$_MP3SettingCopyWithImpl<$Res>
     Object? isShowTranscript = null,
     Object? dateTime = null,
   }) {
-    return _then(_$_MP3Setting(
+    return _then(_$MP3SettingImpl(
       isShuffle: null == isShuffle
           ? _value.isShuffle
           : isShuffle // ignore: cast_nullable_to_non_nullable
@@ -155,8 +155,8 @@ class __$$_MP3SettingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MP3Setting extends _MP3Setting {
-  _$_MP3Setting(
+class _$MP3SettingImpl extends _MP3Setting {
+  _$MP3SettingImpl(
       {@JsonKey(name: 'IS-SHUFFLE') required this.isShuffle,
       @JsonKey(name: 'DELAY-SEC') required this.delaySec,
       @JsonKey(name: 'LOOP-TIME') required this.loopTime,
@@ -164,8 +164,8 @@ class _$_MP3Setting extends _MP3Setting {
       @JsonKey(name: 'DATE-TIME') required this.dateTime})
       : super._();
 
-  factory _$_MP3Setting.fromJson(Map<String, dynamic> json) =>
-      _$$_MP3SettingFromJson(json);
+  factory _$MP3SettingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MP3SettingImplFromJson(json);
 
   @override
   @JsonKey(name: 'IS-SHUFFLE')
@@ -192,7 +192,7 @@ class _$_MP3Setting extends _MP3Setting {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MP3Setting &&
+            other is _$MP3SettingImpl &&
             (identical(other.isShuffle, isShuffle) ||
                 other.isShuffle == isShuffle) &&
             (identical(other.delaySec, delaySec) ||
@@ -213,12 +213,12 @@ class _$_MP3Setting extends _MP3Setting {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MP3SettingCopyWith<_$_MP3Setting> get copyWith =>
-      __$$_MP3SettingCopyWithImpl<_$_MP3Setting>(this, _$identity);
+  _$$MP3SettingImplCopyWith<_$MP3SettingImpl> get copyWith =>
+      __$$MP3SettingImplCopyWithImpl<_$MP3SettingImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MP3SettingToJson(
+    return _$$MP3SettingImplToJson(
       this,
     );
   }
@@ -226,20 +226,16 @@ class _$_MP3Setting extends _MP3Setting {
 
 abstract class _MP3Setting extends MP3Setting {
   factory _MP3Setting(
-      {@JsonKey(name: 'IS-SHUFFLE')
-          required final bool isShuffle,
-      @JsonKey(name: 'DELAY-SEC')
-          required final int delaySec,
-      @JsonKey(name: 'LOOP-TIME')
-          required final int loopTime,
-      @JsonKey(name: 'IS-SHOW-TRANSCRIPT')
-          required final bool isShowTranscript,
+      {@JsonKey(name: 'IS-SHUFFLE') required final bool isShuffle,
+      @JsonKey(name: 'DELAY-SEC') required final int delaySec,
+      @JsonKey(name: 'LOOP-TIME') required final int loopTime,
+      @JsonKey(name: 'IS-SHOW-TRANSCRIPT') required final bool isShowTranscript,
       @JsonKey(name: 'DATE-TIME')
-          required final DateTime dateTime}) = _$_MP3Setting;
+      required final DateTime dateTime}) = _$MP3SettingImpl;
   _MP3Setting._() : super._();
 
   factory _MP3Setting.fromJson(Map<String, dynamic> json) =
-      _$_MP3Setting.fromJson;
+      _$MP3SettingImpl.fromJson;
 
   @override
   @JsonKey(name: 'IS-SHUFFLE')
@@ -258,6 +254,6 @@ abstract class _MP3Setting extends MP3Setting {
   DateTime get dateTime;
   @override
   @JsonKey(ignore: true)
-  _$$_MP3SettingCopyWith<_$_MP3Setting> get copyWith =>
+  _$$MP3SettingImplCopyWith<_$MP3SettingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

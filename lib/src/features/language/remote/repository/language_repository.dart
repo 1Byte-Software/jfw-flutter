@@ -10,7 +10,7 @@ abstract class LanguageRepository {
 }
 
 class LanguageRepositoryImpl extends LanguageRepository {
-  final ref = getI<RemoteLanguage>();
+  final ref = getIt<RemoteLanguage>();
   @override
   Future<FResult<List<Language>>> getLanguages(
       {required String? sortOrder, required String? sortDataField}) async {

@@ -1,4 +1,4 @@
-import 'package:remote_vardytests/src/utils/remote/model/fetch_response.dart';
+import 'package:utils_vardytests/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

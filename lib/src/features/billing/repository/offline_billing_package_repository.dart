@@ -33,7 +33,7 @@ class OfflineBillingPackageRepositoryImpl
           if (isExist == false) {
             await ref.add(package);
             BillingPackage? newPackage = await ref.getPackageById(package.id);
-            return 'success: add package';
+            if (newPackage != null) return 'success: add package';
             throw 'ERROR: failed add package to local';
           } else {
             throw 'ERROR: exist package';

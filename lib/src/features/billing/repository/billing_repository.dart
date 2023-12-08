@@ -1,7 +1,6 @@
 import 'package:remote_vardytests/src/features/billing/model/billing_package.dart';
 import 'package:remote_vardytests/src/features/billing/model/package_price.dart';
 import 'package:utils_vardytests/src/func/function.dart';
-
 import 'package:utils_vardytests/src/model/fresult.dart';
 import 'package:utils_vardytests/src/services/logging/log_manager.dart';
 import '../remote_billing.dart';
@@ -82,15 +81,22 @@ class BillingRepositoryImpl extends BillingRepository {
 
   @override
   Future<FResult<List<BillingPackage>>> getPackages({required int brandId}) {
-    return tryCatchResult(
-        func: () async {
-          final packagesResponse =
-              await ref.getPackages(brandId: brandId.toString());
-          return (packagesResponse.data as List)
-              .map((e) => BillingPackage.fromJson(e))
-              .toList();
-        },
-        logErr: (ex) => logI.e(ex));
+    return ref
+        .getPackages(brandId: brandId.toString())
+        .then((packagesResponse) => FResult.success(
+            (packagesResponse.data as List)
+                .map((e) => BillingPackage.fromJson(e))
+                .toList()))
+        .onError(FetchFunctions.onError);
+    // return tryCatchResult(
+    //     func: () async {
+    //       final packagesResponse =
+    //           await ref.getPackages(brandId: brandId.toString());
+    //       return (packagesResponse.data as List)
+    //           .map((e) => BillingPackage.fromJson(e))
+    //           .toList();
+    //     },
+    //     logErr: (ex) => logI.e(ex));
   }
 
   @override

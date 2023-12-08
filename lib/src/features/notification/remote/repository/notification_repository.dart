@@ -1,5 +1,5 @@
-import 'package:remote_vardytests/src/utils/remote/model/page_model.dart';
-import 'package:remote_vardytests/src/utils/remote/model/page_model_v2.dart';
+import 'package:utils_vardytests/src/model/page_model.dart';
+import 'package:utils_vardytests/src/model/page_model_v2.dart';
 import 'package:utils_vardytests/src/model/fresult.dart';
 import 'package:utils_vardytests/src/func/function.dart';
 import '../remote_notification.dart';

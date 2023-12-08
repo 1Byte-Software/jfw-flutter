@@ -18,13 +18,9 @@ class AuthRepositoryImpl extends AuthRepository {
   @override
   Future<FResult<FUser>> getAnotherUserInfo(int uid,
       {required String brandUrl, required String authKey}) async {
-    return tryCatchResult<FUser>(
-        func: () async {
-          final userResponse = await ref.getAnotherUserInfo(uid,
-              authKey: authKey, brandUrl: brandUrl);
-          return userResponse.data!;
-        },
-        logErr: (ex) => logI.e(ex));
+    return FetchFunctions.fetchRawResponse(
+        ref.getAnotherUserInfo(uid, authKey: authKey, brandUrl: brandUrl),
+        onParse: FUser.fromJson);
   }
 
   @override
@@ -33,16 +29,14 @@ class AuthRepositoryImpl extends AuthRepository {
       required String password,
       required String email,
       required String brandUrl}) async {
-    return tryCatchResult<String>(
-        func: () async {
-          await ref.register(RegisterRequest(
-              brandUrl: brandUrl,
-              password: password,
-              username: username,
-              email: email));
-          return 'success-register';
-        },
-        logErr: (ex) => logI.e(ex));
+    return ref
+        .register(RegisterRequest(
+            brandUrl: brandUrl,
+            password: password,
+            username: username,
+            email: email))
+        .then((value) => FResult.success('Registered successfully'))
+        .onError(FetchFunctions.onError);
   }
 
   @override
@@ -67,13 +61,9 @@ class AuthRepositoryImpl extends AuthRepository {
       {required String username,
       required String brandUrl,
       required String authKey}) async {
-    // return tryCatchResult<FUser>(
-    // func: () async {
-    final userInformationResponse =
-        await ref.getUserInform(username, brandUrl: brandUrl, authKey: authKey);
-    return FResult.success(FUser.fromJson(userInformationResponse.data!));
-    // },
-    // logErr: (ex) => logI.e(ex));
+    return FetchFunctions.fetchRawResponse(
+        ref.getUserInform(username, brandUrl: brandUrl, authKey: authKey),
+        onParse: FUser.fromJson);
   }
 
   @override

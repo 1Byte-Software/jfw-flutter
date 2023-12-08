@@ -90,10 +90,11 @@ class _$PlaylistCopyWithImpl<$Res, $Val extends Playlist>
 }
 
 /// @nodoc
-abstract class _$$_PlaylistCopyWith<$Res> implements $PlaylistCopyWith<$Res> {
-  factory _$$_PlaylistCopyWith(
-          _$_Playlist value, $Res Function(_$_Playlist) then) =
-      __$$_PlaylistCopyWithImpl<$Res>;
+abstract class _$$PlaylistImplCopyWith<$Res>
+    implements $PlaylistCopyWith<$Res> {
+  factory _$$PlaylistImplCopyWith(
+          _$PlaylistImpl value, $Res Function(_$PlaylistImpl) then) =
+      __$$PlaylistImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -105,11 +106,11 @@ abstract class _$$_PlaylistCopyWith<$Res> implements $PlaylistCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PlaylistCopyWithImpl<$Res>
-    extends _$PlaylistCopyWithImpl<$Res, _$_Playlist>
-    implements _$$_PlaylistCopyWith<$Res> {
-  __$$_PlaylistCopyWithImpl(
-      _$_Playlist _value, $Res Function(_$_Playlist) _then)
+class __$$PlaylistImplCopyWithImpl<$Res>
+    extends _$PlaylistCopyWithImpl<$Res, _$PlaylistImpl>
+    implements _$$PlaylistImplCopyWith<$Res> {
+  __$$PlaylistImplCopyWithImpl(
+      _$PlaylistImpl _value, $Res Function(_$PlaylistImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -121,7 +122,7 @@ class __$$_PlaylistCopyWithImpl<$Res>
     Object? isDownloadedPlaylist = null,
     Object? idAudios = null,
   }) {
-    return _then(_$_Playlist(
+    return _then(_$PlaylistImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -148,8 +149,8 @@ class __$$_PlaylistCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Playlist implements _Playlist {
-  _$_Playlist(
+class _$PlaylistImpl implements _Playlist {
+  _$PlaylistImpl(
       {this.id,
       required this.name,
       required this.uid,
@@ -157,8 +158,8 @@ class _$_Playlist implements _Playlist {
       required final List<int> idAudios})
       : _idAudios = idAudios;
 
-  factory _$_Playlist.fromJson(Map<String, dynamic> json) =>
-      _$$_PlaylistFromJson(json);
+  factory _$PlaylistImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PlaylistImplFromJson(json);
 
   @override
   final int? id;
@@ -186,7 +187,7 @@ class _$_Playlist implements _Playlist {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Playlist &&
+            other is _$PlaylistImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.uid, uid) || other.uid == uid) &&
@@ -203,12 +204,12 @@ class _$_Playlist implements _Playlist {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PlaylistCopyWith<_$_Playlist> get copyWith =>
-      __$$_PlaylistCopyWithImpl<_$_Playlist>(this, _$identity);
+  _$$PlaylistImplCopyWith<_$PlaylistImpl> get copyWith =>
+      __$$PlaylistImplCopyWithImpl<_$PlaylistImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PlaylistToJson(
+    return _$$PlaylistImplToJson(
       this,
     );
   }
@@ -220,9 +221,10 @@ abstract class _Playlist implements Playlist {
       required final String name,
       required final int uid,
       final bool isDownloadedPlaylist,
-      required final List<int> idAudios}) = _$_Playlist;
+      required final List<int> idAudios}) = _$PlaylistImpl;
 
-  factory _Playlist.fromJson(Map<String, dynamic> json) = _$_Playlist.fromJson;
+  factory _Playlist.fromJson(Map<String, dynamic> json) =
+      _$PlaylistImpl.fromJson;
 
   @override
   int? get id;
@@ -236,6 +238,6 @@ abstract class _Playlist implements Playlist {
   List<int> get idAudios;
   @override
   @JsonKey(ignore: true)
-  _$$_PlaylistCopyWith<_$_Playlist> get copyWith =>
+  _$$PlaylistImplCopyWith<_$PlaylistImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

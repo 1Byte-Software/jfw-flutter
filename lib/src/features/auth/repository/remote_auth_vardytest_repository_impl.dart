@@ -26,48 +26,4 @@ class RemoteAuthVardyTestRepositoryImpl extends AuthVardyTestRepository {
         },
         logErr: (ex) => logI.e(ex));
   }
-
-  @override
-  Future<FResult<List<Category>>> getCategories() async {
-    try {
-      final response = await ref.getCategories(group: "PTE");
-
-      List<Category> categories = (response.data as List)
-          .map((e) => Category.fromJson(e))
-          .where((element) => element.parentCode != null)
-          .toList();
-
-      return FResult.success(categories);
-    } catch (ex) {
-      return FResult.error(ex.toString());
-    }
-  }
-
-  @override
-  Future<FResult<List<Category>>> getGroupMarks() async {
-    return tryCatchResult(
-        func: () async {
-          final response = await ref.getCategories(group: "MARK");
-
-          List<Category> categories =
-              (response.data as List).map((e) => Category.fromJson(e)).toList();
-
-          return categories;
-        },
-        logErr: (ex) => logI.e(ex));
-  }
-
-  @override
-  Future<FResult<List<Category>>> getGroupStars() async {
-    try {
-      final response = await ref.getCategories(group: "STAR");
-
-      List<Category> categories =
-          (response.data as List).map((e) => Category.fromJson(e)).toList();
-
-      return FResult.success(categories);
-    } catch (e) {
-      return FResult.error(e.toString());
-    }
-  }
 }
