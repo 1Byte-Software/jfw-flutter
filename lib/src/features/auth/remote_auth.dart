@@ -36,7 +36,7 @@ abstract class RemoteAuth {
       @Part(name: 'userIdentifier') required String userIdentifier});
 
   @POST('/tracking-activities')
-  Future<BaseResponseV1> addActivites(@Body() dynamic activityRequest);
+  Future<FetchResponse> addActivites(@Body() dynamic activityRequest);
 
   @GET('/users/{username}')
   Future<FetchResponse> getUserInform(
@@ -65,7 +65,7 @@ abstract class RemoteAuth {
     @Query("authKey") required String authKey,
   });
   @PUT("/users/change-password")
-  Future<BaseResponseV1> changePassword({
+  Future<FetchResponse> changePassword({
     @Query("authKey") required String authKey,
     @Body() required ChangePassRequest changePassRequest,
   });
@@ -93,7 +93,7 @@ abstract class RemoteAuth {
   Future<dynamic> deleteUser(@Path('uid') int uid);
 
   @PUT('/users/{username}')
-  Future<BaseResponseV1> updateProfile(
+  Future<FetchResponse> updateProfile(
     @Path('username') String username, {
     @Query("brandUrl") required String brandUrl,
     @Query("authKey") required String authKey,

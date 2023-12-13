@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'remote_course.dart';
+part of 'discuss_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'remote_course.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _RemoteCourse implements RemoteCourse {
-  _RemoteCourse(
+class _DiscussService implements DiscussService {
+  _DiscussService(
     this._dio, {
     this.baseUrl,
   });
@@ -19,164 +19,83 @@ class _RemoteCourse implements RemoteCourse {
   String? baseUrl;
 
   @override
-  Future<FetchResponse> getCourses({
-    required int userId,
-    required String currentDate,
-    required int pageSize,
-    String? name,
-    String? categoryCode,
+  Future<FetchResponse> getDiscusses({
+    required int lessonId,
+    required int numberPage,
+    required int limit,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'page': numberPage,
+      r'limit': limit,
+    };
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/discussion/lesson/${lessonId}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> addDiscuss(
+      {required AddDiscussRequest addDiscussRequest}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(addDiscussRequest.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/discussion',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getResponseUsers({
     required int pageNumber,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'userId': userId,
-      r'currentDate': currentDate,
-      r'pageSize': pageSize,
-      r'name': name,
-      r'categoryCode': categoryCode,
-      r'pageNumber': pageNumber,
-    };
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/v1/courses/search',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getMyCourses({
-    required int userId,
-    required String currentDate,
     required int pageSize,
-    String? name,
-    String? categoryCode,
-    required int pageNumber,
+    required String typeQuery,
+    required int userId,
+    required int lessonId,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'userId': userId,
-      r'currentDate': currentDate,
-      r'pageSize': pageSize,
-      r'name': name,
-      r'categoryCode': categoryCode,
       r'pageNumber': pageNumber,
-    };
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/course-users/courses',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getLearnersOfCourse({
-    required int courseId,
-    required int pageSize,
-    required int pageNumber,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
       r'pageSize': pageSize,
-      r'pageNumber': pageNumber,
-    };
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/course-users/${courseId}/learners',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getDetailCourse({
-    required int courseId,
-    required int userId,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'userId': userId};
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/v1/courses/${courseId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getClasses({
-    required String startDate,
-    required String endDate,
-    required int userId,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'startDate': startDate,
-      r'endDate': endDate,
+      r'typeQuery': typeQuery,
       r'userId': userId,
+      r'lessonId': lessonId,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
@@ -188,7 +107,7 @@ class _RemoteCourse implements RemoteCourse {
     )
             .compose(
               _dio.options,
-              '/classes',
+              '/discussions/v2/response-user',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -202,15 +121,41 @@ class _RemoteCourse implements RemoteCourse {
   }
 
   @override
-  Future<FetchResponse> unrollCourse({
+  Future<FetchResponse> addReactionDiscuss(
+      {required ReactionRequest reactionRequest}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(reactionRequest.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/discussion-reactions',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> removeReactionDiscuss({
+    required int discussId,
     required int userId,
-    required int courseId,
   }) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'userId': userId,
-      r'courseId': courseId,
-    };
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
@@ -221,7 +166,7 @@ class _RemoteCourse implements RemoteCourse {
     )
             .compose(
               _dio.options,
-              '/course-users',
+              '/discussion_reactions?discussion_id=${discussId}&userid=${userId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -235,22 +180,20 @@ class _RemoteCourse implements RemoteCourse {
   }
 
   @override
-  Future<FetchResponse> registerCourse(
-      {required Map<String, dynamic> registerCourseRequest}) async {
+  Future<FetchResponse> removeResponseUser({required int id}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(registerCourseRequest);
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'POST',
+      method: 'DELETE',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/course-users',
+              '/discussions/${id}',
               queryParameters: queryParameters,
               data: _data,
             )

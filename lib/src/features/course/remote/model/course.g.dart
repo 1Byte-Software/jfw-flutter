@@ -6,7 +6,7 @@ part of 'course.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Course _$$_CourseFromJson(Map<String, dynamic> json) => _$_Course(
+_$CourseImpl _$$CourseImplFromJson(Map<String, dynamic> json) => _$CourseImpl(
       id: json['id'] as int,
       description: json['description'] as String? ?? '',
       name: json['name'] as String? ?? '',
@@ -23,7 +23,8 @@ _$_Course _$$_CourseFromJson(Map<String, dynamic> json) => _$_Course(
       authorAvt: json['authorAvt'] as String?,
     );
 
-Map<String, dynamic> _$$_CourseToJson(_$_Course instance) => <String, dynamic>{
+Map<String, dynamic> _$$CourseImplToJson(_$CourseImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'description': instance.description,
       'name': instance.name,

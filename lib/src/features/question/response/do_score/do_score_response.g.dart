@@ -48,5 +48,5 @@ Map<String, dynamic> _$DoScoreResponseToJson(DoScoreResponse instance) =>
 const _$BillingPackageEnumEnumMap = {
   BillingPackageEnum.free: 'free',
   BillingPackageEnum.standard: 'standard',
-  BillingPackageEnum.premium: 'premium',
+  BillingPackageEnum.gold: 'premium',
 };

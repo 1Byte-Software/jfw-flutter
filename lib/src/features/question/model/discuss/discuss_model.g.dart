@@ -50,5 +50,5 @@ Map<String, dynamic> _$$DiscussModelImplToJson(_$DiscussModelImpl instance) =>
 const _$BillingPackageEnumEnumMap = {
   BillingPackageEnum.free: 'free',
   BillingPackageEnum.standard: 'standard',
-  BillingPackageEnum.premium: 'premium',
+  BillingPackageEnum.gold: 'premium',
 };

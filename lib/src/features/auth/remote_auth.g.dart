@@ -155,13 +155,13 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<BaseResponseV1> addActivites(dynamic activityRequest) async {
+  Future<FetchResponse> addActivites(dynamic activityRequest) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = activityRequest;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<BaseResponseV1>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -177,7 +177,7 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponseV1.fromJson(_result.data!);
+    final value = FetchResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -318,7 +318,7 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<BaseResponseV1> changePassword({
+  Future<FetchResponse> changePassword({
     required String authKey,
     required ChangePassRequest changePassRequest,
   }) async {
@@ -328,7 +328,7 @@ class _RemoteAuth implements RemoteAuth {
     final _data = <String, dynamic>{};
     _data.addAll(changePassRequest.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<BaseResponseV1>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -344,7 +344,7 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponseV1.fromJson(_result.data!);
+    final value = FetchResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -517,7 +517,7 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<BaseResponseV1> updateProfile(
+  Future<FetchResponse> updateProfile(
     String username, {
     required String brandUrl,
     required String authKey,
@@ -532,7 +532,7 @@ class _RemoteAuth implements RemoteAuth {
     final _data = <String, dynamic>{};
     _data.addAll(userInformationUpdate);
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<BaseResponseV1>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -548,7 +548,7 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponseV1.fromJson(_result.data!);
+    final value = FetchResponse.fromJson(_result.data!);
     return value;
   }
 

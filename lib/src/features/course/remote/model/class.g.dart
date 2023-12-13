@@ -6,7 +6,7 @@ part of 'class.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Class _$$_ClassFromJson(Map<String, dynamic> json) => _$_Class(
+_$ClassImpl _$$ClassImplFromJson(Map<String, dynamic> json) => _$ClassImpl(
       className: json['className'] as String? ?? '',
       courseId: json['courseId'] as int,
       classId: json['classId'] as int,
@@ -19,7 +19,8 @@ _$_Class _$$_ClassFromJson(Map<String, dynamic> json) => _$_Class(
       languageCode: json['languageCode'] as String?,
     );
 
-Map<String, dynamic> _$$_ClassToJson(_$_Class instance) => <String, dynamic>{
+Map<String, dynamic> _$$ClassImplToJson(_$ClassImpl instance) =>
+    <String, dynamic>{
       'className': instance.className,
       'courseId': instance.courseId,
       'classId': instance.classId,

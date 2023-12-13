@@ -121,15 +121,12 @@ class AuthRepositoryImpl extends AuthRepository {
       {required updateUserInformation,
       required String brandUrl,
       required String authKey}) async {
-    return tryCatchResult<FUser>(
-        func: () async {
-          final userResult = await ref.updateProfile(username,
-              authKey: authKey,
-              userInformationUpdate: updateUserInformation,
-              brandUrl: brandUrl);
-          return FUser.fromJson(userResult.data!);
-        },
-        logErr: (ex) => logI.e(ex));
+    return FetchFunctions.fetchRawResponse(
+        ref.updateProfile(username,
+            authKey: authKey,
+            userInformationUpdate: updateUserInformation,
+            brandUrl: brandUrl),
+        onParse: FUser.fromJson);
   }
 
   @override
@@ -185,14 +182,9 @@ class AuthRepositoryImpl extends AuthRepository {
   @override
   Future<FResult<FUser>> getInfoAnotherUserByCode(String code,
       {required String brandUrl, required String authKey}) {
-    return tryCatchResult<FUser>(
-        func: () async {
-          final userProfileResponse = await Future.value(ref
-              .getUserInfoByCode(code, brandUrl: brandUrl, authKey: authKey));
-          final user = userProfileResponse.data!;
-          return user;
-        },
-        logErr: (ex) => logI.e(ex));
+    return FetchFunctions.fetchRawResponse<FUser>(
+        ref.getUserInfoByCode(code, brandUrl: brandUrl, authKey: authKey),
+        onParse: FUser.fromJson);
   }
 
   @override
@@ -200,11 +192,10 @@ class AuthRepositoryImpl extends AuthRepository {
       {required String brandUrl,
       required String accessToken,
       required String idToken}) {
-    return tryCatchResult(func: () async {
-      final loginResponse = await ref.loginSocialGoogle(
-          brandUrl: brandUrl, idToken: idToken, accessToken: accessToken);
-      return ItemLoginResponse.fromJson(loginResponse.data);
-    });
+    return FetchFunctions.fetchRawResponse(
+        ref.loginSocialGoogle(
+            brandUrl: brandUrl, idToken: idToken, accessToken: accessToken),
+        onParse: ItemLoginResponse.fromJson);
   }
 
   @override
@@ -224,16 +215,15 @@ class AuthRepositoryImpl extends AuthRepository {
       required String? firstName,
       required String? lastName,
       required String idToken}) {
-    return tryCatchResult(func: () async {
-      final loginResponse = await ref.loginSocialApple(
-        brandUrl: brandUrl,
-        idToken: idToken,
-        code: authorizationCode,
-        firstName: firstName,
-        lastName: lastName,
-        userIdentifier: userIdentifier,
-      );
-      return ItemLoginResponse.fromJson(loginResponse.data);
-    });
+    return FetchFunctions.fetchRawResponse(
+        ref.loginSocialApple(
+          brandUrl: brandUrl,
+          idToken: idToken,
+          code: authorizationCode,
+          firstName: firstName,
+          lastName: lastName,
+          userIdentifier: userIdentifier,
+        ),
+        onParse: ItemLoginResponse.fromJson);
   }
 }

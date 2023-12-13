@@ -18,19 +18,19 @@ class BillingPackageParser {
 
   BillingPackageEnum codeToPackage(String code) {
     if (code == standardCode) return BillingPackageEnum.standard;
-    if (code == goldCode) return BillingPackageEnum.premium;
+    if (code == goldCode) return BillingPackageEnum.gold;
     return BillingPackageEnum.free;
   }
 
   BillingPackageEnum idToPackage(int id) {
     if (id == standardId) return BillingPackageEnum.standard;
-    if (id == goldId) return BillingPackageEnum.premium;
+    if (id == goldId) return BillingPackageEnum.gold;
     return BillingPackageEnum.free;
   }
 
   String packageToCode(BillingPackageEnum code) {
     if (code == BillingPackageEnum.standard) return standardCode;
-    if (code == BillingPackageEnum.premium) return goldCode;
+    if (code == BillingPackageEnum.gold) return goldCode;
     return freeCode;
   }
 }

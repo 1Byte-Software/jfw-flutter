@@ -8,7 +8,10 @@ part 'billing_package.freezed.dart';
 enum BillingPackageEnum {
   free,
   standard,
-  premium;
+  gold;
+
+  @override
+  String toString() => name.toUpperCase();
 }
 
 @freezed

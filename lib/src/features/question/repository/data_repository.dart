@@ -35,7 +35,7 @@ abstract class DataRepository {
 
   Future<FResult<LessonDetail>> getLessonDetail({required int idLesson});
   //Thêm priority
-  Future<FResult<QuestionPriorityResponse>> markPriority(
+  Future<FResult<String>> markPriority(
       {required int categoryPriorityId,
       required int lessonId,
       required int uid});
@@ -153,26 +153,24 @@ class DataRepositoryImpl extends DataRepository {
 
   @override
   Future<FResult<LessonDetail>> getLessonDetail({required int idLesson}) async {
-    return dataService
-        .getLessonDetails(idLesson)
-        .then((value) => FResult.success(LessonDetail.fromJson(value.data)))
-        .onError(FetchFunctions.onError);
+    return FetchFunctions.fetchRawResponse(
+        dataService.getLessonDetails(idLesson),
+        onParse: LessonDetail.fromJson);
   }
 
   //Thêm priority
   @override
-  Future<FResult<QuestionPriorityResponse>> markPriority(
+  Future<FResult<String>> markPriority(
       {required int categoryPriorityId,
       required int lessonId,
       required int uid}) async {
-    return dataService
-        .markPriority(
+    return FetchFunctions.fetchRawResponse<String>(
+        dataService.markPriority(
             lessonId: lessonId.toString(),
             categoryPriorityId: categoryPriorityId.toString(),
-            uid: uid.toString())
-        .then((response) =>
-            FResult.success(QuestionPriorityResponse.fromJson(response.data)))
-        .onError(FetchFunctions.onError);
+            uid: uid.toString()),
+        onParse: null,
+        defaultData: 'Add mark priority successfully');
   }
 
   //Xóa priority

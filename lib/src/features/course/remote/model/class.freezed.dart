@@ -134,9 +134,10 @@ class _$ClassCopyWithImpl<$Res, $Val extends Class>
 }
 
 /// @nodoc
-abstract class _$$_ClassCopyWith<$Res> implements $ClassCopyWith<$Res> {
-  factory _$$_ClassCopyWith(_$_Class value, $Res Function(_$_Class) then) =
-      __$$_ClassCopyWithImpl<$Res>;
+abstract class _$$ClassImplCopyWith<$Res> implements $ClassCopyWith<$Res> {
+  factory _$$ClassImplCopyWith(
+          _$ClassImpl value, $Res Function(_$ClassImpl) then) =
+      __$$ClassImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -153,9 +154,11 @@ abstract class _$$_ClassCopyWith<$Res> implements $ClassCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ClassCopyWithImpl<$Res> extends _$ClassCopyWithImpl<$Res, _$_Class>
-    implements _$$_ClassCopyWith<$Res> {
-  __$$_ClassCopyWithImpl(_$_Class _value, $Res Function(_$_Class) _then)
+class __$$ClassImplCopyWithImpl<$Res>
+    extends _$ClassCopyWithImpl<$Res, _$ClassImpl>
+    implements _$$ClassImplCopyWith<$Res> {
+  __$$ClassImplCopyWithImpl(
+      _$ClassImpl _value, $Res Function(_$ClassImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -172,7 +175,7 @@ class __$$_ClassCopyWithImpl<$Res> extends _$ClassCopyWithImpl<$Res, _$_Class>
     Object? categoryCode = freezed,
     Object? languageCode = freezed,
   }) {
-    return _then(_$_Class(
+    return _then(_$ClassImpl(
       className: null == className
           ? _value.className
           : className // ignore: cast_nullable_to_non_nullable
@@ -216,8 +219,8 @@ class __$$_ClassCopyWithImpl<$Res> extends _$ClassCopyWithImpl<$Res, _$_Class>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Class implements _Class {
-  _$_Class(
+class _$ClassImpl implements _Class {
+  _$ClassImpl(
       {@JsonKey(name: 'className') this.className = '',
       @JsonKey(name: 'courseId') required this.courseId,
       @JsonKey(name: 'classId') required this.classId,
@@ -229,8 +232,8 @@ class _$_Class implements _Class {
       @JsonKey(name: 'categoryCode') this.categoryCode,
       @JsonKey(name: 'languageCode') this.languageCode});
 
-  factory _$_Class.fromJson(Map<String, dynamic> json) =>
-      _$$_ClassFromJson(json);
+  factory _$ClassImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClassImplFromJson(json);
 
   @override
   @JsonKey(name: 'className')
@@ -272,7 +275,7 @@ class _$_Class implements _Class {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Class &&
+            other is _$ClassImpl &&
             (identical(other.className, className) ||
                 other.className == className) &&
             (identical(other.courseId, courseId) ||
@@ -312,12 +315,12 @@ class _$_Class implements _Class {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ClassCopyWith<_$_Class> get copyWith =>
-      __$$_ClassCopyWithImpl<_$_Class>(this, _$identity);
+  _$$ClassImplCopyWith<_$ClassImpl> get copyWith =>
+      __$$ClassImplCopyWithImpl<_$ClassImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ClassToJson(
+    return _$$ClassImplToJson(
       this,
     );
   }
@@ -334,9 +337,9 @@ abstract class _Class implements Class {
       @JsonKey(name: 'startDateActual') final String? startDateActual,
       @JsonKey(name: 'invitationLink') final String? invitationLink,
       @JsonKey(name: 'categoryCode') final String? categoryCode,
-      @JsonKey(name: 'languageCode') final String? languageCode}) = _$_Class;
+      @JsonKey(name: 'languageCode') final String? languageCode}) = _$ClassImpl;
 
-  factory _Class.fromJson(Map<String, dynamic> json) = _$_Class.fromJson;
+  factory _Class.fromJson(Map<String, dynamic> json) = _$ClassImpl.fromJson;
 
   @override
   @JsonKey(name: 'className')
@@ -370,6 +373,6 @@ abstract class _Class implements Class {
   String? get languageCode;
   @override
   @JsonKey(ignore: true)
-  _$$_ClassCopyWith<_$_Class> get copyWith =>
+  _$$ClassImplCopyWith<_$ClassImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -164,9 +164,10 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
 }
 
 /// @nodoc
-abstract class _$$_CourseCopyWith<$Res> implements $CourseCopyWith<$Res> {
-  factory _$$_CourseCopyWith(_$_Course value, $Res Function(_$_Course) then) =
-      __$$_CourseCopyWithImpl<$Res>;
+abstract class _$$CourseImplCopyWith<$Res> implements $CourseCopyWith<$Res> {
+  factory _$$CourseImplCopyWith(
+          _$CourseImpl value, $Res Function(_$CourseImpl) then) =
+      __$$CourseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -187,10 +188,11 @@ abstract class _$$_CourseCopyWith<$Res> implements $CourseCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_CourseCopyWithImpl<$Res>
-    extends _$CourseCopyWithImpl<$Res, _$_Course>
-    implements _$$_CourseCopyWith<$Res> {
-  __$$_CourseCopyWithImpl(_$_Course _value, $Res Function(_$_Course) _then)
+class __$$CourseImplCopyWithImpl<$Res>
+    extends _$CourseCopyWithImpl<$Res, _$CourseImpl>
+    implements _$$CourseImplCopyWith<$Res> {
+  __$$CourseImplCopyWithImpl(
+      _$CourseImpl _value, $Res Function(_$CourseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -211,7 +213,7 @@ class __$$_CourseCopyWithImpl<$Res>
     Object? author = freezed,
     Object? authorAvt = freezed,
   }) {
-    return _then(_$_Course(
+    return _then(_$CourseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -274,8 +276,8 @@ class __$$_CourseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Course implements _Course {
-  _$_Course(
+class _$CourseImpl implements _Course {
+  _$CourseImpl(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'description') this.description = '',
       @JsonKey(name: 'name') this.name = '',
@@ -291,8 +293,8 @@ class _$_Course implements _Course {
       this.author,
       this.authorAvt});
 
-  factory _$_Course.fromJson(Map<String, dynamic> json) =>
-      _$$_CourseFromJson(json);
+  factory _$CourseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CourseImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -344,7 +346,7 @@ class _$_Course implements _Course {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Course &&
+            other is _$CourseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -392,12 +394,12 @@ class _$_Course implements _Course {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CourseCopyWith<_$_Course> get copyWith =>
-      __$$_CourseCopyWithImpl<_$_Course>(this, _$identity);
+  _$$CourseImplCopyWith<_$CourseImpl> get copyWith =>
+      __$$CourseImplCopyWithImpl<_$CourseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CourseToJson(
+    return _$$CourseImplToJson(
       this,
     );
   }
@@ -405,34 +407,23 @@ class _$_Course implements _Course {
 
 abstract class _Course implements Course {
   factory _Course(
-      {@JsonKey(name: 'id')
-          required final int id,
-      @JsonKey(name: 'description')
-          final String description,
-      @JsonKey(name: 'name')
-          final String name,
-      @JsonKey(name: 'totalAttendingMember')
-          final int? totalAttendingMember,
-      @JsonKey(name: 'teacherId')
-          required final int? teacherId,
-      @JsonKey(name: 'isFree')
-          final bool isFree,
-      @JsonKey(name: 'startDate')
-          required final String startDate,
-      @JsonKey(name: 'endDate')
-          required final String endDate,
-      @JsonKey(name: 'scheduleType')
-          required final String scheduleType,
-      @JsonKey(name: 'categoryCode')
-          final String? categoryCode,
-      @JsonKey(name: 'languageCode')
-          final String? languageCode,
+      {@JsonKey(name: 'id') required final int id,
+      @JsonKey(name: 'description') final String description,
+      @JsonKey(name: 'name') final String name,
+      @JsonKey(name: 'totalAttendingMember') final int? totalAttendingMember,
+      @JsonKey(name: 'teacherId') required final int? teacherId,
+      @JsonKey(name: 'isFree') final bool isFree,
+      @JsonKey(name: 'startDate') required final String startDate,
+      @JsonKey(name: 'endDate') required final String endDate,
+      @JsonKey(name: 'scheduleType') required final String scheduleType,
+      @JsonKey(name: 'categoryCode') final String? categoryCode,
+      @JsonKey(name: 'languageCode') final String? languageCode,
       @JsonKey(name: 'userRegistrationStatus')
-          final String? userRegistrationStatus,
+      final String? userRegistrationStatus,
       final String? author,
-      final String? authorAvt}) = _$_Course;
+      final String? authorAvt}) = _$CourseImpl;
 
-  factory _Course.fromJson(Map<String, dynamic> json) = _$_Course.fromJson;
+  factory _Course.fromJson(Map<String, dynamic> json) = _$CourseImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -476,6 +467,6 @@ abstract class _Course implements Course {
   String? get authorAvt;
   @override
   @JsonKey(ignore: true)
-  _$$_CourseCopyWith<_$_Course> get copyWith =>
+  _$$CourseImplCopyWith<_$CourseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
