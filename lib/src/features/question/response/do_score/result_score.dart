@@ -11,12 +11,16 @@ class ResultScore {
   @JsonKey(name: 'scoringSystemName')
   String? scoringSystemName;
 
+  @JsonKey(name: 'description')
+  String? description;
+
   @JsonKey(name: 'scoreDetails')
   List<ComponentScoreResponse>? componentScores;
 
   ResultScore(
       {this.scroingSystemVersion,
       this.scoringSystemName,
+      this.description,
       this.componentScores});
 
   factory ResultScore.fromJson(Map<String, dynamic> json) =>

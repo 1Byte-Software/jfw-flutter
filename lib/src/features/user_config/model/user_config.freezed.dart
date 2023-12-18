@@ -99,11 +99,11 @@ class _$UserConfigCopyWithImpl<$Res, $Val extends UserConfig>
 }
 
 /// @nodoc
-abstract class _$$_UserConfigCopyWith<$Res>
+abstract class _$$UserConfigImplCopyWith<$Res>
     implements $UserConfigCopyWith<$Res> {
-  factory _$$_UserConfigCopyWith(
-          _$_UserConfig value, $Res Function(_$_UserConfig) then) =
-      __$$_UserConfigCopyWithImpl<$Res>;
+  factory _$$UserConfigImplCopyWith(
+          _$UserConfigImpl value, $Res Function(_$UserConfigImpl) then) =
+      __$$UserConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -116,11 +116,11 @@ abstract class _$$_UserConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserConfigCopyWithImpl<$Res>
-    extends _$UserConfigCopyWithImpl<$Res, _$_UserConfig>
-    implements _$$_UserConfigCopyWith<$Res> {
-  __$$_UserConfigCopyWithImpl(
-      _$_UserConfig _value, $Res Function(_$_UserConfig) _then)
+class __$$UserConfigImplCopyWithImpl<$Res>
+    extends _$UserConfigCopyWithImpl<$Res, _$UserConfigImpl>
+    implements _$$UserConfigImplCopyWith<$Res> {
+  __$$UserConfigImplCopyWithImpl(
+      _$UserConfigImpl _value, $Res Function(_$UserConfigImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,7 +133,7 @@ class __$$_UserConfigCopyWithImpl<$Res>
     Object? value = freezed,
     Object? modifiedDate = null,
   }) {
-    return _then(_$_UserConfig(
+    return _then(_$UserConfigImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -164,8 +164,8 @@ class __$$_UserConfigCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserConfig extends _UserConfig {
-  _$_UserConfig(
+class _$UserConfigImpl extends _UserConfig {
+  _$UserConfigImpl(
       {this.id,
       @JsonKey(name: 'userId') required this.uid,
       required this.code,
@@ -174,8 +174,8 @@ class _$_UserConfig extends _UserConfig {
       required this.modifiedDate})
       : super._();
 
-  factory _$_UserConfig.fromJson(Map<String, dynamic> json) =>
-      _$$_UserConfigFromJson(json);
+  factory _$UserConfigImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserConfigImplFromJson(json);
 
   @override
   final int? id;
@@ -200,7 +200,7 @@ class _$_UserConfig extends _UserConfig {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserConfig &&
+            other is _$UserConfigImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.code, code) || other.code == code) &&
@@ -219,12 +219,12 @@ class _$_UserConfig extends _UserConfig {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserConfigCopyWith<_$_UserConfig> get copyWith =>
-      __$$_UserConfigCopyWithImpl<_$_UserConfig>(this, _$identity);
+  _$$UserConfigImplCopyWith<_$UserConfigImpl> get copyWith =>
+      __$$UserConfigImplCopyWithImpl<_$UserConfigImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserConfigToJson(
+    return _$$UserConfigImplToJson(
       this,
     );
   }
@@ -237,11 +237,11 @@ abstract class _UserConfig extends UserConfig {
       required final String code,
       required final String groupCode,
       required final dynamic value,
-      required final String modifiedDate}) = _$_UserConfig;
+      required final String modifiedDate}) = _$UserConfigImpl;
   _UserConfig._() : super._();
 
   factory _UserConfig.fromJson(Map<String, dynamic> json) =
-      _$_UserConfig.fromJson;
+      _$UserConfigImpl.fromJson;
 
   @override
   int? get id;
@@ -258,6 +258,6 @@ abstract class _UserConfig extends UserConfig {
   String get modifiedDate;
   @override
   @JsonKey(ignore: true)
-  _$$_UserConfigCopyWith<_$_UserConfig> get copyWith =>
+  _$$UserConfigImplCopyWith<_$UserConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

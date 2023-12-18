@@ -11,14 +11,12 @@ class ComponentScoreResponse {
   final String? description;
   @JsonKey(name: 'score')
   final num? score;
-  @JsonKey(name: 'maxScore')
-  final num? maxScore;
+
   @JsonKey(name: 'suggestion', defaultValue: '')
   final String suggestion;
   ComponentScoreResponse({
     required this.content,
     this.score,
-    this.maxScore,
     this.description,
     required this.suggestion,
   });
@@ -27,13 +25,9 @@ class ComponentScoreResponse {
     const double a = 2;
     a.toDouble().toStringAsFixed(1);
     return copyWith(
-      score: score != null
-          ? double.parse(score!.toDouble().toStringAsFixed(1))
-          : null,
-      maxScore: maxScore != null
-          ? double.parse(maxScore!.toDouble().toStringAsFixed(1))
-          : null,
-    );
+        score: score != null
+            ? double.parse(score!.toDouble().toStringAsFixed(1))
+            : null);
   }
 
   factory ComponentScoreResponse.fromJson(Map<String, dynamic> json) =>
@@ -45,14 +39,12 @@ class ComponentScoreResponse {
     String? content,
     String? description,
     num? score,
-    num? maxScore,
     String? suggestion,
   }) {
     return ComponentScoreResponse(
       content: content ?? this.content,
       description: description ?? this.description,
       score: score ?? this.score,
-      maxScore: maxScore ?? this.maxScore,
       suggestion: suggestion ?? this.suggestion,
     );
   }

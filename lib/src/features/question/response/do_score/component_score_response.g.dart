@@ -11,7 +11,6 @@ ComponentScoreResponse _$ComponentScoreResponseFromJson(
     ComponentScoreResponse(
       content: json['component'] as String,
       score: json['score'] as num?,
-      maxScore: json['maxScore'] as num?,
       description: json['description'] as String?,
       suggestion: json['suggestion'] as String? ?? '',
     );
@@ -22,6 +21,5 @@ Map<String, dynamic> _$ComponentScoreResponseToJson(
       'component': instance.content,
       'description': instance.description,
       'score': instance.score,
-      'maxScore': instance.maxScore,
       'suggestion': instance.suggestion,
     };
