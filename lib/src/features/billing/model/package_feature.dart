@@ -106,6 +106,7 @@ class PackageFeature with _$PackageFeature {
     @JsonKey(name: 'key') int? key,
     @JsonKey(name: 'featureValue') required int value,
     @JsonKey(name: 'description', defaultValue: '') required String description,
+    @JsonKey(name: 'name', defaultValue: '') required String name,
     @JsonKey(name: 'code') required String code,
   }) = _PackageFeature;
 

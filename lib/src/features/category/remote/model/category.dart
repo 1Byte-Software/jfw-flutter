@@ -7,19 +7,6 @@ enum CategoryTypeEnum {
   reading,
   listening,
   writing;
-
-  toTitle() {
-    switch (this) {
-      case CategoryTypeEnum.reading:
-        return 'Reading';
-      case CategoryTypeEnum.listening:
-        return 'Listening';
-      case CategoryTypeEnum.speaking:
-        return 'Speaking';
-      case CategoryTypeEnum.writing:
-        return 'Writing';
-    }
-  }
 }
 
 @JsonSerializable()
