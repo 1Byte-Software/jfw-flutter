@@ -1249,10 +1249,10 @@ packages:
   utils_vardytests:
     dependency: "direct main"
     description:
-      path: "../utils_vardytests"
-      relative: true
+      path: "/Users/1byte/modules/utils_vardytests/0.11.18+11"
+      relative: false
     source: path
-    version: "0.10.27"
+    version: "0.11.18+11"
   uuid:
     dependency: transitive
     description:
