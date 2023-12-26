@@ -1,3 +1,7 @@
+## 0.11.25+1
+- feature:
+    brand
+
 ## 0.11.18+11
 - Change dependencies:
     utils_vardytests: 0.11.17+27 -> 0.11.18+11
