@@ -21,7 +21,7 @@ dependencies:
   retrofit_generator: ^7.0.8
 
   utils_vardytests:
-    path: /Users/1byte/modules/utils_vardytests/0.11.18+11
+    path: /Users/1byte/modules/utils_vardytests/head
 
   
 

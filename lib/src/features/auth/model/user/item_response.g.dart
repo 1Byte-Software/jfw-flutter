@@ -34,7 +34,9 @@ _$FUserImpl _$$FUserImplFromJson(Map<String, dynamic> json) => _$FUserImpl(
       modifiedDate: json['modifiedDate'] as String?,
       createdDate: json['createdDate'] as String?,
       dateOfJoin: json['dateOfJoin'] as String?,
+      parentUserId: json['parentUserId'] as int?,
       role: json['role'] as String?,
+      isEmailAddressVerified: json['isEmailAddressVerified'] as bool,
     );
 
 Map<String, dynamic> _$$FUserImplToJson(_$FUserImpl instance) =>
@@ -63,5 +65,7 @@ Map<String, dynamic> _$$FUserImplToJson(_$FUserImpl instance) =>
       'modifiedDate': instance.modifiedDate,
       'createdDate': instance.createdDate,
       'dateOfJoin': instance.dateOfJoin,
+      'parentUserId': instance.parentUserId,
       'role': instance.role,
+      'isEmailAddressVerified': instance.isEmailAddressVerified,
     };

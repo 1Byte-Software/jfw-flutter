@@ -82,6 +82,24 @@ abstract class RemoteAuth {
     @Query('UserId') required int uid,
     @Query('DeviceIdentifier') String? deviceIdentifier,
   });
+  @PATCH("/devices/{id}")
+  Future<FetchResponse> updateDevice(
+      {@Path('id') required int id, @Body() required dynamic deviceInfo});
+
+  @DELETE("/devices/{id}")
+  Future<FetchResponse> removeDevice({@Path('id') required int id});
+
+  @POST("/users/email/verify/send")
+  Future<FetchResponse> verifyEmail({
+    @Query('returnUrl') required String returnUrl,
+    @Query('userId') required int userId,
+  });
+
+  @GET("/devices/check-concurrency")
+  Future<FetchResponse> getConcurrency({
+    @Query('userId') required int uid,
+    @Query('deviceCode') required String deviceCode,
+  });
 
   @GET("/tracking-events")
   Future<FetchResponse> getTrackingEvents();

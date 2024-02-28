@@ -437,6 +437,129 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
+  Future<FetchResponse> updateDevice({
+    required int id,
+    required dynamic deviceInfo,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = deviceInfo;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'PATCH',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/devices/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> removeDevice({required int id}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/devices/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> verifyEmail({
+    required String returnUrl,
+    required int userId,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'returnUrl': returnUrl,
+      r'userId': userId,
+    };
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/users/email/verify/send',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getConcurrency({
+    required int uid,
+    required String deviceCode,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'userId': uid,
+      r'deviceCode': deviceCode,
+    };
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/devices/check-concurrency',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<FetchResponse> getTrackingEvents() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

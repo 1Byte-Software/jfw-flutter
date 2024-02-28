@@ -30,6 +30,10 @@ mixin _$BillingPackage {
   List<PackagePrice> get prices => throw _privateConstructorUsedError;
   @JsonKey(name: 'code')
   String get code => throw _privateConstructorUsedError;
+  @JsonKey(name: 'zOrder', defaultValue: 0)
+  int get zOrder => throw _privateConstructorUsedError;
+  @JsonKey(name: 'tags', defaultValue: "")
+  String get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +52,9 @@ abstract class $BillingPackageCopyWith<$Res> {
       @JsonKey(name: 'key') int? key,
       @JsonKey(name: 'features') List<PackageFeature> features,
       @JsonKey(name: 'prices') List<PackagePrice> prices,
-      @JsonKey(name: 'code') String code});
+      @JsonKey(name: 'code') String code,
+      @JsonKey(name: 'zOrder', defaultValue: 0) int zOrder,
+      @JsonKey(name: 'tags', defaultValue: "") String tags});
 }
 
 /// @nodoc
@@ -69,6 +75,8 @@ class _$BillingPackageCopyWithImpl<$Res, $Val extends BillingPackage>
     Object? features = null,
     Object? prices = null,
     Object? code = null,
+    Object? zOrder = null,
+    Object? tags = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -91,6 +99,14 @@ class _$BillingPackageCopyWithImpl<$Res, $Val extends BillingPackage>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
+      zOrder: null == zOrder
+          ? _value.zOrder
+          : zOrder // ignore: cast_nullable_to_non_nullable
+              as int,
+      tags: null == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -108,7 +124,9 @@ abstract class _$$PackageImplCopyWith<$Res>
       @JsonKey(name: 'key') int? key,
       @JsonKey(name: 'features') List<PackageFeature> features,
       @JsonKey(name: 'prices') List<PackagePrice> prices,
-      @JsonKey(name: 'code') String code});
+      @JsonKey(name: 'code') String code,
+      @JsonKey(name: 'zOrder', defaultValue: 0) int zOrder,
+      @JsonKey(name: 'tags', defaultValue: "") String tags});
 }
 
 /// @nodoc
@@ -127,6 +145,8 @@ class __$$PackageImplCopyWithImpl<$Res>
     Object? features = null,
     Object? prices = null,
     Object? code = null,
+    Object? zOrder = null,
+    Object? tags = null,
   }) {
     return _then(_$PackageImpl(
       id: null == id
@@ -149,6 +169,14 @@ class __$$PackageImplCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
+      zOrder: null == zOrder
+          ? _value.zOrder
+          : zOrder // ignore: cast_nullable_to_non_nullable
+              as int,
+      tags: null == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -161,7 +189,9 @@ class _$PackageImpl implements _Package {
       @JsonKey(name: 'key') this.key,
       @JsonKey(name: 'features') required final List<PackageFeature> features,
       @JsonKey(name: 'prices') required final List<PackagePrice> prices,
-      @JsonKey(name: 'code') required this.code})
+      @JsonKey(name: 'code') required this.code,
+      @JsonKey(name: 'zOrder', defaultValue: 0) required this.zOrder,
+      @JsonKey(name: 'tags', defaultValue: "") required this.tags})
       : _features = features,
         _prices = prices;
 
@@ -195,10 +225,16 @@ class _$PackageImpl implements _Package {
   @override
   @JsonKey(name: 'code')
   final String code;
+  @override
+  @JsonKey(name: 'zOrder', defaultValue: 0)
+  final int zOrder;
+  @override
+  @JsonKey(name: 'tags', defaultValue: "")
+  final String tags;
 
   @override
   String toString() {
-    return 'BillingPackage(id: $id, key: $key, features: $features, prices: $prices, code: $code)';
+    return 'BillingPackage(id: $id, key: $key, features: $features, prices: $prices, code: $code, zOrder: $zOrder, tags: $tags)';
   }
 
   @override
@@ -210,7 +246,9 @@ class _$PackageImpl implements _Package {
             (identical(other.key, key) || other.key == key) &&
             const DeepCollectionEquality().equals(other._features, _features) &&
             const DeepCollectionEquality().equals(other._prices, _prices) &&
-            (identical(other.code, code) || other.code == code));
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.zOrder, zOrder) || other.zOrder == zOrder) &&
+            (identical(other.tags, tags) || other.tags == tags));
   }
 
   @JsonKey(ignore: true)
@@ -221,7 +259,9 @@ class _$PackageImpl implements _Package {
       key,
       const DeepCollectionEquality().hash(_features),
       const DeepCollectionEquality().hash(_prices),
-      code);
+      code,
+      zOrder,
+      tags);
 
   @JsonKey(ignore: true)
   @override
@@ -243,7 +283,10 @@ abstract class _Package implements BillingPackage {
       @JsonKey(name: 'key') final int? key,
       @JsonKey(name: 'features') required final List<PackageFeature> features,
       @JsonKey(name: 'prices') required final List<PackagePrice> prices,
-      @JsonKey(name: 'code') required final String code}) = _$PackageImpl;
+      @JsonKey(name: 'code') required final String code,
+      @JsonKey(name: 'zOrder', defaultValue: 0) required final int zOrder,
+      @JsonKey(name: 'tags', defaultValue: "")
+      required final String tags}) = _$PackageImpl;
 
   factory _Package.fromJson(Map<String, dynamic> json) = _$PackageImpl.fromJson;
 
@@ -262,6 +305,12 @@ abstract class _Package implements BillingPackage {
   @override
   @JsonKey(name: 'code')
   String get code;
+  @override
+  @JsonKey(name: 'zOrder', defaultValue: 0)
+  int get zOrder;
+  @override
+  @JsonKey(name: 'tags', defaultValue: "")
+  String get tags;
   @override
   @JsonKey(ignore: true)
   _$$PackageImplCopyWith<_$PackageImpl> get copyWith =>

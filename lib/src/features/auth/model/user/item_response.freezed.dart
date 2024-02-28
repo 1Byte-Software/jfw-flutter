@@ -68,8 +68,12 @@ mixin _$FUser {
   String? get createdDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'dateOfJoin')
   String? get dateOfJoin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'parentUserId')
+  int? get parentUserId => throw _privateConstructorUsedError;
   @JsonKey(name: 'role')
   String? get role => throw _privateConstructorUsedError;
+  @JsonKey(name: 'isEmailAddressVerified')
+  bool get isEmailAddressVerified => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -106,7 +110,9 @@ abstract class $FUserCopyWith<$Res> {
       @JsonKey(name: 'modifiedDate') String? modifiedDate,
       @JsonKey(name: 'createdDate') String? createdDate,
       @JsonKey(name: 'dateOfJoin') String? dateOfJoin,
-      @JsonKey(name: 'role') String? role});
+      @JsonKey(name: 'parentUserId') int? parentUserId,
+      @JsonKey(name: 'role') String? role,
+      @JsonKey(name: 'isEmailAddressVerified') bool isEmailAddressVerified});
 }
 
 /// @nodoc
@@ -146,7 +152,9 @@ class _$FUserCopyWithImpl<$Res, $Val extends FUser>
     Object? modifiedDate = freezed,
     Object? createdDate = freezed,
     Object? dateOfJoin = freezed,
+    Object? parentUserId = freezed,
     Object? role = freezed,
+    Object? isEmailAddressVerified = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -245,10 +253,18 @@ class _$FUserCopyWithImpl<$Res, $Val extends FUser>
           ? _value.dateOfJoin
           : dateOfJoin // ignore: cast_nullable_to_non_nullable
               as String?,
+      parentUserId: freezed == parentUserId
+          ? _value.parentUserId
+          : parentUserId // ignore: cast_nullable_to_non_nullable
+              as int?,
       role: freezed == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
+      isEmailAddressVerified: null == isEmailAddressVerified
+          ? _value.isEmailAddressVerified
+          : isEmailAddressVerified // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -285,7 +301,9 @@ abstract class _$$FUserImplCopyWith<$Res> implements $FUserCopyWith<$Res> {
       @JsonKey(name: 'modifiedDate') String? modifiedDate,
       @JsonKey(name: 'createdDate') String? createdDate,
       @JsonKey(name: 'dateOfJoin') String? dateOfJoin,
-      @JsonKey(name: 'role') String? role});
+      @JsonKey(name: 'parentUserId') int? parentUserId,
+      @JsonKey(name: 'role') String? role,
+      @JsonKey(name: 'isEmailAddressVerified') bool isEmailAddressVerified});
 }
 
 /// @nodoc
@@ -323,7 +341,9 @@ class __$$FUserImplCopyWithImpl<$Res>
     Object? modifiedDate = freezed,
     Object? createdDate = freezed,
     Object? dateOfJoin = freezed,
+    Object? parentUserId = freezed,
     Object? role = freezed,
+    Object? isEmailAddressVerified = null,
   }) {
     return _then(_$FUserImpl(
       id: freezed == id
@@ -422,10 +442,18 @@ class __$$FUserImplCopyWithImpl<$Res>
           ? _value.dateOfJoin
           : dateOfJoin // ignore: cast_nullable_to_non_nullable
               as String?,
+      parentUserId: freezed == parentUserId
+          ? _value.parentUserId
+          : parentUserId // ignore: cast_nullable_to_non_nullable
+              as int?,
       role: freezed == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
+      isEmailAddressVerified: null == isEmailAddressVerified
+          ? _value.isEmailAddressVerified
+          : isEmailAddressVerified // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -458,7 +486,10 @@ class _$FUserImpl extends _FUser {
       @JsonKey(name: 'modifiedDate') this.modifiedDate,
       @JsonKey(name: 'createdDate') this.createdDate,
       @JsonKey(name: 'dateOfJoin') this.dateOfJoin,
-      @JsonKey(name: 'role') this.role})
+      @JsonKey(name: 'parentUserId') this.parentUserId,
+      @JsonKey(name: 'role') this.role,
+      @JsonKey(name: 'isEmailAddressVerified')
+      required this.isEmailAddressVerified})
       : _roleNames = roleNames,
         _roles = roles,
         super._();
@@ -555,12 +586,18 @@ class _$FUserImpl extends _FUser {
   @JsonKey(name: 'dateOfJoin')
   final String? dateOfJoin;
   @override
+  @JsonKey(name: 'parentUserId')
+  final int? parentUserId;
+  @override
   @JsonKey(name: 'role')
   final String? role;
+  @override
+  @JsonKey(name: 'isEmailAddressVerified')
+  final bool isEmailAddressVerified;
 
   @override
   String toString() {
-    return 'FUser(id: $id, key: $key, username: $username, roleNames: $roleNames, emailAddress: $emailAddress, phoneNumber1: $phoneNumber1, phoneNumber2: $phoneNumber2, phoneNumber3: $phoneNumber3, website: $website, firstName: $firstName, expiryDate: $expiryDate, lastName: $lastName, avatar: $avatar, referralCode: $referralCode, nickName: $nickName, languageCode: $languageCode, userCode: $userCode, description: $description, roles: $roles, packageId: $packageId, timeZoneId: $timeZoneId, modifiedDate: $modifiedDate, createdDate: $createdDate, dateOfJoin: $dateOfJoin, role: $role)';
+    return 'FUser(id: $id, key: $key, username: $username, roleNames: $roleNames, emailAddress: $emailAddress, phoneNumber1: $phoneNumber1, phoneNumber2: $phoneNumber2, phoneNumber3: $phoneNumber3, website: $website, firstName: $firstName, expiryDate: $expiryDate, lastName: $lastName, avatar: $avatar, referralCode: $referralCode, nickName: $nickName, languageCode: $languageCode, userCode: $userCode, description: $description, roles: $roles, packageId: $packageId, timeZoneId: $timeZoneId, modifiedDate: $modifiedDate, createdDate: $createdDate, dateOfJoin: $dateOfJoin, parentUserId: $parentUserId, role: $role, isEmailAddressVerified: $isEmailAddressVerified)';
   }
 
   @override
@@ -611,7 +648,11 @@ class _$FUserImpl extends _FUser {
                 other.createdDate == createdDate) &&
             (identical(other.dateOfJoin, dateOfJoin) ||
                 other.dateOfJoin == dateOfJoin) &&
-            (identical(other.role, role) || other.role == role));
+            (identical(other.parentUserId, parentUserId) ||
+                other.parentUserId == parentUserId) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.isEmailAddressVerified, isEmailAddressVerified) ||
+                other.isEmailAddressVerified == isEmailAddressVerified));
   }
 
   @JsonKey(ignore: true)
@@ -642,7 +683,9 @@ class _$FUserImpl extends _FUser {
         modifiedDate,
         createdDate,
         dateOfJoin,
-        role
+        parentUserId,
+        role,
+        isEmailAddressVerified
       ]);
 
   @JsonKey(ignore: true)
@@ -685,7 +728,10 @@ abstract class _FUser extends FUser {
       @JsonKey(name: 'modifiedDate') final String? modifiedDate,
       @JsonKey(name: 'createdDate') final String? createdDate,
       @JsonKey(name: 'dateOfJoin') final String? dateOfJoin,
-      @JsonKey(name: 'role') final String? role}) = _$FUserImpl;
+      @JsonKey(name: 'parentUserId') final int? parentUserId,
+      @JsonKey(name: 'role') final String? role,
+      @JsonKey(name: 'isEmailAddressVerified')
+      required final bool isEmailAddressVerified}) = _$FUserImpl;
   _FUser._() : super._();
 
   factory _FUser.fromJson(Map<String, dynamic> json) = _$FUserImpl.fromJson;
@@ -763,8 +809,14 @@ abstract class _FUser extends FUser {
   @JsonKey(name: 'dateOfJoin')
   String? get dateOfJoin;
   @override
+  @JsonKey(name: 'parentUserId')
+  int? get parentUserId;
+  @override
   @JsonKey(name: 'role')
   String? get role;
+  @override
+  @JsonKey(name: 'isEmailAddressVerified')
+  bool get isEmailAddressVerified;
   @override
   @JsonKey(ignore: true)
   _$$FUserImplCopyWith<_$FUserImpl> get copyWith =>

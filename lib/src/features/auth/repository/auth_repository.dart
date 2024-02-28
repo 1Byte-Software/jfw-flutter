@@ -11,7 +11,9 @@ abstract class AuthRepository {
   Future<FResult<FUser>> getInfoAnotherUserByCode(String code,
       {required String brandUrl, required String authKey});
   Future<FResult<String>> addActivity(Map<String, dynamic> activityRequest);
-  Future<FResult<int>> addDeviceAndGetDeviceId(
+  Future<FResult<bool>> getAccountConcurrency(int uid,
+      {required String deviceCode});
+  Future<FResult<String>> addDeviceAndGetDeviceId(
       Map<String, dynamic> deviceRequest);
 
   Future<FResult<List<TrackingEvent>>> getTrackingEvents();
@@ -65,5 +67,13 @@ abstract class AuthRepository {
   Future<FResult<List<Map<String, dynamic>>>> getDevices(
       {required int uid, String? deviceIdentifier});
 
+  Future<FResult<String>> updateDevice(
+      {required int id, required dynamic deviceInfo});
+
+  Future<FResult<String>> removeDevice({required int id});
+
   Future<FResult<String>> deleteAccount({required int uid});
+
+  Future<FResult<String>> sendEmailVerifyEmail(
+      {required int uid, required String returnUrl});
 }

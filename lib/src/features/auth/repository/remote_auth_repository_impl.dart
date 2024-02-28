@@ -141,13 +141,12 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<int>> addDeviceAndGetDeviceId(
+  Future<FResult<String>> addDeviceAndGetDeviceId(
       Map<String, dynamic> deviceRequest) async {
     return tryCatchResult(
         func: () async {
-          final result =
-              await ref.addNewDevice(addNewDeviceRequest: deviceRequest);
-          return result.data['id'];
+          await ref.addNewDevice(addNewDeviceRequest: deviceRequest);
+          return 'Added this device successfully';
         },
         logErr: (ex) => logI.e(ex));
   }
@@ -225,5 +224,40 @@ class AuthRepositoryImpl extends AuthRepository {
           userIdentifier: userIdentifier,
         ),
         onParse: ItemLoginResponse.fromJson);
+  }
+
+  @override
+  Future<FResult<bool>> getAccountConcurrency(int uid,
+      {required String deviceCode}) async {
+    return ref
+        .getConcurrency(uid: uid, deviceCode: deviceCode)
+        .then((concurrencyResponse) =>
+            FResult.success(concurrencyResponse.data as bool))
+        .onError(FetchFunctions.onError);
+  }
+
+  @override
+  Future<FResult<String>> updateDevice({required int id, required deviceInfo}) {
+    return ref
+        .updateDevice(id: id, deviceInfo: deviceInfo)
+        .then((value) => FResult.success('Updated the device successfully'))
+        .onError(FetchFunctions.onError);
+  }
+
+  @override
+  Future<FResult<String>> removeDevice({required int id}) {
+    return ref
+        .removeDevice(id: id)
+        .then((value) => FResult.success('Removed the device successfully'))
+        .onError(FetchFunctions.onError);
+  }
+
+  @override
+  Future<FResult<String>> sendEmailVerifyEmail(
+      {required int uid, required String returnUrl}) {
+    return ref
+        .verifyEmail(returnUrl: returnUrl, userId: uid)
+        .then((value) => FResult.success('Send email verify successfully'))
+        .onError(FetchFunctions.onError);
   }
 }

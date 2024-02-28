@@ -31,7 +31,10 @@ class FUser with _$FUser {
     @JsonKey(name: 'modifiedDate') String? modifiedDate,
     @JsonKey(name: 'createdDate') String? createdDate,
     @JsonKey(name: 'dateOfJoin') String? dateOfJoin,
+    @JsonKey(name: 'parentUserId') int? parentUserId,
     @JsonKey(name: 'role') String? role,
+    @JsonKey(name: 'isEmailAddressVerified')
+    required bool isEmailAddressVerified,
   }) = _FUser;
 
   factory FUser.fromJson(Map<String, dynamic> json) => _$FUserFromJson(json);

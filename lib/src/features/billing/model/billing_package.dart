@@ -22,6 +22,8 @@ class BillingPackage with _$BillingPackage {
     @JsonKey(name: 'features') required List<PackageFeature> features,
     @JsonKey(name: 'prices') required List<PackagePrice> prices,
     @JsonKey(name: 'code') required String code,
+    @JsonKey(name: 'zOrder', defaultValue: 0) required int zOrder,
+    @JsonKey(name: 'tags', defaultValue: "") required String tags,
   }) = _Package;
 
   factory BillingPackage.fromJson(Map<String, dynamic> json) =>

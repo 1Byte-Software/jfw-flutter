@@ -17,6 +17,8 @@ _$PackageImpl _$$PackageImplFromJson(Map<String, dynamic> json) =>
           .map((e) => PackagePrice.fromJson(e as Map<String, dynamic>))
           .toList(),
       code: json['code'] as String,
+      zOrder: json['zOrder'] as int? ?? 0,
+      tags: json['tags'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$PackageImplToJson(_$PackageImpl instance) =>
@@ -26,4 +28,6 @@ Map<String, dynamic> _$$PackageImplToJson(_$PackageImpl instance) =>
       'features': instance.features,
       'prices': instance.prices,
       'code': instance.code,
+      'zOrder': instance.zOrder,
+      'tags': instance.tags,
     };
