@@ -8,8 +8,8 @@ class Language with _$Language {
   factory Language({
     @JsonKey(name: 'id') required int id,
     @JsonKey(name: 'countryCode') required String countryCode,
-    @JsonKey(name: 'languageCode') required String languageCode,
-    @JsonKey(name: 'description') required String description,
+    @JsonKey(name: 'code') required String languageCode,
+    @JsonKey(name: 'name') required String description,
   }) = _Language;
 
   factory Language.fromJson(Map<String, Object?> json) =>

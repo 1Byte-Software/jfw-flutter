@@ -24,9 +24,9 @@ mixin _$Language {
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'countryCode')
   String get countryCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'languageCode')
+  @JsonKey(name: 'code')
   String get languageCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'description')
+  @JsonKey(name: 'name')
   String get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,8 +43,8 @@ abstract class $LanguageCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'countryCode') String countryCode,
-      @JsonKey(name: 'languageCode') String languageCode,
-      @JsonKey(name: 'description') String description});
+      @JsonKey(name: 'code') String languageCode,
+      @JsonKey(name: 'name') String description});
 }
 
 /// @nodoc
@@ -97,8 +97,8 @@ abstract class _$$LanguageImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'countryCode') String countryCode,
-      @JsonKey(name: 'languageCode') String languageCode,
-      @JsonKey(name: 'description') String description});
+      @JsonKey(name: 'code') String languageCode,
+      @JsonKey(name: 'name') String description});
 }
 
 /// @nodoc
@@ -144,8 +144,8 @@ class _$LanguageImpl implements _Language {
   _$LanguageImpl(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'countryCode') required this.countryCode,
-      @JsonKey(name: 'languageCode') required this.languageCode,
-      @JsonKey(name: 'description') required this.description});
+      @JsonKey(name: 'code') required this.languageCode,
+      @JsonKey(name: 'name') required this.description});
 
   factory _$LanguageImpl.fromJson(Map<String, dynamic> json) =>
       _$$LanguageImplFromJson(json);
@@ -157,10 +157,10 @@ class _$LanguageImpl implements _Language {
   @JsonKey(name: 'countryCode')
   final String countryCode;
   @override
-  @JsonKey(name: 'languageCode')
+  @JsonKey(name: 'code')
   final String languageCode;
   @override
-  @JsonKey(name: 'description')
+  @JsonKey(name: 'name')
   final String description;
 
   @override
@@ -205,8 +205,8 @@ abstract class _Language implements Language {
   factory _Language(
           {@JsonKey(name: 'id') required final int id,
           @JsonKey(name: 'countryCode') required final String countryCode,
-          @JsonKey(name: 'languageCode') required final String languageCode,
-          @JsonKey(name: 'description') required final String description}) =
+          @JsonKey(name: 'code') required final String languageCode,
+          @JsonKey(name: 'name') required final String description}) =
       _$LanguageImpl;
 
   factory _Language.fromJson(Map<String, dynamic> json) =
@@ -219,10 +219,10 @@ abstract class _Language implements Language {
   @JsonKey(name: 'countryCode')
   String get countryCode;
   @override
-  @JsonKey(name: 'languageCode')
+  @JsonKey(name: 'code')
   String get languageCode;
   @override
-  @JsonKey(name: 'description')
+  @JsonKey(name: 'name')
   String get description;
   @override
   @JsonKey(ignore: true)
