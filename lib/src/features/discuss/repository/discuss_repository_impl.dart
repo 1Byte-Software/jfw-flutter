@@ -117,8 +117,8 @@ class RemoteDiscussionRepositoryImpl extends DiscussRepository {
     required int uid,
   }) async {
     try {
-      final result = await discussService.removeResponseUser(id: discussId);
-      return FResult.success(result.data);
+      await discussService.removeResponseUser(id: discussId);
+      return FResult.success('Removed discuss successfully');
     } catch (ex) {
       return FResult.error(ex.toString());
     }

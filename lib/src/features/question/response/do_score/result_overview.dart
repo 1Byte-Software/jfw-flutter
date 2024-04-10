@@ -7,7 +7,7 @@ part 'result_overview.g.dart';
 class ResultOverview {
   @JsonKey(name: 'maxScore')
   dynamic maxScore;
-  @JsonKey(name: 'score')
+  @JsonKey(name: 'displayScore')
   dynamic score;
   @JsonKey(name: 'valueResponses')
   List<String?>? valueResponses;

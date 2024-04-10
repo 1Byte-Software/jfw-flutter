@@ -8,7 +8,7 @@ part of 'add_discuss_request.dart';
 
 AddDiscussRequest _$AddDiscussRequestFromJson(Map<String, dynamic> json) =>
     AddDiscussRequest(
-      discussionContent: json['discussionContent'] as String?,
+      discussionContent: json['content'] as String?,
       id: json['id'] as int?,
       lesson: json['lesson'] == null
           ? null
@@ -20,7 +20,7 @@ AddDiscussRequest _$AddDiscussRequestFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$AddDiscussRequestToJson(AddDiscussRequest instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'discussionContent': instance.discussionContent,
+      'content': instance.discussionContent,
       'lesson': instance.lesson,
       'parentId': instance.parentId,
     };

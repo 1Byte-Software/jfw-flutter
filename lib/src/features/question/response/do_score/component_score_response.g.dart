@@ -10,7 +10,7 @@ ComponentScoreResponse _$ComponentScoreResponseFromJson(
         Map<String, dynamic> json) =>
     ComponentScoreResponse(
       content: json['component'] as String,
-      score: json['score'] as num?,
+      score: json['displayScore'] as num?,
       description: json['description'] as String?,
       suggestion: json['suggestion'] as String? ?? '',
     );
@@ -20,6 +20,6 @@ Map<String, dynamic> _$ComponentScoreResponseToJson(
     <String, dynamic>{
       'component': instance.content,
       'description': instance.description,
-      'score': instance.score,
+      'displayScore': instance.score,
       'suggestion': instance.suggestion,
     };

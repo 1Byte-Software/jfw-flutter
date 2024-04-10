@@ -8,7 +8,7 @@ part 'add_discuss_request.g.dart';
 class AddDiscussRequest {
   @JsonKey(name: 'id')
   int? id;
-  @JsonKey(name: 'discussionContent')
+  @JsonKey(name: 'content')
   String? discussionContent;
 
   @JsonKey(name: 'lesson')

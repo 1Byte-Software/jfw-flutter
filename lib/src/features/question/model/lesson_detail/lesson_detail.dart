@@ -55,7 +55,7 @@ class LessonDetail {
   @JsonKey(name: 'modifiedBy')
   int? modifiedBy;
   @JsonKey(name: 'translations')
-  List<Translate> translations;
+  List<Translate>? translations;
   @JsonKey(name: 'createdDate')
   String? createdDate;
   @JsonKey(name: 'createdBy')

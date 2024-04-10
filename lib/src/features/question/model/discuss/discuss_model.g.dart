@@ -19,7 +19,9 @@ _$DiscussModelImpl _$$DiscussModelImplFromJson(Map<String, dynamic> json) =>
           ?.map((e) => DiscussModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       modifiedByUserId: json['modifiedBy'] as int,
-      modifiedDate: DateTime.parse(json['modifiedDate'] as String),
+      modifiedDate: json['modifiedDate'] == null
+          ? null
+          : DateTime.parse(json['modifiedDate'] as String),
       nickname: json['nickname'] as String?,
       imageUrl: json['imageUrl'] as String?,
       imageAsset: json['imageAsset'] as String?,
@@ -38,7 +40,7 @@ Map<String, dynamic> _$$DiscussModelImplToJson(_$DiscussModelImpl instance) =>
       'discussionReactions': instance.discussionReactions,
       'discussionSubs': instance.discussionSubs,
       'modifiedBy': instance.modifiedByUserId,
-      'modifiedDate': instance.modifiedDate.toIso8601String(),
+      'modifiedDate': instance.modifiedDate?.toIso8601String(),
       'nickname': instance.nickname,
       'imageUrl': instance.imageUrl,
       'imageAsset': instance.imageAsset,

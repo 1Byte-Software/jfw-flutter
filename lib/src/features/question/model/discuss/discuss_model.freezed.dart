@@ -36,7 +36,7 @@ mixin _$DiscussModel {
   @JsonKey(name: 'modifiedBy')
   int get modifiedByUserId => throw _privateConstructorUsedError;
   @JsonKey(name: 'modifiedDate')
-  DateTime get modifiedDate => throw _privateConstructorUsedError;
+  DateTime? get modifiedDate => throw _privateConstructorUsedError;
   String? get nickname => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   String? get imageAsset => throw _privateConstructorUsedError;
@@ -65,7 +65,7 @@ abstract class $DiscussModelCopyWith<$Res> {
       List<ReactionModel> discussionReactions,
       @JsonKey(name: 'discussionSubs') List<DiscussModel>? discussionSubs,
       @JsonKey(name: 'modifiedBy') int modifiedByUserId,
-      @JsonKey(name: 'modifiedDate') DateTime modifiedDate,
+      @JsonKey(name: 'modifiedDate') DateTime? modifiedDate,
       String? nickname,
       String? imageUrl,
       String? imageAsset,
@@ -94,7 +94,7 @@ class _$DiscussModelCopyWithImpl<$Res, $Val extends DiscussModel>
     Object? discussionReactions = null,
     Object? discussionSubs = freezed,
     Object? modifiedByUserId = null,
-    Object? modifiedDate = null,
+    Object? modifiedDate = freezed,
     Object? nickname = freezed,
     Object? imageUrl = freezed,
     Object? imageAsset = freezed,
@@ -131,10 +131,10 @@ class _$DiscussModelCopyWithImpl<$Res, $Val extends DiscussModel>
           ? _value.modifiedByUserId
           : modifiedByUserId // ignore: cast_nullable_to_non_nullable
               as int,
-      modifiedDate: null == modifiedDate
+      modifiedDate: freezed == modifiedDate
           ? _value.modifiedDate
           : modifiedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       nickname: freezed == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -180,7 +180,7 @@ abstract class _$$DiscussModelImplCopyWith<$Res>
       List<ReactionModel> discussionReactions,
       @JsonKey(name: 'discussionSubs') List<DiscussModel>? discussionSubs,
       @JsonKey(name: 'modifiedBy') int modifiedByUserId,
-      @JsonKey(name: 'modifiedDate') DateTime modifiedDate,
+      @JsonKey(name: 'modifiedDate') DateTime? modifiedDate,
       String? nickname,
       String? imageUrl,
       String? imageAsset,
@@ -207,7 +207,7 @@ class __$$DiscussModelImplCopyWithImpl<$Res>
     Object? discussionReactions = null,
     Object? discussionSubs = freezed,
     Object? modifiedByUserId = null,
-    Object? modifiedDate = null,
+    Object? modifiedDate = freezed,
     Object? nickname = freezed,
     Object? imageUrl = freezed,
     Object? imageAsset = freezed,
@@ -244,10 +244,10 @@ class __$$DiscussModelImplCopyWithImpl<$Res>
           ? _value.modifiedByUserId
           : modifiedByUserId // ignore: cast_nullable_to_non_nullable
               as int,
-      modifiedDate: null == modifiedDate
+      modifiedDate: freezed == modifiedDate
           ? _value.modifiedDate
           : modifiedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       nickname: freezed == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -289,7 +289,7 @@ class _$DiscussModelImpl implements _DiscussModel {
       @JsonKey(name: 'discussionSubs')
       required final List<DiscussModel>? discussionSubs,
       @JsonKey(name: 'modifiedBy') required this.modifiedByUserId,
-      @JsonKey(name: 'modifiedDate') required this.modifiedDate,
+      @JsonKey(name: 'modifiedDate') this.modifiedDate,
       this.nickname,
       this.imageUrl,
       this.imageAsset,
@@ -340,7 +340,7 @@ class _$DiscussModelImpl implements _DiscussModel {
   final int modifiedByUserId;
   @override
   @JsonKey(name: 'modifiedDate')
-  final DateTime modifiedDate;
+  final DateTime? modifiedDate;
   @override
   final String? nickname;
   @override
@@ -436,7 +436,7 @@ abstract class _DiscussModel implements DiscussModel {
       @JsonKey(name: 'discussionSubs')
       required final List<DiscussModel>? discussionSubs,
       @JsonKey(name: 'modifiedBy') required final int modifiedByUserId,
-      @JsonKey(name: 'modifiedDate') required final DateTime modifiedDate,
+      @JsonKey(name: 'modifiedDate') final DateTime? modifiedDate,
       final String? nickname,
       final String? imageUrl,
       final String? imageAsset,
@@ -470,7 +470,7 @@ abstract class _DiscussModel implements DiscussModel {
   int get modifiedByUserId;
   @override
   @JsonKey(name: 'modifiedDate')
-  DateTime get modifiedDate;
+  DateTime? get modifiedDate;
   @override
   String? get nickname;
   @override

@@ -16,7 +16,7 @@ class DiscussModel with _$DiscussModel {
     @JsonKey(name: 'discussionSubs')
     required List<DiscussModel>? discussionSubs,
     @JsonKey(name: 'modifiedBy') required int modifiedByUserId,
-    @JsonKey(name: 'modifiedDate') required DateTime modifiedDate,
+    @JsonKey(name: 'modifiedDate') DateTime? modifiedDate,
     String? nickname,
     String? imageUrl,
     String? imageAsset,

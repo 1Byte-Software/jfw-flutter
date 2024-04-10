@@ -31,8 +31,8 @@ LessonDetail _$LessonDetailFromJson(Map<String, dynamic> json) => LessonDetail(
           .toList(),
       modifiedDate: json['modifiedDate'] as String?,
       modifiedBy: json['modifiedBy'] as int?,
-      translations: (json['translations'] as List<dynamic>)
-          .map((e) => Translate.fromJson(e as Map<String, dynamic>))
+      translations: (json['translations'] as List<dynamic>?)
+          ?.map((e) => Translate.fromJson(e as Map<String, dynamic>))
           .toList(),
       createdDate: json['createdDate'] as String?,
       createdBy: json['createdBy'] as int?,

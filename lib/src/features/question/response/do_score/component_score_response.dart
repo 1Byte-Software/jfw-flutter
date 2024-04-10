@@ -9,7 +9,7 @@ class ComponentScoreResponse {
   final String content;
   @JsonKey(name: 'description')
   final String? description;
-  @JsonKey(name: 'score')
+  @JsonKey(name: 'displayScore')
   final num? score;
 
   @JsonKey(name: 'suggestion', defaultValue: '')
