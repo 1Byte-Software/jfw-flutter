@@ -29,10 +29,10 @@ mixin _$Community {
   @JsonKey(name: 'createdDate')
   String? get createdDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'countUsers')
-  int get countUsers => throw _privateConstructorUsedError;
+  int? get countUsers => throw _privateConstructorUsedError;
   @JsonKey(name: 'communityName')
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'private')
+  @JsonKey(name: 'isPrivate')
   bool get private => throw _privateConstructorUsedError;
   @JsonKey(name: 'languageCode')
   String get languageCode => throw _privateConstructorUsedError;
@@ -58,9 +58,9 @@ abstract class $CommunityCopyWith<$Res> {
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'createdBy') int createdBy,
       @JsonKey(name: 'createdDate') String? createdDate,
-      @JsonKey(name: 'countUsers') int countUsers,
+      @JsonKey(name: 'countUsers') int? countUsers,
       @JsonKey(name: 'communityName') String name,
-      @JsonKey(name: 'private') bool private,
+      @JsonKey(name: 'isPrivate') bool private,
       @JsonKey(name: 'languageCode') String languageCode,
       @JsonKey(name: 'description') String description,
       int? idCommunityUser,
@@ -84,7 +84,7 @@ class _$CommunityCopyWithImpl<$Res, $Val extends Community>
     Object? countryCode = freezed,
     Object? createdBy = null,
     Object? createdDate = freezed,
-    Object? countUsers = null,
+    Object? countUsers = freezed,
     Object? name = null,
     Object? private = null,
     Object? languageCode = null,
@@ -109,10 +109,10 @@ class _$CommunityCopyWithImpl<$Res, $Val extends Community>
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      countUsers: null == countUsers
+      countUsers: freezed == countUsers
           ? _value.countUsers
           : countUsers // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -154,9 +154,9 @@ abstract class _$$CommunityImplCopyWith<$Res>
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'createdBy') int createdBy,
       @JsonKey(name: 'createdDate') String? createdDate,
-      @JsonKey(name: 'countUsers') int countUsers,
+      @JsonKey(name: 'countUsers') int? countUsers,
       @JsonKey(name: 'communityName') String name,
-      @JsonKey(name: 'private') bool private,
+      @JsonKey(name: 'isPrivate') bool private,
       @JsonKey(name: 'languageCode') String languageCode,
       @JsonKey(name: 'description') String description,
       int? idCommunityUser,
@@ -178,7 +178,7 @@ class __$$CommunityImplCopyWithImpl<$Res>
     Object? countryCode = freezed,
     Object? createdBy = null,
     Object? createdDate = freezed,
-    Object? countUsers = null,
+    Object? countUsers = freezed,
     Object? name = null,
     Object? private = null,
     Object? languageCode = null,
@@ -203,10 +203,10 @@ class __$$CommunityImplCopyWithImpl<$Res>
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      countUsers: null == countUsers
+      countUsers: freezed == countUsers
           ? _value.countUsers
           : countUsers // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -243,9 +243,9 @@ class _$CommunityImpl implements _Community {
       @JsonKey(name: 'countryCode') required this.countryCode,
       @JsonKey(name: 'createdBy') required this.createdBy,
       @JsonKey(name: 'createdDate') required this.createdDate,
-      @JsonKey(name: 'countUsers') required this.countUsers,
+      @JsonKey(name: 'countUsers') this.countUsers,
       @JsonKey(name: 'communityName') this.name = '',
-      @JsonKey(name: 'private') required this.private,
+      @JsonKey(name: 'isPrivate') required this.private,
       @JsonKey(name: 'languageCode') required this.languageCode,
       @JsonKey(name: 'description') this.description = '',
       this.idCommunityUser,
@@ -268,12 +268,12 @@ class _$CommunityImpl implements _Community {
   final String? createdDate;
   @override
   @JsonKey(name: 'countUsers')
-  final int countUsers;
+  final int? countUsers;
   @override
   @JsonKey(name: 'communityName')
   final String name;
   @override
-  @JsonKey(name: 'private')
+  @JsonKey(name: 'isPrivate')
   final bool private;
   @override
   @JsonKey(name: 'languageCode')
@@ -353,9 +353,9 @@ abstract class _Community implements Community {
       @JsonKey(name: 'countryCode') required final String? countryCode,
       @JsonKey(name: 'createdBy') required final int createdBy,
       @JsonKey(name: 'createdDate') required final String? createdDate,
-      @JsonKey(name: 'countUsers') required final int countUsers,
+      @JsonKey(name: 'countUsers') final int? countUsers,
       @JsonKey(name: 'communityName') final String name,
-      @JsonKey(name: 'private') required final bool private,
+      @JsonKey(name: 'isPrivate') required final bool private,
       @JsonKey(name: 'languageCode') required final String languageCode,
       @JsonKey(name: 'description') final String description,
       final int? idCommunityUser,
@@ -378,12 +378,12 @@ abstract class _Community implements Community {
   String? get createdDate;
   @override
   @JsonKey(name: 'countUsers')
-  int get countUsers;
+  int? get countUsers;
   @override
   @JsonKey(name: 'communityName')
   String get name;
   @override
-  @JsonKey(name: 'private')
+  @JsonKey(name: 'isPrivate')
   bool get private;
   @override
   @JsonKey(name: 'languageCode')

@@ -64,8 +64,7 @@ class RemoteCommunityRepositoryImpl extends CommunityRepository {
           uid: uid,
           languageCode: languageCode,
           communityName: communityName,
-          isMyCommunity:
-              isMyCommunity != null ? (isMyCommunity == true ? 1 : 0) : null,
+          isMyCommunity: isMyCommunity,
           pageSize: pageSize,
           pageNumber: pageNumber);
       return PageModel.fromJson(communititesPage.data, pageSize: pageSize);

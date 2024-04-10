@@ -44,7 +44,7 @@ abstract class RemoteCommunity {
     @Query('userId') required int uid,
     @Query('languageCode') required String? languageCode,
     @Query('communityName') String? communityName,
-    @Query('isMyCommunity') int? isMyCommunity,
+    @Query('isMyCommunity') bool? isMyCommunity,
     @Query('pageSize') required int pageSize,
     @Query('pageNumber') required int pageNumber,
   });

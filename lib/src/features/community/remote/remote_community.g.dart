@@ -206,7 +206,7 @@ class _RemoteCommunity implements RemoteCommunity {
     required int uid,
     String? languageCode,
     String? communityName,
-    int? isMyCommunity,
+    bool? isMyCommunity,
     required int pageSize,
     required int pageNumber,
   }) async {
