@@ -10,10 +10,12 @@ _$TrackingEventImpl _$$TrackingEventImplFromJson(Map<String, dynamic> json) =>
     _$TrackingEventImpl(
       id: json['id'] as int,
       code: json['code'] as String,
+      name: json['name'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$TrackingEventImplToJson(_$TrackingEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
+      'name': instance.name,
     };

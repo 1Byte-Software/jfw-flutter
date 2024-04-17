@@ -155,6 +155,41 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
+  Future<FetchResponse> getActivities({
+    required int pageNumber,
+    required int pageSize,
+    bool isPagination = true,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'pageNumber': pageNumber,
+      r'pageSize': pageSize,
+      r'isPagination': isPagination,
+    };
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/tracking-activities',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<FetchResponse> addActivites(dynamic activityRequest) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -440,11 +475,13 @@ class _RemoteAuth implements RemoteAuth {
   @override
   Future<FetchResponse> getDevices({
     required int uid,
+    bool? isMobile,
     String? deviceIdentifier,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'UserId': uid,
+      r'isMobile': isMobile,
       r'DeviceIdentifier': deviceIdentifier,
     };
     queryParameters.removeWhere((k, v) => v == null);

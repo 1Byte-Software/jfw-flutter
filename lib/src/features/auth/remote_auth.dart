@@ -35,6 +35,13 @@ abstract class RemoteAuth {
       @Part(name: 'lastName') String? lastName,
       @Part(name: 'userIdentifier') required String userIdentifier});
 
+  @GET('/tracking-activities')
+  Future<FetchResponse> getActivities({
+    @Query("pageNumber") required int pageNumber,
+    @Query("pageSize") required int pageSize,
+    @Query("isPagination") bool isPagination = true,
+  });
+
   @POST('/tracking-activities')
   Future<FetchResponse> addActivites(@Body() dynamic activityRequest);
 
@@ -88,6 +95,7 @@ abstract class RemoteAuth {
   @GET("/devices")
   Future<FetchResponse> getDevices({
     @Query('UserId') required int uid,
+    @Query('isMobile') bool? isMobile,
     @Query('DeviceIdentifier') String? deviceIdentifier,
   });
 

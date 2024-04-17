@@ -26,6 +26,7 @@ class TrackingEvent with _$TrackingEvent {
   factory TrackingEvent({
     @JsonKey(name: 'id') required int id,
     @JsonKey(name: 'code') required String code,
+    @JsonKey(name: 'name', defaultValue: '') required String name,
   }) = _TrackingEvent;
 
   factory TrackingEvent.fromJson(Map<String, Object?> json) =>

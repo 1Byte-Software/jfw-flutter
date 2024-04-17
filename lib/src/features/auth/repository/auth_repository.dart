@@ -1,4 +1,6 @@
+import 'package:remote_vardytests/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
 import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:utils_vardytests/src/model/parsed_page_model.dart';
 
 import '../model/device/device.dart';
 import '../model/device_and_tracking/model/tracking_event.dart';
@@ -14,6 +16,8 @@ abstract class AuthRepository {
       {required String brandUrl, required String authKey});
 
   Future<FResult<String>> addActivity(Map<String, dynamic> activityRequest);
+  Future<FResult<ParsedPageModel<TrackingActivity>>> getActivities(
+      {required int pageNumber, required int pageSize});
 
   Future<FResult<bool>> getAccountConcurrency(int uid,
       {required String deviceCode});
@@ -77,8 +81,8 @@ abstract class AuthRepository {
       required String brandUrl,
       required String authKey});
 
-  Future<FResult<List<Map<String, dynamic>>>> getDevices(
-      {required int uid, String? deviceIdentifier});
+  Future<FResult<List<Device>>> getDevices(
+      {required int uid, String? deviceIdentifier, bool? isMobile});
   Future<FResult<Device>> getCurrentDevice();
   Future<FResult<String>> markMainDevice();
   Future<FResult<List<Device>>> filterDevices(
