@@ -1,6 +1,9 @@
+import 'package:remote_vardytests/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
 import 'package:utils_vardytests/src/model/fresult.dart';
 import 'package:utils_vardytests/src/func/function.dart';
 import '../model/device/device.dart';
+import 'package:utils_vardytests/src/model/parsed_page_model.dart';
+
 import '../model/device_and_tracking/model/tracking_event.dart';
 import '../model/login/request/login_request.dart';
 import '../model/login/response/item_login_response.dart';
@@ -11,6 +14,7 @@ import '../request/change_pass_request.dart';
 import '../request/register_request.dart';
 import 'auth_repository.dart';
 import 'package:utils_vardytests/src/services/logging/log_manager.dart';
+import 'package:utils_vardytests/src/model/page_model_v2.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
   final RemoteAuth ref;
@@ -155,18 +159,16 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<List<Map<String, dynamic>>>> getDevices(
-      {required int uid, String? deviceIdentifier}) {
-    return tryCatchResult<List<Map<String, dynamic>>>(
-        func: () async {
-          final devices = await ref.getDevices(
-              uid: uid, deviceIdentifier: deviceIdentifier);
-          final result = (devices.data as List)
-              .map((e) => e as Map<String, dynamic>)
-              .toList();
-          return result;
-        },
-        logErr: (ex) => logI.e(ex));
+  Future<FResult<List<Device>>> getDevices(
+      {required int uid, String? deviceIdentifier, bool? isMobile}) {
+    return ref
+        .getDevices(
+            uid: uid, deviceIdentifier: deviceIdentifier, isMobile: isMobile)
+        .then((devicesResponse) => FResult.success(
+            (devicesResponse.data as List)
+                .map((deviceMap) => Device.fromJson(deviceMap))
+                .toList()))
+        .onError(FetchFunctions.onError);
   }
 
   @override
@@ -296,5 +298,17 @@ class AuthRepositoryImpl extends AuthRepository {
     return ref
         .markMainDevice()
         .then((value) => FResult.success('Mark main device successfully'));
+  }
+
+  @override
+  Future<FResult<ParsedPageModel<TrackingActivity>>> getActivities(
+      {required int pageNumber, required int pageSize}) {
+    return ref
+        .getActivities(pageNumber: pageNumber, pageSize: pageSize)
+        .then((response) => FResult.success(ParsedPageModel.onParse(
+            pageModel: PageModelV2.fromJson(response.data, pageSize: pageSize)
+                .toPageModel(),
+            onParse: TrackingActivity.fromJson)))
+        .onError(FetchFunctions.onError);
   }
 }
