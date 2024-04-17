@@ -52,9 +52,10 @@ class _RemoteCommunity implements RemoteCommunity {
   Future<HttpResponse<dynamic>> joinCommunity({
     required int communityId,
     required int uid,
+    String status = 'JOINED',
   }) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'status': status};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result =
@@ -173,10 +174,13 @@ class _RemoteCommunity implements RemoteCommunity {
   }
 
   @override
-  Future<FetchResponse> getDetailCommunity(
-      {required int communityIdcommunityId}) async {
+  Future<FetchResponse> getDetailCommunity({
+    required int communityIdcommunityId,
+    int? userId,
+  }) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'userId': userId};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio

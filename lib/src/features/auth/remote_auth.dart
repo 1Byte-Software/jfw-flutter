@@ -71,16 +71,37 @@ abstract class RemoteAuth {
   });
 
   @POST("/users/forgot-password")
-  Future<String> forgotPassword({@Body() required dynamic resetObject});
+  Future<FetchResponse> forgotPassword({@Body() required dynamic resetObject});
 
   @POST("/devices")
   Future<FetchResponse> addNewDevice({
     @Body() required dynamic addNewDeviceRequest,
   });
+
+  @POST("/devices/apply-referral-code")
+  Future<FetchResponse> applyReferralCodeToAddDevice({
+    @Query('referralCode') required String referralCode,
+    @Query('justApplyMobile') bool justApplyMobile = true,
+    @Body() required dynamic device,
+  });
+
   @GET("/devices")
   Future<FetchResponse> getDevices({
     @Query('UserId') required int uid,
     @Query('DeviceIdentifier') String? deviceIdentifier,
+  });
+
+  @GET("/devices/current")
+  Future<FetchResponse> getCurrentDevice();
+
+  @POST("/devices/mark-main-device")
+  Future<FetchResponse> markMainDevice();
+
+  @GET("/devices")
+  Future<FetchResponse> filterDevice({
+    @Query('DeviceCode') String? deviceCode,
+    @Query('ReferralCode') String? referralCode,
+    @Query('UserId') int? userId,
   });
   @PATCH("/devices/{id}")
   Future<FetchResponse> updateDevice(

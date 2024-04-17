@@ -22,9 +22,13 @@ class _RemoteUserConfig implements RemoteUserConfig {
   Future<FetchResponse> getConfigurations(
     int uid, {
     String? groupCode,
+    String? code,
   }) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'groupCode': groupCode};
+    final queryParameters = <String, dynamic>{
+      r'groupCode': groupCode,
+      r'code': code,
+    };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;

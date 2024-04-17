@@ -6,7 +6,7 @@ part 'course.freezed.dart';
 @freezed
 class Course with _$Course {
   factory Course({
-    @JsonKey(name: 'id') required int id,
+    @JsonKey(name: 'id', defaultValue: 0) required int id,
     @JsonKey(name: 'description') @Default('') String description,
     @JsonKey(name: 'name') @Default('') String name,
     @JsonKey(name: 'totalAttendingMember') int? totalAttendingMember,

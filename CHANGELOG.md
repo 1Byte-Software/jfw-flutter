@@ -1,3 +1,23 @@
+## 1.3.10+3
+- Update:
+    New API Response
+
+## 1.1.27
+- Feature
+    Device
+    Verify Email
+    Point
+    Reward
+    
+
+- Update
+    Package:
+        - zOrder
+        - Tags
+    User: 
+        - Add ParentId
+        - isEmailVerified
+    
 ## 0.11.25+1
 - feature:
     brand

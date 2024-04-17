@@ -30,6 +30,8 @@ mixin _$BillingPackage {
   List<PackagePrice> get prices => throw _privateConstructorUsedError;
   @JsonKey(name: 'code')
   String get code => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name', defaultValue: '')
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'zOrder', defaultValue: 0)
   int get zOrder => throw _privateConstructorUsedError;
   @JsonKey(name: 'tags', defaultValue: "")
@@ -53,6 +55,7 @@ abstract class $BillingPackageCopyWith<$Res> {
       @JsonKey(name: 'features') List<PackageFeature> features,
       @JsonKey(name: 'prices') List<PackagePrice> prices,
       @JsonKey(name: 'code') String code,
+      @JsonKey(name: 'name', defaultValue: '') String name,
       @JsonKey(name: 'zOrder', defaultValue: 0) int zOrder,
       @JsonKey(name: 'tags', defaultValue: "") String tags});
 }
@@ -75,6 +78,7 @@ class _$BillingPackageCopyWithImpl<$Res, $Val extends BillingPackage>
     Object? features = null,
     Object? prices = null,
     Object? code = null,
+    Object? name = null,
     Object? zOrder = null,
     Object? tags = null,
   }) {
@@ -98,6 +102,10 @@ class _$BillingPackageCopyWithImpl<$Res, $Val extends BillingPackage>
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       zOrder: null == zOrder
           ? _value.zOrder
@@ -125,6 +133,7 @@ abstract class _$$PackageImplCopyWith<$Res>
       @JsonKey(name: 'features') List<PackageFeature> features,
       @JsonKey(name: 'prices') List<PackagePrice> prices,
       @JsonKey(name: 'code') String code,
+      @JsonKey(name: 'name', defaultValue: '') String name,
       @JsonKey(name: 'zOrder', defaultValue: 0) int zOrder,
       @JsonKey(name: 'tags', defaultValue: "") String tags});
 }
@@ -145,6 +154,7 @@ class __$$PackageImplCopyWithImpl<$Res>
     Object? features = null,
     Object? prices = null,
     Object? code = null,
+    Object? name = null,
     Object? zOrder = null,
     Object? tags = null,
   }) {
@@ -169,6 +179,10 @@ class __$$PackageImplCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       zOrder: null == zOrder
           ? _value.zOrder
           : zOrder // ignore: cast_nullable_to_non_nullable
@@ -190,6 +204,7 @@ class _$PackageImpl implements _Package {
       @JsonKey(name: 'features') required final List<PackageFeature> features,
       @JsonKey(name: 'prices') required final List<PackagePrice> prices,
       @JsonKey(name: 'code') required this.code,
+      @JsonKey(name: 'name', defaultValue: '') required this.name,
       @JsonKey(name: 'zOrder', defaultValue: 0) required this.zOrder,
       @JsonKey(name: 'tags', defaultValue: "") required this.tags})
       : _features = features,
@@ -226,6 +241,9 @@ class _$PackageImpl implements _Package {
   @JsonKey(name: 'code')
   final String code;
   @override
+  @JsonKey(name: 'name', defaultValue: '')
+  final String name;
+  @override
   @JsonKey(name: 'zOrder', defaultValue: 0)
   final int zOrder;
   @override
@@ -234,7 +252,7 @@ class _$PackageImpl implements _Package {
 
   @override
   String toString() {
-    return 'BillingPackage(id: $id, key: $key, features: $features, prices: $prices, code: $code, zOrder: $zOrder, tags: $tags)';
+    return 'BillingPackage(id: $id, key: $key, features: $features, prices: $prices, code: $code, name: $name, zOrder: $zOrder, tags: $tags)';
   }
 
   @override
@@ -247,6 +265,7 @@ class _$PackageImpl implements _Package {
             const DeepCollectionEquality().equals(other._features, _features) &&
             const DeepCollectionEquality().equals(other._prices, _prices) &&
             (identical(other.code, code) || other.code == code) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.zOrder, zOrder) || other.zOrder == zOrder) &&
             (identical(other.tags, tags) || other.tags == tags));
   }
@@ -260,6 +279,7 @@ class _$PackageImpl implements _Package {
       const DeepCollectionEquality().hash(_features),
       const DeepCollectionEquality().hash(_prices),
       code,
+      name,
       zOrder,
       tags);
 
@@ -284,6 +304,7 @@ abstract class _Package implements BillingPackage {
       @JsonKey(name: 'features') required final List<PackageFeature> features,
       @JsonKey(name: 'prices') required final List<PackagePrice> prices,
       @JsonKey(name: 'code') required final String code,
+      @JsonKey(name: 'name', defaultValue: '') required final String name,
       @JsonKey(name: 'zOrder', defaultValue: 0) required final int zOrder,
       @JsonKey(name: 'tags', defaultValue: "")
       required final String tags}) = _$PackageImpl;
@@ -305,6 +326,9 @@ abstract class _Package implements BillingPackage {
   @override
   @JsonKey(name: 'code')
   String get code;
+  @override
+  @JsonKey(name: 'name', defaultValue: '')
+  String get name;
   @override
   @JsonKey(name: 'zOrder', defaultValue: 0)
   int get zOrder;

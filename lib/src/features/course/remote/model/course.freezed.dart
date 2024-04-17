@@ -20,7 +20,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Course {
-  @JsonKey(name: 'id')
+  @JsonKey(name: 'id', defaultValue: 0)
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'description')
   String get description => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $CourseCopyWith<$Res> {
       _$CourseCopyWithImpl<$Res, Course>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
+      {@JsonKey(name: 'id', defaultValue: 0) int id,
       @JsonKey(name: 'description') String description,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'totalAttendingMember') int? totalAttendingMember,
@@ -171,7 +171,7 @@ abstract class _$$CourseImplCopyWith<$Res> implements $CourseCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
+      {@JsonKey(name: 'id', defaultValue: 0) int id,
       @JsonKey(name: 'description') String description,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'totalAttendingMember') int? totalAttendingMember,
@@ -278,7 +278,7 @@ class __$$CourseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CourseImpl implements _Course {
   _$CourseImpl(
-      {@JsonKey(name: 'id') required this.id,
+      {@JsonKey(name: 'id', defaultValue: 0) required this.id,
       @JsonKey(name: 'description') this.description = '',
       @JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'totalAttendingMember') this.totalAttendingMember,
@@ -297,7 +297,7 @@ class _$CourseImpl implements _Course {
       _$$CourseImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: 'id', defaultValue: 0)
   final int id;
   @override
   @JsonKey(name: 'description')
@@ -407,7 +407,7 @@ class _$CourseImpl implements _Course {
 
 abstract class _Course implements Course {
   factory _Course(
-      {@JsonKey(name: 'id') required final int id,
+      {@JsonKey(name: 'id', defaultValue: 0) required final int id,
       @JsonKey(name: 'description') final String description,
       @JsonKey(name: 'name') final String name,
       @JsonKey(name: 'totalAttendingMember') final int? totalAttendingMember,
@@ -426,7 +426,7 @@ abstract class _Course implements Course {
   factory _Course.fromJson(Map<String, dynamic> json) = _$CourseImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: 'id', defaultValue: 0)
   int get id;
   @override
   @JsonKey(name: 'description')

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:remote_vardytests/src/features/cdn/model/file_response.dart';
 import 'package:utils_vardytests/src/services/logging/log_manager.dart';
 import 'package:utils_vardytests/src/func/function.dart';
 import 'package:utils_vardytests/src/model/fresult.dart';
@@ -15,6 +16,16 @@ class StorageRepositoryImpl extends StorageRepository {
         func: () async {
           final response = await ref.uploadFile(image);
           return response.data!['url'];
+        },
+        logErr: (ex) => logI.e(ex));
+  }
+
+  @override
+  Future<FResult<FileResponse>> uploadImageV2(File image) {
+    return tryCatchResult<FileResponse>(
+        func: () async {
+          final response = await ref.uploadFile(image);
+          return FileResponse.fromJson(response.data!);
         },
         logErr: (ex) => logI.e(ex));
   }

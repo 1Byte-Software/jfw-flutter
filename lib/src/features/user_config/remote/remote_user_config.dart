@@ -8,8 +8,11 @@ abstract class RemoteUserConfig {
   factory RemoteUserConfig(Dio dio, {String baseUrl}) = _RemoteUserConfig;
 
   @GET('/users/{uid}/configurations')
-  Future<FetchResponse> getConfigurations(@Path('uid') int uid,
-      {@Query('groupCode') required String? groupCode});
+  Future<FetchResponse> getConfigurations(
+    @Path('uid') int uid, {
+    @Query('groupCode') required String? groupCode,
+    @Query('code') required String? code,
+  });
 
   @POST('/users/{uid}/configurations')
   Future<FetchResponse> createConfiguration(@Path('uid') int uid,

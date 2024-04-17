@@ -25,15 +25,17 @@ mixin _$Community {
   @JsonKey(name: 'countryCode')
   String? get countryCode => throw _privateConstructorUsedError;
   @JsonKey(name: 'createdBy')
-  int get createdBy => throw _privateConstructorUsedError;
+  int? get createdBy => throw _privateConstructorUsedError;
   @JsonKey(name: 'createdDate')
   String? get createdDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'countUsers')
+  @JsonKey(name: 'countUser')
   int? get countUsers => throw _privateConstructorUsedError;
   @JsonKey(name: 'communityName')
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'isPrivate')
   bool get private => throw _privateConstructorUsedError;
+  @JsonKey(name: 'statusUser')
+  String? get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'languageCode')
   String get languageCode => throw _privateConstructorUsedError;
   @JsonKey(name: 'description')
@@ -56,11 +58,12 @@ abstract class $CommunityCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'countryCode') String? countryCode,
-      @JsonKey(name: 'createdBy') int createdBy,
+      @JsonKey(name: 'createdBy') int? createdBy,
       @JsonKey(name: 'createdDate') String? createdDate,
-      @JsonKey(name: 'countUsers') int? countUsers,
+      @JsonKey(name: 'countUser') int? countUsers,
       @JsonKey(name: 'communityName') String name,
       @JsonKey(name: 'isPrivate') bool private,
+      @JsonKey(name: 'statusUser') String? status,
       @JsonKey(name: 'languageCode') String languageCode,
       @JsonKey(name: 'description') String description,
       int? idCommunityUser,
@@ -82,11 +85,12 @@ class _$CommunityCopyWithImpl<$Res, $Val extends Community>
   $Res call({
     Object? id = null,
     Object? countryCode = freezed,
-    Object? createdBy = null,
+    Object? createdBy = freezed,
     Object? createdDate = freezed,
     Object? countUsers = freezed,
     Object? name = null,
     Object? private = null,
+    Object? status = freezed,
     Object? languageCode = null,
     Object? description = null,
     Object? idCommunityUser = freezed,
@@ -101,10 +105,10 @@ class _$CommunityCopyWithImpl<$Res, $Val extends Community>
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdBy: null == createdBy
+      createdBy: freezed == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -121,6 +125,10 @@ class _$CommunityCopyWithImpl<$Res, $Val extends Community>
           ? _value.private
           : private // ignore: cast_nullable_to_non_nullable
               as bool,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
       languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
@@ -152,11 +160,12 @@ abstract class _$$CommunityImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'countryCode') String? countryCode,
-      @JsonKey(name: 'createdBy') int createdBy,
+      @JsonKey(name: 'createdBy') int? createdBy,
       @JsonKey(name: 'createdDate') String? createdDate,
-      @JsonKey(name: 'countUsers') int? countUsers,
+      @JsonKey(name: 'countUser') int? countUsers,
       @JsonKey(name: 'communityName') String name,
       @JsonKey(name: 'isPrivate') bool private,
+      @JsonKey(name: 'statusUser') String? status,
       @JsonKey(name: 'languageCode') String languageCode,
       @JsonKey(name: 'description') String description,
       int? idCommunityUser,
@@ -176,11 +185,12 @@ class __$$CommunityImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? countryCode = freezed,
-    Object? createdBy = null,
+    Object? createdBy = freezed,
     Object? createdDate = freezed,
     Object? countUsers = freezed,
     Object? name = null,
     Object? private = null,
+    Object? status = freezed,
     Object? languageCode = null,
     Object? description = null,
     Object? idCommunityUser = freezed,
@@ -195,10 +205,10 @@ class __$$CommunityImplCopyWithImpl<$Res>
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdBy: null == createdBy
+      createdBy: freezed == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       createdDate: freezed == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -215,6 +225,10 @@ class __$$CommunityImplCopyWithImpl<$Res>
           ? _value.private
           : private // ignore: cast_nullable_to_non_nullable
               as bool,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
       languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
@@ -243,9 +257,10 @@ class _$CommunityImpl implements _Community {
       @JsonKey(name: 'countryCode') required this.countryCode,
       @JsonKey(name: 'createdBy') required this.createdBy,
       @JsonKey(name: 'createdDate') required this.createdDate,
-      @JsonKey(name: 'countUsers') this.countUsers,
+      @JsonKey(name: 'countUser') this.countUsers,
       @JsonKey(name: 'communityName') this.name = '',
       @JsonKey(name: 'isPrivate') required this.private,
+      @JsonKey(name: 'statusUser') required this.status,
       @JsonKey(name: 'languageCode') required this.languageCode,
       @JsonKey(name: 'description') this.description = '',
       this.idCommunityUser,
@@ -262,12 +277,12 @@ class _$CommunityImpl implements _Community {
   final String? countryCode;
   @override
   @JsonKey(name: 'createdBy')
-  final int createdBy;
+  final int? createdBy;
   @override
   @JsonKey(name: 'createdDate')
   final String? createdDate;
   @override
-  @JsonKey(name: 'countUsers')
+  @JsonKey(name: 'countUser')
   final int? countUsers;
   @override
   @JsonKey(name: 'communityName')
@@ -275,6 +290,9 @@ class _$CommunityImpl implements _Community {
   @override
   @JsonKey(name: 'isPrivate')
   final bool private;
+  @override
+  @JsonKey(name: 'statusUser')
+  final String? status;
   @override
   @JsonKey(name: 'languageCode')
   final String languageCode;
@@ -288,7 +306,7 @@ class _$CommunityImpl implements _Community {
 
   @override
   String toString() {
-    return 'Community(id: $id, countryCode: $countryCode, createdBy: $createdBy, createdDate: $createdDate, countUsers: $countUsers, name: $name, private: $private, languageCode: $languageCode, description: $description, idCommunityUser: $idCommunityUser, communityUserStatus: $communityUserStatus)';
+    return 'Community(id: $id, countryCode: $countryCode, createdBy: $createdBy, createdDate: $createdDate, countUsers: $countUsers, name: $name, private: $private, status: $status, languageCode: $languageCode, description: $description, idCommunityUser: $idCommunityUser, communityUserStatus: $communityUserStatus)';
   }
 
   @override
@@ -307,6 +325,7 @@ class _$CommunityImpl implements _Community {
                 other.countUsers == countUsers) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.private, private) || other.private == private) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.languageCode, languageCode) ||
                 other.languageCode == languageCode) &&
             (identical(other.description, description) ||
@@ -328,6 +347,7 @@ class _$CommunityImpl implements _Community {
       countUsers,
       name,
       private,
+      status,
       languageCode,
       description,
       idCommunityUser,
@@ -351,11 +371,12 @@ abstract class _Community implements Community {
   factory _Community(
       {@JsonKey(name: 'id') required final int id,
       @JsonKey(name: 'countryCode') required final String? countryCode,
-      @JsonKey(name: 'createdBy') required final int createdBy,
+      @JsonKey(name: 'createdBy') required final int? createdBy,
       @JsonKey(name: 'createdDate') required final String? createdDate,
-      @JsonKey(name: 'countUsers') final int? countUsers,
+      @JsonKey(name: 'countUser') final int? countUsers,
       @JsonKey(name: 'communityName') final String name,
       @JsonKey(name: 'isPrivate') required final bool private,
+      @JsonKey(name: 'statusUser') required final String? status,
       @JsonKey(name: 'languageCode') required final String languageCode,
       @JsonKey(name: 'description') final String description,
       final int? idCommunityUser,
@@ -372,12 +393,12 @@ abstract class _Community implements Community {
   String? get countryCode;
   @override
   @JsonKey(name: 'createdBy')
-  int get createdBy;
+  int? get createdBy;
   @override
   @JsonKey(name: 'createdDate')
   String? get createdDate;
   @override
-  @JsonKey(name: 'countUsers')
+  @JsonKey(name: 'countUser')
   int? get countUsers;
   @override
   @JsonKey(name: 'communityName')
@@ -385,6 +406,9 @@ abstract class _Community implements Community {
   @override
   @JsonKey(name: 'isPrivate')
   bool get private;
+  @override
+  @JsonKey(name: 'statusUser')
+  String? get status;
   @override
   @JsonKey(name: 'languageCode')
   String get languageCode;

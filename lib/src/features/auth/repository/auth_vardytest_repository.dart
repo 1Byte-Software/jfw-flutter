@@ -5,5 +5,7 @@ import '../model/token/token_response.dart';
 
 abstract class AuthVardyTestRepository {
   Future<FResult<TokenResponse>> getToken(
-      {required String username, required String tokenVardyTestsValue});
+      {required String username,
+      required String tokenVardyTestsValue,
+      required String brandUrl});
 }

@@ -15,7 +15,8 @@ abstract class RemoteCommunity {
   @POST('/communities/{communityId}/users/{uid}')
   Future<HttpResponse> joinCommunity(
       {@Path('communityId') required int communityId,
-      @Path('uid') required int uid});
+      @Path('uid') required int uid,
+      @Query('status') String status = 'JOINED'});
 
   @DELETE('/community-user/{communityId}')
   Future<FetchResponse> leaveCommunity(
@@ -36,7 +37,8 @@ abstract class RemoteCommunity {
 
   @GET('/communities/{communityId}')
   Future<FetchResponse> getDetailCommunity(
-      {@Path('communityId') required int communityIdcommunityId});
+      {@Path('communityId') required int communityIdcommunityId,
+      @Query('userId') required int? userId});
 
   @GET('/communities')
   Future<FetchResponse> getCommunitites({

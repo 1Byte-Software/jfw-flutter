@@ -11,16 +11,19 @@ class RemoteAuthVardyTestRepositoryImpl extends AuthVardyTestRepository {
   RemoteAuthVardyTestRepositoryImpl({required this.ref});
 
   final RemoteAuthVardyTest ref;
+
   @override
   Future<FResult<TokenResponse>> getToken(
-      {required String username, required String tokenVardyTestsValue}) {
+      {required String username,
+      required String tokenVardyTestsValue,
+      required String brandUrl}) {
     return tryCatchResult(
         func: () async {
           final tokenResponse = await ref.getToken(
               getTokenRequest: GetTokenRequest(
             username: username,
             authKey: tokenVardyTestsValue,
-            branUrl: '',
+            branUrl: brandUrl,
           ));
           return TokenResponse.fromJson(tokenResponse.data);
         },

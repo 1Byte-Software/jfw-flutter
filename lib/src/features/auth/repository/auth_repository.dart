@@ -1,5 +1,6 @@
 import 'package:utils_vardytests/src/model/fresult.dart';
 
+import '../model/device/device.dart';
 import '../model/device_and_tracking/model/tracking_event.dart';
 import '../model/login/response/item_login_response.dart';
 import '../model/login/response/login_response.dart';
@@ -8,13 +9,23 @@ import '../model/user/item_response.dart';
 abstract class AuthRepository {
   Future<FResult<FUser>> getAnotherUserInfo(int uid,
       {required String brandUrl, required String authKey});
+
   Future<FResult<FUser>> getInfoAnotherUserByCode(String code,
       {required String brandUrl, required String authKey});
+
   Future<FResult<String>> addActivity(Map<String, dynamic> activityRequest);
+
   Future<FResult<bool>> getAccountConcurrency(int uid,
       {required String deviceCode});
+
   Future<FResult<String>> addDeviceAndGetDeviceId(
       Map<String, dynamic> deviceRequest);
+
+  Future<FResult<Device>> applyReferralCodeToAddDevice(
+      {required String deviceReferralCode,
+      required Map<String, dynamic> device});
+
+  // Future<FResult<String>> markMainDevice({required String deviceReferralCode});
 
   Future<FResult<List<TrackingEvent>>> getTrackingEvents();
 
@@ -33,6 +44,7 @@ abstract class AuthRepository {
       {required String brandUrl,
       required String accessToken,
       required String idToken});
+
   Future<FResult<ItemLoginResponse>> loginSocialApple(
       {required String brandUrl,
       required String authorizationCode,
@@ -46,6 +58,7 @@ abstract class AuthRepository {
       {required String username,
       required String brandUrl,
       required String authKey});
+
   Future<FResult<FUser>> getUserInfoById(
       {required int uid, required String brandUrl, required String authKey});
 
@@ -66,6 +79,10 @@ abstract class AuthRepository {
 
   Future<FResult<List<Map<String, dynamic>>>> getDevices(
       {required int uid, String? deviceIdentifier});
+  Future<FResult<Device>> getCurrentDevice();
+  Future<FResult<String>> markMainDevice();
+  Future<FResult<List<Device>>> filterDevices(
+      {required int userId, required String deviceCode});
 
   Future<FResult<String>> updateDevice(
       {required int id, required dynamic deviceInfo});

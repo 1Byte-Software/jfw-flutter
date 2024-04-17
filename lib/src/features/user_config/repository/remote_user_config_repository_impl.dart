@@ -11,9 +11,12 @@ class RemoteUserConfigRepositoryImpl extends RemoteUserConfigRepository {
 
   @override
   Future<FResult<List<UserConfig>>> getUserConfigs(
-      {required int uid, required String? groupCode}) async {
+      {required int uid,
+      required String? groupCode,
+      required String? code}) async {
     // return tryCatchResult(func: () async {
-    final response = await ref.getConfigurations(uid, groupCode: groupCode);
+    final response =
+        await ref.getConfigurations(uid, groupCode: groupCode, code: code);
     final list =
         (response.data as List).map((e) => UserConfig.fromJson(e)).toList();
     return FResult.success(list);

@@ -1,5 +1,6 @@
 import 'package:utils_vardytests/src/model/fresult.dart';
 import 'package:utils_vardytests/src/func/function.dart';
+import '../model/device/device.dart';
 import '../model/device_and_tracking/model/tracking_event.dart';
 import '../model/login/request/login_request.dart';
 import '../model/login/response/item_login_response.dart';
@@ -13,6 +14,7 @@ import 'package:utils_vardytests/src/services/logging/log_manager.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
   final RemoteAuth ref;
+
   AuthRepositoryImpl({required this.ref});
 
   @override
@@ -88,11 +90,12 @@ class AuthRepositoryImpl extends AuthRepository {
       required String resetPasswordLink}) async {
     return tryCatchResult(
         func: () async {
-          return await ref.forgotPassword(resetObject: {
+          await ref.forgotPassword(resetObject: {
             'brandUrl': brandUrl,
             'email': email,
             'resetPasswordLink': resetPasswordLink,
           });
+          return 'Send instruction successfully';
         },
         logErr: (ex) => logI.e(ex));
   }
@@ -259,5 +262,39 @@ class AuthRepositoryImpl extends AuthRepository {
         .verifyEmail(returnUrl: returnUrl, userId: uid)
         .then((value) => FResult.success('Send email verify successfully'))
         .onError(FetchFunctions.onError);
+  }
+
+  @override
+  Future<FResult<Device>> applyReferralCodeToAddDevice(
+      {required String deviceReferralCode,
+      required Map<String, dynamic> device}) {
+    return ref
+        .applyReferralCodeToAddDevice(
+            referralCode: deviceReferralCode, device: device)
+        .then((value) => FResult.success(Device.fromJson(value.data)))
+        .catchError(FetchFunctions.onError);
+  }
+
+  @override
+  Future<FResult<List<Device>>> filterDevices(
+      {required int userId, required String deviceCode}) async {
+    final devicesResponse =
+        await ref.filterDevice(userId: userId, deviceCode: deviceCode);
+    return FResult.success(
+        (devicesResponse.data as List).map((e) => Device.fromJson(e)).toList());
+  }
+
+  @override
+  Future<FResult<Device>> getCurrentDevice() {
+    return ref
+        .getCurrentDevice()
+        .then((value) => FResult.success(Device.fromJson(value.data)));
+  }
+
+  @override
+  Future<FResult<String>> markMainDevice() {
+    return ref
+        .markMainDevice()
+        .then((value) => FResult.success('Mark main device successfully'));
   }
 }

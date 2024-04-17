@@ -11,7 +11,7 @@ enum CommunityUserStatusEnum {
   banned,
   notJoined;
 
-  static CommunityUserStatusEnum fromStatus(String status) {
+  static CommunityUserStatusEnum fromStatus(String? status) {
     switch (status) {
       case 'JOINED':
         return CommunityUserStatusEnum.joined;

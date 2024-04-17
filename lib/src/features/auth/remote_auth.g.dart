@@ -349,28 +349,29 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<String> forgotPassword({required dynamic resetObject}) async {
+  Future<FetchResponse> forgotPassword({required dynamic resetObject}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = resetObject;
-    final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          '/users/forgot-password',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        ))));
-    final value = _result.data!;
+            .compose(
+              _dio.options,
+              '/users/forgot-password',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -403,6 +404,40 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
+  Future<FetchResponse> applyReferralCodeToAddDevice({
+    required String referralCode,
+    bool justApplyMobile = true,
+    required dynamic device,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'referralCode': referralCode,
+      r'justApplyMobile': justApplyMobile,
+    };
+    final _headers = <String, dynamic>{};
+    final _data = device;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/devices/apply-referral-code',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<FetchResponse> getDevices({
     required int uid,
     String? deviceIdentifier,
@@ -411,6 +446,96 @@ class _RemoteAuth implements RemoteAuth {
     final queryParameters = <String, dynamic>{
       r'UserId': uid,
       r'DeviceIdentifier': deviceIdentifier,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/devices',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getCurrentDevice() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/devices/current',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> markMainDevice() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/devices/mark-main-device',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> filterDevice({
+    String? deviceCode,
+    String? referralCode,
+    int? userId,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'DeviceCode': deviceCode,
+      r'ReferralCode': referralCode,
+      r'UserId': userId,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

@@ -24,7 +24,7 @@ abstract class CommunityRepository {
       required String status,
       required int pageNumer});
 
-  Future<FResult<Community>> getCommunity({required int id});
+  Future<FResult<Community>> getCommunity({required int id, int? uid});
   Future<FResult<String>> leaveCommunity({required int id});
   Future<FResult<PageModel>> getCommunitites(
       {required int uid,
@@ -88,11 +88,11 @@ class RemoteCommunityRepositoryImpl extends CommunityRepository {
   }
 
   @override
-  Future<FResult<Community>> getCommunity({required int id}) {
+  Future<FResult<Community>> getCommunity({required int id, int? uid}) {
     return tryCatchResult(
       func: () async {
-        final reponse =
-            await ref.getDetailCommunity(communityIdcommunityId: id);
+        final reponse = await ref.getDetailCommunity(
+            communityIdcommunityId: id, userId: uid);
         return Community.fromJson(reponse.data);
       },
     );
