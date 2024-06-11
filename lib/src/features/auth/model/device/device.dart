@@ -11,7 +11,7 @@ class Device with _$Device {
     @JsonKey(name: 'osDevice', defaultValue: '') required String osDevice,
     @JsonKey(name: 'modifiedDate') required String modifiedDate,
     @JsonKey(name: 'referralCode') required String? referralCode,
-    @JsonKey(name: 'isMobile') required bool isMobile,
+    @JsonKey(name: 'isMobile', defaultValue: false) required bool isMobile,
     @JsonKey(name: 'deviceCode') required String deviceCode,
     @JsonKey(name: 'deviceSession') required String deviceSession,
   }) = _Device;

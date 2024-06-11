@@ -266,16 +266,7 @@ class AuthRepositoryImpl extends AuthRepository {
         .onError(FetchFunctions.onError);
   }
 
-  @override
-  Future<FResult<Device>> applyReferralCodeToAddDevice(
-      {required String deviceReferralCode,
-      required Map<String, dynamic> device}) {
-    return ref
-        .applyReferralCodeToAddDevice(
-            referralCode: deviceReferralCode, device: device)
-        .then((value) => FResult.success(Device.fromJson(value.data)))
-        .catchError(FetchFunctions.onError);
-  }
+
 
   @override
   Future<FResult<List<Device>>> filterDevices(
@@ -293,12 +284,6 @@ class AuthRepositoryImpl extends AuthRepository {
         .then((value) => FResult.success(Device.fromJson(value.data)));
   }
 
-  @override
-  Future<FResult<String>> markMainDevice() {
-    return ref
-        .markMainDevice()
-        .then((value) => FResult.success('Mark main device successfully'));
-  }
 
   @override
   Future<FResult<ParsedPageModel<TrackingActivity>>> getActivities(

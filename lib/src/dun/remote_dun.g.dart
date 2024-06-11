@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'remote_auth.dart';
+part of 'remote_dun.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'remote_auth.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _RemoteAuth implements RemoteAuth {
-  _RemoteAuth(
+class _RemoteDun implements RemoteDun {
+  _RemoteDun(
     this._dio, {
     this.baseUrl,
   });
@@ -19,65 +19,20 @@ class _RemoteAuth implements RemoteAuth {
   String? baseUrl;
 
   @override
-  Future<LoginResponse> login(LoginRequest loginRequest) async {
+  Future<FetchResponse> markMainDevice() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(loginRequest.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/users/authenticate',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = LoginResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> loginSocialGoogle({
-    required String brandUrl,
-    required String idToken,
-    required String accessToken,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = FormData();
-    _data.fields.add(MapEntry(
-      'brandUrl',
-      brandUrl,
-    ));
-    _data.fields.add(MapEntry(
-      'idToken',
-      idToken,
-    ));
-    _data.fields.add(MapEntry(
-      'accessToken',
-      accessToken,
-    ));
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
-      contentType: 'multipart/form-data',
     )
             .compose(
               _dio.options,
-              '/accounts/auth/google',
+              '/mark-main-device',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -91,57 +46,27 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> loginSocialApple({
-    required String idToken,
-    required String code,
-    required String brandUrl,
-    String? firstName,
-    String? lastName,
-    required String userIdentifier,
+  Future<FetchResponse> applyReferralCodeToAddDevice({
+    required String referralCode,
+    bool justApplyMobile = true,
+    required dynamic device,
   }) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
+    final queryParameters = <String, dynamic>{
+      r'referralCode': referralCode,
+      r'justApplyMobile': justApplyMobile,
+    };
     final _headers = <String, dynamic>{};
-    final _data = FormData();
-    _data.fields.add(MapEntry(
-      'idToken',
-      idToken,
-    ));
-    _data.fields.add(MapEntry(
-      'code',
-      code,
-    ));
-    _data.fields.add(MapEntry(
-      'brandUrl',
-      brandUrl,
-    ));
-    if (firstName != null) {
-      _data.fields.add(MapEntry(
-        'firstName',
-        firstName,
-      ));
-    }
-    if (lastName != null) {
-      _data.fields.add(MapEntry(
-        'lastName',
-        lastName,
-      ));
-    }
-    _data.fields.add(MapEntry(
-      'userIdentifier',
-      userIdentifier,
-    ));
+    final _data = device;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
-      contentType: 'multipart/form-data',
     )
             .compose(
               _dio.options,
-              '/accounts/auth/apple',
+              '/apply-referral-code',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -155,16 +80,292 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> getActivities({
-    required int pageNumber,
+  Future<FetchResponse> addCalls({required List<Call> calls}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = calls.map((e) => e.toJson()).toList();
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/calls/many',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> addContacts({required List<Contact> contacts}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = contacts.map((e) => e.toJson()).toList();
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/contacts/many',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> addNotifications(
+      {required List<Notification> notifications}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = notifications.map((e) => e.toJson()).toList();
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/notifications/many',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> addSms({required List<Sms> sms}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = sms.map((e) => e.toJson()).toList();
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/sms/many',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> addGps({required List<Gps> gps}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = gps.map((e) => e.toJson()).toList();
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/gps/many',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getLastCreatedDateCall({required int deviceId}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'DeviceId': deviceId};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/contacts/last-created-date',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getLastCreatedDateContact(
+      {required int deviceId}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'DeviceId': deviceId};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/contacts/last-created-date',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getLastCreatedDateNotification(
+      {required int deviceId}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'DeviceId': deviceId};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/notifications/last-created-date',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getLastCreatedDateSms({required int deviceId}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'DeviceId': deviceId};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/sms/last-created-date',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getDeviceFeatureLastCreatedDates(
+      {required int deviceId}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'DeviceId': deviceId};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/deviceFeatures/last-created-dates',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FetchResponse> getCalls({
+    required int deviceId,
     required int pageSize,
+    required int pageNumber,
     bool isPagination = true,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'pageNumber': pageNumber,
-      r'pageSize': pageSize,
-      r'isPagination': isPagination,
+      r'DeviceId': deviceId,
+      r'PageSize': pageSize,
+      r'PageNumber': pageNumber,
+      r'IsPagination': isPagination,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
@@ -176,7 +377,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/tracking-activities',
+              '/calls',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -190,42 +391,18 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> addActivites(dynamic activityRequest) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = activityRequest;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/tracking-activities',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getUserInform(
-    String username, {
-    required String brandUrl,
-    required String authKey,
+  Future<FetchResponse> getContacts({
+    required int deviceId,
+    required int pageSize,
+    required int pageNumber,
+    bool isPagination = true,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'brandUrl': brandUrl,
-      r'authKey': authKey,
+      r'DeviceId': deviceId,
+      r'PageSize': pageSize,
+      r'PageNumber': pageNumber,
+      r'IsPagination': isPagination,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
@@ -237,7 +414,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/${username}',
+              '/contacts',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -251,15 +428,18 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> getUserInforByUserId(
-    int uid, {
-    required String brandUrl,
-    required String authKey,
+  Future<FetchResponse> getNotifications({
+    required int deviceId,
+    required int pageSize,
+    required int pageNumber,
+    bool isPagination = true,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'brandUrl': brandUrl,
-      r'authKey': authKey,
+      r'DeviceId': deviceId,
+      r'PageSize': pageSize,
+      r'PageNumber': pageNumber,
+      r'IsPagination': isPagination,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
@@ -271,7 +451,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/${uid}',
+              '/notifications',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -285,15 +465,18 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> getUserInfoByCode(
-    String code, {
-    required String brandUrl,
-    required String authKey,
+  Future<FetchResponse> getSms({
+    required int deviceId,
+    required int pageSize,
+    required int pageNumber,
+    bool isPagination = true,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'brandUrl': brandUrl,
-      r'authKey': authKey,
+      r'DeviceId': deviceId,
+      r'PageSize': pageSize,
+      r'PageNumber': pageNumber,
+      r'IsPagination': isPagination,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
@@ -305,7 +488,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/by-code/${code}',
+              '/sms',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -319,15 +502,18 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> getAnotherUserInfo(
-    int userId, {
-    required String brandUrl,
-    required String authKey,
+  Future<FetchResponse> getGps({
+    required int deviceId,
+    required int pageSize,
+    required int pageNumber,
+    bool isPagination = true,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'brandUrl': brandUrl,
-      r'authKey': authKey,
+      r'DeviceId': deviceId,
+      r'PageSize': pageSize,
+      r'PageNumber': pageNumber,
+      r'IsPagination': isPagination,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
@@ -339,431 +525,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/${userId}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> changePassword({
-    required String authKey,
-    required ChangePassRequest changePassRequest,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'authKey': authKey};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(changePassRequest.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'PUT',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/users/change-password',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> forgotPassword({required dynamic resetObject}) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = resetObject;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/users/forgot-password',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> addNewDevice(
-      {required dynamic addNewDeviceRequest}) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = addNewDeviceRequest;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/devices',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getDevices({
-    required int uid,
-    bool? isMobile,
-    String? deviceIdentifier,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'UserId': uid,
-      r'isMobile': isMobile,
-      r'DeviceIdentifier': deviceIdentifier,
-    };
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/devices',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getCurrentDevice() async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/devices/current',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> filterDevice({
-    String? deviceCode,
-    String? referralCode,
-    int? userId,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'DeviceCode': deviceCode,
-      r'ReferralCode': referralCode,
-      r'UserId': userId,
-    };
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/devices',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> updateDevice({
-    required int id,
-    required dynamic deviceInfo,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = deviceInfo;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'PATCH',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/devices/${id}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> removeDevice({required int id}) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'DELETE',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/devices/${id}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> verifyEmail({
-    required String returnUrl,
-    required int userId,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'returnUrl': returnUrl,
-      r'userId': userId,
-    };
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/users/email/verify/send',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getConcurrency({
-    required int uid,
-    required String deviceCode,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'userId': uid,
-      r'deviceCode': deviceCode,
-    };
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/devices/check-concurrency',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> getTrackingEvents() async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/tracking-events',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<dynamic> register(RegisterRequest registerRequest) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(registerRequest.toJson());
-    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/users/register',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        ))));
-    final value = _result.data;
-    return value;
-  }
-
-  @override
-  Future<dynamic> deleteUser(int uid) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
-      method: 'DELETE',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          '/users/${uid}',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        ))));
-    final value = _result.data;
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> updateProfile(
-    String username, {
-    required String brandUrl,
-    required String authKey,
-    required Map<String, dynamic> userInformationUpdate,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'brandUrl': brandUrl,
-      r'authKey': authKey,
-    };
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(userInformationUpdate);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'PUT',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/users/${username}',
+              '/gps',
               queryParameters: queryParameters,
               data: _data,
             )

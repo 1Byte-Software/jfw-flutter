@@ -7,7 +7,7 @@ class RemoteFirebaseRemoteConfig {
     required this.env,
   }) {
     firebaseRemoteConfig.setConfigSettings(RemoteConfigSettings(
-      fetchTimeout: const Duration(seconds: 1),
+      fetchTimeout: const Duration(seconds: 3),
       minimumFetchInterval: const Duration(seconds: 10),
     ));
   }

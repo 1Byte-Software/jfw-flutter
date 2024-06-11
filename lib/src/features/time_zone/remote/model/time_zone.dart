@@ -7,8 +7,9 @@ part 'time_zone.freezed.dart';
 class TimeZone with _$TimeZone {
   factory TimeZone({
     @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'value') required String value,
-    @JsonKey(name: 'identifier') required String identifier,
+    @JsonKey(name: 'value', defaultValue: '') required String value,
+    @JsonKey(name: 'countryCode', defaultValue: '') required String countryCode,
+    @JsonKey(name: 'identifier', defaultValue: '') required String identifier,
   }) = _TokenResponse;
 
   factory TimeZone.fromJson(Map<String, Object?> json) =>

@@ -13,7 +13,7 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
       osDevice: json['osDevice'] as String? ?? '',
       modifiedDate: json['modifiedDate'] as String,
       referralCode: json['referralCode'] as String?,
-      isMobile: json['isMobile'] as bool,
+      isMobile: json['isMobile'] as bool? ?? false,
       deviceCode: json['deviceCode'] as String,
       deviceSession: json['deviceSession'] as String,
     );

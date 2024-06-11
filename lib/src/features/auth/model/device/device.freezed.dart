@@ -32,7 +32,7 @@ mixin _$Device {
   String get modifiedDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'referralCode')
   String? get referralCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'isMobile')
+  @JsonKey(name: 'isMobile', defaultValue: false)
   bool get isMobile => throw _privateConstructorUsedError;
   @JsonKey(name: 'deviceCode')
   String get deviceCode => throw _privateConstructorUsedError;
@@ -56,7 +56,7 @@ abstract class $DeviceCopyWith<$Res> {
       @JsonKey(name: 'osDevice', defaultValue: '') String osDevice,
       @JsonKey(name: 'modifiedDate') String modifiedDate,
       @JsonKey(name: 'referralCode') String? referralCode,
-      @JsonKey(name: 'isMobile') bool isMobile,
+      @JsonKey(name: 'isMobile', defaultValue: false) bool isMobile,
       @JsonKey(name: 'deviceCode') String deviceCode,
       @JsonKey(name: 'deviceSession') String deviceSession});
 }
@@ -139,7 +139,7 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       @JsonKey(name: 'osDevice', defaultValue: '') String osDevice,
       @JsonKey(name: 'modifiedDate') String modifiedDate,
       @JsonKey(name: 'referralCode') String? referralCode,
-      @JsonKey(name: 'isMobile') bool isMobile,
+      @JsonKey(name: 'isMobile', defaultValue: false) bool isMobile,
       @JsonKey(name: 'deviceCode') String deviceCode,
       @JsonKey(name: 'deviceSession') String deviceSession});
 }
@@ -216,7 +216,7 @@ class _$DeviceImpl implements _Device {
       @JsonKey(name: 'osDevice', defaultValue: '') required this.osDevice,
       @JsonKey(name: 'modifiedDate') required this.modifiedDate,
       @JsonKey(name: 'referralCode') required this.referralCode,
-      @JsonKey(name: 'isMobile') required this.isMobile,
+      @JsonKey(name: 'isMobile', defaultValue: false) required this.isMobile,
       @JsonKey(name: 'deviceCode') required this.deviceCode,
       @JsonKey(name: 'deviceSession') required this.deviceSession});
 
@@ -242,7 +242,7 @@ class _$DeviceImpl implements _Device {
   @JsonKey(name: 'referralCode')
   final String? referralCode;
   @override
-  @JsonKey(name: 'isMobile')
+  @JsonKey(name: 'isMobile', defaultValue: false)
   final bool isMobile;
   @override
   @JsonKey(name: 'deviceCode')
@@ -318,7 +318,8 @@ abstract class _Device implements Device {
       required final String osDevice,
       @JsonKey(name: 'modifiedDate') required final String modifiedDate,
       @JsonKey(name: 'referralCode') required final String? referralCode,
-      @JsonKey(name: 'isMobile') required final bool isMobile,
+      @JsonKey(name: 'isMobile', defaultValue: false)
+      required final bool isMobile,
       @JsonKey(name: 'deviceCode') required final String deviceCode,
       @JsonKey(name: 'deviceSession')
       required final String deviceSession}) = _$DeviceImpl;
@@ -344,7 +345,7 @@ abstract class _Device implements Device {
   @JsonKey(name: 'referralCode')
   String? get referralCode;
   @override
-  @JsonKey(name: 'isMobile')
+  @JsonKey(name: 'isMobile', defaultValue: false)
   bool get isMobile;
   @override
   @JsonKey(name: 'deviceCode')

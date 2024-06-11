@@ -22,9 +22,11 @@ TimeZone _$TimeZoneFromJson(Map<String, dynamic> json) {
 mixin _$TimeZone {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'value')
+  @JsonKey(name: 'value', defaultValue: '')
   String get value => throw _privateConstructorUsedError;
-  @JsonKey(name: 'identifier')
+  @JsonKey(name: 'countryCode', defaultValue: '')
+  String get countryCode => throw _privateConstructorUsedError;
+  @JsonKey(name: 'identifier', defaultValue: '')
   String get identifier => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,8 +42,9 @@ abstract class $TimeZoneCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'value') String value,
-      @JsonKey(name: 'identifier') String identifier});
+      @JsonKey(name: 'value', defaultValue: '') String value,
+      @JsonKey(name: 'countryCode', defaultValue: '') String countryCode,
+      @JsonKey(name: 'identifier', defaultValue: '') String identifier});
 }
 
 /// @nodoc
@@ -59,6 +62,7 @@ class _$TimeZoneCopyWithImpl<$Res, $Val extends TimeZone>
   $Res call({
     Object? id = null,
     Object? value = null,
+    Object? countryCode = null,
     Object? identifier = null,
   }) {
     return _then(_value.copyWith(
@@ -69,6 +73,10 @@ class _$TimeZoneCopyWithImpl<$Res, $Val extends TimeZone>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
+              as String,
+      countryCode: null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
               as String,
       identifier: null == identifier
           ? _value.identifier
@@ -88,8 +96,9 @@ abstract class _$$TokenResponseImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'value') String value,
-      @JsonKey(name: 'identifier') String identifier});
+      @JsonKey(name: 'value', defaultValue: '') String value,
+      @JsonKey(name: 'countryCode', defaultValue: '') String countryCode,
+      @JsonKey(name: 'identifier', defaultValue: '') String identifier});
 }
 
 /// @nodoc
@@ -105,6 +114,7 @@ class __$$TokenResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? value = null,
+    Object? countryCode = null,
     Object? identifier = null,
   }) {
     return _then(_$TokenResponseImpl(
@@ -115,6 +125,10 @@ class __$$TokenResponseImplCopyWithImpl<$Res>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
+              as String,
+      countryCode: null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
               as String,
       identifier: null == identifier
           ? _value.identifier
@@ -129,8 +143,9 @@ class __$$TokenResponseImplCopyWithImpl<$Res>
 class _$TokenResponseImpl implements _TokenResponse {
   _$TokenResponseImpl(
       {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'value') required this.value,
-      @JsonKey(name: 'identifier') required this.identifier});
+      @JsonKey(name: 'value', defaultValue: '') required this.value,
+      @JsonKey(name: 'countryCode', defaultValue: '') required this.countryCode,
+      @JsonKey(name: 'identifier', defaultValue: '') required this.identifier});
 
   factory _$TokenResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$TokenResponseImplFromJson(json);
@@ -139,15 +154,18 @@ class _$TokenResponseImpl implements _TokenResponse {
   @JsonKey(name: 'id')
   final int id;
   @override
-  @JsonKey(name: 'value')
+  @JsonKey(name: 'value', defaultValue: '')
   final String value;
   @override
-  @JsonKey(name: 'identifier')
+  @JsonKey(name: 'countryCode', defaultValue: '')
+  final String countryCode;
+  @override
+  @JsonKey(name: 'identifier', defaultValue: '')
   final String identifier;
 
   @override
   String toString() {
-    return 'TimeZone(id: $id, value: $value, identifier: $identifier)';
+    return 'TimeZone(id: $id, value: $value, countryCode: $countryCode, identifier: $identifier)';
   }
 
   @override
@@ -157,13 +175,16 @@ class _$TokenResponseImpl implements _TokenResponse {
             other is _$TokenResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.value, value) || other.value == value) &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode) &&
             (identical(other.identifier, identifier) ||
                 other.identifier == identifier));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, value, identifier);
+  int get hashCode =>
+      Object.hash(runtimeType, id, value, countryCode, identifier);
 
   @JsonKey(ignore: true)
   @override
@@ -181,10 +202,12 @@ class _$TokenResponseImpl implements _TokenResponse {
 
 abstract class _TokenResponse implements TimeZone {
   factory _TokenResponse(
-          {@JsonKey(name: 'id') required final int id,
-          @JsonKey(name: 'value') required final String value,
-          @JsonKey(name: 'identifier') required final String identifier}) =
-      _$TokenResponseImpl;
+      {@JsonKey(name: 'id') required final int id,
+      @JsonKey(name: 'value', defaultValue: '') required final String value,
+      @JsonKey(name: 'countryCode', defaultValue: '')
+      required final String countryCode,
+      @JsonKey(name: 'identifier', defaultValue: '')
+      required final String identifier}) = _$TokenResponseImpl;
 
   factory _TokenResponse.fromJson(Map<String, dynamic> json) =
       _$TokenResponseImpl.fromJson;
@@ -193,10 +216,13 @@ abstract class _TokenResponse implements TimeZone {
   @JsonKey(name: 'id')
   int get id;
   @override
-  @JsonKey(name: 'value')
+  @JsonKey(name: 'value', defaultValue: '')
   String get value;
   @override
-  @JsonKey(name: 'identifier')
+  @JsonKey(name: 'countryCode', defaultValue: '')
+  String get countryCode;
+  @override
+  @JsonKey(name: 'identifier', defaultValue: '')
   String get identifier;
   @override
   @JsonKey(ignore: true)

@@ -85,13 +85,6 @@ abstract class RemoteAuth {
     @Body() required dynamic addNewDeviceRequest,
   });
 
-  @POST("/devices/apply-referral-code")
-  Future<FetchResponse> applyReferralCodeToAddDevice({
-    @Query('referralCode') required String referralCode,
-    @Query('justApplyMobile') bool justApplyMobile = true,
-    @Body() required dynamic device,
-  });
-
   @GET("/devices")
   Future<FetchResponse> getDevices({
     @Query('UserId') required int uid,
@@ -101,9 +94,6 @@ abstract class RemoteAuth {
 
   @GET("/devices/current")
   Future<FetchResponse> getCurrentDevice();
-
-  @POST("/devices/mark-main-device")
-  Future<FetchResponse> markMainDevice();
 
   @GET("/devices")
   Future<FetchResponse> filterDevice({

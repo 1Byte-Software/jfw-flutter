@@ -25,9 +25,7 @@ abstract class AuthRepository {
   Future<FResult<String>> addDeviceAndGetDeviceId(
       Map<String, dynamic> deviceRequest);
 
-  Future<FResult<Device>> applyReferralCodeToAddDevice(
-      {required String deviceReferralCode,
-      required Map<String, dynamic> device});
+
 
   // Future<FResult<String>> markMainDevice({required String deviceReferralCode});
 
@@ -84,7 +82,6 @@ abstract class AuthRepository {
   Future<FResult<List<Device>>> getDevices(
       {required int uid, String? deviceIdentifier, bool? isMobile});
   Future<FResult<Device>> getCurrentDevice();
-  Future<FResult<String>> markMainDevice();
   Future<FResult<List<Device>>> filterDevices(
       {required int userId, required String deviceCode});
 
