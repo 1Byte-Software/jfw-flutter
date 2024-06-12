@@ -22,6 +22,7 @@ abstract class RemoteQuestion {
     @Query("isPracticed") bool? isPracticed,
     @Query("sortDataField") String? sortDataField,
     @Query("sortOrder") String? sortOrder,
+    @Query("status") int? status,
   });
 
   @GET('/lesson/{id}')
@@ -40,7 +41,10 @@ abstract class RemoteQuestion {
     @Path('uid') required String uid,
   });
 
-  @GET('/category?group={group}')
+  @GET('/categories/menu/{group}')
+  Future<FetchResponse> getMenus({@Path('group') required String group});
+
+  @GET('/category?parentCategoryCode={group}')
   Future<FetchResponse> getCategories({@Path('group') required String group});
 
   @POST('/leaner/tested')

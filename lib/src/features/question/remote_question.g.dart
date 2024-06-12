@@ -28,6 +28,7 @@ class _RemoteQuestion implements RemoteQuestion {
     bool? isPracticed,
     String? sortDataField,
     String? sortOrder,
+    int? status,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -39,6 +40,7 @@ class _RemoteQuestion implements RemoteQuestion {
       r'isPracticed': isPracticed,
       r'sortDataField': sortDataField,
       r'sortOrder': sortOrder,
+      r'status': status,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -154,6 +156,33 @@ class _RemoteQuestion implements RemoteQuestion {
   }
 
   @override
+  Future<FetchResponse> getMenus({required String group}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/categories/menu/${group}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = FetchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<FetchResponse> getCategories({required String group}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -167,7 +196,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/category?group=${group}',
+              '/category?parentCategoryCode=${group}',
               queryParameters: queryParameters,
               data: _data,
             )

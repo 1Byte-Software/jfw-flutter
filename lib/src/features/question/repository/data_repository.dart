@@ -107,6 +107,7 @@ abstract class DataRepository {
   //     required double scoreGeneralLinguisticRange});
 
   Future<FResult<List<Category>>> getCategories();
+  Future<FResult<List<Category>>> getMenus({required String group});
 
   Future<FResult<List<Category>>> getGroupMarks();
   Future<FResult<List<Category>>> getGroupStars();
@@ -207,7 +208,11 @@ class DataRepositoryImpl extends DataRepository {
         timeType = TimeTypeEnum.thisMonth;
       }
 
+      /// status is active. Defined by Question.JFW.
+      const activeStatus = 1;
+
       final response = await dataService.getLessonData(
+          status: activeStatus,
           categoryIds: categoryIds.join(','),
           pageNumber: requestData.pageNumber,
           isPracticed: requestData.practiceStatus,
@@ -290,6 +295,22 @@ class DataRepositoryImpl extends DataRepository {
     final response = await dataService.saveResultText(
         doScoreRequest: doScoreRequestForWriting);
     return DoScoreResponse.fromJson(response.data);
+  }
+
+  @override
+  Future<FResult<List<Category>>> getMenus({required String group}) async {
+    try {
+      final response = await dataService.getMenus(group: group);
+
+      List<Category> categories = (response.data as List)
+          .map((e) => Category.fromJson(e))
+          .where((element) => element.parentCode != null)
+          .toList();
+
+      return FResult.success(categories);
+    } catch (ex) {
+      return FResult.error(ex.toString());
+    }
   }
 
   @override
