@@ -25,7 +25,7 @@ abstract class RemoteQuestion {
     @Query("status") int? status,
   });
 
-  @GET('/lesson/{id}')
+  @GET('/lessons/{id}')
   Future<FetchResponse> getLessonDetails(@Path('id') int id);
 
   @POST('/lessons/{lessonId}/priorities/{categoryPriorityId}/{uid}')
@@ -72,20 +72,20 @@ abstract class RemoteQuestion {
 doScore
 */
 
-  @POST('/user-score')
+  @POST('/scores')
   Future<FetchResponse> doScore(
     @Body() List<DoScoreRequest> doScoreRequest,
   );
 //Xóa phần me
-  @DELETE('/user-score?dateTime={date}')
+  @DELETE('/scores?dateTime={date}')
   Future<FetchResponse> deleteUserScore({
     @Path('dateTime') required String date,
   });
-  @POST('/user-score/smw/{lessonId}')
-  Future<FetchResponse> doScoreHighlightIncorrectWord({
-    @Path('lessonId') required int lessonId,
-    @Body() required List<DoScoreRequest> doScoreRequest,
-  });
+  // @POST('/scores/{lessonId}')
+  // Future<FetchResponse> doScoreHighlightIncorrectWord({
+  //   @Path('lessonId') required int lessonId,
+  //   @Body() required List<DoScoreRequest> doScoreRequest,
+  // });
 
   // @GET(
   //     'discussion/me/lesson/{lessonId}?userid={userId}&page={pageNumber}&limit={limit}')
@@ -129,31 +129,31 @@ doScore
 
   //AI Score
 
-  @POST('/user-score/ai-speech')
+  @POST('/scores/ai-speech')
   Future<FetchResponse> saveResultSpeaking(
       {@Part(name: 'speech') required File speechFile,
       @Part(name: 'question') required int questionID});
 
-  @POST('/user-score/ai')
+  @POST('/scores/ai')
   Future<FetchResponse> doAndSaveScoreAI(
       {@Part(name: 'lessonId') required int lessonId,
       @Part(name: 'responseGroupId') required int responseGroupId});
 
-  @GET('/user-score/check-practice-ai-score/{uid}')
+  @GET('/scores/check-practice-ai-score/{uid}')
   Future<FetchResponse> checkPracticeAIScore(@Path('uid') int uid,
       {@Query('codeSkill') required String codeSkill});
 
-  @POST('/user-score/ai-text')
+  @POST('/scores/ai-text')
   Future<FetchResponse> saveResultText(
       {@Body() required DoScoreRequest doScoreRequest});
 
   // Write From Dictation Score
-  @POST('/user-score')
+  @POST('/scores')
   Future<FetchResponse> scoreWriteFromDictation(
     @Body() List<DoScoreRequest> doScoreRequest,
   );
   //Do score ai Lưu điểm xuống data
-  @POST('/user-score/ai/do-score')
+  @POST('/scores/ai/do-score')
   Future<FetchResponse> doScoreAI(@Body() dynamic doScoreRequest,
       {@Query('codeSkill') required String codeSkill});
 

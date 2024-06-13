@@ -80,7 +80,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/lesson/${id}',
+              '/lessons/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -340,7 +340,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/user-score',
+              '/scores',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -367,37 +367,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/user-score?dateTime={date}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<FetchResponse> doScoreHighlightIncorrectWord({
-    required int lessonId,
-    required List<DoScoreRequest> doScoreRequest,
-  }) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = doScoreRequest.map((e) => e.toJson()).toList();
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/user-score/smw/${lessonId}',
+              '/scores?dateTime={date}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -498,7 +468,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/user-score/ai-speech',
+              '/scores/ai-speech',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -536,7 +506,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/user-score/ai',
+              '/scores/ai',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -566,7 +536,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/user-score/check-practice-ai-score/${uid}',
+              '/scores/check-practice-ai-score/${uid}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -595,7 +565,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/user-score/ai-text',
+              '/scores/ai-text',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -623,7 +593,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/user-score',
+              '/scores',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -653,7 +623,7 @@ class _RemoteQuestion implements RemoteQuestion {
     )
             .compose(
               _dio.options,
-              '/user-score/ai/do-score',
+              '/scores/ai/do-score',
               queryParameters: queryParameters,
               data: _data,
             )

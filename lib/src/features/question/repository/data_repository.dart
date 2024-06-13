@@ -144,8 +144,11 @@ class DataRepositoryImpl extends DataRepository {
   @override
   Future<DoScoreResponse> doScoreHighlightIncorrectWord(
       List<DoScoreRequest> doScoreRequests, int lessonId) async {
-    final response = await dataService.doScoreHighlightIncorrectWord(
-        doScoreRequest: doScoreRequests, lessonId: lessonId);
+    final response = await dataService.doScore(
+      // doScoreRequest:
+      doScoreRequests,
+      //  lessonId: lessonId
+    );
     return DoScoreResponse.fromJson(response.data);
   }
 

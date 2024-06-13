@@ -36,10 +36,9 @@ LessonDetail _$LessonDetailFromJson(Map<String, dynamic> json) => LessonDetail(
           .toList(),
       createdDate: json['createdDate'] as String?,
       createdBy: json['createdBy'] as int?,
-      questionGroup: json['questionGroup'] == null
-          ? null
-          : QuestionGroup.fromJson(
-              json['questionGroup'] as Map<String, dynamic>),
+      questionGroups: (json['questionGroups'] as List<dynamic>?)
+          ?.map((e) => QuestionGroup.fromJson(e as Map<String, dynamic>))
+          .toList(),
       lessonMediaDTOs: (json['medias'] as List<dynamic>?)
           ?.map((e) => MediaDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -75,7 +74,7 @@ Map<String, dynamic> _$LessonDetailToJson(LessonDetail instance) =>
       'translations': instance.translations,
       'createdDate': instance.createdDate,
       'createdBy': instance.createdBy,
-      'questionGroup': instance.questionGroup,
+      'questionGroups': instance.questionGroups,
       'medias': instance.lessonMediaDTOs,
       'priorities': instance.priorities,
       'zorder': instance.zorder,

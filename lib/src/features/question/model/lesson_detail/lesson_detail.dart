@@ -60,8 +60,8 @@ class LessonDetail {
   String? createdDate;
   @JsonKey(name: 'createdBy')
   int? createdBy;
-  @JsonKey(name: 'questionGroup')
-  QuestionGroup? questionGroup;
+  @JsonKey(name: 'questionGroups')
+  List<QuestionGroup>? questionGroups;
   @JsonKey(name: 'medias')
   List<MediaDTO>? lessonMediaDTOs;
   @JsonKey(name: 'priorities')
@@ -94,7 +94,7 @@ class LessonDetail {
     required this.translations,
     required this.createdDate,
     required this.createdBy,
-    required this.questionGroup,
+    required this.questionGroups,
     required this.lessonMediaDTOs,
     required this.priorities,
     required this.zorder,
@@ -133,7 +133,7 @@ class LessonDetail {
     List<Translate>? translations,
     String? createdDate,
     int? createdBy,
-    QuestionGroup? questionGroup,
+    List<QuestionGroup>? questionGroups,
     List<MediaDTO>? lessonMediaDTOs,
     List<PriorityModel>? priorities,
     int? zorder,
@@ -166,7 +166,7 @@ class LessonDetail {
       translations: translations ?? this.translations,
       createdDate: createdDate ?? this.createdDate,
       createdBy: createdBy ?? this.createdBy,
-      questionGroup: questionGroup ?? this.questionGroup,
+      questionGroups: questionGroups ?? this.questionGroups,
       lessonMediaDTOs: lessonMediaDTOs ?? this.lessonMediaDTOs,
       priorities: priorities ?? this.priorities,
       zorder: zorder ?? this.zorder,
