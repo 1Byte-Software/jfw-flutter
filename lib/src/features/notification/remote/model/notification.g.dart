@@ -8,20 +8,18 @@ part of 'notification.dart';
 
 _$MNotificationImpl _$$MNotificationImplFromJson(Map<String, dynamic> json) =>
     _$MNotificationImpl(
-      id: json['id'] as int,
-      emailSubject: json['emailSubject'] as String,
-      supportCode: json['supportCode'] as String,
-      emailBody: json['emailBody'] as String,
+      id: json['id'] as int? ?? 0,
+      emailSubject: json['subject'] as String? ?? '',
+      emailBody: json['content'] as String? ?? '',
       createdDate: json['createdDate'] as String,
-      userReadStatus: json['userReadStatus'] as int,
+      userReadStatus: json['status'] as int,
     );
 
 Map<String, dynamic> _$$MNotificationImplToJson(_$MNotificationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'emailSubject': instance.emailSubject,
-      'supportCode': instance.supportCode,
-      'emailBody': instance.emailBody,
+      'subject': instance.emailSubject,
+      'content': instance.emailBody,
       'createdDate': instance.createdDate,
-      'userReadStatus': instance.userReadStatus,
+      'status': instance.userReadStatus,
     };

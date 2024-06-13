@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'notification.freezed.dart';
@@ -38,7 +40,8 @@ enum NotificationStatusEnum {
       case -3:
         return NotificationStatusEnum.deleted;
       default:
-        throw 'ERROR: not found status notification';
+        log('status notification is NOT FOUND');
+        return NotificationStatusEnum.read;
     }
   }
 }
@@ -47,17 +50,11 @@ enum NotificationStatusEnum {
 class MNotification with _$MNotification {
   MNotification._();
   factory MNotification(
-          {@JsonKey(name: 'id') required int id,
-          @JsonKey(name: 'emailSubject') required String emailSubject,
-          @JsonKey(name: 'supportCode') required String supportCode,
-          @JsonKey(name: 'emailBody') required String emailBody,
-          @JsonKey(name: 'createdDate') required String createdDate,
-          @JsonKey(name: 'userReadStatus') required int userReadStatus}) =
-      _MNotification;
-
-  bool get isNeedAccept {
-    return supportCode == 'POLICY';
-  }
+      {@JsonKey(name: 'id', defaultValue: 0) required int id,
+      @JsonKey(name: 'subject', defaultValue: '') required String emailSubject,
+      @JsonKey(name: 'content', defaultValue: '') required String emailBody,
+      @JsonKey(name: 'createdDate') required String createdDate,
+      @JsonKey(name: 'status') required int userReadStatus}) = _MNotification;
 
   factory MNotification.fromJson(Map<String, Object?> json) =>
       _$MNotificationFromJson(json);
