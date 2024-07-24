@@ -8,8 +8,8 @@ part of 'gps.dart';
 
 _$GpsImpl _$$GpsImplFromJson(Map<String, dynamic> json) => _$GpsImpl(
       deviceId: json['deviceId'] as int,
-      clientGPSTime: json['clientGPSTime'] as String?,
-      locationAddress: json['locationAddress'] as String?,
+      clientGPSTime: json['gpsDate'] as String?,
+      locationAddress: json['address'] as String?,
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       accuracy: (json['accuracy'] as num?)?.toDouble(),
@@ -19,8 +19,8 @@ _$GpsImpl _$$GpsImplFromJson(Map<String, dynamic> json) => _$GpsImpl(
 
 Map<String, dynamic> _$$GpsImplToJson(_$GpsImpl instance) => <String, dynamic>{
       'deviceId': instance.deviceId,
-      'clientGPSTime': instance.clientGPSTime,
-      'locationAddress': instance.locationAddress,
+      'gpsDate': instance.clientGPSTime,
+      'address': instance.locationAddress,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'accuracy': instance.accuracy,

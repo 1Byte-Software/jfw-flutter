@@ -22,6 +22,6 @@ class Community with _$Community {
     CommunityUserStatusEnum? communityUserStatus,
   }) = _Community;
 
-  factory Community.fromJson(Map<String, Object?> json) =>
+  factory Community.fromJson(Map<String, dynamic> json) =>
       _$CommunityFromJson(json);
 }

@@ -21,6 +21,16 @@ FBrand _$FBrandFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FBrand {
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
+  String? get name => throw _privateConstructorUsedError;
+
+  /// Logo with text
+  @JsonKey(name: 'logoUrl')
+  String? get logoUrl => throw _privateConstructorUsedError;
+
+  /// Logo icon
+  @JsonKey(name: 'faviconURL')
+  String? get faviconUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +42,11 @@ abstract class $FBrandCopyWith<$Res> {
   factory $FBrandCopyWith(FBrand value, $Res Function(FBrand) then) =
       _$FBrandCopyWithImpl<$Res, FBrand>;
   @useResult
-  $Res call({int id});
+  $Res call(
+      {int id,
+      @JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'logoUrl') String? logoUrl,
+      @JsonKey(name: 'faviconURL') String? faviconUrl});
 }
 
 /// @nodoc
@@ -49,12 +63,27 @@ class _$FBrandCopyWithImpl<$Res, $Val extends FBrand>
   @override
   $Res call({
     Object? id = null,
+    Object? name = freezed,
+    Object? logoUrl = freezed,
+    Object? faviconUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      logoUrl: freezed == logoUrl
+          ? _value.logoUrl
+          : logoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      faviconUrl: freezed == faviconUrl
+          ? _value.faviconUrl
+          : faviconUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -66,7 +95,11 @@ abstract class _$$FBrandImplCopyWith<$Res> implements $FBrandCopyWith<$Res> {
       __$$FBrandImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id});
+  $Res call(
+      {int id,
+      @JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'logoUrl') String? logoUrl,
+      @JsonKey(name: 'faviconURL') String? faviconUrl});
 }
 
 /// @nodoc
@@ -81,12 +114,27 @@ class __$$FBrandImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? name = freezed,
+    Object? logoUrl = freezed,
+    Object? faviconUrl = freezed,
   }) {
     return _then(_$FBrandImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      logoUrl: freezed == logoUrl
+          ? _value.logoUrl
+          : logoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      faviconUrl: freezed == faviconUrl
+          ? _value.faviconUrl
+          : faviconUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -94,17 +142,34 @@ class __$$FBrandImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$FBrandImpl implements _FBrand {
-  _$FBrandImpl({required this.id});
+  _$FBrandImpl(
+      {required this.id,
+      @JsonKey(name: 'name') this.name,
+      @JsonKey(name: 'logoUrl') this.logoUrl,
+      @JsonKey(name: 'faviconURL') this.faviconUrl});
 
   factory _$FBrandImpl.fromJson(Map<String, dynamic> json) =>
       _$$FBrandImplFromJson(json);
 
   @override
   final int id;
+  @override
+  @JsonKey(name: 'name')
+  final String? name;
+
+  /// Logo with text
+  @override
+  @JsonKey(name: 'logoUrl')
+  final String? logoUrl;
+
+  /// Logo icon
+  @override
+  @JsonKey(name: 'faviconURL')
+  final String? faviconUrl;
 
   @override
   String toString() {
-    return 'FBrand(id: $id)';
+    return 'FBrand(id: $id, name: $name, logoUrl: $logoUrl, faviconUrl: $faviconUrl)';
   }
 
   @override
@@ -112,12 +177,16 @@ class _$FBrandImpl implements _FBrand {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FBrandImpl &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.logoUrl, logoUrl) || other.logoUrl == logoUrl) &&
+            (identical(other.faviconUrl, faviconUrl) ||
+                other.faviconUrl == faviconUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, id, name, logoUrl, faviconUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -134,12 +203,29 @@ class _$FBrandImpl implements _FBrand {
 }
 
 abstract class _FBrand implements FBrand {
-  factory _FBrand({required final int id}) = _$FBrandImpl;
+  factory _FBrand(
+      {required final int id,
+      @JsonKey(name: 'name') final String? name,
+      @JsonKey(name: 'logoUrl') final String? logoUrl,
+      @JsonKey(name: 'faviconURL') final String? faviconUrl}) = _$FBrandImpl;
 
   factory _FBrand.fromJson(Map<String, dynamic> json) = _$FBrandImpl.fromJson;
 
   @override
   int get id;
+  @override
+  @JsonKey(name: 'name')
+  String? get name;
+  @override
+
+  /// Logo with text
+  @JsonKey(name: 'logoUrl')
+  String? get logoUrl;
+  @override
+
+  /// Logo icon
+  @JsonKey(name: 'faviconURL')
+  String? get faviconUrl;
   @override
   @JsonKey(ignore: true)
   _$$FBrandImplCopyWith<_$FBrandImpl> get copyWith =>

@@ -7,27 +7,27 @@ part 'remote_community.g.dart';
 abstract class RemoteCommunity {
   factory RemoteCommunity(Dio dio, {String baseUrl}) = _RemoteCommunity;
 
-  @POST('/communities/users/{uid}')
+  @POST('/organizations/users/{uid}')
   Future<FetchResponse> joinInDefaultCommunityInLanguage(
       {@Path('uid') required int uid,
       @Query('languageCode') required String languageCode});
 
-  @POST('/communities/{communityId}/users/{uid}')
+  @POST('/organizations/{communityId}/users/{uid}')
   Future<HttpResponse> joinCommunity(
       {@Path('communityId') required int communityId,
       @Path('uid') required int uid,
       @Query('status') String status = 'JOINED'});
 
-  @DELETE('/community-user/{communityId}')
+  @DELETE('/organization-users/{communityId}')
   Future<FetchResponse> leaveCommunity(
       {@Path('communityId') required int communityId});
 
-  @GET('/communities/{communityId}/users')
+  @GET('/organizations/{communityId}/users')
   Future<FetchResponse> getStatusUserWithCommunity(
       {@Query('userId') required int uid,
       @Path('communityId') required int communityId});
 
-  @GET('/communities/{communityId}/users')
+  @GET('/organizations/{communityId}/users')
   Future<FetchResponse> getStatusUsersInCommunity({
     @Query('status') required String status,
     @Query('pageSize') required int pageSize,
@@ -35,12 +35,12 @@ abstract class RemoteCommunity {
     @Query('pageNumber') required int pageNumber,
   });
 
-  @GET('/communities/{communityId}')
+  @GET('/organizations/{communityId}')
   Future<FetchResponse> getDetailCommunity(
       {@Path('communityId') required int communityIdcommunityId,
       @Query('userId') required int? userId});
 
-  @GET('/communities')
+  @GET('/organizations')
   Future<FetchResponse> getCommunitites({
     @Query('status') int status = 1,
     @Query('userId') required int uid,

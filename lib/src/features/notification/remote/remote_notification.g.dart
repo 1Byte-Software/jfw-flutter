@@ -6,7 +6,7 @@ part of 'remote_notification.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _RemoteNotification implements RemoteNotification {
   _RemoteNotification(
@@ -25,7 +25,7 @@ class _RemoteNotification implements RemoteNotification {
     required int pageNumber,
     required int pageSize,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'status': status,
       r'pageNumber': pageNumber,
@@ -33,7 +33,7 @@ class _RemoteNotification implements RemoteNotification {
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -51,8 +51,8 @@ class _RemoteNotification implements RemoteNotification {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -60,7 +60,7 @@ class _RemoteNotification implements RemoteNotification {
     int uid, {
     required dynamic updateStatusNotificationRequest,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = updateStatusNotificationRequest;
@@ -80,8 +80,8 @@ class _RemoteNotification implements RemoteNotification {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = _result.data;
-    return value;
+    final _value = _result.data;
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

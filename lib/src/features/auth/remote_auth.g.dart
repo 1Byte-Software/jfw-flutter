@@ -6,7 +6,7 @@ part of 'remote_auth.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _RemoteAuth implements RemoteAuth {
   _RemoteAuth(
@@ -20,7 +20,7 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<LoginResponse> login(LoginRequest loginRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -42,8 +42,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = LoginResponse.fromJson(_result.data!);
-    return value;
+    final _value = LoginResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -52,7 +52,7 @@ class _RemoteAuth implements RemoteAuth {
     required String idToken,
     required String accessToken,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = FormData();
@@ -86,8 +86,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -99,7 +99,7 @@ class _RemoteAuth implements RemoteAuth {
     String? lastName,
     required String userIdentifier,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -150,8 +150,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -160,14 +160,14 @@ class _RemoteAuth implements RemoteAuth {
     required int pageSize,
     bool isPagination = true,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'pageNumber': pageNumber,
       r'pageSize': pageSize,
       r'isPagination': isPagination,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -185,13 +185,13 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> addActivites(dynamic activityRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = activityRequest;
@@ -212,8 +212,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -222,13 +222,13 @@ class _RemoteAuth implements RemoteAuth {
     required String brandUrl,
     required String authKey,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'brandUrl': brandUrl,
       r'authKey': authKey,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -246,8 +246,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -256,13 +256,13 @@ class _RemoteAuth implements RemoteAuth {
     required String brandUrl,
     required String authKey,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'brandUrl': brandUrl,
       r'authKey': authKey,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -280,8 +280,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -290,13 +290,13 @@ class _RemoteAuth implements RemoteAuth {
     required String brandUrl,
     required String authKey,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'brandUrl': brandUrl,
       r'authKey': authKey,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -314,8 +314,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -324,13 +324,13 @@ class _RemoteAuth implements RemoteAuth {
     required String brandUrl,
     required String authKey,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'brandUrl': brandUrl,
       r'authKey': authKey,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -348,8 +348,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -357,7 +357,7 @@ class _RemoteAuth implements RemoteAuth {
     required String authKey,
     required ChangePassRequest changePassRequest,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'authKey': authKey};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -379,13 +379,13 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> forgotPassword({required dynamic resetObject}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = resetObject;
@@ -406,14 +406,14 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> addNewDevice(
       {required dynamic addNewDeviceRequest}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = addNewDeviceRequest;
@@ -434,8 +434,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -444,7 +444,7 @@ class _RemoteAuth implements RemoteAuth {
     bool? isMobile,
     String? deviceIdentifier,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'UserId': uid,
       r'isMobile': isMobile,
@@ -452,7 +452,7 @@ class _RemoteAuth implements RemoteAuth {
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -470,16 +470,16 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> getCurrentDevice() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -497,8 +497,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -507,7 +507,7 @@ class _RemoteAuth implements RemoteAuth {
     String? referralCode,
     int? userId,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'DeviceCode': deviceCode,
       r'ReferralCode': referralCode,
@@ -515,7 +515,7 @@ class _RemoteAuth implements RemoteAuth {
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -533,8 +533,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -542,7 +542,7 @@ class _RemoteAuth implements RemoteAuth {
     required int id,
     required dynamic deviceInfo,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = deviceInfo;
@@ -563,16 +563,16 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> removeDevice({required int id}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'DELETE',
@@ -590,8 +590,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -599,13 +599,13 @@ class _RemoteAuth implements RemoteAuth {
     required String returnUrl,
     required int userId,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'returnUrl': returnUrl,
       r'userId': userId,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'POST',
@@ -623,8 +623,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -632,13 +632,13 @@ class _RemoteAuth implements RemoteAuth {
     required int uid,
     required String deviceCode,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'userId': uid,
       r'deviceCode': deviceCode,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -656,16 +656,16 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> getTrackingEvents() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -683,13 +683,13 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<dynamic> register(RegisterRequest registerRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -710,16 +710,16 @@ class _RemoteAuth implements RemoteAuth {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = _result.data;
-    return value;
+    final _value = _result.data;
+    return _value;
   }
 
   @override
   Future<dynamic> deleteUser(int uid) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'DELETE',
       headers: _headers,
@@ -736,8 +736,8 @@ class _RemoteAuth implements RemoteAuth {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = _result.data;
-    return value;
+    final _value = _result.data;
+    return _value;
   }
 
   @override
@@ -747,7 +747,7 @@ class _RemoteAuth implements RemoteAuth {
     required String authKey,
     required Map<String, dynamic> userInformationUpdate,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'brandUrl': brandUrl,
       r'authKey': authKey,
@@ -772,8 +772,8 @@ class _RemoteAuth implements RemoteAuth {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

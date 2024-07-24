@@ -6,7 +6,7 @@ part of 'remote_user_config.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _RemoteUserConfig implements RemoteUserConfig {
   _RemoteUserConfig(
@@ -24,14 +24,14 @@ class _RemoteUserConfig implements RemoteUserConfig {
     String? groupCode,
     String? code,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'groupCode': groupCode,
       r'code': code,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -49,8 +49,8 @@ class _RemoteUserConfig implements RemoteUserConfig {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -58,7 +58,7 @@ class _RemoteUserConfig implements RemoteUserConfig {
     int uid, {
     required Map<String, dynamic> config,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -80,16 +80,16 @@ class _RemoteUserConfig implements RemoteUserConfig {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> removeConfiguration(int id) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'DELETE',
@@ -107,8 +107,8 @@ class _RemoteUserConfig implements RemoteUserConfig {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

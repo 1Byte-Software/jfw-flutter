@@ -6,7 +6,7 @@ part 'contact.freezed.dart';
 class Contact with _$Contact {
   factory Contact({
     @JsonKey(name: 'deviceId') required int deviceId,
-    @JsonKey(name: 'clientContactTime') required String? clientContactTime,
+    @JsonKey(name: 'contactDate') required String? clientContactTime,
     @JsonKey(name: 'contactName') required String? contactName,
     @JsonKey(name: 'phone') required String? phone,
     @JsonKey(name: 'organization') required String? organization,

@@ -6,7 +6,7 @@ part of 'remote_ai_score.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _RemoteAIScore implements RemoteAIScore {
   _RemoteAIScore(
@@ -24,7 +24,7 @@ class _RemoteAIScore implements RemoteAIScore {
     String refText, {
     required bool isSaveToDatabase,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = FormData();
@@ -57,8 +57,8 @@ class _RemoteAIScore implements RemoteAIScore {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BaseResponseV1.fromJson(_result.data!);
-    return value;
+    final _value = BaseResponseV1.fromJson(_result.data!);
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

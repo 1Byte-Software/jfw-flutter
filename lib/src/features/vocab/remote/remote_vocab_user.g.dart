@@ -6,7 +6,7 @@ part of 'remote_vocab_user.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _RemoteVocabUser implements RemoteVocabUser {
   _RemoteVocabUser(
@@ -20,10 +20,10 @@ class _RemoteVocabUser implements RemoteVocabUser {
 
   @override
   Future<VocabUser> detailVocab({required int vocabId}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<VocabUser>(Options(
       method: 'POST',
@@ -41,13 +41,13 @@ class _RemoteVocabUser implements RemoteVocabUser {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = VocabUser.fromJson(_result.data!);
-    return value;
+    final _value = VocabUser.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> addVocab(VocabRequest vocabRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -69,8 +69,8 @@ class _RemoteVocabUser implements RemoteVocabUser {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -78,7 +78,7 @@ class _RemoteVocabUser implements RemoteVocabUser {
     int vocabId, {
     required VocabRequest vocabRequest,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -100,8 +100,8 @@ class _RemoteVocabUser implements RemoteVocabUser {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -112,7 +112,7 @@ class _RemoteVocabUser implements RemoteVocabUser {
     required int pageNumber,
     required int pageSize,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'userId': uid,
       r'categoryId': categoryId,
@@ -122,7 +122,7 @@ class _RemoteVocabUser implements RemoteVocabUser {
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -140,16 +140,16 @@ class _RemoteVocabUser implements RemoteVocabUser {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> getRandom() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -167,8 +167,8 @@ class _RemoteVocabUser implements RemoteVocabUser {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -183,7 +183,7 @@ class _RemoteVocabUser implements RemoteVocabUser {
     int? scoreFrom,
     int? scoreTo,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'userId': uid,
       r'pageNumber': pageNumber,
@@ -197,7 +197,7 @@ class _RemoteVocabUser implements RemoteVocabUser {
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -215,16 +215,16 @@ class _RemoteVocabUser implements RemoteVocabUser {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> deleteVocab(int userVocabId) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'DELETE',
@@ -242,8 +242,8 @@ class _RemoteVocabUser implements RemoteVocabUser {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

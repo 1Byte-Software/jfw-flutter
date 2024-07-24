@@ -6,7 +6,7 @@ part of 'remote_billing.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _RemoteBilling implements RemoteBilling {
   _RemoteBilling(
@@ -20,10 +20,10 @@ class _RemoteBilling implements RemoteBilling {
 
   @override
   Future<FetchResponse> getPrices() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -41,16 +41,16 @@ class _RemoteBilling implements RemoteBilling {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> getPackages({required String brandId}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'brandId': brandId};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -68,16 +68,16 @@ class _RemoteBilling implements RemoteBilling {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> getCheckoutLink(int id) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -95,16 +95,16 @@ class _RemoteBilling implements RemoteBilling {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> checkValidStatusLicense(String licenseKey) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'licenseKey': licenseKey};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -122,8 +122,8 @@ class _RemoteBilling implements RemoteBilling {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -132,14 +132,14 @@ class _RemoteBilling implements RemoteBilling {
     required String authKey,
     required String licenseKey,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'brandUrl': brandUrl,
       r'authKey': authKey,
       r'licenseKey': licenseKey,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'POST',
@@ -157,14 +157,14 @@ class _RemoteBilling implements RemoteBilling {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<FetchResponse> registerServerSideAfterPayment(
       dynamic registerPaymentRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = registerPaymentRequest;
@@ -185,8 +185,8 @@ class _RemoteBilling implements RemoteBilling {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

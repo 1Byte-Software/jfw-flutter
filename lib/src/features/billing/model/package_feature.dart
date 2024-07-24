@@ -108,6 +108,7 @@ class PackageFeature with _$PackageFeature {
     @JsonKey(name: 'description', defaultValue: '') required String description,
     @JsonKey(name: 'name', defaultValue: '') required String name,
     @JsonKey(name: 'code') required String code,
+    @JsonKey(name: 'zOrder', defaultValue: 0) required int zOrder,
   }) = _PackageFeature;
 
   factory PackageFeature.fromJson(Map<String, dynamic> json) =>

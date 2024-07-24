@@ -6,8 +6,8 @@ part 'gps.freezed.dart';
 class Gps with _$Gps {
   factory Gps({
     @JsonKey(name: 'deviceId') required int deviceId,
-    @JsonKey(name: 'clientGPSTime') required String? clientGPSTime,
-    @JsonKey(name: 'locationAddress') required String? locationAddress,
+    @JsonKey(name: 'gpsDate') required String? clientGPSTime,
+    @JsonKey(name: 'address') required String? locationAddress,
     @JsonKey(name: 'latitude') required double? latitude,
     @JsonKey(name: 'longitude') required double? longitude,
     @JsonKey(name: 'accuracy') required double? accuracy,

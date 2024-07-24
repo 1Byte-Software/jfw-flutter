@@ -28,7 +28,7 @@ mixin _$Call {
   String get phoneNumber => throw _privateConstructorUsedError;
   @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
   String get phoneNumberSIM => throw _privateConstructorUsedError;
-  @JsonKey(name: 'clientCallTime', defaultValue: '')
+  @JsonKey(name: 'callDate', defaultValue: '')
   String get clientCallTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'direction')
   int get direction => throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ abstract class $CallCopyWith<$Res> {
       @JsonKey(name: 'contactName', defaultValue: '') String contactName,
       @JsonKey(name: 'phoneNumber', defaultValue: '') String phoneNumber,
       @JsonKey(name: 'phoneNumberSIM', defaultValue: '') String phoneNumberSIM,
-      @JsonKey(name: 'clientCallTime', defaultValue: '') String clientCallTime,
+      @JsonKey(name: 'callDate', defaultValue: '') String clientCallTime,
       @JsonKey(name: 'direction') int direction,
       @JsonKey(name: 'duration') int duration,
       @JsonKey(name: 'modifiedDate') String? modifiedDate,
@@ -137,7 +137,7 @@ abstract class _$$CallImplCopyWith<$Res> implements $CallCopyWith<$Res> {
       @JsonKey(name: 'contactName', defaultValue: '') String contactName,
       @JsonKey(name: 'phoneNumber', defaultValue: '') String phoneNumber,
       @JsonKey(name: 'phoneNumberSIM', defaultValue: '') String phoneNumberSIM,
-      @JsonKey(name: 'clientCallTime', defaultValue: '') String clientCallTime,
+      @JsonKey(name: 'callDate', defaultValue: '') String clientCallTime,
       @JsonKey(name: 'direction') int direction,
       @JsonKey(name: 'duration') int duration,
       @JsonKey(name: 'modifiedDate') String? modifiedDate,
@@ -214,8 +214,7 @@ class _$CallImpl implements _Call {
       @JsonKey(name: 'phoneNumber', defaultValue: '') required this.phoneNumber,
       @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
       required this.phoneNumberSIM,
-      @JsonKey(name: 'clientCallTime', defaultValue: '')
-      required this.clientCallTime,
+      @JsonKey(name: 'callDate', defaultValue: '') required this.clientCallTime,
       @JsonKey(name: 'direction') required this.direction,
       @JsonKey(name: 'duration') required this.duration,
       @JsonKey(name: 'modifiedDate') required this.modifiedDate,
@@ -237,7 +236,7 @@ class _$CallImpl implements _Call {
   @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
   final String phoneNumberSIM;
   @override
-  @JsonKey(name: 'clientCallTime', defaultValue: '')
+  @JsonKey(name: 'callDate', defaultValue: '')
   final String clientCallTime;
   @override
   @JsonKey(name: 'direction')
@@ -319,7 +318,7 @@ abstract class _Call implements Call {
           required final String phoneNumber,
           @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
           required final String phoneNumberSIM,
-          @JsonKey(name: 'clientCallTime', defaultValue: '')
+          @JsonKey(name: 'callDate', defaultValue: '')
           required final String clientCallTime,
           @JsonKey(name: 'direction') required final int direction,
           @JsonKey(name: 'duration') required final int duration,
@@ -342,7 +341,7 @@ abstract class _Call implements Call {
   @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
   String get phoneNumberSIM;
   @override
-  @JsonKey(name: 'clientCallTime', defaultValue: '')
+  @JsonKey(name: 'callDate', defaultValue: '')
   String get clientCallTime;
   @override
   @JsonKey(name: 'direction')

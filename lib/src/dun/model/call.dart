@@ -10,8 +10,7 @@ class Call with _$Call {
     @JsonKey(name: 'phoneNumber', defaultValue: '') required String phoneNumber,
     @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
     required String phoneNumberSIM,
-    @JsonKey(name: 'clientCallTime', defaultValue: '')
-    required String clientCallTime,
+    @JsonKey(name: 'callDate', defaultValue: '') required String clientCallTime,
     @JsonKey(name: 'direction') required int direction,
     @JsonKey(name: 'duration') required int duration,
     @JsonKey(name: 'modifiedDate') required String? modifiedDate,

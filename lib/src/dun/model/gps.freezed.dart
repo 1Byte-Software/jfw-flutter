@@ -22,9 +22,9 @@ Gps _$GpsFromJson(Map<String, dynamic> json) {
 mixin _$Gps {
   @JsonKey(name: 'deviceId')
   int get deviceId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'clientGPSTime')
+  @JsonKey(name: 'gpsDate')
   String? get clientGPSTime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'locationAddress')
+  @JsonKey(name: 'address')
   String? get locationAddress => throw _privateConstructorUsedError;
   @JsonKey(name: 'latitude')
   double? get latitude => throw _privateConstructorUsedError;
@@ -49,8 +49,8 @@ abstract class $GpsCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'deviceId') int deviceId,
-      @JsonKey(name: 'clientGPSTime') String? clientGPSTime,
-      @JsonKey(name: 'locationAddress') String? locationAddress,
+      @JsonKey(name: 'gpsDate') String? clientGPSTime,
+      @JsonKey(name: 'address') String? locationAddress,
       @JsonKey(name: 'latitude') double? latitude,
       @JsonKey(name: 'longitude') double? longitude,
       @JsonKey(name: 'accuracy') double? accuracy,
@@ -124,8 +124,8 @@ abstract class _$$GpsImplCopyWith<$Res> implements $GpsCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'deviceId') int deviceId,
-      @JsonKey(name: 'clientGPSTime') String? clientGPSTime,
-      @JsonKey(name: 'locationAddress') String? locationAddress,
+      @JsonKey(name: 'gpsDate') String? clientGPSTime,
+      @JsonKey(name: 'address') String? locationAddress,
       @JsonKey(name: 'latitude') double? latitude,
       @JsonKey(name: 'longitude') double? longitude,
       @JsonKey(name: 'accuracy') double? accuracy,
@@ -193,8 +193,8 @@ class __$$GpsImplCopyWithImpl<$Res> extends _$GpsCopyWithImpl<$Res, _$GpsImpl>
 class _$GpsImpl implements _Gps {
   _$GpsImpl(
       {@JsonKey(name: 'deviceId') required this.deviceId,
-      @JsonKey(name: 'clientGPSTime') required this.clientGPSTime,
-      @JsonKey(name: 'locationAddress') required this.locationAddress,
+      @JsonKey(name: 'gpsDate') required this.clientGPSTime,
+      @JsonKey(name: 'address') required this.locationAddress,
       @JsonKey(name: 'latitude') required this.latitude,
       @JsonKey(name: 'longitude') required this.longitude,
       @JsonKey(name: 'accuracy') required this.accuracy,
@@ -208,10 +208,10 @@ class _$GpsImpl implements _Gps {
   @JsonKey(name: 'deviceId')
   final int deviceId;
   @override
-  @JsonKey(name: 'clientGPSTime')
+  @JsonKey(name: 'gpsDate')
   final String? clientGPSTime;
   @override
-  @JsonKey(name: 'locationAddress')
+  @JsonKey(name: 'address')
   final String? locationAddress;
   @override
   @JsonKey(name: 'latitude')
@@ -286,15 +286,15 @@ class _$GpsImpl implements _Gps {
 
 abstract class _Gps implements Gps {
   factory _Gps(
-      {@JsonKey(name: 'deviceId') required final int deviceId,
-      @JsonKey(name: 'clientGPSTime') required final String? clientGPSTime,
-      @JsonKey(name: 'locationAddress') required final String? locationAddress,
-      @JsonKey(name: 'latitude') required final double? latitude,
-      @JsonKey(name: 'longitude') required final double? longitude,
-      @JsonKey(name: 'accuracy') required final double? accuracy,
-      @JsonKey(name: 'modifiedDate') required final String? modifiedDate,
-      @JsonKey(name: 'createdDate')
-      required final String? createdDate}) = _$GpsImpl;
+          {@JsonKey(name: 'deviceId') required final int deviceId,
+          @JsonKey(name: 'gpsDate') required final String? clientGPSTime,
+          @JsonKey(name: 'address') required final String? locationAddress,
+          @JsonKey(name: 'latitude') required final double? latitude,
+          @JsonKey(name: 'longitude') required final double? longitude,
+          @JsonKey(name: 'accuracy') required final double? accuracy,
+          @JsonKey(name: 'modifiedDate') required final String? modifiedDate,
+          @JsonKey(name: 'createdDate') required final String? createdDate}) =
+      _$GpsImpl;
 
   factory _Gps.fromJson(Map<String, dynamic> json) = _$GpsImpl.fromJson;
 
@@ -302,10 +302,10 @@ abstract class _Gps implements Gps {
   @JsonKey(name: 'deviceId')
   int get deviceId;
   @override
-  @JsonKey(name: 'clientGPSTime')
+  @JsonKey(name: 'gpsDate')
   String? get clientGPSTime;
   @override
-  @JsonKey(name: 'locationAddress')
+  @JsonKey(name: 'address')
   String? get locationAddress;
   @override
   @JsonKey(name: 'latitude')

@@ -9,7 +9,7 @@ part of 'contact.dart';
 _$ContactImpl _$$ContactImplFromJson(Map<String, dynamic> json) =>
     _$ContactImpl(
       deviceId: json['deviceId'] as int,
-      clientContactTime: json['clientContactTime'] as String?,
+      clientContactTime: json['contactDate'] as String?,
       contactName: json['contactName'] as String?,
       phone: json['phone'] as String?,
       organization: json['organization'] as String?,
@@ -21,7 +21,7 @@ _$ContactImpl _$$ContactImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$ContactImplToJson(_$ContactImpl instance) =>
     <String, dynamic>{
       'deviceId': instance.deviceId,
-      'clientContactTime': instance.clientContactTime,
+      'contactDate': instance.clientContactTime,
       'contactName': instance.contactName,
       'phone': instance.phone,
       'organization': instance.organization,

@@ -14,6 +14,7 @@ _$PackageFeatureImpl _$$PackageFeatureImplFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String? ?? '',
       name: json['name'] as String? ?? '',
       code: json['code'] as String,
+      zOrder: json['zOrder'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$PackageFeatureImplToJson(
@@ -25,4 +26,5 @@ Map<String, dynamic> _$$PackageFeatureImplToJson(
       'description': instance.description,
       'name': instance.name,
       'code': instance.code,
+      'zOrder': instance.zOrder,
     };

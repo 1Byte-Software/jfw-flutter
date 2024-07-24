@@ -14,7 +14,7 @@ class Sms with _$Sms {
     required String? phoneNumber,
     @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
     required String? phoneNumberSIM,
-    @JsonKey(name: 'clientMessageTime', defaultValue: '')
+    @JsonKey(name: 'smsDate', defaultValue: '')
     required String? clientMessageTime,
     @JsonKey(name: 'direction') required int? direction,
     @JsonKey(name: 'modifiedDate') required String? modifiedDate,

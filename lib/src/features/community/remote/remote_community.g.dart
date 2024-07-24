@@ -6,7 +6,7 @@ part of 'remote_community.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _RemoteCommunity implements RemoteCommunity {
   _RemoteCommunity(
@@ -23,10 +23,10 @@ class _RemoteCommunity implements RemoteCommunity {
     required int uid,
     required String languageCode,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'languageCode': languageCode};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'POST',
@@ -35,7 +35,7 @@ class _RemoteCommunity implements RemoteCommunity {
     )
             .compose(
               _dio.options,
-              '/communities/users/${uid}',
+              '/organizations/users/${uid}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -44,8 +44,8 @@ class _RemoteCommunity implements RemoteCommunity {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -54,10 +54,10 @@ class _RemoteCommunity implements RemoteCommunity {
     required int uid,
     String status = 'JOINED',
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'status': status};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result =
         await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(Options(
       method: 'POST',
@@ -66,7 +66,7 @@ class _RemoteCommunity implements RemoteCommunity {
     )
             .compose(
               _dio.options,
-              '/communities/${communityId}/users/${uid}',
+              '/organizations/${communityId}/users/${uid}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -75,17 +75,17 @@ class _RemoteCommunity implements RemoteCommunity {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = _result.data;
-    final httpResponse = HttpResponse(value, _result);
+    final _value = _result.data;
+    final httpResponse = HttpResponse(_value, _result);
     return httpResponse;
   }
 
   @override
   Future<FetchResponse> leaveCommunity({required int communityId}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'DELETE',
@@ -94,7 +94,7 @@ class _RemoteCommunity implements RemoteCommunity {
     )
             .compose(
               _dio.options,
-              '/community-user/${communityId}',
+              '/organization-users/${communityId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -103,8 +103,8 @@ class _RemoteCommunity implements RemoteCommunity {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -112,10 +112,10 @@ class _RemoteCommunity implements RemoteCommunity {
     required int uid,
     required int communityId,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'userId': uid};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -124,7 +124,7 @@ class _RemoteCommunity implements RemoteCommunity {
     )
             .compose(
               _dio.options,
-              '/communities/${communityId}/users',
+              '/organizations/${communityId}/users',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -133,8 +133,8 @@ class _RemoteCommunity implements RemoteCommunity {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -144,14 +144,14 @@ class _RemoteCommunity implements RemoteCommunity {
     required int communityId,
     required int pageNumber,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'status': status,
       r'pageSize': pageSize,
       r'pageNumber': pageNumber,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -160,7 +160,7 @@ class _RemoteCommunity implements RemoteCommunity {
     )
             .compose(
               _dio.options,
-              '/communities/${communityId}/users',
+              '/organizations/${communityId}/users',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -169,8 +169,8 @@ class _RemoteCommunity implements RemoteCommunity {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -178,11 +178,11 @@ class _RemoteCommunity implements RemoteCommunity {
     required int communityIdcommunityId,
     int? userId,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'userId': userId};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -191,7 +191,7 @@ class _RemoteCommunity implements RemoteCommunity {
     )
             .compose(
               _dio.options,
-              '/communities/${communityIdcommunityId}',
+              '/organizations/${communityIdcommunityId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -200,8 +200,8 @@ class _RemoteCommunity implements RemoteCommunity {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
@@ -214,7 +214,7 @@ class _RemoteCommunity implements RemoteCommunity {
     required int pageSize,
     required int pageNumber,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'status': status,
       r'userId': uid,
@@ -226,7 +226,7 @@ class _RemoteCommunity implements RemoteCommunity {
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
       method: 'GET',
@@ -235,7 +235,7 @@ class _RemoteCommunity implements RemoteCommunity {
     )
             .compose(
               _dio.options,
-              '/communities',
+              '/organizations',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -244,8 +244,8 @@ class _RemoteCommunity implements RemoteCommunity {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = FetchResponse.fromJson(_result.data!);
-    return value;
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

@@ -58,6 +58,6 @@ class CommunityUser with _$CommunityUser {
     bool? isJoined,
   }) = _CommunityUser;
 
-  factory CommunityUser.fromJson(Map<String, Object?> json) =>
+  factory CommunityUser.fromJson(Map<String, dynamic> json) =>
       _$CommunityUserFromJson(json);
 }

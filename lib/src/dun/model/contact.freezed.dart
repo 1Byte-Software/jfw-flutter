@@ -22,7 +22,7 @@ Contact _$ContactFromJson(Map<String, dynamic> json) {
 mixin _$Contact {
   @JsonKey(name: 'deviceId')
   int get deviceId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'clientContactTime')
+  @JsonKey(name: 'contactDate')
   String? get clientContactTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'contactName')
   String? get contactName => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ abstract class $ContactCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'deviceId') int deviceId,
-      @JsonKey(name: 'clientContactTime') String? clientContactTime,
+      @JsonKey(name: 'contactDate') String? clientContactTime,
       @JsonKey(name: 'contactName') String? contactName,
       @JsonKey(name: 'phone') String? phone,
       @JsonKey(name: 'organization') String? organization,
@@ -126,7 +126,7 @@ abstract class _$$ContactImplCopyWith<$Res> implements $ContactCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'deviceId') int deviceId,
-      @JsonKey(name: 'clientContactTime') String? clientContactTime,
+      @JsonKey(name: 'contactDate') String? clientContactTime,
       @JsonKey(name: 'contactName') String? contactName,
       @JsonKey(name: 'phone') String? phone,
       @JsonKey(name: 'organization') String? organization,
@@ -197,7 +197,7 @@ class __$$ContactImplCopyWithImpl<$Res>
 class _$ContactImpl implements _Contact {
   _$ContactImpl(
       {@JsonKey(name: 'deviceId') required this.deviceId,
-      @JsonKey(name: 'clientContactTime') required this.clientContactTime,
+      @JsonKey(name: 'contactDate') required this.clientContactTime,
       @JsonKey(name: 'contactName') required this.contactName,
       @JsonKey(name: 'phone') required this.phone,
       @JsonKey(name: 'organization') required this.organization,
@@ -212,7 +212,7 @@ class _$ContactImpl implements _Contact {
   @JsonKey(name: 'deviceId')
   final int deviceId;
   @override
-  @JsonKey(name: 'clientContactTime')
+  @JsonKey(name: 'contactDate')
   final String? clientContactTime;
   @override
   @JsonKey(name: 'contactName')
@@ -280,16 +280,15 @@ class _$ContactImpl implements _Contact {
 
 abstract class _Contact implements Contact {
   factory _Contact(
-          {@JsonKey(name: 'deviceId') required final int deviceId,
-          @JsonKey(name: 'clientContactTime')
-          required final String? clientContactTime,
-          @JsonKey(name: 'contactName') required final String? contactName,
-          @JsonKey(name: 'phone') required final String? phone,
-          @JsonKey(name: 'organization') required final String? organization,
-          @JsonKey(name: 'address') required final String? address,
-          @JsonKey(name: 'modifiedDate') required final String? modifiedDate,
-          @JsonKey(name: 'createdDate') required final String? createdDate}) =
-      _$ContactImpl;
+      {@JsonKey(name: 'deviceId') required final int deviceId,
+      @JsonKey(name: 'contactDate') required final String? clientContactTime,
+      @JsonKey(name: 'contactName') required final String? contactName,
+      @JsonKey(name: 'phone') required final String? phone,
+      @JsonKey(name: 'organization') required final String? organization,
+      @JsonKey(name: 'address') required final String? address,
+      @JsonKey(name: 'modifiedDate') required final String? modifiedDate,
+      @JsonKey(name: 'createdDate')
+      required final String? createdDate}) = _$ContactImpl;
 
   factory _Contact.fromJson(Map<String, dynamic> json) = _$ContactImpl.fromJson;
 
@@ -297,7 +296,7 @@ abstract class _Contact implements Contact {
   @JsonKey(name: 'deviceId')
   int get deviceId;
   @override
-  @JsonKey(name: 'clientContactTime')
+  @JsonKey(name: 'contactDate')
   String? get clientContactTime;
   @override
   @JsonKey(name: 'contactName')

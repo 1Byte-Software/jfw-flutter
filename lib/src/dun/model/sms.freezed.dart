@@ -30,7 +30,7 @@ mixin _$Sms {
   String? get phoneNumber => throw _privateConstructorUsedError;
   @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
   String? get phoneNumberSIM => throw _privateConstructorUsedError;
-  @JsonKey(name: 'clientMessageTime', defaultValue: '')
+  @JsonKey(name: 'smsDate', defaultValue: '')
   String? get clientMessageTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'direction')
   int? get direction => throw _privateConstructorUsedError;
@@ -55,8 +55,7 @@ abstract class $SmsCopyWith<$Res> {
       @JsonKey(name: 'textMessage', defaultValue: '') String? textMessage,
       @JsonKey(name: 'phoneNumber', defaultValue: '') String? phoneNumber,
       @JsonKey(name: 'phoneNumberSIM', defaultValue: '') String? phoneNumberSIM,
-      @JsonKey(name: 'clientMessageTime', defaultValue: '')
-      String? clientMessageTime,
+      @JsonKey(name: 'smsDate', defaultValue: '') String? clientMessageTime,
       @JsonKey(name: 'direction') int? direction,
       @JsonKey(name: 'modifiedDate') String? modifiedDate,
       @JsonKey(name: 'createdDate') String? createdDate});
@@ -137,8 +136,7 @@ abstract class _$$SmsImplCopyWith<$Res> implements $SmsCopyWith<$Res> {
       @JsonKey(name: 'textMessage', defaultValue: '') String? textMessage,
       @JsonKey(name: 'phoneNumber', defaultValue: '') String? phoneNumber,
       @JsonKey(name: 'phoneNumberSIM', defaultValue: '') String? phoneNumberSIM,
-      @JsonKey(name: 'clientMessageTime', defaultValue: '')
-      String? clientMessageTime,
+      @JsonKey(name: 'smsDate', defaultValue: '') String? clientMessageTime,
       @JsonKey(name: 'direction') int? direction,
       @JsonKey(name: 'modifiedDate') String? modifiedDate,
       @JsonKey(name: 'createdDate') String? createdDate});
@@ -214,7 +212,7 @@ class _$SmsImpl implements _Sms {
       @JsonKey(name: 'phoneNumber', defaultValue: '') required this.phoneNumber,
       @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
       required this.phoneNumberSIM,
-      @JsonKey(name: 'clientMessageTime', defaultValue: '')
+      @JsonKey(name: 'smsDate', defaultValue: '')
       required this.clientMessageTime,
       @JsonKey(name: 'direction') required this.direction,
       @JsonKey(name: 'modifiedDate') required this.modifiedDate,
@@ -239,7 +237,7 @@ class _$SmsImpl implements _Sms {
   @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
   final String? phoneNumberSIM;
   @override
-  @JsonKey(name: 'clientMessageTime', defaultValue: '')
+  @JsonKey(name: 'smsDate', defaultValue: '')
   final String? clientMessageTime;
   @override
   @JsonKey(name: 'direction')
@@ -320,7 +318,7 @@ abstract class _Sms implements Sms {
           required final String? phoneNumber,
           @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
           required final String? phoneNumberSIM,
-          @JsonKey(name: 'clientMessageTime', defaultValue: '')
+          @JsonKey(name: 'smsDate', defaultValue: '')
           required final String? clientMessageTime,
           @JsonKey(name: 'direction') required final int? direction,
           @JsonKey(name: 'modifiedDate') required final String? modifiedDate,
@@ -345,7 +343,7 @@ abstract class _Sms implements Sms {
   @JsonKey(name: 'phoneNumberSIM', defaultValue: '')
   String? get phoneNumberSIM;
   @override
-  @JsonKey(name: 'clientMessageTime', defaultValue: '')
+  @JsonKey(name: 'smsDate', defaultValue: '')
   String? get clientMessageTime;
   @override
   @JsonKey(name: 'direction')
