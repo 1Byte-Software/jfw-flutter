@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:utils_vardytests/src/model/fetch_response.dart';
+import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 part 'remote_community.g.dart';
 
 @RestApi()

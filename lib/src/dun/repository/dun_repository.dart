@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:remote_vardytests/src/dun/model/configuration/configuration.dart';
-import 'package:remote_vardytests/src/dun/model/data_sync.dart';
-import 'package:remote_vardytests/src/dun/model/device_profile.dart';
+import 'package:mobile_1byte_remote/src/dun/model/configuration/configuration.dart';
+import 'package:mobile_1byte_remote/src/dun/model/data_sync.dart';
+import 'package:mobile_1byte_remote/src/dun/model/device_profile.dart';
 
 import '../../features/auth/model/device/device.dart';
 import '../model/contact.dart';
@@ -12,9 +12,9 @@ import '../model/call.dart';
 import '../model/setting_sync.dart';
 import '../model/url.dart';
 import '../model/sms.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/model/page_model.dart';
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
 
 abstract class DunRepository {
   Future<FResult<String>> markMainDevice();
@@ -117,5 +117,6 @@ abstract class DunRepository {
 
   Future<FResult<DataSync>> getDataSyncs({required int deviceId});
   Future<FResult<SettingSync>> getSettingSync({required int deviceId});
+  Future<FResult<String>> updateSettingSync({required SettingSync settingSync});
   Future<FResult<String>> updateDataSync({required DataSync dataSync});
 }

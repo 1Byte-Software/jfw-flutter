@@ -1,22 +1,22 @@
 import 'dart:io';
 
 import 'package:flutter/gestures.dart';
-import 'package:remote_vardytests/src/dun/model/call.dart';
-import 'package:remote_vardytests/src/dun/model/configuration/configuration.dart';
-import 'package:remote_vardytests/src/dun/model/contact.dart';
-import 'package:remote_vardytests/src/dun/model/data_sync.dart';
-import 'package:remote_vardytests/src/dun/model/device_profile.dart';
-import 'package:remote_vardytests/src/dun/model/gps.dart';
-import 'package:remote_vardytests/src/dun/model/notification.dart';
-import 'package:remote_vardytests/src/dun/model/setting_sync.dart';
-import 'package:remote_vardytests/src/dun/model/url.dart';
-import 'package:remote_vardytests/src/dun/model/sms.dart';
-import 'package:remote_vardytests/src/dun/repository/dun_repository.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/model/page_model_v2.dart';
-import 'package:utils_vardytests/src/model/page_model.dart';
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
-import 'package:utils_vardytests/src/func/function.dart';
+import 'package:mobile_1byte_remote/src/dun/model/call.dart';
+import 'package:mobile_1byte_remote/src/dun/model/configuration/configuration.dart';
+import 'package:mobile_1byte_remote/src/dun/model/contact.dart';
+import 'package:mobile_1byte_remote/src/dun/model/data_sync.dart';
+import 'package:mobile_1byte_remote/src/dun/model/device_profile.dart';
+import 'package:mobile_1byte_remote/src/dun/model/gps.dart';
+import 'package:mobile_1byte_remote/src/dun/model/notification.dart';
+import 'package:mobile_1byte_remote/src/dun/model/setting_sync.dart';
+import 'package:mobile_1byte_remote/src/dun/model/url.dart';
+import 'package:mobile_1byte_remote/src/dun/model/sms.dart';
+import 'package:mobile_1byte_remote/src/dun/repository/dun_repository.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/page_model_v2.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
 import '../../features/auth/model/device/device.dart';
 import '../remote_dun.dart';
 
@@ -435,6 +435,17 @@ class RemoteDunRepositoryImpl extends DunRepository {
     try {
       final configurations = await remoteDun.getSettingSync(deviceId: deviceId);
       return FResult.success(SettingSync.fromJson(configurations.data));
+    } catch (error) {
+      return FResult.error(error.toString());
+    }
+  }
+
+  @override
+  Future<FResult<String>> updateSettingSync(
+      {required SettingSync settingSync}) async {
+    try {
+      await remoteDun.updateSettingSync(settingSync: settingSync);
+      return FResult.success('Updated setting sync successfully');
     } catch (error) {
       return FResult.error(error.toString());
     }

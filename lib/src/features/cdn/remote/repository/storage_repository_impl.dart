@@ -1,8 +1,8 @@
 import 'dart:io';
-import 'package:remote_vardytests/src/features/cdn/model/file_response.dart';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_remote/src/features/cdn/model/file_response.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 import '../remote_storage.dart';
 import 'storage_repository.dart';

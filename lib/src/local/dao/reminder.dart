@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:utils_vardytests/src/services/notification/day_of_week_enum.dart';
+import 'package:mobile_1byte_utils/src/services/notification/day_of_week_enum.dart';
 part 'reminder.g.dart';
 part 'reminder.freezed.dart';
 

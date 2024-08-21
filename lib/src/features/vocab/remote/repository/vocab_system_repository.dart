@@ -1,7 +1,7 @@
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/model/page_model.dart';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
-import 'package:utils_vardytests/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
 import '../model/vocab/vocab_v2.dart';
 import '../remote_vocab_system.dart';
 

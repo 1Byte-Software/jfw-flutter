@@ -1,8 +1,8 @@
-import 'package:remote_vardytests/src/features/auth/model/user/item_response.dart';
-import 'package:remote_vardytests/src/local/collection_reference/user_ferefence.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_remote/src/features/auth/model/user/item_response.dart';
+import 'package:mobile_1byte_remote/src/local/collection_reference/user_ferefence.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
 
 abstract class OfflineUserRepository {
   Future<FResult<FUser>> getInforUser(String username);

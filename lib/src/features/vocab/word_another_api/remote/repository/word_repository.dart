@@ -1,4 +1,4 @@
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 import '../model/m_word.dart';
 

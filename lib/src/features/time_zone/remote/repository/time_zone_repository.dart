@@ -1,8 +1,8 @@
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 import '../model/time_zone.dart';
 import '../remote_time_zone.dart';
-import 'package:utils_vardytests/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
 
 abstract class TimeZoneRepository {
   Future<FResult<List<TimeZone>>> getTimeZones(

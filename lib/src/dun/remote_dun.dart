@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:remote_vardytests/src/dun/model/configuration/configuration.dart';
-import 'package:remote_vardytests/src/dun/model/data_sync.dart';
-import 'package:remote_vardytests/src/dun/model/notification.dart';
+import 'package:mobile_1byte_remote/src/dun/model/configuration/configuration.dart';
+import 'package:mobile_1byte_remote/src/dun/model/data_sync.dart';
+import 'package:mobile_1byte_remote/src/dun/model/notification.dart';
 import 'package:retrofit/http.dart';
-import 'package:utils_vardytests/src/model/fetch_response.dart';
+import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -12,6 +12,7 @@ import 'model/call.dart';
 import 'model/contact.dart';
 import 'model/device_profile.dart';
 import 'model/gps.dart';
+import 'model/setting_sync.dart';
 import 'model/sms.dart';
 import 'model/url.dart';
 part 'remote_dun.g.dart';
@@ -181,6 +182,11 @@ abstract class RemoteDun {
   @GET('/devices/setting-sync/get-or-create')
   Future<FetchResponse> getSettingSync(
       {@Query('DeviceId') required int deviceId});
+
+  @POST('/devices/setting-sync/create-or-update')
+  Future<FetchResponse> updateSettingSync(
+      {@Body() required SettingSync settingSync});
+
   @GET('/devices/data-sync/get-or-create')
   Future<FetchResponse> getDataSync({@Query('DeviceId') required int deviceId});
   @POST('/devices/data-sync/create-or-update')

@@ -1,11 +1,11 @@
-import 'package:remote_vardytests/src/features/auth/model/user/item_response.dart';
-import 'package:utils_vardytests/src/model/page_model.dart';
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
-import 'package:remote_vardytests/src/features/course/remote/course_repository.dart';
-import 'package:remote_vardytests/src/features/course/remote/model/class.dart';
-import 'package:remote_vardytests/src/features/course/remote/remote_course.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_remote/src/features/auth/model/user/item_response.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_remote/src/features/course/remote/course_repository.dart';
+import 'package:mobile_1byte_remote/src/features/course/remote/model/class.dart';
+import 'package:mobile_1byte_remote/src/features/course/remote/remote_course.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 import 'model/course.dart';
 

@@ -1,7 +1,7 @@
-import 'package:remote_vardytests/src/features/point_and_reward/model/reward.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
-import 'package:utils_vardytests/src/model/page_model.dart';
+import 'package:mobile_1byte_remote/src/features/point_and_reward/model/reward.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
 import '../model/point.dart';
 
 abstract class PointAndRewardRepository {

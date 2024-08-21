@@ -1,8 +1,8 @@
 import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast.dart';
-import 'package:utils_vardytests/src/services/local_database/app_database.dart';
-import 'package:utils_vardytests/src/services/local_database/base_collection_reference.dart';
-import 'package:remote_vardytests/src/features/question/model/lesson_detail/lesson_detail.dart';
+import 'package:mobile_1byte_utils/src/services/local_database/app_database.dart';
+import 'package:mobile_1byte_utils/src/services/local_database/base_collection_reference.dart';
+import 'package:mobile_1byte_remote/src/features/question/model/lesson_detail/lesson_detail.dart';
 
 class AudioCollectionReference extends BaseCollectionReference<LessonDetail> {
   // ignore: constant_identifier_names

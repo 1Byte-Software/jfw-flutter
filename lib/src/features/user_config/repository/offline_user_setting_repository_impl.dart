@@ -1,10 +1,10 @@
-import 'package:remote_vardytests/src/local/collection_reference/user_setting_reference.dart';
-import 'package:remote_vardytests/src/local/dao/user_setting/config_group_enum.dart';
-import 'package:remote_vardytests/src/local/dao/user_setting/mp3_setting.dart';
-import 'package:remote_vardytests/src/local/dao/user_setting/user_setting.dart';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_remote/src/local/collection_reference/user_setting_reference.dart';
+import 'package:mobile_1byte_remote/src/local/dao/user_setting/config_group_enum.dart';
+import 'package:mobile_1byte_remote/src/local/dao/user_setting/mp3_setting.dart';
+import 'package:mobile_1byte_remote/src/local/dao/user_setting/user_setting.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 import 'offline_user_setting_repository.dart';
 

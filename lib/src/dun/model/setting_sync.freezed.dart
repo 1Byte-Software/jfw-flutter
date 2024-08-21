@@ -24,6 +24,8 @@ mixin _$SettingSync {
   int get deviceId => throw _privateConstructorUsedError;
   @JsonKey(name: 'distanceFilter')
   int get distanceFilter => throw _privateConstructorUsedError;
+  @JsonKey(name: 'deviceName', defaultValue: '')
+  String get deviceName => throw _privateConstructorUsedError;
   @JsonKey(name: 'gpsInterval')
   int get gpsInterval => throw _privateConstructorUsedError;
 
@@ -42,6 +44,7 @@ abstract class $SettingSyncCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'deviceId') int deviceId,
       @JsonKey(name: 'distanceFilter') int distanceFilter,
+      @JsonKey(name: 'deviceName', defaultValue: '') String deviceName,
       @JsonKey(name: 'gpsInterval') int gpsInterval});
 }
 
@@ -60,6 +63,7 @@ class _$SettingSyncCopyWithImpl<$Res, $Val extends SettingSync>
   $Res call({
     Object? deviceId = null,
     Object? distanceFilter = null,
+    Object? deviceName = null,
     Object? gpsInterval = null,
   }) {
     return _then(_value.copyWith(
@@ -71,6 +75,10 @@ class _$SettingSyncCopyWithImpl<$Res, $Val extends SettingSync>
           ? _value.distanceFilter
           : distanceFilter // ignore: cast_nullable_to_non_nullable
               as int,
+      deviceName: null == deviceName
+          ? _value.deviceName
+          : deviceName // ignore: cast_nullable_to_non_nullable
+              as String,
       gpsInterval: null == gpsInterval
           ? _value.gpsInterval
           : gpsInterval // ignore: cast_nullable_to_non_nullable
@@ -90,6 +98,7 @@ abstract class _$$SettingSyncImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'deviceId') int deviceId,
       @JsonKey(name: 'distanceFilter') int distanceFilter,
+      @JsonKey(name: 'deviceName', defaultValue: '') String deviceName,
       @JsonKey(name: 'gpsInterval') int gpsInterval});
 }
 
@@ -106,6 +115,7 @@ class __$$SettingSyncImplCopyWithImpl<$Res>
   $Res call({
     Object? deviceId = null,
     Object? distanceFilter = null,
+    Object? deviceName = null,
     Object? gpsInterval = null,
   }) {
     return _then(_$SettingSyncImpl(
@@ -117,6 +127,10 @@ class __$$SettingSyncImplCopyWithImpl<$Res>
           ? _value.distanceFilter
           : distanceFilter // ignore: cast_nullable_to_non_nullable
               as int,
+      deviceName: null == deviceName
+          ? _value.deviceName
+          : deviceName // ignore: cast_nullable_to_non_nullable
+              as String,
       gpsInterval: null == gpsInterval
           ? _value.gpsInterval
           : gpsInterval // ignore: cast_nullable_to_non_nullable
@@ -131,6 +145,7 @@ class _$SettingSyncImpl implements _SettingSync {
   _$SettingSyncImpl(
       {@JsonKey(name: 'deviceId') required this.deviceId,
       @JsonKey(name: 'distanceFilter') required this.distanceFilter,
+      @JsonKey(name: 'deviceName', defaultValue: '') required this.deviceName,
       @JsonKey(name: 'gpsInterval') required this.gpsInterval});
 
   factory _$SettingSyncImpl.fromJson(Map<String, dynamic> json) =>
@@ -143,12 +158,15 @@ class _$SettingSyncImpl implements _SettingSync {
   @JsonKey(name: 'distanceFilter')
   final int distanceFilter;
   @override
+  @JsonKey(name: 'deviceName', defaultValue: '')
+  final String deviceName;
+  @override
   @JsonKey(name: 'gpsInterval')
   final int gpsInterval;
 
   @override
   String toString() {
-    return 'SettingSync(deviceId: $deviceId, distanceFilter: $distanceFilter, gpsInterval: $gpsInterval)';
+    return 'SettingSync(deviceId: $deviceId, distanceFilter: $distanceFilter, deviceName: $deviceName, gpsInterval: $gpsInterval)';
   }
 
   @override
@@ -160,14 +178,16 @@ class _$SettingSyncImpl implements _SettingSync {
                 other.deviceId == deviceId) &&
             (identical(other.distanceFilter, distanceFilter) ||
                 other.distanceFilter == distanceFilter) &&
+            (identical(other.deviceName, deviceName) ||
+                other.deviceName == deviceName) &&
             (identical(other.gpsInterval, gpsInterval) ||
                 other.gpsInterval == gpsInterval));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, deviceId, distanceFilter, gpsInterval);
+  int get hashCode => Object.hash(
+      runtimeType, deviceId, distanceFilter, deviceName, gpsInterval);
 
   @JsonKey(ignore: true)
   @override
@@ -187,6 +207,8 @@ abstract class _SettingSync implements SettingSync {
   factory _SettingSync(
           {@JsonKey(name: 'deviceId') required final int deviceId,
           @JsonKey(name: 'distanceFilter') required final int distanceFilter,
+          @JsonKey(name: 'deviceName', defaultValue: '')
+          required final String deviceName,
           @JsonKey(name: 'gpsInterval') required final int gpsInterval}) =
       _$SettingSyncImpl;
 
@@ -199,6 +221,9 @@ abstract class _SettingSync implements SettingSync {
   @override
   @JsonKey(name: 'distanceFilter')
   int get distanceFilter;
+  @override
+  @JsonKey(name: 'deviceName', defaultValue: '')
+  String get deviceName;
   @override
   @JsonKey(name: 'gpsInterval')
   int get gpsInterval;

@@ -1,7 +1,7 @@
-import 'package:remote_vardytests/src/local/collection_reference/playlist_reference.dart';
-import 'package:remote_vardytests/src/local/dao/playlist.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_remote/src/local/collection_reference/playlist_reference.dart';
+import 'package:mobile_1byte_remote/src/local/dao/playlist.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 abstract class PlaylistRepository {
   Future<FResult<List<Playlist>>> getAll(int uid);

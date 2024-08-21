@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:remote_vardytests/src/features/question/request/do_score/id_object.dart';
+import 'package:mobile_1byte_remote/src/features/question/request/do_score/id_object.dart';
 
 part 'reaction_request.g.dart';
 

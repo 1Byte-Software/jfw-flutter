@@ -1,7 +1,7 @@
 import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast.dart';
-import 'package:utils_vardytests/src/services/local_database/app_database.dart';
-import 'package:utils_vardytests/src/services/local_database/base_collection_reference.dart';
+import 'package:mobile_1byte_utils/src/services/local_database/app_database.dart';
+import 'package:mobile_1byte_utils/src/services/local_database/base_collection_reference.dart';
 
 import '../dao/user_setting/user_setting.dart';
 

@@ -1,8 +1,8 @@
-import 'package:remote_vardytests/src/features/vocab/remote/model/vocab_score/score_vocab.dart';
+import 'package:mobile_1byte_remote/src/features/vocab/remote/model/vocab_score/score_vocab.dart';
 
 import '../remote/remote_ai_score.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
 
 abstract class AIScoreRepository {
   Future<FResult<ScoreVocab>> score(

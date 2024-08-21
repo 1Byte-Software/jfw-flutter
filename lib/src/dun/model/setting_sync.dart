@@ -7,6 +7,7 @@ class SettingSync with _$SettingSync {
   factory SettingSync({
     @JsonKey(name: 'deviceId') required int deviceId,
     @JsonKey(name: 'distanceFilter') required int distanceFilter,
+    @JsonKey(name: 'deviceName', defaultValue: '') required String deviceName,
     @JsonKey(name: 'gpsInterval') required int gpsInterval,
   }) = _SettingSync;
 

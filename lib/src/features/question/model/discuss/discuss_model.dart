@@ -1,4 +1,4 @@
-import 'package:remote_vardytests/src/features/billing/model/billing_package.dart';
+import 'package:mobile_1byte_remote/src/features/billing/model/billing_package.dart';
 import 'reaction_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'discuss_model.g.dart';

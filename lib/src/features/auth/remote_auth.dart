@@ -4,8 +4,8 @@ import 'package:retrofit/retrofit.dart';
 import 'model/login/request/login_request.dart';
 import 'model/login/response/login_response.dart';
 
-import 'package:utils_vardytests/src/model/fetch_response.dart';
-import 'package:utils_vardytests/src/model/base_reponse_v1/base_response_v1.dart';
+import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
+import 'package:mobile_1byte_utils/src/model/base_reponse_v1/base_response_v1.dart';
 
 import 'request/change_pass_request.dart';
 import 'request/register_request.dart';

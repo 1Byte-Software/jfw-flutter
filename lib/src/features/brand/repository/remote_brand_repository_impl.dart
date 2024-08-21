@@ -1,5 +1,5 @@
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 import 'brand_repository.dart';
 import '../remote/remote_brand.dart';
 export 'brand_repository.dart';

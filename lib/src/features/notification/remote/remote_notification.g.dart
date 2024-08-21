@@ -19,19 +19,15 @@ class _RemoteNotification implements RemoteNotification {
   String? baseUrl;
 
   @override
-  Future<FetchResponse> getNotification(
-    int uid, {
-    int? status,
+  Future<FetchResponse> getNotification({
     required int pageNumber,
     required int pageSize,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'status': status,
       r'pageNumber': pageNumber,
       r'pageSize': pageSize,
     };
-    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio
@@ -42,7 +38,7 @@ class _RemoteNotification implements RemoteNotification {
     )
             .compose(
               _dio.options,
-              '/users/${uid}/notifications',
+              '/notifications',
               queryParameters: queryParameters,
               data: _data,
             )

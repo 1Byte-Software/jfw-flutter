@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:remote_vardytests/src/features/point_and_reward/model/point.dart';
-import 'package:remote_vardytests/src/features/point_and_reward/model/reward.dart';
-import 'package:remote_vardytests/src/features/point_and_reward/remote/remote_point_and_reward.dart';
-import 'package:remote_vardytests/src/features/point_and_reward/repository/point_and_reward_repository.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
-import 'package:utils_vardytests/src/model/page_model.dart';
-import 'package:utils_vardytests/src/model/page_model_v2.dart';
+import 'package:mobile_1byte_remote/src/features/point_and_reward/model/point.dart';
+import 'package:mobile_1byte_remote/src/features/point_and_reward/model/reward.dart';
+import 'package:mobile_1byte_remote/src/features/point_and_reward/remote/remote_point_and_reward.dart';
+import 'package:mobile_1byte_remote/src/features/point_and_reward/repository/point_and_reward_repository.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/model/page_model_v2.dart';
 
 class RemotePointAndRewardRepositoryImpl extends PointAndRewardRepository {
   RemotePointAndRewardRepositoryImpl({required this.ref});

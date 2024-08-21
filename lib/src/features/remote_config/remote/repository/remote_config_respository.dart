@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 import '../model/config_app.dart';
 import '../model/config_debug_mode.dart';

@@ -1,7 +1,7 @@
-import 'package:remote_vardytests/src/features/question/model/lesson_detail/lesson_detail.dart';
-import 'package:remote_vardytests/src/local/collection_reference/audio_reference.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_remote/src/features/question/model/lesson_detail/lesson_detail.dart';
+import 'package:mobile_1byte_remote/src/local/collection_reference/audio_reference.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 abstract class AudioRepository {
   Future<FResult<String>> addAudioToResource(LessonDetail audio);

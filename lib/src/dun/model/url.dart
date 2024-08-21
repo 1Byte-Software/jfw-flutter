@@ -8,6 +8,7 @@ class Url with _$Url {
     @JsonKey(name: 'deviceId') required int deviceId,
     @JsonKey(name: 'urlLink', defaultValue: '') required String urlLink,
     @JsonKey(name: 'urlDate', defaultValue: '') required String clientUrlTime,
+    @JsonKey(name: 'browserName', defaultValue: '') required String browserName,
     @JsonKey(name: 'modifiedDate') required String? modifiedDate,
     @JsonKey(name: 'createdDate') required String? createdDate,
   }) = _Url;

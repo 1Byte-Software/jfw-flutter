@@ -13,6 +13,7 @@ class Device with _$Device {
     @JsonKey(name: 'createdDate') required String createdDate,
     @JsonKey(name: 'referralCode') required String? referralCode,
     @JsonKey(name: 'isMobile', defaultValue: false) required bool isMobile,
+    @JsonKey(name: 'imei') required String? imei,
     @JsonKey(name: 'tags', defaultValue: '') required String tags,
     @JsonKey(name: 'deviceCode') required String deviceCode,
     @JsonKey(name: 'appVersionNumber', defaultValue: '')

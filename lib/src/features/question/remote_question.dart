@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
-import 'package:utils_vardytests/src/model/fetch_response.dart';
+import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 import 'package:retrofit/http.dart';
 
 import 'request/add_tested_request.dart';

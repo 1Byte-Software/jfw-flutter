@@ -1,5 +1,5 @@
-import 'package:utils_vardytests/src/model/page_model.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 abstract class DiscussRepository {
   Future<FResult<PageModel>> getDiscusses({

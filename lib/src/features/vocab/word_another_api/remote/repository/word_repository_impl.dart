@@ -1,6 +1,6 @@
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
 
 import '../model/m_word.dart';
 import '../remote_definition.dart';

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:utils_vardytests/src/extensions/string_extensions.dart';
+import 'package:mobile_1byte_utils/src/extensions/string_extensions.dart';
 part 'mp3_setting.g.dart';
 part 'mp3_setting.freezed.dart';
 

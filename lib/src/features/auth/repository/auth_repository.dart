@@ -1,6 +1,6 @@
-import 'package:remote_vardytests/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_remote/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
 
 import '../model/device/device.dart';
 import '../model/device_and_tracking/model/tracking_event.dart';
@@ -24,8 +24,6 @@ abstract class AuthRepository {
 
   Future<FResult<String>> addDeviceAndGetDeviceId(
       Map<String, dynamic> deviceRequest);
-
-
 
   // Future<FResult<String>> markMainDevice({required String deviceReferralCode});
 

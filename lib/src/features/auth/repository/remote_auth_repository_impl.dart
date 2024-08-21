@@ -1,8 +1,8 @@
-import 'package:remote_vardytests/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/func/function.dart';
+import 'package:mobile_1byte_remote/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
 import '../model/device/device.dart';
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
 
 import '../model/device_and_tracking/model/tracking_event.dart';
 import '../model/login/request/login_request.dart';
@@ -13,8 +13,8 @@ import '../remote_auth.dart';
 import '../request/change_pass_request.dart';
 import '../request/register_request.dart';
 import 'auth_repository.dart';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
-import 'package:utils_vardytests/src/model/page_model_v2.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/model/page_model_v2.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
   final RemoteAuth ref;
@@ -266,8 +266,6 @@ class AuthRepositoryImpl extends AuthRepository {
         .onError(FetchFunctions.onError);
   }
 
-
-
   @override
   Future<FResult<List<Device>>> filterDevices(
       {required int userId, required String deviceCode}) async {
@@ -283,7 +281,6 @@ class AuthRepositoryImpl extends AuthRepository {
         .getCurrentDevice()
         .then((value) => FResult.success(Device.fromJson(value.data)));
   }
-
 
   @override
   Future<FResult<ParsedPageModel<TrackingActivity>>> getActivities(

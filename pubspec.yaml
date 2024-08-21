@@ -1,4 +1,4 @@
-name: remote_vardytests
+name: mobile_1byte_remote
 description: A new Flutter package project.
 version: 1.3.10+3
 homepage: null
@@ -20,7 +20,7 @@ dependencies:
   retrofit: ^4.1.0
   retrofit_generator: ^8.1.1
 
-  utils_vardytests:
+  mobile_1byte_utils:
     path: /Users/1byte/modules/utils_vardytests/head
 
   

@@ -1,10 +1,10 @@
-import 'package:remote_vardytests/src/features/auth/remote_auth_vardytest.dart';
-import 'package:remote_vardytests/src/features/auth/request/get_token/token/get_token_request.dart';
-import 'package:remote_vardytests/src/features/category/remote/model/category.dart';
+import 'package:mobile_1byte_remote/src/features/auth/remote_auth_vardytest.dart';
+import 'package:mobile_1byte_remote/src/features/auth/request/get_token/token/get_token_request.dart';
+import 'package:mobile_1byte_remote/src/features/category/remote/model/category.dart';
 import '../model/token/token_response.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
 import 'auth_vardytest_repository.dart';
 
 class RemoteAuthVardyTestRepositoryImpl extends AuthVardyTestRepository {

@@ -26,6 +26,8 @@ mixin _$Url {
   String get urlLink => throw _privateConstructorUsedError;
   @JsonKey(name: 'urlDate', defaultValue: '')
   String get clientUrlTime => throw _privateConstructorUsedError;
+  @JsonKey(name: 'browserName', defaultValue: '')
+  String get browserName => throw _privateConstructorUsedError;
   @JsonKey(name: 'modifiedDate')
   String? get modifiedDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'createdDate')
@@ -45,6 +47,7 @@ abstract class $UrlCopyWith<$Res> {
       {@JsonKey(name: 'deviceId') int deviceId,
       @JsonKey(name: 'urlLink', defaultValue: '') String urlLink,
       @JsonKey(name: 'urlDate', defaultValue: '') String clientUrlTime,
+      @JsonKey(name: 'browserName', defaultValue: '') String browserName,
       @JsonKey(name: 'modifiedDate') String? modifiedDate,
       @JsonKey(name: 'createdDate') String? createdDate});
 }
@@ -64,6 +67,7 @@ class _$UrlCopyWithImpl<$Res, $Val extends Url> implements $UrlCopyWith<$Res> {
     Object? deviceId = null,
     Object? urlLink = null,
     Object? clientUrlTime = null,
+    Object? browserName = null,
     Object? modifiedDate = freezed,
     Object? createdDate = freezed,
   }) {
@@ -79,6 +83,10 @@ class _$UrlCopyWithImpl<$Res, $Val extends Url> implements $UrlCopyWith<$Res> {
       clientUrlTime: null == clientUrlTime
           ? _value.clientUrlTime
           : clientUrlTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      browserName: null == browserName
+          ? _value.browserName
+          : browserName // ignore: cast_nullable_to_non_nullable
               as String,
       modifiedDate: freezed == modifiedDate
           ? _value.modifiedDate
@@ -102,6 +110,7 @@ abstract class _$$UrlImplCopyWith<$Res> implements $UrlCopyWith<$Res> {
       {@JsonKey(name: 'deviceId') int deviceId,
       @JsonKey(name: 'urlLink', defaultValue: '') String urlLink,
       @JsonKey(name: 'urlDate', defaultValue: '') String clientUrlTime,
+      @JsonKey(name: 'browserName', defaultValue: '') String browserName,
       @JsonKey(name: 'modifiedDate') String? modifiedDate,
       @JsonKey(name: 'createdDate') String? createdDate});
 }
@@ -118,6 +127,7 @@ class __$$UrlImplCopyWithImpl<$Res> extends _$UrlCopyWithImpl<$Res, _$UrlImpl>
     Object? deviceId = null,
     Object? urlLink = null,
     Object? clientUrlTime = null,
+    Object? browserName = null,
     Object? modifiedDate = freezed,
     Object? createdDate = freezed,
   }) {
@@ -133,6 +143,10 @@ class __$$UrlImplCopyWithImpl<$Res> extends _$UrlCopyWithImpl<$Res, _$UrlImpl>
       clientUrlTime: null == clientUrlTime
           ? _value.clientUrlTime
           : clientUrlTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      browserName: null == browserName
+          ? _value.browserName
+          : browserName // ignore: cast_nullable_to_non_nullable
               as String,
       modifiedDate: freezed == modifiedDate
           ? _value.modifiedDate
@@ -153,6 +167,7 @@ class _$UrlImpl implements _Url {
       {@JsonKey(name: 'deviceId') required this.deviceId,
       @JsonKey(name: 'urlLink', defaultValue: '') required this.urlLink,
       @JsonKey(name: 'urlDate', defaultValue: '') required this.clientUrlTime,
+      @JsonKey(name: 'browserName', defaultValue: '') required this.browserName,
       @JsonKey(name: 'modifiedDate') required this.modifiedDate,
       @JsonKey(name: 'createdDate') required this.createdDate});
 
@@ -169,6 +184,9 @@ class _$UrlImpl implements _Url {
   @JsonKey(name: 'urlDate', defaultValue: '')
   final String clientUrlTime;
   @override
+  @JsonKey(name: 'browserName', defaultValue: '')
+  final String browserName;
+  @override
   @JsonKey(name: 'modifiedDate')
   final String? modifiedDate;
   @override
@@ -177,7 +195,7 @@ class _$UrlImpl implements _Url {
 
   @override
   String toString() {
-    return 'Url(deviceId: $deviceId, urlLink: $urlLink, clientUrlTime: $clientUrlTime, modifiedDate: $modifiedDate, createdDate: $createdDate)';
+    return 'Url(deviceId: $deviceId, urlLink: $urlLink, clientUrlTime: $clientUrlTime, browserName: $browserName, modifiedDate: $modifiedDate, createdDate: $createdDate)';
   }
 
   @override
@@ -190,6 +208,8 @@ class _$UrlImpl implements _Url {
             (identical(other.urlLink, urlLink) || other.urlLink == urlLink) &&
             (identical(other.clientUrlTime, clientUrlTime) ||
                 other.clientUrlTime == clientUrlTime) &&
+            (identical(other.browserName, browserName) ||
+                other.browserName == browserName) &&
             (identical(other.modifiedDate, modifiedDate) ||
                 other.modifiedDate == modifiedDate) &&
             (identical(other.createdDate, createdDate) ||
@@ -198,8 +218,8 @@ class _$UrlImpl implements _Url {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, deviceId, urlLink, clientUrlTime, modifiedDate, createdDate);
+  int get hashCode => Object.hash(runtimeType, deviceId, urlLink, clientUrlTime,
+      browserName, modifiedDate, createdDate);
 
   @JsonKey(ignore: true)
   @override
@@ -221,6 +241,8 @@ abstract class _Url implements Url {
       @JsonKey(name: 'urlLink', defaultValue: '') required final String urlLink,
       @JsonKey(name: 'urlDate', defaultValue: '')
       required final String clientUrlTime,
+      @JsonKey(name: 'browserName', defaultValue: '')
+      required final String browserName,
       @JsonKey(name: 'modifiedDate') required final String? modifiedDate,
       @JsonKey(name: 'createdDate')
       required final String? createdDate}) = _$UrlImpl;
@@ -236,6 +258,9 @@ abstract class _Url implements Url {
   @override
   @JsonKey(name: 'urlDate', defaultValue: '')
   String get clientUrlTime;
+  @override
+  @JsonKey(name: 'browserName', defaultValue: '')
+  String get browserName;
   @override
   @JsonKey(name: 'modifiedDate')
   String? get modifiedDate;

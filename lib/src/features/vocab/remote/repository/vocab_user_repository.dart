@@ -1,9 +1,9 @@
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
 
-import 'package:utils_vardytests/src/services/logging/log_manager.dart';
-import 'package:utils_vardytests/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
 import 'package:flutter/material.dart';
 
 import '../model/history_vocab_score/history_vocab_score.dart';

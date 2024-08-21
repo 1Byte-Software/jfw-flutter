@@ -1,8 +1,8 @@
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 import '../model/language.dart';
 import '../remote_language.dart';
-import 'package:utils_vardytests/src/services/get_it.dart';
-import 'package:utils_vardytests/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/services/get_it.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
 
 abstract class LanguageRepository {
   Future<FResult<List<Language>>> getLanguages(

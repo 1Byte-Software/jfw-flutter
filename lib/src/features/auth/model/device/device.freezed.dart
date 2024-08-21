@@ -35,6 +35,8 @@ mixin _$Device {
   String? get referralCode => throw _privateConstructorUsedError;
   @JsonKey(name: 'isMobile', defaultValue: false)
   bool get isMobile => throw _privateConstructorUsedError;
+  @JsonKey(name: 'imei')
+  String? get imei => throw _privateConstructorUsedError;
   @JsonKey(name: 'tags', defaultValue: '')
   String get tags => throw _privateConstructorUsedError;
   @JsonKey(name: 'deviceCode')
@@ -62,6 +64,7 @@ abstract class $DeviceCopyWith<$Res> {
       @JsonKey(name: 'createdDate') String createdDate,
       @JsonKey(name: 'referralCode') String? referralCode,
       @JsonKey(name: 'isMobile', defaultValue: false) bool isMobile,
+      @JsonKey(name: 'imei') String? imei,
       @JsonKey(name: 'tags', defaultValue: '') String tags,
       @JsonKey(name: 'deviceCode') String deviceCode,
       @JsonKey(name: 'appVersionNumber', defaultValue: '')
@@ -89,6 +92,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? createdDate = null,
     Object? referralCode = freezed,
     Object? isMobile = null,
+    Object? imei = freezed,
     Object? tags = null,
     Object? deviceCode = null,
     Object? appVersionNumber = null,
@@ -123,6 +127,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.isMobile
           : isMobile // ignore: cast_nullable_to_non_nullable
               as bool,
+      imei: freezed == imei
+          ? _value.imei
+          : imei // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -158,6 +166,7 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       @JsonKey(name: 'createdDate') String createdDate,
       @JsonKey(name: 'referralCode') String? referralCode,
       @JsonKey(name: 'isMobile', defaultValue: false) bool isMobile,
+      @JsonKey(name: 'imei') String? imei,
       @JsonKey(name: 'tags', defaultValue: '') String tags,
       @JsonKey(name: 'deviceCode') String deviceCode,
       @JsonKey(name: 'appVersionNumber', defaultValue: '')
@@ -183,6 +192,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? createdDate = null,
     Object? referralCode = freezed,
     Object? isMobile = null,
+    Object? imei = freezed,
     Object? tags = null,
     Object? deviceCode = null,
     Object? appVersionNumber = null,
@@ -217,6 +227,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.isMobile
           : isMobile // ignore: cast_nullable_to_non_nullable
               as bool,
+      imei: freezed == imei
+          ? _value.imei
+          : imei // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -248,6 +262,7 @@ class _$DeviceImpl implements _Device {
       @JsonKey(name: 'createdDate') required this.createdDate,
       @JsonKey(name: 'referralCode') required this.referralCode,
       @JsonKey(name: 'isMobile', defaultValue: false) required this.isMobile,
+      @JsonKey(name: 'imei') required this.imei,
       @JsonKey(name: 'tags', defaultValue: '') required this.tags,
       @JsonKey(name: 'deviceCode') required this.deviceCode,
       @JsonKey(name: 'appVersionNumber', defaultValue: '')
@@ -280,6 +295,9 @@ class _$DeviceImpl implements _Device {
   @JsonKey(name: 'isMobile', defaultValue: false)
   final bool isMobile;
   @override
+  @JsonKey(name: 'imei')
+  final String? imei;
+  @override
   @JsonKey(name: 'tags', defaultValue: '')
   final String tags;
   @override
@@ -294,7 +312,7 @@ class _$DeviceImpl implements _Device {
 
   @override
   String toString() {
-    return 'Device(id: $id, deviceName: $deviceName, osDevice: $osDevice, modifiedDate: $modifiedDate, createdDate: $createdDate, referralCode: $referralCode, isMobile: $isMobile, tags: $tags, deviceCode: $deviceCode, appVersionNumber: $appVersionNumber, deviceSession: $deviceSession)';
+    return 'Device(id: $id, deviceName: $deviceName, osDevice: $osDevice, modifiedDate: $modifiedDate, createdDate: $createdDate, referralCode: $referralCode, isMobile: $isMobile, imei: $imei, tags: $tags, deviceCode: $deviceCode, appVersionNumber: $appVersionNumber, deviceSession: $deviceSession)';
   }
 
   @override
@@ -315,6 +333,7 @@ class _$DeviceImpl implements _Device {
                 other.referralCode == referralCode) &&
             (identical(other.isMobile, isMobile) ||
                 other.isMobile == isMobile) &&
+            (identical(other.imei, imei) || other.imei == imei) &&
             (identical(other.tags, tags) || other.tags == tags) &&
             (identical(other.deviceCode, deviceCode) ||
                 other.deviceCode == deviceCode) &&
@@ -335,6 +354,7 @@ class _$DeviceImpl implements _Device {
       createdDate,
       referralCode,
       isMobile,
+      imei,
       tags,
       deviceCode,
       appVersionNumber,
@@ -365,6 +385,7 @@ abstract class _Device implements Device {
       @JsonKey(name: 'referralCode') required final String? referralCode,
       @JsonKey(name: 'isMobile', defaultValue: false)
       required final bool isMobile,
+      @JsonKey(name: 'imei') required final String? imei,
       @JsonKey(name: 'tags', defaultValue: '') required final String tags,
       @JsonKey(name: 'deviceCode') required final String deviceCode,
       @JsonKey(name: 'appVersionNumber', defaultValue: '')
@@ -395,6 +416,9 @@ abstract class _Device implements Device {
   @override
   @JsonKey(name: 'isMobile', defaultValue: false)
   bool get isMobile;
+  @override
+  @JsonKey(name: 'imei')
+  String? get imei;
   @override
   @JsonKey(name: 'tags', defaultValue: '')
   String get tags;

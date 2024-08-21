@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:json_annotation/json_annotation.dart';
-import 'package:remote_vardytests/src/features/category/remote/model/category.dart';
+import 'package:mobile_1byte_remote/src/features/category/remote/model/category.dart';
 import 'lesson_content.dart';
 import 'media_dto.dart';
 import 'priority_model.dart';

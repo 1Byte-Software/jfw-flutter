@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:json_annotation/json_annotation.dart';
-import 'package:remote_vardytests/src/features/billing/model/billing_package.dart';
-import 'package:remote_vardytests/src/features/question/model/discuss/discuss_model.dart';
-import 'package:remote_vardytests/src/features/question/response/do_score/question_response_users.dart';
+import 'package:mobile_1byte_remote/src/features/billing/model/billing_package.dart';
+import 'package:mobile_1byte_remote/src/features/question/model/discuss/discuss_model.dart';
+import 'package:mobile_1byte_remote/src/features/question/response/do_score/question_response_users.dart';
 import 'result_overview.dart';
 
 part 'do_score_response.g.dart';

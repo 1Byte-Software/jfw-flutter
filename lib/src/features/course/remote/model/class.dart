@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:utils_vardytests/src/helpers/time_helpers.dart';
-import 'package:utils_vardytests/src/services/get_it.dart';
+import 'package:mobile_1byte_utils/src/helpers/time_helpers.dart';
+import 'package:mobile_1byte_utils/src/services/get_it.dart';
 
 part 'class.g.dart';
 part 'class.freezed.dart';

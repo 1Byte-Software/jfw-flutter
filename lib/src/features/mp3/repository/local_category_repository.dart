@@ -1,7 +1,7 @@
-import 'package:remote_vardytests/src/features/category/remote/model/category.dart';
-import 'package:remote_vardytests/src/local/collection_reference/category_reference.dart';
-import 'package:utils_vardytests/src/func/function.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_remote/src/features/category/remote/model/category.dart';
+import 'package:mobile_1byte_remote/src/local/collection_reference/category_reference.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 
 abstract class LocalCategoryRepository {
   Future<FResult<List<Category>>> getAll();

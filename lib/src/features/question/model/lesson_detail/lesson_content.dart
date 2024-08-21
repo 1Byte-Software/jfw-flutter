@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:remote_vardytests/src/features/category/remote/model/category.dart';
+import 'package:mobile_1byte_remote/src/features/category/remote/model/category.dart';
 
 import 'priority_model.dart';
 part 'lesson_content.g.dart';

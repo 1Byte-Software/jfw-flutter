@@ -904,6 +904,34 @@ class _RemoteDun implements RemoteDun {
   }
 
   @override
+  Future<FetchResponse> updateSettingSync(
+      {required SettingSync settingSync}) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = settingSync;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/devices/setting-sync/create-or-update',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
+  }
+
+  @override
   Future<FetchResponse> getDataSync({required int deviceId}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'DeviceId': deviceId};

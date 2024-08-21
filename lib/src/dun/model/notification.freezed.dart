@@ -28,12 +28,8 @@ mixin _$Notification {
   String get notificationTitle => throw _privateConstructorUsedError;
   @JsonKey(name: 'notificationContent', defaultValue: '')
   String get notificationContent => throw _privateConstructorUsedError;
-  @JsonKey(name: 'clientNotificationTime', defaultValue: '')
+  @JsonKey(name: 'notificationDate', defaultValue: '')
   String get clientNotificationTime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'modifiedDate')
-  String? get modifiedDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'createdDate')
-  String? get createdDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,10 +50,8 @@ abstract class $NotificationCopyWith<$Res> {
       String notificationTitle,
       @JsonKey(name: 'notificationContent', defaultValue: '')
       String notificationContent,
-      @JsonKey(name: 'clientNotificationTime', defaultValue: '')
-      String clientNotificationTime,
-      @JsonKey(name: 'modifiedDate') String? modifiedDate,
-      @JsonKey(name: 'createdDate') String? createdDate});
+      @JsonKey(name: 'notificationDate', defaultValue: '')
+      String clientNotificationTime});
 }
 
 /// @nodoc
@@ -78,8 +72,6 @@ class _$NotificationCopyWithImpl<$Res, $Val extends Notification>
     Object? notificationTitle = null,
     Object? notificationContent = null,
     Object? clientNotificationTime = null,
-    Object? modifiedDate = freezed,
-    Object? createdDate = freezed,
   }) {
     return _then(_value.copyWith(
       deviceId: null == deviceId
@@ -102,14 +94,6 @@ class _$NotificationCopyWithImpl<$Res, $Val extends Notification>
           ? _value.clientNotificationTime
           : clientNotificationTime // ignore: cast_nullable_to_non_nullable
               as String,
-      modifiedDate: freezed == modifiedDate
-          ? _value.modifiedDate
-          : modifiedDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdDate: freezed == createdDate
-          ? _value.createdDate
-          : createdDate // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 }
@@ -129,10 +113,8 @@ abstract class _$$NotificationImplCopyWith<$Res>
       String notificationTitle,
       @JsonKey(name: 'notificationContent', defaultValue: '')
       String notificationContent,
-      @JsonKey(name: 'clientNotificationTime', defaultValue: '')
-      String clientNotificationTime,
-      @JsonKey(name: 'modifiedDate') String? modifiedDate,
-      @JsonKey(name: 'createdDate') String? createdDate});
+      @JsonKey(name: 'notificationDate', defaultValue: '')
+      String clientNotificationTime});
 }
 
 /// @nodoc
@@ -151,8 +133,6 @@ class __$$NotificationImplCopyWithImpl<$Res>
     Object? notificationTitle = null,
     Object? notificationContent = null,
     Object? clientNotificationTime = null,
-    Object? modifiedDate = freezed,
-    Object? createdDate = freezed,
   }) {
     return _then(_$NotificationImpl(
       deviceId: null == deviceId
@@ -175,14 +155,6 @@ class __$$NotificationImplCopyWithImpl<$Res>
           ? _value.clientNotificationTime
           : clientNotificationTime // ignore: cast_nullable_to_non_nullable
               as String,
-      modifiedDate: freezed == modifiedDate
-          ? _value.modifiedDate
-          : modifiedDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdDate: freezed == createdDate
-          ? _value.createdDate
-          : createdDate // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -197,10 +169,8 @@ class _$NotificationImpl implements _Notification {
       required this.notificationTitle,
       @JsonKey(name: 'notificationContent', defaultValue: '')
       required this.notificationContent,
-      @JsonKey(name: 'clientNotificationTime', defaultValue: '')
-      required this.clientNotificationTime,
-      @JsonKey(name: 'modifiedDate') required this.modifiedDate,
-      @JsonKey(name: 'createdDate') required this.createdDate});
+      @JsonKey(name: 'notificationDate', defaultValue: '')
+      required this.clientNotificationTime});
 
   factory _$NotificationImpl.fromJson(Map<String, dynamic> json) =>
       _$$NotificationImplFromJson(json);
@@ -218,18 +188,12 @@ class _$NotificationImpl implements _Notification {
   @JsonKey(name: 'notificationContent', defaultValue: '')
   final String notificationContent;
   @override
-  @JsonKey(name: 'clientNotificationTime', defaultValue: '')
+  @JsonKey(name: 'notificationDate', defaultValue: '')
   final String clientNotificationTime;
-  @override
-  @JsonKey(name: 'modifiedDate')
-  final String? modifiedDate;
-  @override
-  @JsonKey(name: 'createdDate')
-  final String? createdDate;
 
   @override
   String toString() {
-    return 'Notification(deviceId: $deviceId, appName: $appName, notificationTitle: $notificationTitle, notificationContent: $notificationContent, clientNotificationTime: $clientNotificationTime, modifiedDate: $modifiedDate, createdDate: $createdDate)';
+    return 'Notification(deviceId: $deviceId, appName: $appName, notificationTitle: $notificationTitle, notificationContent: $notificationContent, clientNotificationTime: $clientNotificationTime)';
   }
 
   @override
@@ -245,24 +209,13 @@ class _$NotificationImpl implements _Notification {
             (identical(other.notificationContent, notificationContent) ||
                 other.notificationContent == notificationContent) &&
             (identical(other.clientNotificationTime, clientNotificationTime) ||
-                other.clientNotificationTime == clientNotificationTime) &&
-            (identical(other.modifiedDate, modifiedDate) ||
-                other.modifiedDate == modifiedDate) &&
-            (identical(other.createdDate, createdDate) ||
-                other.createdDate == createdDate));
+                other.clientNotificationTime == clientNotificationTime));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      deviceId,
-      appName,
-      notificationTitle,
-      notificationContent,
-      clientNotificationTime,
-      modifiedDate,
-      createdDate);
+  int get hashCode => Object.hash(runtimeType, deviceId, appName,
+      notificationTitle, notificationContent, clientNotificationTime);
 
   @JsonKey(ignore: true)
   @override
@@ -286,11 +239,8 @@ abstract class _Notification implements Notification {
       required final String notificationTitle,
       @JsonKey(name: 'notificationContent', defaultValue: '')
       required final String notificationContent,
-      @JsonKey(name: 'clientNotificationTime', defaultValue: '')
-      required final String clientNotificationTime,
-      @JsonKey(name: 'modifiedDate') required final String? modifiedDate,
-      @JsonKey(name: 'createdDate')
-      required final String? createdDate}) = _$NotificationImpl;
+      @JsonKey(name: 'notificationDate', defaultValue: '')
+      required final String clientNotificationTime}) = _$NotificationImpl;
 
   factory _Notification.fromJson(Map<String, dynamic> json) =
       _$NotificationImpl.fromJson;
@@ -308,14 +258,8 @@ abstract class _Notification implements Notification {
   @JsonKey(name: 'notificationContent', defaultValue: '')
   String get notificationContent;
   @override
-  @JsonKey(name: 'clientNotificationTime', defaultValue: '')
+  @JsonKey(name: 'notificationDate', defaultValue: '')
   String get clientNotificationTime;
-  @override
-  @JsonKey(name: 'modifiedDate')
-  String? get modifiedDate;
-  @override
-  @JsonKey(name: 'createdDate')
-  String? get createdDate;
   @override
   @JsonKey(ignore: true)
   _$$NotificationImplCopyWith<_$NotificationImpl> get copyWith =>

@@ -12,9 +12,7 @@ _$NotificationImpl _$$NotificationImplFromJson(Map<String, dynamic> json) =>
       appName: json['appName'] as String? ?? '',
       notificationTitle: json['notificationTitle'] as String? ?? '',
       notificationContent: json['notificationContent'] as String? ?? '',
-      clientNotificationTime: json['clientNotificationTime'] as String? ?? '',
-      modifiedDate: json['modifiedDate'] as String?,
-      createdDate: json['createdDate'] as String?,
+      clientNotificationTime: json['notificationDate'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$NotificationImplToJson(_$NotificationImpl instance) =>
@@ -23,7 +21,5 @@ Map<String, dynamic> _$$NotificationImplToJson(_$NotificationImpl instance) =>
       'appName': instance.appName,
       'notificationTitle': instance.notificationTitle,
       'notificationContent': instance.notificationContent,
-      'clientNotificationTime': instance.clientNotificationTime,
-      'modifiedDate': instance.modifiedDate,
-      'createdDate': instance.createdDate,
+      'notificationDate': instance.clientNotificationTime,
     };

@@ -1,5 +1,5 @@
-import 'package:remote_vardytests/src/features/vocab/remote/model/vocab/vocab_v2.dart';
-import 'package:utils_vardytests/src/model/fetch_response.dart';
+import 'package:mobile_1byte_remote/src/features/vocab/remote/model/vocab/vocab_v2.dart';
+import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'model/vocab/vocab_user.dart';

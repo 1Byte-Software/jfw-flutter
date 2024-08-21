@@ -1,9 +1,9 @@
 import 'dart:io';
-import 'package:remote_vardytests/src/features/category/remote/model/category.dart';
-import 'package:remote_vardytests/src/features/question/request/do_score/id_object.dart';
-import 'package:utils_vardytests/src/model/page_model.dart';
-import 'package:utils_vardytests/src/model/parsed_page_model.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
+import 'package:mobile_1byte_remote/src/features/category/remote/model/category.dart';
+import 'package:mobile_1byte_remote/src/features/question/request/do_score/id_object.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
 import '../remote_question.dart';
 import '../model/lesson_detail/lesson_detail.dart';
 import '../model/lesson_detail/lesson_response.dart';
@@ -14,7 +14,7 @@ import '../request/request_data.dart';
 import '../response/do_score/do_score_response.dart';
 import '../response/do_score/question_response_users.dart';
 import '../response/priority/question_priority_response.dart';
-import 'package:utils_vardytests/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
 
 abstract class DataRepository {
 ////////////////////////////////////////////////////////////////////////////////

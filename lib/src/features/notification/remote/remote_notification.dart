@@ -2,7 +2,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:utils_vardytests/src/model/fetch_response.dart';
+import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 
 part 'remote_notification.g.dart';
 
@@ -10,10 +10,11 @@ part 'remote_notification.g.dart';
 abstract class RemoteNotification {
   factory RemoteNotification(Dio dio, {String baseUrl}) = _RemoteNotification;
 
-  @GET('/users/{uid}/notifications')
+  @GET('/notifications')
   Future<FetchResponse> getNotification(
-    @Path('uid') int uid, {
-    @Query('status') required int? status,
+      // @Path('uid') int uid,
+      {
+    // @Query('status') String status = 'Unread',
     @Query('pageNumber') required int pageNumber,
     @Query('pageSize') required int pageSize,
   });

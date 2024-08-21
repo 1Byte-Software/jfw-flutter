@@ -1,5 +1,5 @@
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:utils_vardytests/src/enum/environment.dart';
+import 'package:mobile_1byte_utils/src/enum/environment.dart';
 
 class RemoteFirebaseRemoteConfig {
   final Environments env;
@@ -36,6 +36,9 @@ class RemoteFirebaseRemoteConfig {
       firebaseRemoteConfig.getString(_key(_latestVersionVardyTestsPortKey));
   RemoteConfigValue? getConfigDebugMode() =>
       firebaseRemoteConfig.getAll()[_key(_configDebugModeKey)];
+
+  RemoteConfigValue? getConfigValue(String configKey) =>
+      firebaseRemoteConfig.getAll()[_key(configKey)];
 
   bool getIsMaintenance() =>
       firebaseRemoteConfig.getBool(_key(_isMaintenanceKey));

@@ -1,7 +1,7 @@
-import 'package:utils_vardytests/src/model/page_model.dart';
-import 'package:utils_vardytests/src/model/page_model_v2.dart';
-import 'package:utils_vardytests/src/model/fresult.dart';
-import 'package:utils_vardytests/src/func/function.dart';
+import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:mobile_1byte_utils/src/model/page_model_v2.dart';
+import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:mobile_1byte_utils/src/func/function.dart';
 import '../remote_notification.dart';
 
 abstract class NotificationRepository {
@@ -24,10 +24,10 @@ class NotificationRepositoryImpl extends NotificationRepository {
     // return tryCatchResult(
     // func: () async {
     final notifications = await ref.getNotification(
-      uid,
+      // uid,
       pageNumber: pageNumber,
       pageSize: pageSize,
-      status: status,
+      // status: status,
     );
 
     return FResult.success(

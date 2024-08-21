@@ -1,6 +1,6 @@
 // import 'package:flutter_test/flutter_test.dart';
 
-// import 'package:remote_vardytests/remote_vardytests.dart';
+// import 'package:mobile_1byte_remote/remote_vardytests.dart';
 
 // void main() {
 //   test('adds one to input values', () {
