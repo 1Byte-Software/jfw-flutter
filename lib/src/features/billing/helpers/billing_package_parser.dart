@@ -1,4 +1,4 @@
-import 'package:mobile_1byte_remote/src/features/billing/model/billing_package.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/billing/model/billing_package.dart';
 
 class BillingPackageParser {
   final String standardCode;

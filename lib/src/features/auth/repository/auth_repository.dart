@@ -1,4 +1,4 @@
-import 'package:mobile_1byte_remote/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
 import 'package:mobile_1byte_utils/src/model/fresult.dart';
 import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
 

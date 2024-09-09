@@ -1,5 +1,5 @@
-import 'package:mobile_1byte_remote/src/features/auth/model/user/item_response.dart';
-import 'package:mobile_1byte_remote/src/local/collection_reference/user_ferefence.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/auth/model/user/item_response.dart';
+import 'package:mobile_1byte_remote_jfw/src/local/collection_reference/user_ferefence.dart';
 import 'package:mobile_1byte_utils/src/model/fresult.dart';
 import 'package:mobile_1byte_utils/src/func/function.dart';
 import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';

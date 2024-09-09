@@ -851,10 +851,10 @@ packages:
   mobile_1byte_utils:
     dependency: "direct main"
     description:
-      path: "/Users/1byte/modules/utils_vardytests/head"
+      path: "/Users/1byte/modules/1byte_modules/mobile_1byte_utils"
       relative: false
     source: path
-    version: "1.3.16+4"
+    version: "1.7.20+5"
   nested:
     dependency: transitive
     description:

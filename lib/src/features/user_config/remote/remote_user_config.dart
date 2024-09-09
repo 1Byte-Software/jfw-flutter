@@ -1,25 +1,37 @@
 import 'package:dio/dio.dart';
+import 'package:mobile_1byte_remote_jfw/src/constant/app_constant.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 part 'remote_user_config.g.dart';
+
+const _getConfigurationPath =
+    '/users/{${AppConstant.userIdParam}}/configurations';
+const _createConfigurationPath =
+    '/users/{${AppConstant.userIdParam}}/configurations';
+const _removeConfigurationPath = '/configurations/{${AppConstant.idParam}}';
+
+/// PARAMS
+const _groupCodeParam = 'groupCode';
+const _codeParam = 'code';
 
 @RestApi()
 abstract class RemoteUserConfig {
   factory RemoteUserConfig(Dio dio, {String baseUrl}) = _RemoteUserConfig;
 
-  @GET('/users/{uid}/configurations')
+  @GET(_getConfigurationPath)
   Future<FetchResponse> getConfigurations(
-    @Path('uid') int uid, {
-    @Query('groupCode') required String? groupCode,
-    @Query('code') required String? code,
+    @Path(AppConstant.userIdParam) int uid, {
+    @Query(_groupCodeParam) required String? groupCode,
+    @Query(_codeParam) required String? code,
   });
 
-  @POST('/users/{uid}/configurations')
-  Future<FetchResponse> createConfiguration(@Path('uid') int uid,
+  @POST(_createConfigurationPath)
+  Future<FetchResponse> createConfiguration(
+      @Path(AppConstant.userIdParam) int uid,
       {@Body() required Map<String, dynamic> config});
 
-  @DELETE('/configurations/{id}')
+  @DELETE(_removeConfigurationPath)
   Future<FetchResponse> removeConfiguration(
-    @Path('id') int id,
+    @Path(AppConstant.idParam) int id,
   );
 }

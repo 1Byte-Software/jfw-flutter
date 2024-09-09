@@ -1,4 +1,4 @@
-import 'package:mobile_1byte_remote/src/features/point_and_reward/model/reward.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/point_and_reward/model/reward.dart';
 import 'package:mobile_1byte_utils/src/model/fresult.dart';
 import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
 import 'package:mobile_1byte_utils/src/model/page_model.dart';

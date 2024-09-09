@@ -1,34 +1,48 @@
+import 'package:mobile_1byte_remote_jfw/src/constant/app_constant.dart';
 import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 part 'remote_billing.g.dart';
 
+// PROTOCOLS
+const _getPricesPath = '/prices';
+const _getPackagesPath = '/packages';
+const _registerServerSideAfterPaymentPath = '/payments/registration';
+const _applyLicensePath = '/licenses/apply';
+const _checkValidStatusLicensePath = '/licenses/check';
+const _getCheckOutLinkPath = '/prices/{${AppConstant.idParam}}/checkout-link';
+
+// PARAMS
+const _authKeyParam = 'authKey';
+const _licenseKeyParam = 'licenseKey';
+const _brandIdParam = 'brandId';
+
 @RestApi()
 abstract class RemoteBilling {
   factory RemoteBilling(Dio dio, {String baseUrl}) = _RemoteBilling;
 
-  @GET('/prices')
+  @GET(_getPricesPath)
   Future<FetchResponse> getPrices();
 
-  @GET('/packages')
+  @GET(_getPackagesPath)
   Future<FetchResponse> getPackages(
-      {@Query('brandId') required String brandId});
+      {@Query(_brandIdParam) required String brandId});
 
-  @GET('/prices/{id}/checkout-link')
-  Future<FetchResponse> getCheckoutLink(@Path('id') int id);
+  @GET(_getCheckOutLinkPath)
+  Future<FetchResponse> getCheckoutLink(@Path(AppConstant.idParam) int id);
 
-  @GET('/licenses/check')
+  @GET(_checkValidStatusLicensePath)
   Future<FetchResponse> checkValidStatusLicense(
-      @Query('licenseKey') String licenseKey);
+      @Query(_licenseKeyParam) String licenseKey);
 
-  @POST('/licenses/apply')
+  @POST(_applyLicensePath)
   Future<FetchResponse> applyLicense({
-    @Query('brandUrl') required String brandUrl,
-    @Query('authKey') required String authKey,
-    @Query('licenseKey') required String licenseKey,
+    @Query(AppConstant.brandUrlParam) required String brandUrl,
+    @Query(_authKeyParam) required String authKey,
+    @Query(_licenseKeyParam) required String licenseKey,
   });
 
-  @POST('/payments/registration')
+  @POST(_registerServerSideAfterPaymentPath)
   Future<FetchResponse> registerServerSideAfterPayment(
       @Body() dynamic registerPaymentRequest);
 }

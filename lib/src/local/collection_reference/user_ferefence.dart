@@ -1,22 +1,22 @@
-import 'package:mobile_1byte_remote/src/features/auth/model/user/item_response.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/auth/model/user/item_response.dart';
 import 'package:sembast/sembast.dart';
-import 'package:mobile_1byte_utils/src/services/local_database/app_database.dart';
 import 'package:mobile_1byte_utils/src/services/local_database/base_collection_reference.dart';
 
-class UserCollectionReference extends BaseCollectionReference<FUser> {
-  // ignore: constant_identifier_names
-  static const String USER_KEY = 'USER';
+// ignore: constant_identifier_names
+const String _USER_KEY = 'USER';
 
+class UserCollectionReference extends BaseCollectionReference<FUser> {
   UserCollectionReference()
       : super(
-          intMapStoreFactory.store(USER_KEY),
+          intMapStoreFactory.store(_USER_KEY),
           toJson: (snapshot) => snapshot.toJson(),
           fromJson: (snapshot) => FUser.fromJson(snapshot),
           copyWithKey: (value, key) => value.copyWith(key: key),
         );
 
   Future<FUser?> getUserByUsername(String username) async {
-    final finder = Finder(filter: Filter.equals('username', username));
+    const userNameParam = 'username';
+    final finder = Finder(filter: Filter.equals(userNameParam, username));
 
     final recordSnapshots = await ref.find(await db, finder: finder);
     final users = recordSnapshots.map((e) {

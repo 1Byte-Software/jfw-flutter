@@ -5,22 +5,18 @@ import 'package:retrofit/retrofit.dart';
 
 part 'remote_storage.g.dart';
 
+// PROTOCOLS
+const _uploadFilePath = '/cdn/upload-file';
+
+// PARAMS
+const _fileParam = 'file';
+
 @RestApi()
 abstract class RemoteStorage {
   factory RemoteStorage(Dio dio, {String baseUrl}) = _RemoteStorage;
 
-  @POST('/cdn/save-file')
+  @POST(_uploadFilePath)
   Future<BaseResponseV1> uploadFile(
-    @Part(name: 'file') File attach,
+    @Part(name: _fileParam) File attach,
   );
-
-  // @POST('/users/register')
-  // Future<RegisterResponseFail> registerFail(
-  //     @Body() RegisterRequest registerRequest);
-
-  // @POST('/authenticate')
-  // Future<LoginResponse> login(@Body() LoginRequest loginRequest);
-
-  // @POST('/authenticate')
-  // Future<RegisterResponseFail> loginFail(@Body() LoginRequest loginRequest);
 }

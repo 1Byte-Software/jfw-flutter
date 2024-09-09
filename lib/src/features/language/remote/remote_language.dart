@@ -1,14 +1,17 @@
+import 'package:mobile_1byte_remote_jfw/src/constant/app_constant.dart';
 import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 part 'remote_language.g.dart';
 
+const _getLanguagesPath = '/languages';
+
 @RestApi()
 abstract class RemoteLanguage {
   factory RemoteLanguage(Dio dio, {String baseUrl}) = _RemoteLanguage;
 
-  @GET('/languages')
+  @GET(_getLanguagesPath)
   Future<FetchResponse> getLanguages(
-      {@Query('SortOrder') required String? sortOrder,
-      @Query('SortDataField') required String? sortDataField});
+      {@Query(AppConstant.sortOrderParam) required String? sortOrder,
+      @Query(AppConstant.sortDataFieldParam) required String? sortDataField});
 }

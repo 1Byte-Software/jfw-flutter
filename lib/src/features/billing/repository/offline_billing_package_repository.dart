@@ -1,5 +1,5 @@
-import 'package:mobile_1byte_remote/src/features/billing/model/billing_package.dart';
-import 'package:mobile_1byte_remote/src/local/collection_reference/billling_package_reference.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/billing/model/billing_package.dart';
+import 'package:mobile_1byte_remote_jfw/src/local/collection_reference/billling_package_reference.dart';
 import 'package:mobile_1byte_utils/src/model/fresult.dart';
 import 'package:mobile_1byte_utils/src/func/function.dart';
 import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';

@@ -1,6 +1,6 @@
-import 'package:mobile_1byte_remote/src/features/user_config/model/user_config.dart';
-import 'package:mobile_1byte_remote/src/features/user_config/remote/remote_user_config.dart';
-import 'package:mobile_1byte_remote/src/features/user_config/repository/remote_user_config_repository.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/user_config/model/user_config.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/user_config/remote/remote_user_config.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/user_config/repository/remote_user_config_repository.dart';
 import 'package:mobile_1byte_utils/src/func/function.dart';
 import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
 import 'package:mobile_1byte_utils/src/model/fresult.dart';

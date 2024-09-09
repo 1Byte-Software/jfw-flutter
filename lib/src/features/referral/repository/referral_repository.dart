@@ -1,5 +1,5 @@
-import 'package:mobile_1byte_remote/src/features/auth/model/user/item_response.dart';
-import 'package:mobile_1byte_remote/src/features/referral/remote/remote_referral.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/auth/model/user/item_response.dart';
+import 'package:mobile_1byte_remote_jfw/src/features/referral/remote/remote_referral.dart';
 import 'package:mobile_1byte_utils/src/func/function.dart';
 import 'package:mobile_1byte_utils/src/model/fresult.dart';
 import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
@@ -29,7 +29,7 @@ class ReferralRepositoryImpl extends ReferralReposity {
   Future<FResult<List<FUser>>> getReferees(int uid) async {
     return tryCatchResult<List<FUser>>(
         func: () async {
-          final response = await ref.getReferresOfUser(uid);
+          final response = await ref.getRefereesOfUser(uid);
           return (response.data as List).map((e) => FUser.fromJson(e)).toList();
         },
         logErr: (ex) => logI.e(ex));

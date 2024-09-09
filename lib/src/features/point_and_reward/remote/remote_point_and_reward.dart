@@ -1,29 +1,41 @@
+import 'package:mobile_1byte_remote_jfw/src/constant/app_constant.dart';
 import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'remote_point_and_reward.g.dart';
 
+const _getPointOfUserPath = '/users/{${AppConstant.userIdParam}}/points';
+const _getRewardsPath = '/point-events/redeem';
+const _applyRewardToUser =
+    '/points/apply-reward/{$_pointEventIdParam}/{${AppConstant.userIdParam}}';
+const getPointHistoriesPath =
+    '/users/{${AppConstant.userIdParam}}/point-histories';
+
+// PARAMS
+const _pointEventIdParam = 'pointEventId';
+
 @RestApi()
 abstract class RemotePointAndReward {
   factory RemotePointAndReward(Dio dio, {String baseUrl}) =
       _RemotePointAndReward;
 
-  @GET('/users/{userId}/points')
-  Future<FetchResponse> getPointOfUser({@Path('userId') required int userId});
+  @GET(_getPointOfUserPath)
+  Future<FetchResponse> getPointOfUser(
+      {@Path(AppConstant.userIdParam) required int userId});
 
-  @GET('/point-events/redeem')
+  @GET(_getRewardsPath)
   Future<FetchResponse> getRewards();
 
-  @POST('/points/apply-reward/{pointEventId}/{userId}')
+  @POST(_applyRewardToUser)
   Future<FetchResponse> applyRewardToUser(
-      {@Path('pointEventId') required int pointEventId,
-      @Path('userId') required int userId});
+      {@Path(_pointEventIdParam) required int pointEventId,
+      @Path(AppConstant.userIdParam) required int userId});
 
-  @GET('/users/{userId}/point-histories')
+  @GET(getPointHistoriesPath)
   Future<FetchResponse> getUserPointHistories(
-    @Path('userId') int userId, {
-    @Query("pageNumber") required int pageNumber,
-    @Query('pageSize') required int pageSize,
+    @Path(AppConstant.userIdParam) int userId, {
+    @Query(AppConstant.pageNumberParam) required int pageNumber,
+    @Query(AppConstant.pageSizeParam) required int pageSize,
   });
 }
