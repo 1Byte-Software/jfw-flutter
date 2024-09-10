@@ -20,13 +20,13 @@ TimeZone _$TimeZoneFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TimeZone {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'value', defaultValue: '')
+  @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
   String get value => throw _privateConstructorUsedError;
-  @JsonKey(name: 'countryCode', defaultValue: '')
+  @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
   String get countryCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'identifier', defaultValue: '')
+  @JsonKey(name: _identifierParam, defaultValue: _defaultValueEmptyString)
   String get identifier => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,10 +41,13 @@ abstract class $TimeZoneCopyWith<$Res> {
       _$TimeZoneCopyWithImpl<$Res, TimeZone>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'value', defaultValue: '') String value,
-      @JsonKey(name: 'countryCode', defaultValue: '') String countryCode,
-      @JsonKey(name: 'identifier', defaultValue: '') String identifier});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
+      String value,
+      @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
+      String countryCode,
+      @JsonKey(name: _identifierParam, defaultValue: _defaultValueEmptyString)
+      String identifier});
 }
 
 /// @nodoc
@@ -95,10 +98,13 @@ abstract class _$$TokenResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'value', defaultValue: '') String value,
-      @JsonKey(name: 'countryCode', defaultValue: '') String countryCode,
-      @JsonKey(name: 'identifier', defaultValue: '') String identifier});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
+      String value,
+      @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
+      String countryCode,
+      @JsonKey(name: _identifierParam, defaultValue: _defaultValueEmptyString)
+      String identifier});
 }
 
 /// @nodoc
@@ -142,25 +148,28 @@ class __$$TokenResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TokenResponseImpl implements _TokenResponse {
   _$TokenResponseImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'value', defaultValue: '') required this.value,
-      @JsonKey(name: 'countryCode', defaultValue: '') required this.countryCode,
-      @JsonKey(name: 'identifier', defaultValue: '') required this.identifier});
+      {@JsonKey(name: _idParam) required this.id,
+      @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
+      required this.value,
+      @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
+      required this.countryCode,
+      @JsonKey(name: _identifierParam, defaultValue: _defaultValueEmptyString)
+      required this.identifier});
 
   factory _$TokenResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$TokenResponseImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int id;
   @override
-  @JsonKey(name: 'value', defaultValue: '')
+  @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
   final String value;
   @override
-  @JsonKey(name: 'countryCode', defaultValue: '')
+  @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
   final String countryCode;
   @override
-  @JsonKey(name: 'identifier', defaultValue: '')
+  @JsonKey(name: _identifierParam, defaultValue: _defaultValueEmptyString)
   final String identifier;
 
   @override
@@ -202,27 +211,28 @@ class _$TokenResponseImpl implements _TokenResponse {
 
 abstract class _TokenResponse implements TimeZone {
   factory _TokenResponse(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'value', defaultValue: '') required final String value,
-      @JsonKey(name: 'countryCode', defaultValue: '')
+      {@JsonKey(name: _idParam) required final int id,
+      @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
+      required final String value,
+      @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
       required final String countryCode,
-      @JsonKey(name: 'identifier', defaultValue: '')
+      @JsonKey(name: _identifierParam, defaultValue: _defaultValueEmptyString)
       required final String identifier}) = _$TokenResponseImpl;
 
   factory _TokenResponse.fromJson(Map<String, dynamic> json) =
       _$TokenResponseImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id;
   @override
-  @JsonKey(name: 'value', defaultValue: '')
+  @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
   String get value;
   @override
-  @JsonKey(name: 'countryCode', defaultValue: '')
+  @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
   String get countryCode;
   @override
-  @JsonKey(name: 'identifier', defaultValue: '')
+  @JsonKey(name: _identifierParam, defaultValue: _defaultValueEmptyString)
   String get identifier;
   @override
   @JsonKey(ignore: true)

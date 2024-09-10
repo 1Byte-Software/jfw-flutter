@@ -7,8 +7,8 @@ part of 'point.dart';
 // **************************************************************************
 
 _$FPointImpl _$$FPointImplFromJson(Map<String, dynamic> json) => _$FPointImpl(
-      description: json['description'] as String? ?? '',
-      pointValue: json['pointValue'] as int? ?? 0,
+      description: json['description'] as String? ?? _defaultValueEmptyString,
+      pointValue: json['pointValue'] as int? ?? _defaultValueZero,
       createdDate: json['createdDate'] as String,
     );
 

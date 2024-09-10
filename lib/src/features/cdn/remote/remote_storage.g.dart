@@ -39,7 +39,7 @@ class _RemoteStorage implements RemoteStorage {
     )
             .compose(
               _dio.options,
-              '/cdn/save-file',
+              '/cdn/upload-file',
               queryParameters: queryParameters,
               data: _data,
             )

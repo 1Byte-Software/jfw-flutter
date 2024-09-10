@@ -8,8 +8,8 @@ part of 'reward.dart';
 
 _$RewardImpl _$$RewardImplFromJson(Map<String, dynamic> json) => _$RewardImpl(
       id: json['id'] as int,
-      description: json['description'] as String? ?? '',
-      pointValue: json['pointValue'] as int? ?? 0,
+      description: json['description'] as String? ?? _defaultValueEmptyString,
+      pointValue: json['pointValue'] as int? ?? _defaultValueZero,
     );
 
 Map<String, dynamic> _$$RewardImplToJson(_$RewardImpl instance) =>

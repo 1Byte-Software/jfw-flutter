@@ -20,11 +20,11 @@ TrackingEvent _$TrackingEventFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TrackingEvent {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get code => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: '')
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,9 +40,9 @@ abstract class $TrackingEventCopyWith<$Res> {
       _$TrackingEventCopyWithImpl<$Res, TrackingEvent>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'code') String code,
-      @JsonKey(name: 'name', defaultValue: '') String name});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _codeParam) String code,
+      @JsonKey(name: _nameParam, defaultValue: '') String name});
 }
 
 /// @nodoc
@@ -88,9 +88,9 @@ abstract class _$$TrackingEventImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'code') String code,
-      @JsonKey(name: 'name', defaultValue: '') String name});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _codeParam) String code,
+      @JsonKey(name: _nameParam, defaultValue: '') String name});
 }
 
 /// @nodoc
@@ -129,21 +129,21 @@ class __$$TrackingEventImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TrackingEventImpl implements _TrackingEvent {
   _$TrackingEventImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'code') required this.code,
-      @JsonKey(name: 'name', defaultValue: '') required this.name});
+      {@JsonKey(name: _idParam) required this.id,
+      @JsonKey(name: _codeParam) required this.code,
+      @JsonKey(name: _nameParam, defaultValue: '') required this.name});
 
   factory _$TrackingEventImpl.fromJson(Map<String, dynamic> json) =>
       _$$TrackingEventImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int id;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   final String code;
   @override
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: '')
   final String name;
 
   @override
@@ -181,22 +181,22 @@ class _$TrackingEventImpl implements _TrackingEvent {
 
 abstract class _TrackingEvent implements TrackingEvent {
   factory _TrackingEvent(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'code') required final String code,
-      @JsonKey(name: 'name', defaultValue: '')
+      {@JsonKey(name: _idParam) required final int id,
+      @JsonKey(name: _codeParam) required final String code,
+      @JsonKey(name: _nameParam, defaultValue: '')
       required final String name}) = _$TrackingEventImpl;
 
   factory _TrackingEvent.fromJson(Map<String, dynamic> json) =
       _$TrackingEventImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get code;
   @override
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: '')
   String get name;
   @override
   @JsonKey(ignore: true)

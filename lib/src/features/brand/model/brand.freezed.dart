@@ -21,15 +21,11 @@ FBrand _$FBrandFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FBrand {
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   String? get name => throw _privateConstructorUsedError;
-
-  /// Logo with text
-  @JsonKey(name: 'logoUrl')
+  @JsonKey(name: _logoUrlParam)
   String? get logoUrl => throw _privateConstructorUsedError;
-
-  /// Logo icon
-  @JsonKey(name: 'faviconURL')
+  @JsonKey(name: _faviconURLParam)
   String? get faviconUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,9 +40,9 @@ abstract class $FBrandCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'logoUrl') String? logoUrl,
-      @JsonKey(name: 'faviconURL') String? faviconUrl});
+      @JsonKey(name: _nameParam) String? name,
+      @JsonKey(name: _logoUrlParam) String? logoUrl,
+      @JsonKey(name: _faviconURLParam) String? faviconUrl});
 }
 
 /// @nodoc
@@ -97,9 +93,9 @@ abstract class _$$FBrandImplCopyWith<$Res> implements $FBrandCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'logoUrl') String? logoUrl,
-      @JsonKey(name: 'faviconURL') String? faviconUrl});
+      @JsonKey(name: _nameParam) String? name,
+      @JsonKey(name: _logoUrlParam) String? logoUrl,
+      @JsonKey(name: _faviconURLParam) String? faviconUrl});
 }
 
 /// @nodoc
@@ -144,9 +140,9 @@ class __$$FBrandImplCopyWithImpl<$Res>
 class _$FBrandImpl implements _FBrand {
   _$FBrandImpl(
       {required this.id,
-      @JsonKey(name: 'name') this.name,
-      @JsonKey(name: 'logoUrl') this.logoUrl,
-      @JsonKey(name: 'faviconURL') this.faviconUrl});
+      @JsonKey(name: _nameParam) this.name,
+      @JsonKey(name: _logoUrlParam) this.logoUrl,
+      @JsonKey(name: _faviconURLParam) this.faviconUrl});
 
   factory _$FBrandImpl.fromJson(Map<String, dynamic> json) =>
       _$$FBrandImplFromJson(json);
@@ -154,17 +150,13 @@ class _$FBrandImpl implements _FBrand {
   @override
   final int id;
   @override
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   final String? name;
-
-  /// Logo with text
   @override
-  @JsonKey(name: 'logoUrl')
+  @JsonKey(name: _logoUrlParam)
   final String? logoUrl;
-
-  /// Logo icon
   @override
-  @JsonKey(name: 'faviconURL')
+  @JsonKey(name: _faviconURLParam)
   final String? faviconUrl;
 
   @override
@@ -204,27 +196,24 @@ class _$FBrandImpl implements _FBrand {
 
 abstract class _FBrand implements FBrand {
   factory _FBrand(
-      {required final int id,
-      @JsonKey(name: 'name') final String? name,
-      @JsonKey(name: 'logoUrl') final String? logoUrl,
-      @JsonKey(name: 'faviconURL') final String? faviconUrl}) = _$FBrandImpl;
+          {required final int id,
+          @JsonKey(name: _nameParam) final String? name,
+          @JsonKey(name: _logoUrlParam) final String? logoUrl,
+          @JsonKey(name: _faviconURLParam) final String? faviconUrl}) =
+      _$FBrandImpl;
 
   factory _FBrand.fromJson(Map<String, dynamic> json) = _$FBrandImpl.fromJson;
 
   @override
   int get id;
   @override
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   String? get name;
   @override
-
-  /// Logo with text
-  @JsonKey(name: 'logoUrl')
+  @JsonKey(name: _logoUrlParam)
   String? get logoUrl;
   @override
-
-  /// Logo icon
-  @JsonKey(name: 'faviconURL')
+  @JsonKey(name: _faviconURLParam)
   String? get faviconUrl;
   @override
   @JsonKey(ignore: true)

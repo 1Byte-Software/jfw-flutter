@@ -5,6 +5,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'notification.freezed.dart';
 part 'notification.g.dart';
 
+// Notification code
+const _codeNotificationStatusUnread = 0;
+const _codeNotificationStatusRead = 1;
+const _codeNotificationStatusAccept = 2;
+const _codeNotificationStatusRejected = -1;
+const _codeNotificationStatusDeleted = -3;
+
 enum NotificationStatusEnum {
   read,
   unread,
@@ -15,29 +22,29 @@ enum NotificationStatusEnum {
   int toInt() {
     switch (this) {
       case NotificationStatusEnum.unread:
-        return 0;
+        return _codeNotificationStatusUnread;
       case NotificationStatusEnum.read:
-        return 1;
+        return _codeNotificationStatusRead;
       case NotificationStatusEnum.accept:
-        return 2;
+        return _codeNotificationStatusAccept;
       case NotificationStatusEnum.rejected:
-        return -1;
+        return _codeNotificationStatusRejected;
       case NotificationStatusEnum.deleted:
-        return -3;
+        return _codeNotificationStatusDeleted;
     }
   }
 
   static NotificationStatusEnum fromInt(int status) {
     switch (status) {
-      case 0:
+      case _codeNotificationStatusUnread:
         return NotificationStatusEnum.unread;
-      case 1:
+      case _codeNotificationStatusRead:
         return NotificationStatusEnum.read;
-      case 2:
+      case _codeNotificationStatusAccept:
         return NotificationStatusEnum.accept;
-      case -1:
+      case _codeNotificationStatusRejected:
         return NotificationStatusEnum.rejected;
-      case -3:
+      case _codeNotificationStatusDeleted:
         return NotificationStatusEnum.deleted;
       default:
         log('status notification is NOT FOUND');
@@ -46,15 +53,30 @@ enum NotificationStatusEnum {
   }
 }
 
+// PARAMS
+const _idParam = 'id';
+const _subjectParam = 'subject';
+const _contentParam = 'content';
+const _createdDateParam = 'createdDate';
+const _statusParam = 'status';
+
+// DEFAULT VALUE
+const _defaultValueZero = 0;
+const _defaultValueEmptyString = 0;
+
 @freezed
 class MNotification with _$MNotification {
   MNotification._();
   factory MNotification(
-      {@JsonKey(name: 'id', defaultValue: 0) required int id,
-      @JsonKey(name: 'subject', defaultValue: '') required String emailSubject,
-      @JsonKey(name: 'content', defaultValue: '') required String emailBody,
-      @JsonKey(name: 'createdDate') required String createdDate,
-      @JsonKey(name: 'status') required int userReadStatus}) = _MNotification;
+          {@JsonKey(name: _idParam, defaultValue: _defaultValueZero)
+          required int id,
+          @JsonKey(name: _subjectParam, defaultValue: _defaultValueEmptyString)
+          required String emailSubject,
+          @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
+          required String emailBody,
+          @JsonKey(name: _createdDateParam) required String createdDate,
+          @JsonKey(name: _statusParam) required int userReadStatus}) =
+      _MNotification;
 
   factory MNotification.fromJson(Map<String, Object?> json) =>
       _$MNotificationFromJson(json);

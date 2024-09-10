@@ -5,26 +5,31 @@ import 'package_price.dart';
 part 'billing_package.g.dart';
 part 'billing_package.freezed.dart';
 
-enum BillingPackageEnum {
-  free,
-  standard,
-  gold;
+// PARAMS
+const _idParam = 'id';
+const _keyParam = 'key';
+const _featuresParam = 'features';
+const _pricesParam = 'prices';
+const _codeParam = 'code';
+const _nameParam = 'name';
+const _zOrderParam = 'zOrder';
+const _tagsParam = 'tags';
 
-  @override
-  String toString() => name.toUpperCase();
-}
+// DEFAULT VALUE
+const _valueEmpty = '';
+const _valueZero = 0;
 
 @freezed
 class BillingPackage with _$BillingPackage {
   factory BillingPackage({
-    @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'key') int? key,
-    @JsonKey(name: 'features') required List<PackageFeature> features,
-    @JsonKey(name: 'prices') required List<PackagePrice> prices,
-    @JsonKey(name: 'code') required String code,
-    @JsonKey(name: 'name', defaultValue: '') required String name,
-    @JsonKey(name: 'zOrder', defaultValue: 0) required int zOrder,
-    @JsonKey(name: 'tags', defaultValue: "") required String tags,
+    @JsonKey(name: _idParam) required int id,
+    @JsonKey(name: _keyParam) int? key,
+    @JsonKey(name: _featuresParam) required List<PackageFeature> features,
+    @JsonKey(name: _pricesParam) required List<PackagePrice> prices,
+    @JsonKey(name: _codeParam) required String code,
+    @JsonKey(name: _nameParam, defaultValue: _valueEmpty) required String name,
+    @JsonKey(name: _zOrderParam, defaultValue: _valueZero) required int zOrder,
+    @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) required String tags,
   }) = _Package;
 
   factory BillingPackage.fromJson(Map<String, dynamic> json) =>

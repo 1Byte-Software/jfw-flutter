@@ -20,17 +20,17 @@ TrackingActivity _$TrackingActivityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TrackingActivity {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'browserName')
+  @JsonKey(name: _browserNameParam)
   String? get browserName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'os')
+  @JsonKey(name: _osParam)
   String? get os => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ipAddress')
+  @JsonKey(name: _ipAddressParam)
   String? get ip => throw _privateConstructorUsedError;
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   String? get createdDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'trackingEventId')
+  @JsonKey(name: _trackingEventIdParam)
   int? get trackingEventId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,12 +46,12 @@ abstract class $TrackingActivityCopyWith<$Res> {
       _$TrackingActivityCopyWithImpl<$Res, TrackingActivity>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'browserName') String? browserName,
-      @JsonKey(name: 'os') String? os,
-      @JsonKey(name: 'ipAddress') String? ip,
-      @JsonKey(name: 'createdDate') String? createdDate,
-      @JsonKey(name: 'trackingEventId') int? trackingEventId});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _browserNameParam) String? browserName,
+      @JsonKey(name: _osParam) String? os,
+      @JsonKey(name: _ipAddressParam) String? ip,
+      @JsonKey(name: _createdDateParam) String? createdDate,
+      @JsonKey(name: _trackingEventIdParam) int? trackingEventId});
 }
 
 /// @nodoc
@@ -112,12 +112,12 @@ abstract class _$$TrackingActivityImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'browserName') String? browserName,
-      @JsonKey(name: 'os') String? os,
-      @JsonKey(name: 'ipAddress') String? ip,
-      @JsonKey(name: 'createdDate') String? createdDate,
-      @JsonKey(name: 'trackingEventId') int? trackingEventId});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _browserNameParam) String? browserName,
+      @JsonKey(name: _osParam) String? os,
+      @JsonKey(name: _ipAddressParam) String? ip,
+      @JsonKey(name: _createdDateParam) String? createdDate,
+      @JsonKey(name: _trackingEventIdParam) int? trackingEventId});
 }
 
 /// @nodoc
@@ -171,33 +171,33 @@ class __$$TrackingActivityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TrackingActivityImpl implements _TrackingActivity {
   _$TrackingActivityImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'browserName') required this.browserName,
-      @JsonKey(name: 'os') required this.os,
-      @JsonKey(name: 'ipAddress') required this.ip,
-      @JsonKey(name: 'createdDate') required this.createdDate,
-      @JsonKey(name: 'trackingEventId') required this.trackingEventId});
+      {@JsonKey(name: _idParam) required this.id,
+      @JsonKey(name: _browserNameParam) required this.browserName,
+      @JsonKey(name: _osParam) required this.os,
+      @JsonKey(name: _ipAddressParam) required this.ip,
+      @JsonKey(name: _createdDateParam) required this.createdDate,
+      @JsonKey(name: _trackingEventIdParam) required this.trackingEventId});
 
   factory _$TrackingActivityImpl.fromJson(Map<String, dynamic> json) =>
       _$$TrackingActivityImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int id;
   @override
-  @JsonKey(name: 'browserName')
+  @JsonKey(name: _browserNameParam)
   final String? browserName;
   @override
-  @JsonKey(name: 'os')
+  @JsonKey(name: _osParam)
   final String? os;
   @override
-  @JsonKey(name: 'ipAddress')
+  @JsonKey(name: _ipAddressParam)
   final String? ip;
   @override
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   final String? createdDate;
   @override
-  @JsonKey(name: 'trackingEventId')
+  @JsonKey(name: _trackingEventIdParam)
   final int? trackingEventId;
 
   @override
@@ -243,34 +243,34 @@ class _$TrackingActivityImpl implements _TrackingActivity {
 
 abstract class _TrackingActivity implements TrackingActivity {
   factory _TrackingActivity(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'browserName') required final String? browserName,
-      @JsonKey(name: 'os') required final String? os,
-      @JsonKey(name: 'ipAddress') required final String? ip,
-      @JsonKey(name: 'createdDate') required final String? createdDate,
-      @JsonKey(name: 'trackingEventId')
+      {@JsonKey(name: _idParam) required final int id,
+      @JsonKey(name: _browserNameParam) required final String? browserName,
+      @JsonKey(name: _osParam) required final String? os,
+      @JsonKey(name: _ipAddressParam) required final String? ip,
+      @JsonKey(name: _createdDateParam) required final String? createdDate,
+      @JsonKey(name: _trackingEventIdParam)
       required final int? trackingEventId}) = _$TrackingActivityImpl;
 
   factory _TrackingActivity.fromJson(Map<String, dynamic> json) =
       _$TrackingActivityImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id;
   @override
-  @JsonKey(name: 'browserName')
+  @JsonKey(name: _browserNameParam)
   String? get browserName;
   @override
-  @JsonKey(name: 'os')
+  @JsonKey(name: _osParam)
   String? get os;
   @override
-  @JsonKey(name: 'ipAddress')
+  @JsonKey(name: _ipAddressParam)
   String? get ip;
   @override
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   String? get createdDate;
   @override
-  @JsonKey(name: 'trackingEventId')
+  @JsonKey(name: _trackingEventIdParam)
   int? get trackingEventId;
   @override
   @JsonKey(ignore: true)

@@ -2,16 +2,23 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'package_price.g.dart';
 part 'package_price.freezed.dart';
 
+const _idParam = 'id';
+const _packageIdParam = 'packageId';
+const _codeParam = 'code';
+const _nameParam = 'name';
+const _amountParam = 'amount';
+const _currencyParam = 'currency';
+
 @freezed
 class PackagePrice with _$PackagePrice {
   const PackagePrice._();
   const factory PackagePrice({
-    @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'packageId') required int packageID,
-    @JsonKey(name: 'code') required String code,
-    @JsonKey(name: 'name') required String name,
-    @JsonKey(name: 'amount') required num amount,
-    @JsonKey(name: 'currency') required String currency,
+    @JsonKey(name: _idParam) required int id,
+    @JsonKey(name: _packageIdParam) required int packageID,
+    @JsonKey(name: _codeParam) required String code,
+    @JsonKey(name: _nameParam) required String name,
+    @JsonKey(name: _amountParam) required num amount,
+    @JsonKey(name: _currencyParam) required String currency,
   }) = _PackagePrice;
 
   String get getCountDay => name.substring(name.indexOf('-') + 1, name.length);

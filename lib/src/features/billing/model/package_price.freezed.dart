@@ -20,17 +20,17 @@ PackagePrice _$PackagePriceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PackagePrice {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'packageId')
+  @JsonKey(name: _packageIdParam)
   int get packageID => throw _privateConstructorUsedError;
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get code => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'amount')
+  @JsonKey(name: _amountParam)
   num get amount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'currency')
+  @JsonKey(name: _currencyParam)
   String get currency => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,12 +46,12 @@ abstract class $PackagePriceCopyWith<$Res> {
       _$PackagePriceCopyWithImpl<$Res, PackagePrice>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'packageId') int packageID,
-      @JsonKey(name: 'code') String code,
-      @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'amount') num amount,
-      @JsonKey(name: 'currency') String currency});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _packageIdParam) int packageID,
+      @JsonKey(name: _codeParam) String code,
+      @JsonKey(name: _nameParam) String name,
+      @JsonKey(name: _amountParam) num amount,
+      @JsonKey(name: _currencyParam) String currency});
 }
 
 /// @nodoc
@@ -112,12 +112,12 @@ abstract class _$$PackagePriceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'packageId') int packageID,
-      @JsonKey(name: 'code') String code,
-      @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'amount') num amount,
-      @JsonKey(name: 'currency') String currency});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _packageIdParam) int packageID,
+      @JsonKey(name: _codeParam) String code,
+      @JsonKey(name: _nameParam) String name,
+      @JsonKey(name: _amountParam) num amount,
+      @JsonKey(name: _currencyParam) String currency});
 }
 
 /// @nodoc
@@ -171,34 +171,34 @@ class __$$PackagePriceImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PackagePriceImpl extends _PackagePrice {
   const _$PackagePriceImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'packageId') required this.packageID,
-      @JsonKey(name: 'code') required this.code,
-      @JsonKey(name: 'name') required this.name,
-      @JsonKey(name: 'amount') required this.amount,
-      @JsonKey(name: 'currency') required this.currency})
+      {@JsonKey(name: _idParam) required this.id,
+      @JsonKey(name: _packageIdParam) required this.packageID,
+      @JsonKey(name: _codeParam) required this.code,
+      @JsonKey(name: _nameParam) required this.name,
+      @JsonKey(name: _amountParam) required this.amount,
+      @JsonKey(name: _currencyParam) required this.currency})
       : super._();
 
   factory _$PackagePriceImpl.fromJson(Map<String, dynamic> json) =>
       _$$PackagePriceImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int id;
   @override
-  @JsonKey(name: 'packageId')
+  @JsonKey(name: _packageIdParam)
   final int packageID;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   final String code;
   @override
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   final String name;
   @override
-  @JsonKey(name: 'amount')
+  @JsonKey(name: _amountParam)
   final num amount;
   @override
-  @JsonKey(name: 'currency')
+  @JsonKey(name: _currencyParam)
   final String currency;
 
   @override
@@ -242,12 +242,12 @@ class _$PackagePriceImpl extends _PackagePrice {
 
 abstract class _PackagePrice extends PackagePrice {
   const factory _PackagePrice(
-          {@JsonKey(name: 'id') required final int id,
-          @JsonKey(name: 'packageId') required final int packageID,
-          @JsonKey(name: 'code') required final String code,
-          @JsonKey(name: 'name') required final String name,
-          @JsonKey(name: 'amount') required final num amount,
-          @JsonKey(name: 'currency') required final String currency}) =
+          {@JsonKey(name: _idParam) required final int id,
+          @JsonKey(name: _packageIdParam) required final int packageID,
+          @JsonKey(name: _codeParam) required final String code,
+          @JsonKey(name: _nameParam) required final String name,
+          @JsonKey(name: _amountParam) required final num amount,
+          @JsonKey(name: _currencyParam) required final String currency}) =
       _$PackagePriceImpl;
   const _PackagePrice._() : super._();
 
@@ -255,22 +255,22 @@ abstract class _PackagePrice extends PackagePrice {
       _$PackagePriceImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id;
   @override
-  @JsonKey(name: 'packageId')
+  @JsonKey(name: _packageIdParam)
   int get packageID;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get code;
   @override
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   String get name;
   @override
-  @JsonKey(name: 'amount')
+  @JsonKey(name: _amountParam)
   num get amount;
   @override
-  @JsonKey(name: 'currency')
+  @JsonKey(name: _currencyParam)
   String get currency;
   @override
   @JsonKey(ignore: true)

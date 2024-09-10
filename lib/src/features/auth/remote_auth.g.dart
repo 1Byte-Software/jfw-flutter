@@ -446,9 +446,9 @@ class _RemoteAuth implements RemoteAuth {
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'UserId': uid,
+      r'userId': uid,
       r'isMobile': isMobile,
-      r'DeviceIdentifier': deviceIdentifier,
+      r'deviceIdentifier': deviceIdentifier,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -510,8 +510,8 @@ class _RemoteAuth implements RemoteAuth {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'DeviceCode': deviceCode,
-      r'ReferralCode': referralCode,
-      r'UserId': userId,
+      r'referralCode': referralCode,
+      r'userId': userId,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -635,7 +635,7 @@ class _RemoteAuth implements RemoteAuth {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'userId': uid,
-      r'deviceCode': deviceCode,
+      r'DeviceCode': deviceCode,
     };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

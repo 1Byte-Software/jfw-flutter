@@ -116,7 +116,10 @@ class __$$RewardImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$RewardImpl implements _Reward {
-  _$RewardImpl({required this.id, this.description = '', this.pointValue = 0});
+  _$RewardImpl(
+      {required this.id,
+      this.description = _defaultValueEmptyString,
+      this.pointValue = _defaultValueZero});
 
   factory _$RewardImpl.fromJson(Map<String, dynamic> json) =>
       _$$RewardImplFromJson(json);

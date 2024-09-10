@@ -20,59 +20,59 @@ FUser _$FUserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FUser {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   int? get key => throw _privateConstructorUsedError;
-  @JsonKey(name: 'username')
+  @JsonKey(name: _usernameParam)
   String? get username => throw _privateConstructorUsedError;
-  @JsonKey(name: 'roleNames')
+  @JsonKey(name: _roleNamesParam)
   List<String>? get roleNames => throw _privateConstructorUsedError;
-  @JsonKey(name: 'emailAddress')
+  @JsonKey(name: _emailAddressParam)
   String? get emailAddress => throw _privateConstructorUsedError;
-  @JsonKey(name: 'phoneNumber1')
+  @JsonKey(name: _phoneNumber1Param)
   String? get phoneNumber1 => throw _privateConstructorUsedError;
-  @JsonKey(name: 'phoneNumber2')
+  @JsonKey(name: _phoneNumber2Param)
   String? get phoneNumber2 => throw _privateConstructorUsedError;
-  @JsonKey(name: 'phoneNumber3')
+  @JsonKey(name: _phoneNumber3Param)
   String? get phoneNumber3 => throw _privateConstructorUsedError;
-  @JsonKey(name: 'website')
+  @JsonKey(name: _websiteParam)
   String? get website => throw _privateConstructorUsedError;
-  @JsonKey(name: 'firstName')
+  @JsonKey(name: _firstNameParam)
   String get firstName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'expiryDate')
+  @JsonKey(name: _expiryDateParam)
   String? get expiryDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'lastName')
+  @JsonKey(name: _lastNameParam)
   String get lastName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'avatar')
+  @JsonKey(name: _avatarParam)
   String? get avatar => throw _privateConstructorUsedError;
-  @JsonKey(name: 'referralCode')
+  @JsonKey(name: _referralCodeParam)
   String? get referralCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'nickName')
+  @JsonKey(name: _nickNameParam)
   String? get nickName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'languageCode')
+  @JsonKey(name: _languageCodeParam)
   String? get languageCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'userCode')
+  @JsonKey(name: _userCodeParam)
   String? get userCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'description')
+  @JsonKey(name: _descriptionParam)
   String get description => throw _privateConstructorUsedError;
-  @JsonKey(name: 'roles')
+  @JsonKey(name: _rolesParam)
   List<String>? get roles => throw _privateConstructorUsedError;
-  @JsonKey(name: 'packageId')
+  @JsonKey(name: _packageIdParam)
   int? get packageId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'timeZoneId')
+  @JsonKey(name: _timeZoneIdParam)
   int? get timeZoneId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'modifiedDate')
+  @JsonKey(name: _modifiedDateParam)
   String? get modifiedDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   String? get createdDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'dateOfJoin')
+  @JsonKey(name: _dateOfJoinParam)
   String? get dateOfJoin => throw _privateConstructorUsedError;
-  @JsonKey(name: 'parentUserId')
+  @JsonKey(name: _parentUserIdParam)
   int? get parentUserId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'role')
+  @JsonKey(name: _roleParam)
   String? get role => throw _privateConstructorUsedError;
-  @JsonKey(name: 'isEmailAddressVerified')
+  @JsonKey(name: _isEmailAddressVerifiedParam)
   bool get isEmailAddressVerified => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -86,33 +86,34 @@ abstract class $FUserCopyWith<$Res> {
       _$FUserCopyWithImpl<$Res, FUser>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'key') int? key,
-      @JsonKey(name: 'username') String? username,
-      @JsonKey(name: 'roleNames') List<String>? roleNames,
-      @JsonKey(name: 'emailAddress') String? emailAddress,
-      @JsonKey(name: 'phoneNumber1') String? phoneNumber1,
-      @JsonKey(name: 'phoneNumber2') String? phoneNumber2,
-      @JsonKey(name: 'phoneNumber3') String? phoneNumber3,
-      @JsonKey(name: 'website') String? website,
-      @JsonKey(name: 'firstName') String firstName,
-      @JsonKey(name: 'expiryDate') String? expiryDate,
-      @JsonKey(name: 'lastName') String lastName,
-      @JsonKey(name: 'avatar') String? avatar,
-      @JsonKey(name: 'referralCode') String? referralCode,
-      @JsonKey(name: 'nickName') String? nickName,
-      @JsonKey(name: 'languageCode') String? languageCode,
-      @JsonKey(name: 'userCode') String? userCode,
-      @JsonKey(name: 'description') String description,
-      @JsonKey(name: 'roles') List<String>? roles,
-      @JsonKey(name: 'packageId') int? packageId,
-      @JsonKey(name: 'timeZoneId') int? timeZoneId,
-      @JsonKey(name: 'modifiedDate') String? modifiedDate,
-      @JsonKey(name: 'createdDate') String? createdDate,
-      @JsonKey(name: 'dateOfJoin') String? dateOfJoin,
-      @JsonKey(name: 'parentUserId') int? parentUserId,
-      @JsonKey(name: 'role') String? role,
-      @JsonKey(name: 'isEmailAddressVerified') bool isEmailAddressVerified});
+      {@JsonKey(name: _idParam) int? id,
+      @JsonKey(name: _keyParam) int? key,
+      @JsonKey(name: _usernameParam) String? username,
+      @JsonKey(name: _roleNamesParam) List<String>? roleNames,
+      @JsonKey(name: _emailAddressParam) String? emailAddress,
+      @JsonKey(name: _phoneNumber1Param) String? phoneNumber1,
+      @JsonKey(name: _phoneNumber2Param) String? phoneNumber2,
+      @JsonKey(name: _phoneNumber3Param) String? phoneNumber3,
+      @JsonKey(name: _websiteParam) String? website,
+      @JsonKey(name: _firstNameParam) String firstName,
+      @JsonKey(name: _expiryDateParam) String? expiryDate,
+      @JsonKey(name: _lastNameParam) String lastName,
+      @JsonKey(name: _avatarParam) String? avatar,
+      @JsonKey(name: _referralCodeParam) String? referralCode,
+      @JsonKey(name: _nickNameParam) String? nickName,
+      @JsonKey(name: _languageCodeParam) String? languageCode,
+      @JsonKey(name: _userCodeParam) String? userCode,
+      @JsonKey(name: _descriptionParam) String description,
+      @JsonKey(name: _rolesParam) List<String>? roles,
+      @JsonKey(name: _packageIdParam) int? packageId,
+      @JsonKey(name: _timeZoneIdParam) int? timeZoneId,
+      @JsonKey(name: _modifiedDateParam) String? modifiedDate,
+      @JsonKey(name: _createdDateParam) String? createdDate,
+      @JsonKey(name: _dateOfJoinParam) String? dateOfJoin,
+      @JsonKey(name: _parentUserIdParam) int? parentUserId,
+      @JsonKey(name: _roleParam) String? role,
+      @JsonKey(name: _isEmailAddressVerifiedParam)
+      bool isEmailAddressVerified});
 }
 
 /// @nodoc
@@ -277,33 +278,34 @@ abstract class _$$FUserImplCopyWith<$Res> implements $FUserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'key') int? key,
-      @JsonKey(name: 'username') String? username,
-      @JsonKey(name: 'roleNames') List<String>? roleNames,
-      @JsonKey(name: 'emailAddress') String? emailAddress,
-      @JsonKey(name: 'phoneNumber1') String? phoneNumber1,
-      @JsonKey(name: 'phoneNumber2') String? phoneNumber2,
-      @JsonKey(name: 'phoneNumber3') String? phoneNumber3,
-      @JsonKey(name: 'website') String? website,
-      @JsonKey(name: 'firstName') String firstName,
-      @JsonKey(name: 'expiryDate') String? expiryDate,
-      @JsonKey(name: 'lastName') String lastName,
-      @JsonKey(name: 'avatar') String? avatar,
-      @JsonKey(name: 'referralCode') String? referralCode,
-      @JsonKey(name: 'nickName') String? nickName,
-      @JsonKey(name: 'languageCode') String? languageCode,
-      @JsonKey(name: 'userCode') String? userCode,
-      @JsonKey(name: 'description') String description,
-      @JsonKey(name: 'roles') List<String>? roles,
-      @JsonKey(name: 'packageId') int? packageId,
-      @JsonKey(name: 'timeZoneId') int? timeZoneId,
-      @JsonKey(name: 'modifiedDate') String? modifiedDate,
-      @JsonKey(name: 'createdDate') String? createdDate,
-      @JsonKey(name: 'dateOfJoin') String? dateOfJoin,
-      @JsonKey(name: 'parentUserId') int? parentUserId,
-      @JsonKey(name: 'role') String? role,
-      @JsonKey(name: 'isEmailAddressVerified') bool isEmailAddressVerified});
+      {@JsonKey(name: _idParam) int? id,
+      @JsonKey(name: _keyParam) int? key,
+      @JsonKey(name: _usernameParam) String? username,
+      @JsonKey(name: _roleNamesParam) List<String>? roleNames,
+      @JsonKey(name: _emailAddressParam) String? emailAddress,
+      @JsonKey(name: _phoneNumber1Param) String? phoneNumber1,
+      @JsonKey(name: _phoneNumber2Param) String? phoneNumber2,
+      @JsonKey(name: _phoneNumber3Param) String? phoneNumber3,
+      @JsonKey(name: _websiteParam) String? website,
+      @JsonKey(name: _firstNameParam) String firstName,
+      @JsonKey(name: _expiryDateParam) String? expiryDate,
+      @JsonKey(name: _lastNameParam) String lastName,
+      @JsonKey(name: _avatarParam) String? avatar,
+      @JsonKey(name: _referralCodeParam) String? referralCode,
+      @JsonKey(name: _nickNameParam) String? nickName,
+      @JsonKey(name: _languageCodeParam) String? languageCode,
+      @JsonKey(name: _userCodeParam) String? userCode,
+      @JsonKey(name: _descriptionParam) String description,
+      @JsonKey(name: _rolesParam) List<String>? roles,
+      @JsonKey(name: _packageIdParam) int? packageId,
+      @JsonKey(name: _timeZoneIdParam) int? timeZoneId,
+      @JsonKey(name: _modifiedDateParam) String? modifiedDate,
+      @JsonKey(name: _createdDateParam) String? createdDate,
+      @JsonKey(name: _dateOfJoinParam) String? dateOfJoin,
+      @JsonKey(name: _parentUserIdParam) int? parentUserId,
+      @JsonKey(name: _roleParam) String? role,
+      @JsonKey(name: _isEmailAddressVerifiedParam)
+      bool isEmailAddressVerified});
 }
 
 /// @nodoc
@@ -462,33 +464,33 @@ class __$$FUserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FUserImpl extends _FUser {
   _$FUserImpl(
-      {@JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'key') this.key,
-      @JsonKey(name: 'username') this.username,
-      @JsonKey(name: 'roleNames') final List<String>? roleNames,
-      @JsonKey(name: 'emailAddress') this.emailAddress,
-      @JsonKey(name: 'phoneNumber1') this.phoneNumber1,
-      @JsonKey(name: 'phoneNumber2') this.phoneNumber2,
-      @JsonKey(name: 'phoneNumber3') this.phoneNumber3,
-      @JsonKey(name: 'website') this.website,
-      @JsonKey(name: 'firstName') this.firstName = '',
-      @JsonKey(name: 'expiryDate') this.expiryDate,
-      @JsonKey(name: 'lastName') this.lastName = '',
-      @JsonKey(name: 'avatar') this.avatar,
-      @JsonKey(name: 'referralCode') this.referralCode,
-      @JsonKey(name: 'nickName') this.nickName,
-      @JsonKey(name: 'languageCode') this.languageCode,
-      @JsonKey(name: 'userCode') this.userCode,
-      @JsonKey(name: 'description') this.description = '',
-      @JsonKey(name: 'roles') final List<String>? roles,
-      @JsonKey(name: 'packageId') this.packageId,
-      @JsonKey(name: 'timeZoneId') this.timeZoneId,
-      @JsonKey(name: 'modifiedDate') this.modifiedDate,
-      @JsonKey(name: 'createdDate') this.createdDate,
-      @JsonKey(name: 'dateOfJoin') this.dateOfJoin,
-      @JsonKey(name: 'parentUserId') this.parentUserId,
-      @JsonKey(name: 'role') this.role,
-      @JsonKey(name: 'isEmailAddressVerified')
+      {@JsonKey(name: _idParam) this.id,
+      @JsonKey(name: _keyParam) this.key,
+      @JsonKey(name: _usernameParam) this.username,
+      @JsonKey(name: _roleNamesParam) final List<String>? roleNames,
+      @JsonKey(name: _emailAddressParam) this.emailAddress,
+      @JsonKey(name: _phoneNumber1Param) this.phoneNumber1,
+      @JsonKey(name: _phoneNumber2Param) this.phoneNumber2,
+      @JsonKey(name: _phoneNumber3Param) this.phoneNumber3,
+      @JsonKey(name: _websiteParam) this.website,
+      @JsonKey(name: _firstNameParam) this.firstName = '',
+      @JsonKey(name: _expiryDateParam) this.expiryDate,
+      @JsonKey(name: _lastNameParam) this.lastName = '',
+      @JsonKey(name: _avatarParam) this.avatar,
+      @JsonKey(name: _referralCodeParam) this.referralCode,
+      @JsonKey(name: _nickNameParam) this.nickName,
+      @JsonKey(name: _languageCodeParam) this.languageCode,
+      @JsonKey(name: _userCodeParam) this.userCode,
+      @JsonKey(name: _descriptionParam) this.description = '',
+      @JsonKey(name: _rolesParam) final List<String>? roles,
+      @JsonKey(name: _packageIdParam) this.packageId,
+      @JsonKey(name: _timeZoneIdParam) this.timeZoneId,
+      @JsonKey(name: _modifiedDateParam) this.modifiedDate,
+      @JsonKey(name: _createdDateParam) this.createdDate,
+      @JsonKey(name: _dateOfJoinParam) this.dateOfJoin,
+      @JsonKey(name: _parentUserIdParam) this.parentUserId,
+      @JsonKey(name: _roleParam) this.role,
+      @JsonKey(name: _isEmailAddressVerifiedParam)
       required this.isEmailAddressVerified})
       : _roleNames = roleNames,
         _roles = roles,
@@ -498,17 +500,17 @@ class _$FUserImpl extends _FUser {
       _$$FUserImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int? id;
   @override
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   final int? key;
   @override
-  @JsonKey(name: 'username')
+  @JsonKey(name: _usernameParam)
   final String? username;
   final List<String>? _roleNames;
   @override
-  @JsonKey(name: 'roleNames')
+  @JsonKey(name: _roleNamesParam)
   List<String>? get roleNames {
     final value = _roleNames;
     if (value == null) return null;
@@ -518,50 +520,50 @@ class _$FUserImpl extends _FUser {
   }
 
   @override
-  @JsonKey(name: 'emailAddress')
+  @JsonKey(name: _emailAddressParam)
   final String? emailAddress;
   @override
-  @JsonKey(name: 'phoneNumber1')
+  @JsonKey(name: _phoneNumber1Param)
   final String? phoneNumber1;
   @override
-  @JsonKey(name: 'phoneNumber2')
+  @JsonKey(name: _phoneNumber2Param)
   final String? phoneNumber2;
   @override
-  @JsonKey(name: 'phoneNumber3')
+  @JsonKey(name: _phoneNumber3Param)
   final String? phoneNumber3;
   @override
-  @JsonKey(name: 'website')
+  @JsonKey(name: _websiteParam)
   final String? website;
   @override
-  @JsonKey(name: 'firstName')
+  @JsonKey(name: _firstNameParam)
   final String firstName;
   @override
-  @JsonKey(name: 'expiryDate')
+  @JsonKey(name: _expiryDateParam)
   final String? expiryDate;
   @override
-  @JsonKey(name: 'lastName')
+  @JsonKey(name: _lastNameParam)
   final String lastName;
   @override
-  @JsonKey(name: 'avatar')
+  @JsonKey(name: _avatarParam)
   final String? avatar;
   @override
-  @JsonKey(name: 'referralCode')
+  @JsonKey(name: _referralCodeParam)
   final String? referralCode;
   @override
-  @JsonKey(name: 'nickName')
+  @JsonKey(name: _nickNameParam)
   final String? nickName;
   @override
-  @JsonKey(name: 'languageCode')
+  @JsonKey(name: _languageCodeParam)
   final String? languageCode;
   @override
-  @JsonKey(name: 'userCode')
+  @JsonKey(name: _userCodeParam)
   final String? userCode;
   @override
-  @JsonKey(name: 'description')
+  @JsonKey(name: _descriptionParam)
   final String description;
   final List<String>? _roles;
   @override
-  @JsonKey(name: 'roles')
+  @JsonKey(name: _rolesParam)
   List<String>? get roles {
     final value = _roles;
     if (value == null) return null;
@@ -571,28 +573,28 @@ class _$FUserImpl extends _FUser {
   }
 
   @override
-  @JsonKey(name: 'packageId')
+  @JsonKey(name: _packageIdParam)
   final int? packageId;
   @override
-  @JsonKey(name: 'timeZoneId')
+  @JsonKey(name: _timeZoneIdParam)
   final int? timeZoneId;
   @override
-  @JsonKey(name: 'modifiedDate')
+  @JsonKey(name: _modifiedDateParam)
   final String? modifiedDate;
   @override
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   final String? createdDate;
   @override
-  @JsonKey(name: 'dateOfJoin')
+  @JsonKey(name: _dateOfJoinParam)
   final String? dateOfJoin;
   @override
-  @JsonKey(name: 'parentUserId')
+  @JsonKey(name: _parentUserIdParam)
   final int? parentUserId;
   @override
-  @JsonKey(name: 'role')
+  @JsonKey(name: _roleParam)
   final String? role;
   @override
-  @JsonKey(name: 'isEmailAddressVerified')
+  @JsonKey(name: _isEmailAddressVerifiedParam)
   final bool isEmailAddressVerified;
 
   @override
@@ -704,118 +706,118 @@ class _$FUserImpl extends _FUser {
 
 abstract class _FUser extends FUser {
   factory _FUser(
-      {@JsonKey(name: 'id') final int? id,
-      @JsonKey(name: 'key') final int? key,
-      @JsonKey(name: 'username') final String? username,
-      @JsonKey(name: 'roleNames') final List<String>? roleNames,
-      @JsonKey(name: 'emailAddress') final String? emailAddress,
-      @JsonKey(name: 'phoneNumber1') final String? phoneNumber1,
-      @JsonKey(name: 'phoneNumber2') final String? phoneNumber2,
-      @JsonKey(name: 'phoneNumber3') final String? phoneNumber3,
-      @JsonKey(name: 'website') final String? website,
-      @JsonKey(name: 'firstName') final String firstName,
-      @JsonKey(name: 'expiryDate') final String? expiryDate,
-      @JsonKey(name: 'lastName') final String lastName,
-      @JsonKey(name: 'avatar') final String? avatar,
-      @JsonKey(name: 'referralCode') final String? referralCode,
-      @JsonKey(name: 'nickName') final String? nickName,
-      @JsonKey(name: 'languageCode') final String? languageCode,
-      @JsonKey(name: 'userCode') final String? userCode,
-      @JsonKey(name: 'description') final String description,
-      @JsonKey(name: 'roles') final List<String>? roles,
-      @JsonKey(name: 'packageId') final int? packageId,
-      @JsonKey(name: 'timeZoneId') final int? timeZoneId,
-      @JsonKey(name: 'modifiedDate') final String? modifiedDate,
-      @JsonKey(name: 'createdDate') final String? createdDate,
-      @JsonKey(name: 'dateOfJoin') final String? dateOfJoin,
-      @JsonKey(name: 'parentUserId') final int? parentUserId,
-      @JsonKey(name: 'role') final String? role,
-      @JsonKey(name: 'isEmailAddressVerified')
+      {@JsonKey(name: _idParam) final int? id,
+      @JsonKey(name: _keyParam) final int? key,
+      @JsonKey(name: _usernameParam) final String? username,
+      @JsonKey(name: _roleNamesParam) final List<String>? roleNames,
+      @JsonKey(name: _emailAddressParam) final String? emailAddress,
+      @JsonKey(name: _phoneNumber1Param) final String? phoneNumber1,
+      @JsonKey(name: _phoneNumber2Param) final String? phoneNumber2,
+      @JsonKey(name: _phoneNumber3Param) final String? phoneNumber3,
+      @JsonKey(name: _websiteParam) final String? website,
+      @JsonKey(name: _firstNameParam) final String firstName,
+      @JsonKey(name: _expiryDateParam) final String? expiryDate,
+      @JsonKey(name: _lastNameParam) final String lastName,
+      @JsonKey(name: _avatarParam) final String? avatar,
+      @JsonKey(name: _referralCodeParam) final String? referralCode,
+      @JsonKey(name: _nickNameParam) final String? nickName,
+      @JsonKey(name: _languageCodeParam) final String? languageCode,
+      @JsonKey(name: _userCodeParam) final String? userCode,
+      @JsonKey(name: _descriptionParam) final String description,
+      @JsonKey(name: _rolesParam) final List<String>? roles,
+      @JsonKey(name: _packageIdParam) final int? packageId,
+      @JsonKey(name: _timeZoneIdParam) final int? timeZoneId,
+      @JsonKey(name: _modifiedDateParam) final String? modifiedDate,
+      @JsonKey(name: _createdDateParam) final String? createdDate,
+      @JsonKey(name: _dateOfJoinParam) final String? dateOfJoin,
+      @JsonKey(name: _parentUserIdParam) final int? parentUserId,
+      @JsonKey(name: _roleParam) final String? role,
+      @JsonKey(name: _isEmailAddressVerifiedParam)
       required final bool isEmailAddressVerified}) = _$FUserImpl;
   _FUser._() : super._();
 
   factory _FUser.fromJson(Map<String, dynamic> json) = _$FUserImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int? get id;
   @override
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   int? get key;
   @override
-  @JsonKey(name: 'username')
+  @JsonKey(name: _usernameParam)
   String? get username;
   @override
-  @JsonKey(name: 'roleNames')
+  @JsonKey(name: _roleNamesParam)
   List<String>? get roleNames;
   @override
-  @JsonKey(name: 'emailAddress')
+  @JsonKey(name: _emailAddressParam)
   String? get emailAddress;
   @override
-  @JsonKey(name: 'phoneNumber1')
+  @JsonKey(name: _phoneNumber1Param)
   String? get phoneNumber1;
   @override
-  @JsonKey(name: 'phoneNumber2')
+  @JsonKey(name: _phoneNumber2Param)
   String? get phoneNumber2;
   @override
-  @JsonKey(name: 'phoneNumber3')
+  @JsonKey(name: _phoneNumber3Param)
   String? get phoneNumber3;
   @override
-  @JsonKey(name: 'website')
+  @JsonKey(name: _websiteParam)
   String? get website;
   @override
-  @JsonKey(name: 'firstName')
+  @JsonKey(name: _firstNameParam)
   String get firstName;
   @override
-  @JsonKey(name: 'expiryDate')
+  @JsonKey(name: _expiryDateParam)
   String? get expiryDate;
   @override
-  @JsonKey(name: 'lastName')
+  @JsonKey(name: _lastNameParam)
   String get lastName;
   @override
-  @JsonKey(name: 'avatar')
+  @JsonKey(name: _avatarParam)
   String? get avatar;
   @override
-  @JsonKey(name: 'referralCode')
+  @JsonKey(name: _referralCodeParam)
   String? get referralCode;
   @override
-  @JsonKey(name: 'nickName')
+  @JsonKey(name: _nickNameParam)
   String? get nickName;
   @override
-  @JsonKey(name: 'languageCode')
+  @JsonKey(name: _languageCodeParam)
   String? get languageCode;
   @override
-  @JsonKey(name: 'userCode')
+  @JsonKey(name: _userCodeParam)
   String? get userCode;
   @override
-  @JsonKey(name: 'description')
+  @JsonKey(name: _descriptionParam)
   String get description;
   @override
-  @JsonKey(name: 'roles')
+  @JsonKey(name: _rolesParam)
   List<String>? get roles;
   @override
-  @JsonKey(name: 'packageId')
+  @JsonKey(name: _packageIdParam)
   int? get packageId;
   @override
-  @JsonKey(name: 'timeZoneId')
+  @JsonKey(name: _timeZoneIdParam)
   int? get timeZoneId;
   @override
-  @JsonKey(name: 'modifiedDate')
+  @JsonKey(name: _modifiedDateParam)
   String? get modifiedDate;
   @override
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   String? get createdDate;
   @override
-  @JsonKey(name: 'dateOfJoin')
+  @JsonKey(name: _dateOfJoinParam)
   String? get dateOfJoin;
   @override
-  @JsonKey(name: 'parentUserId')
+  @JsonKey(name: _parentUserIdParam)
   int? get parentUserId;
   @override
-  @JsonKey(name: 'role')
+  @JsonKey(name: _roleParam)
   String? get role;
   @override
-  @JsonKey(name: 'isEmailAddressVerified')
+  @JsonKey(name: _isEmailAddressVerifiedParam)
   bool get isEmailAddressVerified;
   @override
   @JsonKey(ignore: true)

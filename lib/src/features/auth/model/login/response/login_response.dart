@@ -4,9 +4,11 @@ import 'item_login_response.dart';
 
 part 'login_response.g.dart';
 
+const _dataParam = 'data';
+
 @JsonSerializable()
 class LoginResponse {
-  @JsonKey(name: 'data')
+  @JsonKey(name: _dataParam)
   ItemLoginResponse? data;
 
   LoginResponse({

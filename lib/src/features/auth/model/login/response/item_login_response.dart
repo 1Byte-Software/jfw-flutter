@@ -1,13 +1,17 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'item_login_response.g.dart';
 
+const _loginStatusParam = 'loginStatus';
+const _usernameParam = 'username';
+const _authKeyParam = 'authKey';
+
 @JsonSerializable()
 class ItemLoginResponse {
-  @JsonKey(name: 'loginStatus')
+  @JsonKey(name: _loginStatusParam)
   int? loginStatus;
-  @JsonKey(name: 'username')
+  @JsonKey(name: _usernameParam)
   String? username;
-  @JsonKey(name: 'authKey')
+  @JsonKey(name: _authKeyParam)
   String? authKey;
 
   ItemLoginResponse({

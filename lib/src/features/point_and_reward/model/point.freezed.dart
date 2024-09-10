@@ -117,7 +117,9 @@ class __$$FPointImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FPointImpl implements _FPoint {
   _$FPointImpl(
-      {this.description = '', this.pointValue = 0, required this.createdDate});
+      {this.description = _defaultValueEmptyString,
+      this.pointValue = _defaultValueZero,
+      required this.createdDate});
 
   factory _$FPointImpl.fromJson(Map<String, dynamic> json) =>
       _$$FPointImplFromJson(json);

@@ -20,7 +20,7 @@ ConfigDebugMode _$ConfigDebugModeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ConfigDebugMode {
-  @JsonKey(name: 'uids')
+  @JsonKey(name: _uidsParam)
   List<int> get uids => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $ConfigDebugModeCopyWith<$Res> {
           ConfigDebugMode value, $Res Function(ConfigDebugMode) then) =
       _$ConfigDebugModeCopyWithImpl<$Res, ConfigDebugMode>;
   @useResult
-  $Res call({@JsonKey(name: 'uids') List<int> uids});
+  $Res call({@JsonKey(name: _uidsParam) List<int> uids});
 }
 
 /// @nodoc
@@ -70,7 +70,7 @@ abstract class _$$ConfigDebugModeImplCopyWith<$Res>
       __$$ConfigDebugModeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'uids') List<int> uids});
+  $Res call({@JsonKey(name: _uidsParam) List<int> uids});
 }
 
 /// @nodoc
@@ -98,7 +98,8 @@ class __$$ConfigDebugModeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ConfigDebugModeImpl implements _ConfigDebugMode {
-  _$ConfigDebugModeImpl({@JsonKey(name: 'uids') required final List<int> uids})
+  _$ConfigDebugModeImpl(
+      {@JsonKey(name: _uidsParam) required final List<int> uids})
       : _uids = uids;
 
   factory _$ConfigDebugModeImpl.fromJson(Map<String, dynamic> json) =>
@@ -106,7 +107,7 @@ class _$ConfigDebugModeImpl implements _ConfigDebugMode {
 
   final List<int> _uids;
   @override
-  @JsonKey(name: 'uids')
+  @JsonKey(name: _uidsParam)
   List<int> get uids {
     if (_uids is EqualUnmodifiableListView) return _uids;
     // ignore: implicit_dynamic_type
@@ -148,14 +149,14 @@ class _$ConfigDebugModeImpl implements _ConfigDebugMode {
 
 abstract class _ConfigDebugMode implements ConfigDebugMode {
   factory _ConfigDebugMode(
-          {@JsonKey(name: 'uids') required final List<int> uids}) =
+          {@JsonKey(name: _uidsParam) required final List<int> uids}) =
       _$ConfigDebugModeImpl;
 
   factory _ConfigDebugMode.fromJson(Map<String, dynamic> json) =
       _$ConfigDebugModeImpl.fromJson;
 
   @override
-  @JsonKey(name: 'uids')
+  @JsonKey(name: _uidsParam)
   List<int> get uids;
   @override
   @JsonKey(ignore: true)

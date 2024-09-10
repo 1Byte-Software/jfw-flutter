@@ -1,13 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'login_request.g.dart';
 
+// PARAMS
+const _brandUrlParam = 'brandUrl';
+const _usernameParam = 'username';
+const _passwordParam = 'password';
+
 @JsonSerializable()
 class LoginRequest {
-  @JsonKey(name: 'brandUrl')
+  @JsonKey(name: _brandUrlParam)
   String? brandUrl;
-  @JsonKey(name: 'username')
+  @JsonKey(name: _usernameParam)
   String? username;
-  @JsonKey(name: 'password')
+  @JsonKey(name: _passwordParam)
   String? password;
 
   LoginRequest({this.brandUrl, this.password, this.username});

@@ -20,21 +20,21 @@ BillingPackage _$BillingPackageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BillingPackage {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   int? get key => throw _privateConstructorUsedError;
-  @JsonKey(name: 'features')
+  @JsonKey(name: _featuresParam)
   List<PackageFeature> get features => throw _privateConstructorUsedError;
-  @JsonKey(name: 'prices')
+  @JsonKey(name: _pricesParam)
   List<PackagePrice> get prices => throw _privateConstructorUsedError;
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get code => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: _valueEmpty)
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'zOrder', defaultValue: 0)
+  @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   int get zOrder => throw _privateConstructorUsedError;
-  @JsonKey(name: 'tags', defaultValue: "")
+  @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   String get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,14 +50,14 @@ abstract class $BillingPackageCopyWith<$Res> {
       _$BillingPackageCopyWithImpl<$Res, BillingPackage>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'key') int? key,
-      @JsonKey(name: 'features') List<PackageFeature> features,
-      @JsonKey(name: 'prices') List<PackagePrice> prices,
-      @JsonKey(name: 'code') String code,
-      @JsonKey(name: 'name', defaultValue: '') String name,
-      @JsonKey(name: 'zOrder', defaultValue: 0) int zOrder,
-      @JsonKey(name: 'tags', defaultValue: "") String tags});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _keyParam) int? key,
+      @JsonKey(name: _featuresParam) List<PackageFeature> features,
+      @JsonKey(name: _pricesParam) List<PackagePrice> prices,
+      @JsonKey(name: _codeParam) String code,
+      @JsonKey(name: _nameParam, defaultValue: _valueEmpty) String name,
+      @JsonKey(name: _zOrderParam, defaultValue: _valueZero) int zOrder,
+      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) String tags});
 }
 
 /// @nodoc
@@ -128,14 +128,14 @@ abstract class _$$PackageImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'key') int? key,
-      @JsonKey(name: 'features') List<PackageFeature> features,
-      @JsonKey(name: 'prices') List<PackagePrice> prices,
-      @JsonKey(name: 'code') String code,
-      @JsonKey(name: 'name', defaultValue: '') String name,
-      @JsonKey(name: 'zOrder', defaultValue: 0) int zOrder,
-      @JsonKey(name: 'tags', defaultValue: "") String tags});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _keyParam) int? key,
+      @JsonKey(name: _featuresParam) List<PackageFeature> features,
+      @JsonKey(name: _pricesParam) List<PackagePrice> prices,
+      @JsonKey(name: _codeParam) String code,
+      @JsonKey(name: _nameParam, defaultValue: _valueEmpty) String name,
+      @JsonKey(name: _zOrderParam, defaultValue: _valueZero) int zOrder,
+      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) String tags});
 }
 
 /// @nodoc
@@ -199,14 +199,16 @@ class __$$PackageImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PackageImpl implements _Package {
   _$PackageImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'key') this.key,
-      @JsonKey(name: 'features') required final List<PackageFeature> features,
-      @JsonKey(name: 'prices') required final List<PackagePrice> prices,
-      @JsonKey(name: 'code') required this.code,
-      @JsonKey(name: 'name', defaultValue: '') required this.name,
-      @JsonKey(name: 'zOrder', defaultValue: 0) required this.zOrder,
-      @JsonKey(name: 'tags', defaultValue: "") required this.tags})
+      {@JsonKey(name: _idParam) required this.id,
+      @JsonKey(name: _keyParam) this.key,
+      @JsonKey(name: _featuresParam)
+      required final List<PackageFeature> features,
+      @JsonKey(name: _pricesParam) required final List<PackagePrice> prices,
+      @JsonKey(name: _codeParam) required this.code,
+      @JsonKey(name: _nameParam, defaultValue: _valueEmpty) required this.name,
+      @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
+      required this.zOrder,
+      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) required this.tags})
       : _features = features,
         _prices = prices;
 
@@ -214,14 +216,14 @@ class _$PackageImpl implements _Package {
       _$$PackageImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int id;
   @override
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   final int? key;
   final List<PackageFeature> _features;
   @override
-  @JsonKey(name: 'features')
+  @JsonKey(name: _featuresParam)
   List<PackageFeature> get features {
     if (_features is EqualUnmodifiableListView) return _features;
     // ignore: implicit_dynamic_type
@@ -230,7 +232,7 @@ class _$PackageImpl implements _Package {
 
   final List<PackagePrice> _prices;
   @override
-  @JsonKey(name: 'prices')
+  @JsonKey(name: _pricesParam)
   List<PackagePrice> get prices {
     if (_prices is EqualUnmodifiableListView) return _prices;
     // ignore: implicit_dynamic_type
@@ -238,16 +240,16 @@ class _$PackageImpl implements _Package {
   }
 
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   final String code;
   @override
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: _valueEmpty)
   final String name;
   @override
-  @JsonKey(name: 'zOrder', defaultValue: 0)
+  @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   final int zOrder;
   @override
-  @JsonKey(name: 'tags', defaultValue: "")
+  @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   final String tags;
 
   @override
@@ -299,41 +301,44 @@ class _$PackageImpl implements _Package {
 
 abstract class _Package implements BillingPackage {
   factory _Package(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'key') final int? key,
-      @JsonKey(name: 'features') required final List<PackageFeature> features,
-      @JsonKey(name: 'prices') required final List<PackagePrice> prices,
-      @JsonKey(name: 'code') required final String code,
-      @JsonKey(name: 'name', defaultValue: '') required final String name,
-      @JsonKey(name: 'zOrder', defaultValue: 0) required final int zOrder,
-      @JsonKey(name: 'tags', defaultValue: "")
+      {@JsonKey(name: _idParam) required final int id,
+      @JsonKey(name: _keyParam) final int? key,
+      @JsonKey(name: _featuresParam)
+      required final List<PackageFeature> features,
+      @JsonKey(name: _pricesParam) required final List<PackagePrice> prices,
+      @JsonKey(name: _codeParam) required final String code,
+      @JsonKey(name: _nameParam, defaultValue: _valueEmpty)
+      required final String name,
+      @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
+      required final int zOrder,
+      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
       required final String tags}) = _$PackageImpl;
 
   factory _Package.fromJson(Map<String, dynamic> json) = _$PackageImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id;
   @override
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   int? get key;
   @override
-  @JsonKey(name: 'features')
+  @JsonKey(name: _featuresParam)
   List<PackageFeature> get features;
   @override
-  @JsonKey(name: 'prices')
+  @JsonKey(name: _pricesParam)
   List<PackagePrice> get prices;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get code;
   @override
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: _valueEmpty)
   String get name;
   @override
-  @JsonKey(name: 'zOrder', defaultValue: 0)
+  @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   int get zOrder;
   @override
-  @JsonKey(name: 'tags', defaultValue: "")
+  @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   String get tags;
   @override
   @JsonKey(ignore: true)

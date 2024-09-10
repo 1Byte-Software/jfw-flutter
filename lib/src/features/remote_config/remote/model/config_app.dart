@@ -8,13 +8,18 @@ enum StatusApp {
   maintain,
 }
 
+// PARAMS
+const _isShowNewVersionAnnouncementParam = 'isShowNewVersionAnnouncement';
+const _minVersionParam = 'minVersion';
+const _isForceUpdateLatestVersionAppParam = 'isForceUpdateLatestVersionApp';
+
 @freezed
 class ConfigApp with _$ConfigApp {
   factory ConfigApp({
-    @JsonKey(name: 'isShowNewVersionAnnoucement')
-    required bool isShowNewVersionAnnoucement,
-    @JsonKey(name: 'minVersion') required String minVersion,
-    @JsonKey(name: 'isForceUpdateLatestVersionApp')
+    @JsonKey(name: _isShowNewVersionAnnouncementParam)
+    required bool isShowNewVersionAnnouncement,
+    @JsonKey(name: _minVersionParam) required String minVersion,
+    @JsonKey(name: _isForceUpdateLatestVersionAppParam)
     required bool isForceUpdateLatestVersionApp,
   }) = _ConfigApp;
 

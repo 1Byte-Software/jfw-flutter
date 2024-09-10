@@ -25,8 +25,8 @@ class _RemoteLanguage implements RemoteLanguage {
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'SortOrder': sortOrder,
-      r'SortDataField': sortDataField,
+      r'sortOrder': sortOrder,
+      r'sortDataField': sortDataField,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

@@ -3,11 +3,17 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'user_config.g.dart';
 part 'user_config.freezed.dart';
 
+// PARAMS
+const _userIdParam = 'userId';
+
+// Value String
+const _valueStringTrue = 'true';
+
 @freezed
 class UserConfig with _$UserConfig {
   factory UserConfig(
       {int? id,
-      @JsonKey(name: 'userId') required int uid,
+      @JsonKey(name: _userIdParam) required int uid,
       required String code,
       required String groupCode,
       required dynamic value,
@@ -21,7 +27,7 @@ class UserConfig with _$UserConfig {
   UserConfig castValue(Type type) {
     switch (type) {
       case bool:
-        if (value == 'true') {
+        if (value == _valueStringTrue) {
           return copyWith(value: true);
         } else {
           return copyWith(value: false);

@@ -2,6 +2,25 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'package_feature.g.dart';
 part 'package_feature.freezed.dart';
 
+// PackageFeatureEnum CODES
+const _codePackageFeatureEnumPlayMp3 = 'PLAY-MP3';
+const _codePackageFeatureEnumDownloadQuestion = 'DOWNLOAD-QUESTION';
+const _codePackageFeatureEnumClass = 'CLASS';
+const _codePackageFeatureEnumRaiseHand = 'RAISE-HAND';
+const _codePackageFeatureEnumMockTest = 'MOCK-TEST';
+const _codePackageFeatureEnumAnalyzeStudyPlanWithAI =
+    'ANALYZE-STUDY-PLAN-WITH-AI';
+const _codePackageFeatureEnumPoint = 'POINT';
+const _codePackageFeatureEnumDiscussCommunity = 'DISCUSSION-COMMUNITY';
+const _codePackageFeatureEnumFeedbackReport = 'FEEDBACK-REPORT';
+const _codePackageFeatureEnumContributeContent = 'CONTRIBUTE-CONTENT';
+const _codePackageFeatureEnumScoringWithAIMockTest = 'SCORING-WITH-AI-MOCKTEST';
+const _codePackageFeatureEnumScoringWithAIListening = 'SCORING-AI-LISTENING';
+const _codePackageFeatureEnumScoringWithAISpeaking = 'SCORING-AI-SPEAKING';
+const _codePackageFeatureEnumScoringWithAIWriting = 'SCORING-AI-WRITING';
+const _codePackageFeatureEnumUnlimitedQuestion = 'UNLIMITED-QUESTION';
+const _codePackageFeatureEnumDeviceAccess = 'DEVICE-ACCESS';
+
 enum PackageFeatureEnum {
   contributeContent,
   feedbackReport,
@@ -21,41 +40,41 @@ enum PackageFeatureEnum {
   donwloadQuestions,
   playMp3,
   point,
-  analyzeSturyPlanWithAI;
+  analyzeStudyPlanWithAI;
 
   static PackageFeatureEnum? fromFeatureCode(String code) {
     switch (code) {
-      case 'PLAY-MP3':
+      case _codePackageFeatureEnumPlayMp3:
         return PackageFeatureEnum.playMp3;
-      case 'DOWNLOAD-QUESTION':
+      case _codePackageFeatureEnumDownloadQuestion:
         return PackageFeatureEnum.donwloadQuestions;
-      case 'CLASS':
+      case _codePackageFeatureEnumClass:
         return PackageFeatureEnum.inClass;
-      case 'RAISE-HAND':
+      case _codePackageFeatureEnumRaiseHand:
         return PackageFeatureEnum.raiseHand;
-      case 'MOCK-TEST':
+      case _codePackageFeatureEnumMockTest:
         return PackageFeatureEnum.mockTest;
-      case 'ANALYZE-STUDY-PLAN-WITH-AI':
-        return PackageFeatureEnum.analyzeSturyPlanWithAI;
-      case 'POINT':
+      case _codePackageFeatureEnumAnalyzeStudyPlanWithAI:
+        return PackageFeatureEnum.analyzeStudyPlanWithAI;
+      case _codePackageFeatureEnumPoint:
         return PackageFeatureEnum.point;
-      case 'DISCUSSION-COMMUNITY':
+      case _codePackageFeatureEnumDiscussCommunity:
         return PackageFeatureEnum.discussionCommunity;
-      case 'FEEDBACK-REPORT':
+      case _codePackageFeatureEnumFeedbackReport:
         return PackageFeatureEnum.feedbackReport;
-      case 'CONTRIBUTE-CONTENT':
+      case _codePackageFeatureEnumContributeContent:
         return PackageFeatureEnum.contributeContent;
-      case 'SCORING-WITH-AI-MOCKTEST':
+      case _codePackageFeatureEnumScoringWithAIMockTest:
         return PackageFeatureEnum.scoreWithAIMockTest;
-      case 'SCORING-AI-LISTENING':
+      case _codePackageFeatureEnumScoringWithAIListening:
         return PackageFeatureEnum.scoreWithAIListening;
-      case 'SCORING-AI-SPEAKING':
+      case _codePackageFeatureEnumScoringWithAISpeaking:
         return PackageFeatureEnum.scoreWithAISpeaking;
-      case 'SCORING-AI-WRITING':
+      case _codePackageFeatureEnumScoringWithAIWriting:
         return PackageFeatureEnum.scoreWithAIWriting;
-      case 'UNLIMITED-QUESTION':
+      case _codePackageFeatureEnumUnlimitedQuestion:
         return PackageFeatureEnum.unlimitedLesson;
-      case 'DEVICE-ACCESS':
+      case _codePackageFeatureEnumDeviceAccess:
         return PackageFeatureEnum.deviceAccess;
     }
     return null;
@@ -64,52 +83,71 @@ enum PackageFeatureEnum {
   String toCode() {
     switch (this) {
       case PackageFeatureEnum.playMp3:
-        return 'PLAY-MP3';
+        return _codePackageFeatureEnumPlayMp3;
       case PackageFeatureEnum.donwloadQuestions:
-        return 'DOWNLOAD-QUESTION';
+        return _codePackageFeatureEnumDownloadQuestion;
       case PackageFeatureEnum.inClass:
-        return 'CLASS';
+        return _codePackageFeatureEnumClass;
       case PackageFeatureEnum.raiseHand:
-        return 'RAISE-HAND';
+        return _codePackageFeatureEnumRaiseHand;
       case PackageFeatureEnum.mockTest:
-        return 'MOCK-TEST';
-      case PackageFeatureEnum.analyzeSturyPlanWithAI:
-        return 'ANALYZE-STUDY-PLAN-WITH-AI';
+        return _codePackageFeatureEnumMockTest;
+      case PackageFeatureEnum.analyzeStudyPlanWithAI:
+        return _codePackageFeatureEnumAnalyzeStudyPlanWithAI;
       case PackageFeatureEnum.point:
-        return 'POINT';
+        return _codePackageFeatureEnumPoint;
       case PackageFeatureEnum.discussionCommunity:
-        return 'DISCUSSION-COMMUNITY';
+        return _codePackageFeatureEnumDiscussCommunity;
       case PackageFeatureEnum.feedbackReport:
-        return 'FEEDBACK-REPORT';
+        return _codePackageFeatureEnumFeedbackReport;
       case PackageFeatureEnum.contributeContent:
-        return 'CONTRIBUTE-CONTENT';
+        return _codePackageFeatureEnumContributeContent;
       case PackageFeatureEnum.scoreWithAIMockTest:
-        return 'SCORING-WITH-AI-MOCKTEST';
+        return _codePackageFeatureEnumScoringWithAIMockTest;
       case PackageFeatureEnum.scoreWithAIListening:
-        return 'SCORING-AI-LISTENING';
+        return _codePackageFeatureEnumScoringWithAIListening;
       case PackageFeatureEnum.scoreWithAISpeaking:
-        return 'SCORING-AI-SPEAKING';
+        return _codePackageFeatureEnumScoringWithAISpeaking;
       case PackageFeatureEnum.scoreWithAIWriting:
-        return 'SCORING-AI-WRITING';
+        return _codePackageFeatureEnumScoringWithAIWriting;
       case PackageFeatureEnum.unlimitedLesson:
-        return 'UNLIMITED-QUESTION';
+        return _codePackageFeatureEnumUnlimitedQuestion;
       case PackageFeatureEnum.deviceAccess:
-        return 'DEVICE-ACCESS';
+        return _codePackageFeatureEnumDeviceAccess;
     }
   }
 }
 
+// PARAMS
+const _idParam = 'id';
+const _keyParam = 'key';
+const _featureValueParam = 'featureValue';
+const _descriptionParam = 'description';
+const _nameParam = 'name';
+const _codeParam = 'code';
+const _statusParam = 'status';
+const _zOrderParam = 'zOrder';
+
+// DEFAULT VALUE
+const _defaultValueStatus = 1;
+const _defaultValueZOrder = 0;
+const _defaultValueEmpty = '';
+
 @freezed
 class PackageFeature with _$PackageFeature {
   factory PackageFeature({
-    @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'key') int? key,
-    @JsonKey(name: 'featureValue') required int value,
-    @JsonKey(name: 'description', defaultValue: '') required String description,
-    @JsonKey(name: 'name', defaultValue: '') required String name,
-    @JsonKey(name: 'code') required String code,
-    @JsonKey(name: 'status', defaultValue: 1) required int status,
-    @JsonKey(name: 'zOrder', defaultValue: 0) required int zOrder,
+    @JsonKey(name: _idParam) required int id,
+    @JsonKey(name: _keyParam) int? key,
+    @JsonKey(name: _featureValueParam) required int value,
+    @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
+    required String description,
+    @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty)
+    required String name,
+    @JsonKey(name: _codeParam) required String code,
+    @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
+    required int status,
+    @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
+    required int zOrder,
   }) = _PackageFeature;
 
   factory PackageFeature.fromJson(Map<String, dynamic> json) =>

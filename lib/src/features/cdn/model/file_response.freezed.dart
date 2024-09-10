@@ -20,9 +20,9 @@ FileResponse _$FileResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FileResponse {
-  @JsonKey(name: 'fileName')
+  @JsonKey(name: _fileNameParam)
   String get fileName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'url')
+  @JsonKey(name: _urlParam)
   String get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,8 +38,8 @@ abstract class $FileResponseCopyWith<$Res> {
       _$FileResponseCopyWithImpl<$Res, FileResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'fileName') String fileName,
-      @JsonKey(name: 'url') String url});
+      {@JsonKey(name: _fileNameParam) String fileName,
+      @JsonKey(name: _urlParam) String url});
 }
 
 /// @nodoc
@@ -80,8 +80,8 @@ abstract class _$$FileResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'fileName') String fileName,
-      @JsonKey(name: 'url') String url});
+      {@JsonKey(name: _fileNameParam) String fileName,
+      @JsonKey(name: _urlParam) String url});
 }
 
 /// @nodoc
@@ -115,17 +115,17 @@ class __$$FileResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FileResponseImpl implements _FileResponse {
   _$FileResponseImpl(
-      {@JsonKey(name: 'fileName') required this.fileName,
-      @JsonKey(name: 'url') required this.url});
+      {@JsonKey(name: _fileNameParam) required this.fileName,
+      @JsonKey(name: _urlParam) required this.url});
 
   factory _$FileResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$FileResponseImplFromJson(json);
 
   @override
-  @JsonKey(name: 'fileName')
+  @JsonKey(name: _fileNameParam)
   final String fileName;
   @override
-  @JsonKey(name: 'url')
+  @JsonKey(name: _urlParam)
   final String url;
 
   @override
@@ -163,17 +163,18 @@ class _$FileResponseImpl implements _FileResponse {
 
 abstract class _FileResponse implements FileResponse {
   factory _FileResponse(
-      {@JsonKey(name: 'fileName') required final String fileName,
-      @JsonKey(name: 'url') required final String url}) = _$FileResponseImpl;
+          {@JsonKey(name: _fileNameParam) required final String fileName,
+          @JsonKey(name: _urlParam) required final String url}) =
+      _$FileResponseImpl;
 
   factory _FileResponse.fromJson(Map<String, dynamic> json) =
       _$FileResponseImpl.fromJson;
 
   @override
-  @JsonKey(name: 'fileName')
+  @JsonKey(name: _fileNameParam)
   String get fileName;
   @override
-  @JsonKey(name: 'url')
+  @JsonKey(name: _urlParam)
   String get url;
   @override
   @JsonKey(ignore: true)

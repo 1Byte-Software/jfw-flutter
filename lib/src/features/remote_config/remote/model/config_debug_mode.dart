@@ -3,10 +3,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'config_debug_mode.freezed.dart';
 part 'config_debug_mode.g.dart';
 
+// PARAMS
+const _uidsParam = 'uids';
+
 @freezed
 class ConfigDebugMode with _$ConfigDebugMode {
   factory ConfigDebugMode({
-    @JsonKey(name: 'uids') required List<int> uids,
+    @JsonKey(name: _uidsParam) required List<int> uids,
   }) = _ConfigDebugMode;
 
   factory ConfigDebugMode.fromJson(Map<String, Object?> json) =>

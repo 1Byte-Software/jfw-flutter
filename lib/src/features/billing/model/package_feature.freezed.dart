@@ -20,21 +20,21 @@ PackageFeature _$PackageFeatureFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PackageFeature {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   int? get key => throw _privateConstructorUsedError;
-  @JsonKey(name: 'featureValue')
+  @JsonKey(name: _featureValueParam)
   int get value => throw _privateConstructorUsedError;
-  @JsonKey(name: 'description', defaultValue: '')
+  @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
   String get description => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty)
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get code => throw _privateConstructorUsedError;
-  @JsonKey(name: 'status', defaultValue: 1)
+  @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
   int get status => throw _privateConstructorUsedError;
-  @JsonKey(name: 'zOrder', defaultValue: 0)
+  @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
   int get zOrder => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,14 +50,17 @@ abstract class $PackageFeatureCopyWith<$Res> {
       _$PackageFeatureCopyWithImpl<$Res, PackageFeature>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'key') int? key,
-      @JsonKey(name: 'featureValue') int value,
-      @JsonKey(name: 'description', defaultValue: '') String description,
-      @JsonKey(name: 'name', defaultValue: '') String name,
-      @JsonKey(name: 'code') String code,
-      @JsonKey(name: 'status', defaultValue: 1) int status,
-      @JsonKey(name: 'zOrder', defaultValue: 0) int zOrder});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _keyParam) int? key,
+      @JsonKey(name: _featureValueParam) int value,
+      @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
+      String description,
+      @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty) String name,
+      @JsonKey(name: _codeParam) String code,
+      @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
+      int status,
+      @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
+      int zOrder});
 }
 
 /// @nodoc
@@ -128,14 +131,17 @@ abstract class _$$PackageFeatureImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'key') int? key,
-      @JsonKey(name: 'featureValue') int value,
-      @JsonKey(name: 'description', defaultValue: '') String description,
-      @JsonKey(name: 'name', defaultValue: '') String name,
-      @JsonKey(name: 'code') String code,
-      @JsonKey(name: 'status', defaultValue: 1) int status,
-      @JsonKey(name: 'zOrder', defaultValue: 0) int zOrder});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _keyParam) int? key,
+      @JsonKey(name: _featureValueParam) int value,
+      @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
+      String description,
+      @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty) String name,
+      @JsonKey(name: _codeParam) String code,
+      @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
+      int status,
+      @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
+      int zOrder});
 }
 
 /// @nodoc
@@ -199,41 +205,45 @@ class __$$PackageFeatureImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PackageFeatureImpl implements _PackageFeature {
   _$PackageFeatureImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'key') this.key,
-      @JsonKey(name: 'featureValue') required this.value,
-      @JsonKey(name: 'description', defaultValue: '') required this.description,
-      @JsonKey(name: 'name', defaultValue: '') required this.name,
-      @JsonKey(name: 'code') required this.code,
-      @JsonKey(name: 'status', defaultValue: 1) required this.status,
-      @JsonKey(name: 'zOrder', defaultValue: 0) required this.zOrder});
+      {@JsonKey(name: _idParam) required this.id,
+      @JsonKey(name: _keyParam) this.key,
+      @JsonKey(name: _featureValueParam) required this.value,
+      @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
+      required this.description,
+      @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty)
+      required this.name,
+      @JsonKey(name: _codeParam) required this.code,
+      @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
+      required this.status,
+      @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
+      required this.zOrder});
 
   factory _$PackageFeatureImpl.fromJson(Map<String, dynamic> json) =>
       _$$PackageFeatureImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int id;
   @override
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   final int? key;
   @override
-  @JsonKey(name: 'featureValue')
+  @JsonKey(name: _featureValueParam)
   final int value;
   @override
-  @JsonKey(name: 'description', defaultValue: '')
+  @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
   final String description;
   @override
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty)
   final String name;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   final String code;
   @override
-  @JsonKey(name: 'status', defaultValue: 1)
+  @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
   final int status;
   @override
-  @JsonKey(name: 'zOrder', defaultValue: 0)
+  @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
   final int zOrder;
 
   @override
@@ -279,43 +289,45 @@ class _$PackageFeatureImpl implements _PackageFeature {
 
 abstract class _PackageFeature implements PackageFeature {
   factory _PackageFeature(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'key') final int? key,
-      @JsonKey(name: 'featureValue') required final int value,
-      @JsonKey(name: 'description', defaultValue: '')
+      {@JsonKey(name: _idParam) required final int id,
+      @JsonKey(name: _keyParam) final int? key,
+      @JsonKey(name: _featureValueParam) required final int value,
+      @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
       required final String description,
-      @JsonKey(name: 'name', defaultValue: '') required final String name,
-      @JsonKey(name: 'code') required final String code,
-      @JsonKey(name: 'status', defaultValue: 1) required final int status,
-      @JsonKey(name: 'zOrder', defaultValue: 0)
+      @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty)
+      required final String name,
+      @JsonKey(name: _codeParam) required final String code,
+      @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
+      required final int status,
+      @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
       required final int zOrder}) = _$PackageFeatureImpl;
 
   factory _PackageFeature.fromJson(Map<String, dynamic> json) =
       _$PackageFeatureImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id;
   @override
-  @JsonKey(name: 'key')
+  @JsonKey(name: _keyParam)
   int? get key;
   @override
-  @JsonKey(name: 'featureValue')
+  @JsonKey(name: _featureValueParam)
   int get value;
   @override
-  @JsonKey(name: 'description', defaultValue: '')
+  @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
   String get description;
   @override
-  @JsonKey(name: 'name', defaultValue: '')
+  @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty)
   String get name;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get code;
   @override
-  @JsonKey(name: 'status', defaultValue: 1)
+  @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
   int get status;
   @override
-  @JsonKey(name: 'zOrder', defaultValue: 0)
+  @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
   int get zOrder;
   @override
   @JsonKey(ignore: true)

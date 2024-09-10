@@ -20,13 +20,13 @@ Language _$LanguageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Language {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'countryCode')
+  @JsonKey(name: _countryCodeParam)
   String get countryCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get languageCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   String get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,10 +41,10 @@ abstract class $LanguageCopyWith<$Res> {
       _$LanguageCopyWithImpl<$Res, Language>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'countryCode') String countryCode,
-      @JsonKey(name: 'code') String languageCode,
-      @JsonKey(name: 'name') String description});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _countryCodeParam) String countryCode,
+      @JsonKey(name: _codeParam) String languageCode,
+      @JsonKey(name: _nameParam) String description});
 }
 
 /// @nodoc
@@ -95,10 +95,10 @@ abstract class _$$LanguageImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'countryCode') String countryCode,
-      @JsonKey(name: 'code') String languageCode,
-      @JsonKey(name: 'name') String description});
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _countryCodeParam) String countryCode,
+      @JsonKey(name: _codeParam) String languageCode,
+      @JsonKey(name: _nameParam) String description});
 }
 
 /// @nodoc
@@ -142,25 +142,25 @@ class __$$LanguageImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$LanguageImpl implements _Language {
   _$LanguageImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'countryCode') required this.countryCode,
-      @JsonKey(name: 'code') required this.languageCode,
-      @JsonKey(name: 'name') required this.description});
+      {@JsonKey(name: _idParam) required this.id,
+      @JsonKey(name: _countryCodeParam) required this.countryCode,
+      @JsonKey(name: _codeParam) required this.languageCode,
+      @JsonKey(name: _nameParam) required this.description});
 
   factory _$LanguageImpl.fromJson(Map<String, dynamic> json) =>
       _$$LanguageImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int id;
   @override
-  @JsonKey(name: 'countryCode')
+  @JsonKey(name: _countryCodeParam)
   final String countryCode;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   final String languageCode;
   @override
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   final String description;
 
   @override
@@ -203,26 +203,26 @@ class _$LanguageImpl implements _Language {
 
 abstract class _Language implements Language {
   factory _Language(
-          {@JsonKey(name: 'id') required final int id,
-          @JsonKey(name: 'countryCode') required final String countryCode,
-          @JsonKey(name: 'code') required final String languageCode,
-          @JsonKey(name: 'name') required final String description}) =
+          {@JsonKey(name: _idParam) required final int id,
+          @JsonKey(name: _countryCodeParam) required final String countryCode,
+          @JsonKey(name: _codeParam) required final String languageCode,
+          @JsonKey(name: _nameParam) required final String description}) =
       _$LanguageImpl;
 
   factory _Language.fromJson(Map<String, dynamic> json) =
       _$LanguageImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id;
   @override
-  @JsonKey(name: 'countryCode')
+  @JsonKey(name: _countryCodeParam)
   String get countryCode;
   @override
-  @JsonKey(name: 'code')
+  @JsonKey(name: _codeParam)
   String get languageCode;
   @override
-  @JsonKey(name: 'name')
+  @JsonKey(name: _nameParam)
   String get description;
   @override
   @JsonKey(ignore: true)

@@ -3,37 +3,65 @@ import 'package:mobile_1byte_utils/src/extensions/string_extensions.dart';
 part 'item_response.g.dart';
 part 'item_response.freezed.dart';
 
+const _idParam = 'id';
+const _keyParam = 'key';
+const _usernameParam = 'username';
+const _roleNamesParam = 'roleNames';
+const _emailAddressParam = 'emailAddress';
+const _phoneNumber1Param = 'phoneNumber1';
+const _phoneNumber2Param = 'phoneNumber2';
+const _phoneNumber3Param = 'phoneNumber3';
+const _websiteParam = 'website';
+const _firstNameParam = 'firstName';
+const _expiryDateParam = 'expiryDate';
+const _lastNameParam = 'lastName';
+const _avatarParam = 'avatar';
+const _referralCodeParam = 'referralCode';
+const _nickNameParam = 'nickName';
+const _languageCodeParam = 'languageCode';
+const _userCodeParam = 'userCode';
+const _descriptionParam = 'description';
+const _rolesParam = 'roles';
+const _packageIdParam = 'packageId';
+const _timeZoneIdParam = 'timeZoneId';
+const _modifiedDateParam = 'modifiedDate';
+const _createdDateParam = 'createdDate';
+const _dateOfJoinParam = 'dateOfJoin';
+const _parentUserIdParam = 'parentUserId';
+const _roleParam = 'role';
+const _isEmailAddressVerifiedParam = 'isEmailAddressVerified';
+
 @freezed
 class FUser with _$FUser {
   FUser._();
   factory FUser({
-    @JsonKey(name: 'id') int? id,
-    @JsonKey(name: 'key') int? key,
-    @JsonKey(name: 'username') String? username,
-    @JsonKey(name: 'roleNames') List<String>? roleNames,
-    @JsonKey(name: 'emailAddress') String? emailAddress,
-    @JsonKey(name: 'phoneNumber1') String? phoneNumber1,
-    @JsonKey(name: 'phoneNumber2') String? phoneNumber2,
-    @JsonKey(name: 'phoneNumber3') String? phoneNumber3,
-    @JsonKey(name: 'website') String? website,
-    @JsonKey(name: 'firstName') @Default('') String firstName,
-    @JsonKey(name: 'expiryDate') String? expiryDate,
-    @JsonKey(name: 'lastName') @Default('') String lastName,
-    @JsonKey(name: 'avatar') String? avatar,
-    @JsonKey(name: 'referralCode') String? referralCode,
-    @JsonKey(name: 'nickName') String? nickName,
-    @JsonKey(name: 'languageCode') String? languageCode,
-    @JsonKey(name: 'userCode') String? userCode,
-    @JsonKey(name: 'description') @Default('') String description,
-    @JsonKey(name: 'roles') List<String>? roles,
-    @JsonKey(name: 'packageId') int? packageId,
-    @JsonKey(name: 'timeZoneId') int? timeZoneId,
-    @JsonKey(name: 'modifiedDate') String? modifiedDate,
-    @JsonKey(name: 'createdDate') String? createdDate,
-    @JsonKey(name: 'dateOfJoin') String? dateOfJoin,
-    @JsonKey(name: 'parentUserId') int? parentUserId,
-    @JsonKey(name: 'role') String? role,
-    @JsonKey(name: 'isEmailAddressVerified')
+    @JsonKey(name: _idParam) int? id,
+    @JsonKey(name: _keyParam) int? key,
+    @JsonKey(name: _usernameParam) String? username,
+    @JsonKey(name: _roleNamesParam) List<String>? roleNames,
+    @JsonKey(name: _emailAddressParam) String? emailAddress,
+    @JsonKey(name: _phoneNumber1Param) String? phoneNumber1,
+    @JsonKey(name: _phoneNumber2Param) String? phoneNumber2,
+    @JsonKey(name: _phoneNumber3Param) String? phoneNumber3,
+    @JsonKey(name: _websiteParam) String? website,
+    @JsonKey(name: _firstNameParam) @Default('') String firstName,
+    @JsonKey(name: _expiryDateParam) String? expiryDate,
+    @JsonKey(name: _lastNameParam) @Default('') String lastName,
+    @JsonKey(name: _avatarParam) String? avatar,
+    @JsonKey(name: _referralCodeParam) String? referralCode,
+    @JsonKey(name: _nickNameParam) String? nickName,
+    @JsonKey(name: _languageCodeParam) String? languageCode,
+    @JsonKey(name: _userCodeParam) String? userCode,
+    @JsonKey(name: _descriptionParam) @Default('') String description,
+    @JsonKey(name: _rolesParam) List<String>? roles,
+    @JsonKey(name: _packageIdParam) int? packageId,
+    @JsonKey(name: _timeZoneIdParam) int? timeZoneId,
+    @JsonKey(name: _modifiedDateParam) String? modifiedDate,
+    @JsonKey(name: _createdDateParam) String? createdDate,
+    @JsonKey(name: _dateOfJoinParam) String? dateOfJoin,
+    @JsonKey(name: _parentUserIdParam) int? parentUserId,
+    @JsonKey(name: _roleParam) String? role,
+    @JsonKey(name: _isEmailAddressVerifiedParam)
     required bool isEmailAddressVerified,
   }) = _FUser;
 

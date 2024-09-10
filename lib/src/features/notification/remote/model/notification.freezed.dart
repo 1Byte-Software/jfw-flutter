@@ -20,15 +20,15 @@ MNotification _$MNotificationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MNotification {
-  @JsonKey(name: 'id', defaultValue: 0)
+  @JsonKey(name: _idParam, defaultValue: _defaultValueZero)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'subject', defaultValue: '')
+  @JsonKey(name: _subjectParam, defaultValue: _defaultValueEmptyString)
   String get emailSubject => throw _privateConstructorUsedError;
-  @JsonKey(name: 'content', defaultValue: '')
+  @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
   String get emailBody => throw _privateConstructorUsedError;
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   String get createdDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'status')
+  @JsonKey(name: _statusParam)
   int get userReadStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,11 +44,13 @@ abstract class $MNotificationCopyWith<$Res> {
       _$MNotificationCopyWithImpl<$Res, MNotification>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id', defaultValue: 0) int id,
-      @JsonKey(name: 'subject', defaultValue: '') String emailSubject,
-      @JsonKey(name: 'content', defaultValue: '') String emailBody,
-      @JsonKey(name: 'createdDate') String createdDate,
-      @JsonKey(name: 'status') int userReadStatus});
+      {@JsonKey(name: _idParam, defaultValue: _defaultValueZero) int id,
+      @JsonKey(name: _subjectParam, defaultValue: _defaultValueEmptyString)
+      String emailSubject,
+      @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
+      String emailBody,
+      @JsonKey(name: _createdDateParam) String createdDate,
+      @JsonKey(name: _statusParam) int userReadStatus});
 }
 
 /// @nodoc
@@ -104,11 +106,13 @@ abstract class _$$MNotificationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id', defaultValue: 0) int id,
-      @JsonKey(name: 'subject', defaultValue: '') String emailSubject,
-      @JsonKey(name: 'content', defaultValue: '') String emailBody,
-      @JsonKey(name: 'createdDate') String createdDate,
-      @JsonKey(name: 'status') int userReadStatus});
+      {@JsonKey(name: _idParam, defaultValue: _defaultValueZero) int id,
+      @JsonKey(name: _subjectParam, defaultValue: _defaultValueEmptyString)
+      String emailSubject,
+      @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
+      String emailBody,
+      @JsonKey(name: _createdDateParam) String createdDate,
+      @JsonKey(name: _statusParam) int userReadStatus});
 }
 
 /// @nodoc
@@ -157,30 +161,33 @@ class __$$MNotificationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MNotificationImpl extends _MNotification {
   _$MNotificationImpl(
-      {@JsonKey(name: 'id', defaultValue: 0) required this.id,
-      @JsonKey(name: 'subject', defaultValue: '') required this.emailSubject,
-      @JsonKey(name: 'content', defaultValue: '') required this.emailBody,
-      @JsonKey(name: 'createdDate') required this.createdDate,
-      @JsonKey(name: 'status') required this.userReadStatus})
+      {@JsonKey(name: _idParam, defaultValue: _defaultValueZero)
+      required this.id,
+      @JsonKey(name: _subjectParam, defaultValue: _defaultValueEmptyString)
+      required this.emailSubject,
+      @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
+      required this.emailBody,
+      @JsonKey(name: _createdDateParam) required this.createdDate,
+      @JsonKey(name: _statusParam) required this.userReadStatus})
       : super._();
 
   factory _$MNotificationImpl.fromJson(Map<String, dynamic> json) =>
       _$$MNotificationImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id', defaultValue: 0)
+  @JsonKey(name: _idParam, defaultValue: _defaultValueZero)
   final int id;
   @override
-  @JsonKey(name: 'subject', defaultValue: '')
+  @JsonKey(name: _subjectParam, defaultValue: _defaultValueEmptyString)
   final String emailSubject;
   @override
-  @JsonKey(name: 'content', defaultValue: '')
+  @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
   final String emailBody;
   @override
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   final String createdDate;
   @override
-  @JsonKey(name: 'status')
+  @JsonKey(name: _statusParam)
   final int userReadStatus;
 
   @override
@@ -225,13 +232,14 @@ class _$MNotificationImpl extends _MNotification {
 
 abstract class _MNotification extends MNotification {
   factory _MNotification(
-          {@JsonKey(name: 'id', defaultValue: 0) required final int id,
-          @JsonKey(name: 'subject', defaultValue: '')
+          {@JsonKey(name: _idParam, defaultValue: _defaultValueZero)
+          required final int id,
+          @JsonKey(name: _subjectParam, defaultValue: _defaultValueEmptyString)
           required final String emailSubject,
-          @JsonKey(name: 'content', defaultValue: '')
+          @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
           required final String emailBody,
-          @JsonKey(name: 'createdDate') required final String createdDate,
-          @JsonKey(name: 'status') required final int userReadStatus}) =
+          @JsonKey(name: _createdDateParam) required final String createdDate,
+          @JsonKey(name: _statusParam) required final int userReadStatus}) =
       _$MNotificationImpl;
   _MNotification._() : super._();
 
@@ -239,19 +247,19 @@ abstract class _MNotification extends MNotification {
       _$MNotificationImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id', defaultValue: 0)
+  @JsonKey(name: _idParam, defaultValue: _defaultValueZero)
   int get id;
   @override
-  @JsonKey(name: 'subject', defaultValue: '')
+  @JsonKey(name: _subjectParam, defaultValue: _defaultValueEmptyString)
   String get emailSubject;
   @override
-  @JsonKey(name: 'content', defaultValue: '')
+  @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
   String get emailBody;
   @override
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   String get createdDate;
   @override
-  @JsonKey(name: 'status')
+  @JsonKey(name: _statusParam)
   int get userReadStatus;
   @override
   @JsonKey(ignore: true)

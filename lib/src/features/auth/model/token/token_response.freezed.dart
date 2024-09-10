@@ -20,9 +20,9 @@ TokenResponse _$TokenResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TokenResponse {
-  @JsonKey(name: 'accessToken')
+  @JsonKey(name: _accessTokenParam)
   String get accessToken => throw _privateConstructorUsedError;
-  @JsonKey(name: 'refreshToken')
+  @JsonKey(name: _refreshTokenParam)
   String get refreshToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,8 +38,8 @@ abstract class $TokenResponseCopyWith<$Res> {
       _$TokenResponseCopyWithImpl<$Res, TokenResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'accessToken') String accessToken,
-      @JsonKey(name: 'refreshToken') String refreshToken});
+      {@JsonKey(name: _accessTokenParam) String accessToken,
+      @JsonKey(name: _refreshTokenParam) String refreshToken});
 }
 
 /// @nodoc
@@ -80,8 +80,8 @@ abstract class _$$TokenResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'accessToken') String accessToken,
-      @JsonKey(name: 'refreshToken') String refreshToken});
+      {@JsonKey(name: _accessTokenParam) String accessToken,
+      @JsonKey(name: _refreshTokenParam) String refreshToken});
 }
 
 /// @nodoc
@@ -115,17 +115,17 @@ class __$$TokenResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TokenResponseImpl implements _TokenResponse {
   _$TokenResponseImpl(
-      {@JsonKey(name: 'accessToken') required this.accessToken,
-      @JsonKey(name: 'refreshToken') required this.refreshToken});
+      {@JsonKey(name: _accessTokenParam) required this.accessToken,
+      @JsonKey(name: _refreshTokenParam) required this.refreshToken});
 
   factory _$TokenResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$TokenResponseImplFromJson(json);
 
   @override
-  @JsonKey(name: 'accessToken')
+  @JsonKey(name: _accessTokenParam)
   final String accessToken;
   @override
-  @JsonKey(name: 'refreshToken')
+  @JsonKey(name: _refreshTokenParam)
   final String refreshToken;
 
   @override
@@ -164,18 +164,18 @@ class _$TokenResponseImpl implements _TokenResponse {
 
 abstract class _TokenResponse implements TokenResponse {
   factory _TokenResponse(
-          {@JsonKey(name: 'accessToken') required final String accessToken,
-          @JsonKey(name: 'refreshToken') required final String refreshToken}) =
-      _$TokenResponseImpl;
+      {@JsonKey(name: _accessTokenParam) required final String accessToken,
+      @JsonKey(name: _refreshTokenParam)
+      required final String refreshToken}) = _$TokenResponseImpl;
 
   factory _TokenResponse.fromJson(Map<String, dynamic> json) =
       _$TokenResponseImpl.fromJson;
 
   @override
-  @JsonKey(name: 'accessToken')
+  @JsonKey(name: _accessTokenParam)
   String get accessToken;
   @override
-  @JsonKey(name: 'refreshToken')
+  @JsonKey(name: _refreshTokenParam)
   String get refreshToken;
   @override
   @JsonKey(ignore: true)

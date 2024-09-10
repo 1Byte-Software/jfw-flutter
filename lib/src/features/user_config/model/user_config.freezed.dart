@@ -21,7 +21,7 @@ UserConfig _$UserConfigFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserConfig {
   int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'userId')
+  @JsonKey(name: _userIdParam)
   int get uid => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
   String get groupCode => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $UserConfigCopyWith<$Res> {
   @useResult
   $Res call(
       {int? id,
-      @JsonKey(name: 'userId') int uid,
+      @JsonKey(name: _userIdParam) int uid,
       String code,
       String groupCode,
       dynamic value,
@@ -108,7 +108,7 @@ abstract class _$$UserConfigImplCopyWith<$Res>
   @useResult
   $Res call(
       {int? id,
-      @JsonKey(name: 'userId') int uid,
+      @JsonKey(name: _userIdParam) int uid,
       String code,
       String groupCode,
       dynamic value,
@@ -167,7 +167,7 @@ class __$$UserConfigImplCopyWithImpl<$Res>
 class _$UserConfigImpl extends _UserConfig {
   _$UserConfigImpl(
       {this.id,
-      @JsonKey(name: 'userId') required this.uid,
+      @JsonKey(name: _userIdParam) required this.uid,
       required this.code,
       required this.groupCode,
       required this.value,
@@ -180,7 +180,7 @@ class _$UserConfigImpl extends _UserConfig {
   @override
   final int? id;
   @override
-  @JsonKey(name: 'userId')
+  @JsonKey(name: _userIdParam)
   final int uid;
   @override
   final String code;
@@ -233,7 +233,7 @@ class _$UserConfigImpl extends _UserConfig {
 abstract class _UserConfig extends UserConfig {
   factory _UserConfig(
       {final int? id,
-      @JsonKey(name: 'userId') required final int uid,
+      @JsonKey(name: _userIdParam) required final int uid,
       required final String code,
       required final String groupCode,
       required final dynamic value,
@@ -246,7 +246,7 @@ abstract class _UserConfig extends UserConfig {
   @override
   int? get id;
   @override
-  @JsonKey(name: 'userId')
+  @JsonKey(name: _userIdParam)
   int get uid;
   @override
   String get code;

@@ -20,30 +20,29 @@ Device _$DeviceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Device {
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'deviceName')
-  String get deviceName =>
-      throw _privateConstructorUsedError; // @JsonKey(name: 'isDefault', defaultValue: false) required bool isDefault,
-  @JsonKey(name: 'osDevice', defaultValue: '')
+  @JsonKey(name: _deviceName)
+  String get deviceName => throw _privateConstructorUsedError;
+  @JsonKey(name: _osDevice, defaultValue: '')
   String get osDevice => throw _privateConstructorUsedError;
-  @JsonKey(name: 'modifiedDate')
+  @JsonKey(name: _modifiedDate)
   String get modifiedDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   String get createdDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'referralCode')
+  @JsonKey(name: _referralCodeParam)
   String? get referralCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'isMobile', defaultValue: false)
+  @JsonKey(name: _isMobileParam, defaultValue: false)
   bool get isMobile => throw _privateConstructorUsedError;
-  @JsonKey(name: 'imei')
+  @JsonKey(name: _imeiParam)
   String? get imei => throw _privateConstructorUsedError;
-  @JsonKey(name: 'tags', defaultValue: '')
+  @JsonKey(name: _tagsParam, defaultValue: '')
   String get tags => throw _privateConstructorUsedError;
-  @JsonKey(name: 'deviceCode')
+  @JsonKey(name: _deviceCodeParam)
   String get deviceCode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'appVersionNumber', defaultValue: '')
+  @JsonKey(name: _appVersionNumberParam, defaultValue: '')
   String get appVersionNumber => throw _privateConstructorUsedError;
-  @JsonKey(name: 'deviceSession')
+  @JsonKey(name: _deviceSessionParam)
   String get deviceSession => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -57,19 +56,19 @@ abstract class $DeviceCopyWith<$Res> {
       _$DeviceCopyWithImpl<$Res, Device>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'deviceName') String deviceName,
-      @JsonKey(name: 'osDevice', defaultValue: '') String osDevice,
-      @JsonKey(name: 'modifiedDate') String modifiedDate,
-      @JsonKey(name: 'createdDate') String createdDate,
-      @JsonKey(name: 'referralCode') String? referralCode,
-      @JsonKey(name: 'isMobile', defaultValue: false) bool isMobile,
-      @JsonKey(name: 'imei') String? imei,
-      @JsonKey(name: 'tags', defaultValue: '') String tags,
-      @JsonKey(name: 'deviceCode') String deviceCode,
-      @JsonKey(name: 'appVersionNumber', defaultValue: '')
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _deviceName) String deviceName,
+      @JsonKey(name: _osDevice, defaultValue: '') String osDevice,
+      @JsonKey(name: _modifiedDate) String modifiedDate,
+      @JsonKey(name: _createdDateParam) String createdDate,
+      @JsonKey(name: _referralCodeParam) String? referralCode,
+      @JsonKey(name: _isMobileParam, defaultValue: false) bool isMobile,
+      @JsonKey(name: _imeiParam) String? imei,
+      @JsonKey(name: _tagsParam, defaultValue: '') String tags,
+      @JsonKey(name: _deviceCodeParam) String deviceCode,
+      @JsonKey(name: _appVersionNumberParam, defaultValue: '')
       String appVersionNumber,
-      @JsonKey(name: 'deviceSession') String deviceSession});
+      @JsonKey(name: _deviceSessionParam) String deviceSession});
 }
 
 /// @nodoc
@@ -159,19 +158,19 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'deviceName') String deviceName,
-      @JsonKey(name: 'osDevice', defaultValue: '') String osDevice,
-      @JsonKey(name: 'modifiedDate') String modifiedDate,
-      @JsonKey(name: 'createdDate') String createdDate,
-      @JsonKey(name: 'referralCode') String? referralCode,
-      @JsonKey(name: 'isMobile', defaultValue: false) bool isMobile,
-      @JsonKey(name: 'imei') String? imei,
-      @JsonKey(name: 'tags', defaultValue: '') String tags,
-      @JsonKey(name: 'deviceCode') String deviceCode,
-      @JsonKey(name: 'appVersionNumber', defaultValue: '')
+      {@JsonKey(name: _idParam) int id,
+      @JsonKey(name: _deviceName) String deviceName,
+      @JsonKey(name: _osDevice, defaultValue: '') String osDevice,
+      @JsonKey(name: _modifiedDate) String modifiedDate,
+      @JsonKey(name: _createdDateParam) String createdDate,
+      @JsonKey(name: _referralCodeParam) String? referralCode,
+      @JsonKey(name: _isMobileParam, defaultValue: false) bool isMobile,
+      @JsonKey(name: _imeiParam) String? imei,
+      @JsonKey(name: _tagsParam, defaultValue: '') String tags,
+      @JsonKey(name: _deviceCodeParam) String deviceCode,
+      @JsonKey(name: _appVersionNumberParam, defaultValue: '')
       String appVersionNumber,
-      @JsonKey(name: 'deviceSession') String deviceSession});
+      @JsonKey(name: _deviceSessionParam) String deviceSession});
 }
 
 /// @nodoc
@@ -255,59 +254,59 @@ class __$$DeviceImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DeviceImpl implements _Device {
   _$DeviceImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'deviceName') required this.deviceName,
-      @JsonKey(name: 'osDevice', defaultValue: '') required this.osDevice,
-      @JsonKey(name: 'modifiedDate') required this.modifiedDate,
-      @JsonKey(name: 'createdDate') required this.createdDate,
-      @JsonKey(name: 'referralCode') required this.referralCode,
-      @JsonKey(name: 'isMobile', defaultValue: false) required this.isMobile,
-      @JsonKey(name: 'imei') required this.imei,
-      @JsonKey(name: 'tags', defaultValue: '') required this.tags,
-      @JsonKey(name: 'deviceCode') required this.deviceCode,
-      @JsonKey(name: 'appVersionNumber', defaultValue: '')
+      {@JsonKey(name: _idParam) required this.id,
+      @JsonKey(name: _deviceName) required this.deviceName,
+      @JsonKey(name: _osDevice, defaultValue: '') required this.osDevice,
+      @JsonKey(name: _modifiedDate) required this.modifiedDate,
+      @JsonKey(name: _createdDateParam) required this.createdDate,
+      @JsonKey(name: _referralCodeParam) required this.referralCode,
+      @JsonKey(name: _isMobileParam, defaultValue: false)
+      required this.isMobile,
+      @JsonKey(name: _imeiParam) required this.imei,
+      @JsonKey(name: _tagsParam, defaultValue: '') required this.tags,
+      @JsonKey(name: _deviceCodeParam) required this.deviceCode,
+      @JsonKey(name: _appVersionNumberParam, defaultValue: '')
       required this.appVersionNumber,
-      @JsonKey(name: 'deviceSession') required this.deviceSession});
+      @JsonKey(name: _deviceSessionParam) required this.deviceSession});
 
   factory _$DeviceImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeviceImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   final int id;
   @override
-  @JsonKey(name: 'deviceName')
+  @JsonKey(name: _deviceName)
   final String deviceName;
-// @JsonKey(name: 'isDefault', defaultValue: false) required bool isDefault,
   @override
-  @JsonKey(name: 'osDevice', defaultValue: '')
+  @JsonKey(name: _osDevice, defaultValue: '')
   final String osDevice;
   @override
-  @JsonKey(name: 'modifiedDate')
+  @JsonKey(name: _modifiedDate)
   final String modifiedDate;
   @override
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   final String createdDate;
   @override
-  @JsonKey(name: 'referralCode')
+  @JsonKey(name: _referralCodeParam)
   final String? referralCode;
   @override
-  @JsonKey(name: 'isMobile', defaultValue: false)
+  @JsonKey(name: _isMobileParam, defaultValue: false)
   final bool isMobile;
   @override
-  @JsonKey(name: 'imei')
+  @JsonKey(name: _imeiParam)
   final String? imei;
   @override
-  @JsonKey(name: 'tags', defaultValue: '')
+  @JsonKey(name: _tagsParam, defaultValue: '')
   final String tags;
   @override
-  @JsonKey(name: 'deviceCode')
+  @JsonKey(name: _deviceCodeParam)
   final String deviceCode;
   @override
-  @JsonKey(name: 'appVersionNumber', defaultValue: '')
+  @JsonKey(name: _appVersionNumberParam, defaultValue: '')
   final String appVersionNumber;
   @override
-  @JsonKey(name: 'deviceSession')
+  @JsonKey(name: _deviceSessionParam)
   final String deviceSession;
 
   @override
@@ -376,60 +375,60 @@ class _$DeviceImpl implements _Device {
 
 abstract class _Device implements Device {
   factory _Device(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'deviceName') required final String deviceName,
-      @JsonKey(name: 'osDevice', defaultValue: '')
+      {@JsonKey(name: _idParam) required final int id,
+      @JsonKey(name: _deviceName) required final String deviceName,
+      @JsonKey(name: _osDevice, defaultValue: '')
       required final String osDevice,
-      @JsonKey(name: 'modifiedDate') required final String modifiedDate,
-      @JsonKey(name: 'createdDate') required final String createdDate,
-      @JsonKey(name: 'referralCode') required final String? referralCode,
-      @JsonKey(name: 'isMobile', defaultValue: false)
+      @JsonKey(name: _modifiedDate) required final String modifiedDate,
+      @JsonKey(name: _createdDateParam) required final String createdDate,
+      @JsonKey(name: _referralCodeParam) required final String? referralCode,
+      @JsonKey(name: _isMobileParam, defaultValue: false)
       required final bool isMobile,
-      @JsonKey(name: 'imei') required final String? imei,
-      @JsonKey(name: 'tags', defaultValue: '') required final String tags,
-      @JsonKey(name: 'deviceCode') required final String deviceCode,
-      @JsonKey(name: 'appVersionNumber', defaultValue: '')
+      @JsonKey(name: _imeiParam) required final String? imei,
+      @JsonKey(name: _tagsParam, defaultValue: '') required final String tags,
+      @JsonKey(name: _deviceCodeParam) required final String deviceCode,
+      @JsonKey(name: _appVersionNumberParam, defaultValue: '')
       required final String appVersionNumber,
-      @JsonKey(name: 'deviceSession')
+      @JsonKey(name: _deviceSessionParam)
       required final String deviceSession}) = _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
+  @JsonKey(name: _idParam)
   int get id;
   @override
-  @JsonKey(name: 'deviceName')
+  @JsonKey(name: _deviceName)
   String get deviceName;
-  @override // @JsonKey(name: 'isDefault', defaultValue: false) required bool isDefault,
-  @JsonKey(name: 'osDevice', defaultValue: '')
+  @override
+  @JsonKey(name: _osDevice, defaultValue: '')
   String get osDevice;
   @override
-  @JsonKey(name: 'modifiedDate')
+  @JsonKey(name: _modifiedDate)
   String get modifiedDate;
   @override
-  @JsonKey(name: 'createdDate')
+  @JsonKey(name: _createdDateParam)
   String get createdDate;
   @override
-  @JsonKey(name: 'referralCode')
+  @JsonKey(name: _referralCodeParam)
   String? get referralCode;
   @override
-  @JsonKey(name: 'isMobile', defaultValue: false)
+  @JsonKey(name: _isMobileParam, defaultValue: false)
   bool get isMobile;
   @override
-  @JsonKey(name: 'imei')
+  @JsonKey(name: _imeiParam)
   String? get imei;
   @override
-  @JsonKey(name: 'tags', defaultValue: '')
+  @JsonKey(name: _tagsParam, defaultValue: '')
   String get tags;
   @override
-  @JsonKey(name: 'deviceCode')
+  @JsonKey(name: _deviceCodeParam)
   String get deviceCode;
   @override
-  @JsonKey(name: 'appVersionNumber', defaultValue: '')
+  @JsonKey(name: _appVersionNumberParam, defaultValue: '')
   String get appVersionNumber;
   @override
-  @JsonKey(name: 'deviceSession')
+  @JsonKey(name: _deviceSessionParam)
   String get deviceSession;
   @override
   @JsonKey(ignore: true)
