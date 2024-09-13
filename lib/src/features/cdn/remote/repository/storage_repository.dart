@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:mobile_1byte_remote_jfw/src/features/cdn/model/file_response.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:jfw_remote_mobile/src/features/cdn/model/file_response.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
 
 abstract class StorageRepository {
   Future<FResult<String>> uploadImage(File image);

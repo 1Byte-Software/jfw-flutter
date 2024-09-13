@@ -848,13 +848,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  mobile_1byte_utils:
-    dependency: "direct main"
-    description:
-      path: "/Users/1byte/modules/1byte_modules/mobile_1byte_utils"
-      relative: false
-    source: path
-    version: "1.7.20+5"
   nested:
     dependency: transitive
     description:
@@ -1356,6 +1349,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
+  utils_mobile:
+    dependency: "direct main"
+    description:
+      path: "/Users/1byte/modules/1byte_modules/utils_mobile"
+      relative: false
+    source: path
+    version: "1.7.20+5"
   uuid:
     dependency: transitive
     description:

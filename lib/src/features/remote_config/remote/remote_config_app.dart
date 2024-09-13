@@ -1,5 +1,5 @@
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:mobile_1byte_utils/src/enum/environment.dart';
+import 'package:utils_mobile/src/enum/environment.dart';
 
 class RemoteFirebaseRemoteConfig {
   final Environments env;

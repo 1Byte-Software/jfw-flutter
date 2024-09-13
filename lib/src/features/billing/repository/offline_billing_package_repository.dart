@@ -1,8 +1,8 @@
-import 'package:mobile_1byte_remote_jfw/src/features/billing/model/billing_package.dart';
-import 'package:mobile_1byte_remote_jfw/src/local/collection_reference/billling_package_reference.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
-import 'package:mobile_1byte_utils/src/func/function.dart';
-import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
+import 'package:jfw_remote_mobile/src/features/billing/model/billing_package.dart';
+import 'package:jfw_remote_mobile/src/local/collection_reference/billling_package_reference.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
+import 'package:utils_mobile/src/func/function.dart';
+import 'package:utils_mobile/src/services/logging/log_manager.dart';
 
 abstract class OfflineBillingPackageRepository {
   Future<FResult<List<BillingPackage>>> getAllPackages();

@@ -1,8 +1,8 @@
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
 import '../model/language.dart';
 import '../remote_language.dart';
-import 'package:mobile_1byte_utils/src/services/get_it.dart';
-import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:utils_mobile/src/services/get_it.dart';
+import 'package:utils_mobile/src/func/function.dart';
 
 abstract class LanguageRepository {
   Future<FResult<List<Language>>> getLanguages(

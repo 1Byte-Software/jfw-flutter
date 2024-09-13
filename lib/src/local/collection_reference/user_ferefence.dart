@@ -1,6 +1,6 @@
-import 'package:mobile_1byte_remote_jfw/src/features/auth/model/user/item_response.dart';
+import 'package:jfw_remote_mobile/src/features/auth/model/user/item_response.dart';
 import 'package:sembast/sembast.dart';
-import 'package:mobile_1byte_utils/src/services/local_database/base_collection_reference.dart';
+import 'package:utils_mobile/src/services/local_database/base_collection_reference.dart';
 
 // ignore: constant_identifier_names
 const String _USER_KEY = 'USER';

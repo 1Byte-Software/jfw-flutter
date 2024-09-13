@@ -1,5 +1,5 @@
-import 'package:mobile_1byte_utils/src/func/function.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:utils_mobile/src/func/function.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
 import 'brand_repository.dart';
 import '../remote/remote_brand.dart';
 export 'brand_repository.dart';

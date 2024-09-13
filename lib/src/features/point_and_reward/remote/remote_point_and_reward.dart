@@ -1,5 +1,5 @@
-import 'package:mobile_1byte_remote_jfw/src/constant/app_constant.dart';
-import 'package:mobile_1byte_utils/src/model/fetch_response.dart';
+import 'package:jfw_remote_mobile/src/constant/app_constant.dart';
+import 'package:utils_mobile/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

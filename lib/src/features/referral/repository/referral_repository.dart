@@ -1,8 +1,8 @@
-import 'package:mobile_1byte_remote_jfw/src/features/auth/model/user/item_response.dart';
-import 'package:mobile_1byte_remote_jfw/src/features/referral/remote/remote_referral.dart';
-import 'package:mobile_1byte_utils/src/func/function.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
-import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
+import 'package:jfw_remote_mobile/src/features/auth/model/user/item_response.dart';
+import 'package:jfw_remote_mobile/src/features/referral/remote/remote_referral.dart';
+import 'package:utils_mobile/src/func/function.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
+import 'package:utils_mobile/src/services/logging/log_manager.dart';
 
 abstract class ReferralReposity {
   Future<FResult<bool>> getStatusValidReferralCode(String referralCode);

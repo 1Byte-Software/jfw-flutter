@@ -1,6 +1,6 @@
-import 'package:mobile_1byte_remote_jfw/src/features/billing/model/billing_package.dart';
+import 'package:jfw_remote_mobile/src/features/billing/model/billing_package.dart';
 import 'package:sembast/sembast.dart';
-import 'package:mobile_1byte_utils/src/services/local_database/base_collection_reference.dart';
+import 'package:utils_mobile/src/services/local_database/base_collection_reference.dart';
 
 // ignore: constant_identifier_names
 const String _BILLING_PACKAGE_KEY = 'BILLING_PACKAGE';

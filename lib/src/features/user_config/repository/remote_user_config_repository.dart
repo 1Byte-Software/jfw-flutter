@@ -1,4 +1,4 @@
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
 
 import '../model/user_config.dart';
 

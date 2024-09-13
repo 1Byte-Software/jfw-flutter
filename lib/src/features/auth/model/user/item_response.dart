@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mobile_1byte_utils/src/extensions/string_extensions.dart';
+import 'package:utils_mobile/src/extensions/string_extensions.dart';
 part 'item_response.g.dart';
 part 'item_response.freezed.dart';
 

@@ -1,9 +1,9 @@
-import 'package:mobile_1byte_remote_jfw/src/features/user_config/model/user_config.dart';
-import 'package:mobile_1byte_remote_jfw/src/features/user_config/remote/remote_user_config.dart';
-import 'package:mobile_1byte_remote_jfw/src/features/user_config/repository/remote_user_config_repository.dart';
-import 'package:mobile_1byte_utils/src/func/function.dart';
-import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
+import 'package:jfw_remote_mobile/src/features/user_config/model/user_config.dart';
+import 'package:jfw_remote_mobile/src/features/user_config/remote/remote_user_config.dart';
+import 'package:jfw_remote_mobile/src/features/user_config/repository/remote_user_config_repository.dart';
+import 'package:utils_mobile/src/func/function.dart';
+import 'package:utils_mobile/src/services/logging/log_manager.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
 
 class RemoteUserConfigRepositoryImpl extends RemoteUserConfigRepository {
   final RemoteUserConfig ref;

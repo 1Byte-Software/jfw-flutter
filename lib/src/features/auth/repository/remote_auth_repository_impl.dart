@@ -1,8 +1,8 @@
-import 'package:mobile_1byte_remote_jfw/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
-import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:jfw_remote_mobile/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
+import 'package:utils_mobile/src/func/function.dart';
 import '../model/device/device.dart';
-import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
+import 'package:utils_mobile/src/model/parsed_page_model.dart';
 
 import '../model/device_and_tracking/model/tracking_event.dart';
 import '../model/login/request/login_request.dart';
@@ -13,8 +13,8 @@ import '../remote_auth.dart';
 import '../request/change_pass_request.dart';
 import '../request/register_request.dart';
 import 'auth_repository.dart';
-import 'package:mobile_1byte_utils/src/services/logging/log_manager.dart';
-import 'package:mobile_1byte_utils/src/model/page_model_v2.dart';
+import 'package:utils_mobile/src/services/logging/log_manager.dart';
+import 'package:utils_mobile/src/model/page_model_v2.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
   final RemoteAuth ref;

@@ -1,6 +1,6 @@
-import 'package:mobile_1byte_remote_jfw/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
-import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
+import 'package:jfw_remote_mobile/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
+import 'package:utils_mobile/src/model/parsed_page_model.dart';
 
 import '../model/device/device.dart';
 import '../model/device_and_tracking/model/tracking_event.dart';

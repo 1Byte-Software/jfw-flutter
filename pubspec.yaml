@@ -1,4 +1,4 @@
-name: mobile_1byte_remote_jfw
+name: jfw_remote_mobile
 description: A new Flutter package project.
 version: 1.7.20+4
 homepage: null
@@ -20,8 +20,8 @@ dependencies:
   retrofit: ^4.1.0
   retrofit_generator: ^8.1.1
 
-  mobile_1byte_utils:
-    path: /Users/1byte/modules/1byte_modules/mobile_1byte_utils
+  utils_mobile:
+    path: /Users/1byte/modules/1byte_modules/utils_mobile
 
   
 

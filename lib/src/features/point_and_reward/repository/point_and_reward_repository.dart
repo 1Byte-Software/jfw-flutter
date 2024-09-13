@@ -1,7 +1,7 @@
-import 'package:mobile_1byte_remote_jfw/src/features/point_and_reward/model/reward.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
-import 'package:mobile_1byte_utils/src/model/parsed_page_model.dart';
-import 'package:mobile_1byte_utils/src/model/page_model.dart';
+import 'package:jfw_remote_mobile/src/features/point_and_reward/model/reward.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
+import 'package:utils_mobile/src/model/parsed_page_model.dart';
+import 'package:utils_mobile/src/model/page_model.dart';
 import '../model/point.dart';
 
 abstract class PointAndRewardRepository {

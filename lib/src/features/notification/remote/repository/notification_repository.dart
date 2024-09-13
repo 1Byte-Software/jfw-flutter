@@ -1,7 +1,7 @@
-import 'package:mobile_1byte_utils/src/model/page_model.dart';
-import 'package:mobile_1byte_utils/src/model/page_model_v2.dart';
-import 'package:mobile_1byte_utils/src/model/fresult.dart';
-import 'package:mobile_1byte_utils/src/func/function.dart';
+import 'package:utils_mobile/src/model/page_model.dart';
+import 'package:utils_mobile/src/model/page_model_v2.dart';
+import 'package:utils_mobile/src/model/fresult.dart';
+import 'package:utils_mobile/src/func/function.dart';
 import '../remote_notification.dart';
 
 abstract class NotificationRepository {
