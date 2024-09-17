@@ -1,4 +1,4 @@
-import 'package:jfw_remote_mobile/src/features/billing/model/billing_package.dart';
+import 'package:jfw_flutter/src/features/billing/model/billing_package.dart';
 import 'package:sembast/sembast.dart';
 import 'package:utils_mobile/src/services/local_database/base_collection_reference.dart';
 

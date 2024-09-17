@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:jfw_remote_mobile/src/constant/app_constant.dart';
+import 'package:jfw_flutter/src/constant/app_constant.dart';
 import 'package:retrofit/retrofit.dart';
 import 'model/login/request/login_request.dart';
 import 'model/login/response/login_response.dart';

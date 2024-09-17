@@ -1,4 +1,4 @@
-import 'package:jfw_remote_mobile/src/features/auth/model/user/item_response.dart';
+import 'package:jfw_flutter/src/features/auth/model/user/item_response.dart';
 import 'package:sembast/sembast.dart';
 import 'package:utils_mobile/src/services/local_database/base_collection_reference.dart';
 

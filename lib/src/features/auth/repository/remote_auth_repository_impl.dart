@@ -1,4 +1,4 @@
-import 'package:jfw_remote_mobile/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:jfw_flutter/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/func/function.dart';
 import '../model/device/device.dart';

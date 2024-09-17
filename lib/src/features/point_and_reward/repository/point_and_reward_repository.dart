@@ -1,4 +1,4 @@
-import 'package:jfw_remote_mobile/src/features/point_and_reward/model/reward.dart';
+import 'package:jfw_flutter/src/features/point_and_reward/model/reward.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/model/parsed_page_model.dart';
 import 'package:utils_mobile/src/model/page_model.dart';

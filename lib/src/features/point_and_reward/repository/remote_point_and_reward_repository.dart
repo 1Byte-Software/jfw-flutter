@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jfw_remote_mobile/src/features/point_and_reward/model/point.dart';
-import 'package:jfw_remote_mobile/src/features/point_and_reward/model/reward.dart';
-import 'package:jfw_remote_mobile/src/features/point_and_reward/remote/remote_point_and_reward.dart';
-import 'package:jfw_remote_mobile/src/features/point_and_reward/repository/point_and_reward_repository.dart';
+import 'package:jfw_flutter/src/features/point_and_reward/model/point.dart';
+import 'package:jfw_flutter/src/features/point_and_reward/model/reward.dart';
+import 'package:jfw_flutter/src/features/point_and_reward/remote/remote_point_and_reward.dart';
+import 'package:jfw_flutter/src/features/point_and_reward/repository/point_and_reward_repository.dart';
 import 'package:utils_mobile/src/func/function.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/model/parsed_page_model.dart';

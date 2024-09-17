@@ -1,5 +1,5 @@
-import 'package:jfw_remote_mobile/src/features/billing/model/billing_package.dart';
-import 'package:jfw_remote_mobile/src/features/billing/model/package_price.dart';
+import 'package:jfw_flutter/src/features/billing/model/billing_package.dart';
+import 'package:jfw_flutter/src/features/billing/model/package_price.dart';
 import 'package:utils_mobile/src/func/function.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/services/logging/log_manager.dart';
