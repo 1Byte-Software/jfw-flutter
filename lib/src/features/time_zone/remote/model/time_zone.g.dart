@@ -8,7 +8,7 @@ part of 'time_zone.dart';
 
 _$TokenResponseImpl _$$TokenResponseImplFromJson(Map<String, dynamic> json) =>
     _$TokenResponseImpl(
-      id: json['id'] as int,
+      id: json['id'] as String,
       value: json['value'] as String? ?? '',
       countryCode: json['countryCode'] as String? ?? '',
       identifier: json['identifier'] as String? ?? '',
