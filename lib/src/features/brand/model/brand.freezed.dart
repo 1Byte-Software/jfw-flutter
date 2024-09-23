@@ -20,7 +20,7 @@ FBrand _$FBrandFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FBrand {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: _nameParam)
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: _logoUrlParam)
@@ -39,7 +39,7 @@ abstract class $FBrandCopyWith<$Res> {
       _$FBrandCopyWithImpl<$Res, FBrand>;
   @useResult
   $Res call(
-      {int id,
+      {String id,
       @JsonKey(name: _nameParam) String? name,
       @JsonKey(name: _logoUrlParam) String? logoUrl,
       @JsonKey(name: _faviconURLParam) String? faviconUrl});
@@ -67,7 +67,7 @@ class _$FBrandCopyWithImpl<$Res, $Val extends FBrand>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -92,7 +92,7 @@ abstract class _$$FBrandImplCopyWith<$Res> implements $FBrandCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {String id,
       @JsonKey(name: _nameParam) String? name,
       @JsonKey(name: _logoUrlParam) String? logoUrl,
       @JsonKey(name: _faviconURLParam) String? faviconUrl});
@@ -118,7 +118,7 @@ class __$$FBrandImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -148,7 +148,7 @@ class _$FBrandImpl implements _FBrand {
       _$$FBrandImplFromJson(json);
 
   @override
-  final int id;
+  final String id;
   @override
   @JsonKey(name: _nameParam)
   final String? name;
@@ -196,7 +196,7 @@ class _$FBrandImpl implements _FBrand {
 
 abstract class _FBrand implements FBrand {
   factory _FBrand(
-          {required final int id,
+          {required final String id,
           @JsonKey(name: _nameParam) final String? name,
           @JsonKey(name: _logoUrlParam) final String? logoUrl,
           @JsonKey(name: _faviconURLParam) final String? faviconUrl}) =
@@ -205,7 +205,7 @@ abstract class _FBrand implements FBrand {
   factory _FBrand.fromJson(Map<String, dynamic> json) = _$FBrandImpl.fromJson;
 
   @override
-  int get id;
+  String get id;
   @override
   @JsonKey(name: _nameParam)
   String? get name;

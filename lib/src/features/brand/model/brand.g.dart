@@ -7,7 +7,7 @@ part of 'brand.dart';
 // **************************************************************************
 
 _$FBrandImpl _$$FBrandImplFromJson(Map<String, dynamic> json) => _$FBrandImpl(
-      id: json['id'] as int,
+      id: json['id'] as String,
       name: json['name'] as String?,
       logoUrl: json['logoUrl'] as String?,
       faviconUrl: json['faviconURL'] as String?,

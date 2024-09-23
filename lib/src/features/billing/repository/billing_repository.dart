@@ -7,7 +7,7 @@ import '../remote_billing.dart';
 
 abstract class BillingRepository {
   Future<FResult<List<PackagePrice>>> getPrices();
-  Future<FResult<List<BillingPackage>>> getPackages({required int brandId});
+  Future<FResult<List<BillingPackage>>> getPackages({required String brandId});
   Future<FResult<String>> getCheckoutLink(int id);
   Future<FResult<bool>> applyLicense(
       {required String license,
@@ -80,7 +80,7 @@ class BillingRepositoryImpl extends BillingRepository {
   }
 
   @override
-  Future<FResult<List<BillingPackage>>> getPackages({required int brandId}) {
+  Future<FResult<List<BillingPackage>>> getPackages({required String brandId}) {
     return ref
         .getPackages(brandId: brandId.toString())
         .then((packagesResponse) => FResult.success(
