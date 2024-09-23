@@ -2,6 +2,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:jfw_flutter/src/constant/app_constant.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:utils_mobile/src/model/fetch_response.dart';
 
@@ -24,6 +25,6 @@ abstract class RemoteNotification {
     @Query(AppConstant.pageSizeParam) required int pageSize,
   });
   @PUT(_updateNotificationPath)
-  Future<dynamic> updateNotification(@Path(AppConstant.userIdParam) int uid,
+  Future<dynamic> updateNotification(@Path(AppConstant.userIdParam) UserId uid,
       {@Body() required dynamic updateStatusNotificationRequest});
 }

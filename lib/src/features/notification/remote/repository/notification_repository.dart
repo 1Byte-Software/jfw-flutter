@@ -1,3 +1,4 @@
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:utils_mobile/src/model/page_model.dart';
 import 'package:utils_mobile/src/model/page_model_v2.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
@@ -5,11 +6,13 @@ import 'package:utils_mobile/src/func/function.dart';
 import '../remote_notification.dart';
 
 abstract class NotificationRepository {
-  Future<FResult<PageModel>> getNotifications(int uid,
+  Future<FResult<PageModel>> getNotifications(UserId uid,
       {required int? status, required int pageSize, required int pageNumber});
 
   Future<FResult<String>> updateStatusNotification(
-      {required int uid, required int status, required int notificationId});
+      {required UserId uid,
+      required int status,
+      required UserId notificationId});
 }
 
 class NotificationRepositoryImpl extends NotificationRepository {
@@ -17,7 +20,7 @@ class NotificationRepositoryImpl extends NotificationRepository {
 
   NotificationRepositoryImpl({required this.ref});
   @override
-  Future<FResult<PageModel>> getNotifications(int uid,
+  Future<FResult<PageModel>> getNotifications(UserId uid,
       {required int? status,
       required int pageSize,
       required int pageNumber}) async {
@@ -39,9 +42,9 @@ class NotificationRepositoryImpl extends NotificationRepository {
 
   @override
   Future<FResult<String>> updateStatusNotification(
-      {required int uid,
+      {required UserId uid,
       required int status,
-      required int notificationId}) async {
+      required UserId notificationId}) async {
     return tryCatchResult<String>(
       func: () async {
         final updateStatusNotificationRequest = {
