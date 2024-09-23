@@ -7,7 +7,7 @@ part of 'device.dart';
 // **************************************************************************
 
 _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
-      id: json['id'] as int,
+      id: json['id'] as String,
       deviceName: json['deviceName'] as String,
       osDevice: json['osDevice'] as String? ?? '',
       modifiedDate: json['modifiedDate'] as String,
