@@ -8,8 +8,8 @@ part of 'package_price.dart';
 
 _$PackagePriceImpl _$$PackagePriceImplFromJson(Map<String, dynamic> json) =>
     _$PackagePriceImpl(
-      id: json['id'] as int,
-      packageID: json['packageId'] as int,
+      id: json['id'] as String,
+      packageID: json['packageId'] as String,
       code: json['code'] as String,
       name: json['name'] as String,
       amount: json['amount'] as num,

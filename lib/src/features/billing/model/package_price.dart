@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 part 'package_price.g.dart';
 part 'package_price.freezed.dart';
 
@@ -13,8 +14,8 @@ const _currencyParam = 'currency';
 class PackagePrice with _$PackagePrice {
   const PackagePrice._();
   const factory PackagePrice({
-    @JsonKey(name: _idParam) required int id,
-    @JsonKey(name: _packageIdParam) required int packageID,
+    @JsonKey(name: _idParam) required UserId id,
+    @JsonKey(name: _packageIdParam) required UserId packageID,
     @JsonKey(name: _codeParam) required String code,
     @JsonKey(name: _nameParam) required String name,
     @JsonKey(name: _amountParam) required num amount,
