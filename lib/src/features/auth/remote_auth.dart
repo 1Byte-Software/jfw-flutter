@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:jfw_flutter/src/constant/app_constant.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:retrofit/retrofit.dart';
 import 'model/login/request/login_request.dart';
 import 'model/login/response/login_response.dart';
@@ -27,11 +28,12 @@ const _getCurrentDevicePath = '/devices/current';
 const _updateDevicePath = '/devices/{${AppConstant.idParam}}';
 const _removeDevicePath = '/devices/{${AppConstant.idParam}}';
 const _verifyEmailSendPath = '/users/email/verify/send';
-const _checkConcurrencyPath = '/devices/check-concurrency';
+const _checkConcurrencyPath = '/devices/check-user-access';
 const _getTrackingEventsPath = '/tracking-events';
 const _registerPath = '/users/register';
 const _deleteUserPath = '/users/{${AppConstant.userIdParam}}';
 const _updateProfilePath = '/users/{$_usernameParam}';
+const _getMeInformation = '/v1/users/me';
 
 // PARAMS
 const _idTokenParam = 'idToken';
@@ -89,9 +91,13 @@ abstract class RemoteAuth {
     @Query(AppConstant.brandUrlParam) required String brandUrl,
     @Query(_authKeyParam) required String authKey,
   });
+
+  @GET(_getMeInformation)
+  Future<FetchResponse> getMeInformation();
+
   @GET(_getUserInfoByUserIdPath)
   Future<FetchResponse> getUserInforByUserId(
-    @Path(AppConstant.userIdParam) int uid, {
+    @Path(AppConstant.userIdParam) UserId uid, {
     @Query(AppConstant.brandUrlParam) required String brandUrl,
     @Query(_authKeyParam) required String authKey,
   });
@@ -105,7 +111,7 @@ abstract class RemoteAuth {
 
   @GET(_getAnotherUserInfoPath)
   Future<FetchResponse> getAnotherUserInfo(
-    @Path(AppConstant.userIdParam) int userId, {
+    @Path(AppConstant.userIdParam) UserId userId, {
     @Query(AppConstant.brandUrlParam) required String brandUrl,
     @Query(_authKeyParam) required String authKey,
   });
@@ -125,7 +131,7 @@ abstract class RemoteAuth {
 
   @GET(_getDevicesPath)
   Future<FetchResponse> getDevices({
-    @Query(AppConstant.userIdParam) required int uid,
+    @Query(AppConstant.userIdParam) required UserId uid,
     @Query(_isMobileParam) bool? isMobile,
     @Query(_deviceIdentifierParam) String? deviceIdentifier,
   });
@@ -137,7 +143,7 @@ abstract class RemoteAuth {
   Future<FetchResponse> filterDevice({
     @Query(_deviceCodeParam) String? deviceCode,
     @Query(_referralCodeParam) String? referralCode,
-    @Query(AppConstant.userIdParam) int? userId,
+    @Query(AppConstant.userIdParam) UserId? userId,
   });
   @PATCH(_updateDevicePath)
   Future<FetchResponse> updateDevice(
@@ -151,12 +157,12 @@ abstract class RemoteAuth {
   @POST(_verifyEmailSendPath)
   Future<FetchResponse> verifyEmail({
     @Query(_returnUrlParam) required String returnUrl,
-    @Query(AppConstant.userIdParam) required int userId,
+    @Query(AppConstant.userIdParam) required UserId userId,
   });
 
   @GET(_checkConcurrencyPath)
   Future<FetchResponse> getConcurrency({
-    @Query(AppConstant.userIdParam) required int uid,
+    @Query(AppConstant.userIdParam) required UserId uid,
     @Query(_deviceCodeParam) required String deviceCode,
   });
 
@@ -167,7 +173,7 @@ abstract class RemoteAuth {
   Future<dynamic> register(@Body() RegisterRequest registerRequest);
 
   @DELETE(_deleteUserPath)
-  Future<dynamic> deleteUser(@Path(AppConstant.userIdParam) int uid);
+  Future<dynamic> deleteUser(@Path(AppConstant.userIdParam) UserId uid);
 
   @PUT(_updateProfilePath)
   Future<FetchResponse> updateProfile(
