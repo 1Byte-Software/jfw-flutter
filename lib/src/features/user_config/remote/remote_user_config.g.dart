@@ -20,7 +20,7 @@ class _RemoteUserConfig implements RemoteUserConfig {
 
   @override
   Future<FetchResponse> getConfigurations(
-    int uid, {
+    String uid, {
     String? groupCode,
     String? code,
   }) async {
@@ -40,7 +40,7 @@ class _RemoteUserConfig implements RemoteUserConfig {
     )
             .compose(
               _dio.options,
-              '/users/${uid}/configurations',
+              '/v1/configurations',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -55,7 +55,7 @@ class _RemoteUserConfig implements RemoteUserConfig {
 
   @override
   Future<FetchResponse> createConfiguration(
-    int uid, {
+    String uid, {
     required Map<String, dynamic> config,
   }) async {
     final _extra = <String, dynamic>{};
@@ -71,7 +71,7 @@ class _RemoteUserConfig implements RemoteUserConfig {
     )
             .compose(
               _dio.options,
-              '/users/${uid}/configurations',
+              '/v1/configurations',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -85,7 +85,7 @@ class _RemoteUserConfig implements RemoteUserConfig {
   }
 
   @override
-  Future<FetchResponse> removeConfiguration(int id) async {
+  Future<FetchResponse> removeConfiguration(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -98,7 +98,7 @@ class _RemoteUserConfig implements RemoteUserConfig {
     )
             .compose(
               _dio.options,
-              '/configurations/${id}',
+              '/v1/configurations/${id}',
               queryParameters: queryParameters,
               data: _data,
             )

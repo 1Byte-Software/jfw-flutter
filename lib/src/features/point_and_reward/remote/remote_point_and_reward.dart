@@ -1,4 +1,5 @@
-import 'package:jfw_remote_mobile/src/constant/app_constant.dart';
+import 'package:jfw_flutter/src/constant/app_constant.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:utils_mobile/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
@@ -22,7 +23,7 @@ abstract class RemotePointAndReward {
 
   @GET(_getPointOfUserPath)
   Future<FetchResponse> getPointOfUser(
-      {@Path(AppConstant.userIdParam) required int userId});
+      {@Path(AppConstant.userIdParam) required UserId userId});
 
   @GET(_getRewardsPath)
   Future<FetchResponse> getRewards();
@@ -30,11 +31,11 @@ abstract class RemotePointAndReward {
   @POST(_applyRewardToUser)
   Future<FetchResponse> applyRewardToUser(
       {@Path(_pointEventIdParam) required int pointEventId,
-      @Path(AppConstant.userIdParam) required int userId});
+      @Path(AppConstant.userIdParam) required UserId userId});
 
   @GET(getPointHistoriesPath)
   Future<FetchResponse> getUserPointHistories(
-    @Path(AppConstant.userIdParam) int userId, {
+    @Path(AppConstant.userIdParam) UserId userId, {
     @Query(AppConstant.pageNumberParam) required int pageNumber,
     @Query(AppConstant.pageSizeParam) required int pageSize,
   });

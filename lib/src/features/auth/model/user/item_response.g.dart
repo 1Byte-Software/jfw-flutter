@@ -7,7 +7,7 @@ part of 'item_response.dart';
 // **************************************************************************
 
 _$FUserImpl _$$FUserImplFromJson(Map<String, dynamic> json) => _$FUserImpl(
-      id: json['id'] as int?,
+      id: json['id'] as String?,
       key: json['key'] as int?,
       username: json['username'] as String?,
       roleNames: (json['roleNames'] as List<dynamic>?)
@@ -29,12 +29,12 @@ _$FUserImpl _$$FUserImplFromJson(Map<String, dynamic> json) => _$FUserImpl(
       description: json['description'] as String? ?? '',
       roles:
           (json['roles'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      packageId: json['packageId'] as int?,
-      timeZoneId: json['timeZoneId'] as int?,
+      packageId: json['packageId'] as String?,
+      timeZoneId: json['timeZoneId'] as String?,
       modifiedDate: json['modifiedDate'] as String?,
       createdDate: json['createdDate'] as String?,
       dateOfJoin: json['dateOfJoin'] as String?,
-      parentUserId: json['parentUserId'] as int?,
+      parentUserId: json['parentUserId'] as String?,
       role: json['role'] as String?,
       isEmailAddressVerified: json['isEmailAddressVerified'] as bool,
     );

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 part 'device.g.dart';
 part 'device.freezed.dart';
 
@@ -19,7 +20,7 @@ const _deviceSessionParam = 'deviceSession';
 @freezed
 class Device with _$Device {
   factory Device({
-    @JsonKey(name: _idParam) required int id,
+    @JsonKey(name: _idParam) required UserId id,
     @JsonKey(name: _deviceName) required String deviceName,
     @JsonKey(name: _osDevice, defaultValue: '') required String osDevice,
     @JsonKey(name: _modifiedDate) required String modifiedDate,

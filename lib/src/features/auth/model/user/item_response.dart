@@ -35,7 +35,7 @@ const _isEmailAddressVerifiedParam = 'isEmailAddressVerified';
 class FUser with _$FUser {
   FUser._();
   factory FUser({
-    @JsonKey(name: _idParam) int? id,
+    @JsonKey(name: _idParam) String? id,
     @JsonKey(name: _keyParam) int? key,
     @JsonKey(name: _usernameParam) String? username,
     @JsonKey(name: _roleNamesParam) List<String>? roleNames,
@@ -54,12 +54,12 @@ class FUser with _$FUser {
     @JsonKey(name: _userCodeParam) String? userCode,
     @JsonKey(name: _descriptionParam) @Default('') String description,
     @JsonKey(name: _rolesParam) List<String>? roles,
-    @JsonKey(name: _packageIdParam) int? packageId,
-    @JsonKey(name: _timeZoneIdParam) int? timeZoneId,
+    @JsonKey(name: _packageIdParam) String? packageId,
+    @JsonKey(name: _timeZoneIdParam) String? timeZoneId,
     @JsonKey(name: _modifiedDateParam) String? modifiedDate,
     @JsonKey(name: _createdDateParam) String? createdDate,
     @JsonKey(name: _dateOfJoinParam) String? dateOfJoin,
-    @JsonKey(name: _parentUserIdParam) int? parentUserId,
+    @JsonKey(name: _parentUserIdParam) String? parentUserId,
     @JsonKey(name: _roleParam) String? role,
     @JsonKey(name: _isEmailAddressVerifiedParam)
     required bool isEmailAddressVerified,

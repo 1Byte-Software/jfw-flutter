@@ -19,7 +19,7 @@ class _RemotePointAndReward implements RemotePointAndReward {
   String? baseUrl;
 
   @override
-  Future<FetchResponse> getPointOfUser({required int userId}) async {
+  Future<FetchResponse> getPointOfUser({required String userId}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -75,7 +75,7 @@ class _RemotePointAndReward implements RemotePointAndReward {
   @override
   Future<FetchResponse> applyRewardToUser({
     required int pointEventId,
-    required int userId,
+    required String userId,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -104,7 +104,7 @@ class _RemotePointAndReward implements RemotePointAndReward {
 
   @override
   Future<FetchResponse> getUserPointHistories(
-    int userId, {
+    String userId, {
     required int pageNumber,
     required int pageSize,
   }) async {

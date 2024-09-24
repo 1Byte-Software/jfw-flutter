@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 part 'package_feature.g.dart';
 part 'package_feature.freezed.dart';
 
@@ -121,7 +122,7 @@ enum PackageFeatureEnum {
 // PARAMS
 const _idParam = 'id';
 const _keyParam = 'key';
-const _featureValueParam = 'featureValue';
+const _quantity = 'quantity';
 const _descriptionParam = 'description';
 const _nameParam = 'name';
 const _codeParam = 'code';
@@ -136,16 +137,15 @@ const _defaultValueEmpty = '';
 @freezed
 class PackageFeature with _$PackageFeature {
   factory PackageFeature({
-    @JsonKey(name: _idParam) required int id,
+    @JsonKey(name: _idParam) required UserId id,
     @JsonKey(name: _keyParam) int? key,
-    @JsonKey(name: _featureValueParam) required int value,
+    @JsonKey(name: _quantity) required int quantity,
     @JsonKey(name: _descriptionParam, defaultValue: _defaultValueEmpty)
     required String description,
     @JsonKey(name: _nameParam, defaultValue: _defaultValueEmpty)
     required String name,
     @JsonKey(name: _codeParam) required String code,
-    @JsonKey(name: _statusParam, defaultValue: _defaultValueStatus)
-    required int status,
+    @JsonKey(name: _statusParam) required String status,
     @JsonKey(name: _zOrderParam, defaultValue: _defaultValueZOrder)
     required int zOrder,
   }) = _PackageFeature;

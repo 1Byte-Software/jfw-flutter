@@ -10,7 +10,7 @@ const _faviconURLParam = 'faviconURL';
 @freezed
 class FBrand with _$FBrand {
   factory FBrand({
-    required int id,
+    required String id,
     @JsonKey(name: _nameParam) String? name,
     @JsonKey(name: _logoUrlParam) String? logoUrl,
     @JsonKey(name: _faviconURLParam) String? faviconUrl,

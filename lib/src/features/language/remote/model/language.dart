@@ -11,7 +11,7 @@ const _nameParam = 'name';
 @freezed
 class Language with _$Language {
   factory Language({
-    @JsonKey(name: _idParam) required int id,
+    @JsonKey(name: _idParam) required String id,
     @JsonKey(name: _countryCodeParam) required String countryCode,
     @JsonKey(name: _codeParam) required String languageCode,
     @JsonKey(name: _nameParam) required String description,

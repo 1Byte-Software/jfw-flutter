@@ -15,7 +15,7 @@ const _defaultValueEmptyString = '';
 @freezed
 class TimeZone with _$TimeZone {
   factory TimeZone({
-    @JsonKey(name: _idParam) required int id,
+    @JsonKey(name: _idParam) required String id,
     @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
     required String value,
     @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)

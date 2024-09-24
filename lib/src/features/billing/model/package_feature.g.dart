@@ -8,13 +8,13 @@ part of 'package_feature.dart';
 
 _$PackageFeatureImpl _$$PackageFeatureImplFromJson(Map<String, dynamic> json) =>
     _$PackageFeatureImpl(
-      id: json['id'] as int,
+      id: json['id'] as String,
       key: json['key'] as int?,
-      value: json['featureValue'] as int,
+      quantity: json['quantity'] as int,
       description: json['description'] as String? ?? '',
       name: json['name'] as String? ?? '',
       code: json['code'] as String,
-      status: json['status'] as int? ?? 1,
+      status: json['status'] as String,
       zOrder: json['zOrder'] as int? ?? 0,
     );
 
@@ -23,7 +23,7 @@ Map<String, dynamic> _$$PackageFeatureImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'key': instance.key,
-      'featureValue': instance.value,
+      'quantity': instance.quantity,
       'description': instance.description,
       'name': instance.name,
       'code': instance.code,

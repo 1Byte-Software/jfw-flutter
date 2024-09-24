@@ -53,7 +53,7 @@ class _RemoteNotification implements RemoteNotification {
 
   @override
   Future<dynamic> updateNotification(
-    int uid, {
+    String uid, {
     required dynamic updateStatusNotificationRequest,
   }) async {
     final _extra = <String, dynamic>{};

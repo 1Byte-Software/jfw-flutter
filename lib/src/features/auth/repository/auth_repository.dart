@@ -1,4 +1,5 @@
-import 'package:jfw_remote_mobile/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:jfw_flutter/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/model/parsed_page_model.dart';
 
@@ -9,7 +10,7 @@ import '../model/login/response/login_response.dart';
 import '../model/user/item_response.dart';
 
 abstract class AuthRepository {
-  Future<FResult<FUser>> getAnotherUserInfo(int uid,
+  Future<FResult<FUser>> getAnotherUserInfo(UserId uid,
       {required String brandUrl, required String authKey});
 
   Future<FResult<FUser>> getInfoAnotherUserByCode(String code,
@@ -19,7 +20,7 @@ abstract class AuthRepository {
   Future<FResult<ParsedPageModel<TrackingActivity>>> getActivities(
       {required int pageNumber, required int pageSize});
 
-  Future<FResult<bool>> getAccountConcurrency(int uid,
+  Future<FResult<bool>> getAccountUserAccess(UserId uid,
       {required String deviceCode});
 
   Future<FResult<String>> addDeviceAndGetDeviceId(
@@ -53,14 +54,15 @@ abstract class AuthRepository {
       required String? lastName,
       required String idToken});
 
-  //Lấy thông tin cơ bản của 1 user
   Future<FResult<FUser>> getUserInformation(
       {required String username,
       required String brandUrl,
       required String authKey});
 
+  Future<FResult<FUser>> getMeInformation();
+
   Future<FResult<FUser>> getUserInfoById(
-      {required int uid, required String brandUrl, required String authKey});
+      {required UserId uid, required String brandUrl, required String authKey});
 
   Future<FResult<String>> forgotPassword(
       {required String email,
@@ -78,18 +80,18 @@ abstract class AuthRepository {
       required String authKey});
 
   Future<FResult<List<Device>>> getDevices(
-      {required int uid, String? deviceIdentifier, bool? isMobile});
+      {required UserId uid, String? deviceIdentifier, bool? isMobile});
   Future<FResult<Device>> getCurrentDevice();
   Future<FResult<List<Device>>> filterDevices(
-      {required int userId, required String deviceCode});
+      {required UserId userId, required String deviceCode});
 
   Future<FResult<String>> updateDevice(
       {required int id, required dynamic deviceInfo});
 
   Future<FResult<String>> removeDevice({required int id});
 
-  Future<FResult<String>> deleteAccount({required int uid});
+  Future<FResult<String>> deleteAccount({required UserId uid});
 
   Future<FResult<String>> sendEmailVerifyEmail(
-      {required int uid, required String returnUrl});
+      {required UserId uid, required String returnUrl});
 }

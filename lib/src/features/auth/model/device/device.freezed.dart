@@ -21,7 +21,7 @@ Device _$DeviceFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Device {
   @JsonKey(name: _idParam)
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: _deviceName)
   String get deviceName => throw _privateConstructorUsedError;
   @JsonKey(name: _osDevice, defaultValue: '')
@@ -56,7 +56,7 @@ abstract class $DeviceCopyWith<$Res> {
       _$DeviceCopyWithImpl<$Res, Device>;
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _deviceName) String deviceName,
       @JsonKey(name: _osDevice, defaultValue: '') String osDevice,
       @JsonKey(name: _modifiedDate) String modifiedDate,
@@ -101,7 +101,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       deviceName: null == deviceName
           ? _value.deviceName
           : deviceName // ignore: cast_nullable_to_non_nullable
@@ -158,7 +158,7 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _deviceName) String deviceName,
       @JsonKey(name: _osDevice, defaultValue: '') String osDevice,
       @JsonKey(name: _modifiedDate) String modifiedDate,
@@ -201,7 +201,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       deviceName: null == deviceName
           ? _value.deviceName
           : deviceName // ignore: cast_nullable_to_non_nullable
@@ -274,7 +274,7 @@ class _$DeviceImpl implements _Device {
 
   @override
   @JsonKey(name: _idParam)
-  final int id;
+  final String id;
   @override
   @JsonKey(name: _deviceName)
   final String deviceName;
@@ -375,7 +375,7 @@ class _$DeviceImpl implements _Device {
 
 abstract class _Device implements Device {
   factory _Device(
-      {@JsonKey(name: _idParam) required final int id,
+      {@JsonKey(name: _idParam) required final String id,
       @JsonKey(name: _deviceName) required final String deviceName,
       @JsonKey(name: _osDevice, defaultValue: '')
       required final String osDevice,
@@ -396,7 +396,7 @@ abstract class _Device implements Device {
 
   @override
   @JsonKey(name: _idParam)
-  int get id;
+  String get id;
   @override
   @JsonKey(name: _deviceName)
   String get deviceName;

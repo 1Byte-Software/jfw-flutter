@@ -20,9 +20,9 @@ UserConfig _$UserConfigFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserConfig {
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: _userIdParam)
-  int get uid => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
   String get groupCode => throw _privateConstructorUsedError;
   dynamic get value => throw _privateConstructorUsedError;
@@ -41,8 +41,8 @@ abstract class $UserConfigCopyWith<$Res> {
       _$UserConfigCopyWithImpl<$Res, UserConfig>;
   @useResult
   $Res call(
-      {int? id,
-      @JsonKey(name: _userIdParam) int uid,
+      {String? id,
+      @JsonKey(name: _userIdParam) String uid,
       String code,
       String groupCode,
       dynamic value,
@@ -73,11 +73,11 @@ class _$UserConfigCopyWithImpl<$Res, $Val extends UserConfig>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -107,8 +107,8 @@ abstract class _$$UserConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? id,
-      @JsonKey(name: _userIdParam) int uid,
+      {String? id,
+      @JsonKey(name: _userIdParam) String uid,
       String code,
       String groupCode,
       dynamic value,
@@ -137,11 +137,11 @@ class __$$UserConfigImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -178,10 +178,10 @@ class _$UserConfigImpl extends _UserConfig {
       _$$UserConfigImplFromJson(json);
 
   @override
-  final int? id;
+  final String? id;
   @override
   @JsonKey(name: _userIdParam)
-  final int uid;
+  final String uid;
   @override
   final String code;
   @override
@@ -232,8 +232,8 @@ class _$UserConfigImpl extends _UserConfig {
 
 abstract class _UserConfig extends UserConfig {
   factory _UserConfig(
-      {final int? id,
-      @JsonKey(name: _userIdParam) required final int uid,
+      {final String? id,
+      @JsonKey(name: _userIdParam) required final String uid,
       required final String code,
       required final String groupCode,
       required final dynamic value,
@@ -244,10 +244,10 @@ abstract class _UserConfig extends UserConfig {
       _$UserConfigImpl.fromJson;
 
   @override
-  int? get id;
+  String? get id;
   @override
   @JsonKey(name: _userIdParam)
-  int get uid;
+  String get uid;
   @override
   String get code;
   @override
