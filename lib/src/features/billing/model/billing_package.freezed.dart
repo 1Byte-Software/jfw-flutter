@@ -34,6 +34,8 @@ mixin _$BillingPackage {
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   int get zOrder => throw _privateConstructorUsedError;
+  @JsonKey(name: _imageParam)
+  String? get image => throw _privateConstructorUsedError;
   @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   String get tags => throw _privateConstructorUsedError;
   @JsonKey(name: _isFreeParam)
@@ -59,6 +61,7 @@ abstract class $BillingPackageCopyWith<$Res> {
       @JsonKey(name: _codeParam) String code,
       @JsonKey(name: _nameParam, defaultValue: _valueEmpty) String name,
       @JsonKey(name: _zOrderParam, defaultValue: _valueZero) int zOrder,
+      @JsonKey(name: _imageParam) String? image,
       @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) String tags,
       @JsonKey(name: _isFreeParam) bool isFree});
 }
@@ -83,6 +86,7 @@ class _$BillingPackageCopyWithImpl<$Res, $Val extends BillingPackage>
     Object? code = null,
     Object? name = null,
     Object? zOrder = null,
+    Object? image = freezed,
     Object? tags = null,
     Object? isFree = null,
   }) {
@@ -115,6 +119,10 @@ class _$BillingPackageCopyWithImpl<$Res, $Val extends BillingPackage>
           ? _value.zOrder
           : zOrder // ignore: cast_nullable_to_non_nullable
               as int,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -143,6 +151,7 @@ abstract class _$$PackageImplCopyWith<$Res>
       @JsonKey(name: _codeParam) String code,
       @JsonKey(name: _nameParam, defaultValue: _valueEmpty) String name,
       @JsonKey(name: _zOrderParam, defaultValue: _valueZero) int zOrder,
+      @JsonKey(name: _imageParam) String? image,
       @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) String tags,
       @JsonKey(name: _isFreeParam) bool isFree});
 }
@@ -165,6 +174,7 @@ class __$$PackageImplCopyWithImpl<$Res>
     Object? code = null,
     Object? name = null,
     Object? zOrder = null,
+    Object? image = freezed,
     Object? tags = null,
     Object? isFree = null,
   }) {
@@ -197,6 +207,10 @@ class __$$PackageImplCopyWithImpl<$Res>
           ? _value.zOrder
           : zOrder // ignore: cast_nullable_to_non_nullable
               as int,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -222,6 +236,7 @@ class _$PackageImpl implements _Package {
       @JsonKey(name: _nameParam, defaultValue: _valueEmpty) required this.name,
       @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
       required this.zOrder,
+      @JsonKey(name: _imageParam) required this.image,
       @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) required this.tags,
       @JsonKey(name: _isFreeParam) required this.isFree})
       : _features = features,
@@ -264,6 +279,9 @@ class _$PackageImpl implements _Package {
   @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   final int zOrder;
   @override
+  @JsonKey(name: _imageParam)
+  final String? image;
+  @override
   @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   final String tags;
   @override
@@ -272,7 +290,7 @@ class _$PackageImpl implements _Package {
 
   @override
   String toString() {
-    return 'BillingPackage(id: $id, key: $key, features: $features, prices: $prices, code: $code, name: $name, zOrder: $zOrder, tags: $tags, isFree: $isFree)';
+    return 'BillingPackage(id: $id, key: $key, features: $features, prices: $prices, code: $code, name: $name, zOrder: $zOrder, image: $image, tags: $tags, isFree: $isFree)';
   }
 
   @override
@@ -287,6 +305,7 @@ class _$PackageImpl implements _Package {
             (identical(other.code, code) || other.code == code) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.zOrder, zOrder) || other.zOrder == zOrder) &&
+            (identical(other.image, image) || other.image == image) &&
             (identical(other.tags, tags) || other.tags == tags) &&
             (identical(other.isFree, isFree) || other.isFree == isFree));
   }
@@ -302,6 +321,7 @@ class _$PackageImpl implements _Package {
       code,
       name,
       zOrder,
+      image,
       tags,
       isFree);
 
@@ -331,6 +351,7 @@ abstract class _Package implements BillingPackage {
       required final String name,
       @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
       required final int zOrder,
+      @JsonKey(name: _imageParam) required final String? image,
       @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
       required final String tags,
       @JsonKey(name: _isFreeParam) required final bool isFree}) = _$PackageImpl;
@@ -358,6 +379,9 @@ abstract class _Package implements BillingPackage {
   @override
   @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   int get zOrder;
+  @override
+  @JsonKey(name: _imageParam)
+  String? get image;
   @override
   @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   String get tags;

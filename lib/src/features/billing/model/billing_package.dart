@@ -16,6 +16,7 @@ const _nameParam = 'name';
 const _zOrderParam = 'zOrder';
 const _tagsParam = 'tags';
 const _isFreeParam = 'isFree';
+const _imageParam = 'image';
 
 // DEFAULT VALUE
 const _valueEmpty = '';
@@ -31,6 +32,7 @@ class BillingPackage with _$BillingPackage {
     @JsonKey(name: _codeParam) required String code,
     @JsonKey(name: _nameParam, defaultValue: _valueEmpty) required String name,
     @JsonKey(name: _zOrderParam, defaultValue: _valueZero) required int zOrder,
+    @JsonKey(name: _imageParam) required String? image,
     @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) required String tags,
     @JsonKey(name: _isFreeParam) required bool isFree,
   }) = _Package;

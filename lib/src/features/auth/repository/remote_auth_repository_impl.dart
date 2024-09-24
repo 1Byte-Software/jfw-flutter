@@ -1,4 +1,5 @@
 import 'package:jfw_flutter/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/func/function.dart';
 import '../model/device/device.dart';
@@ -22,7 +23,7 @@ class AuthRepositoryImpl extends AuthRepository {
   AuthRepositoryImpl({required this.ref});
 
   @override
-  Future<FResult<FUser>> getAnotherUserInfo(int uid,
+  Future<FResult<FUser>> getAnotherUserInfo(UserId uid,
       {required String brandUrl, required String authKey}) async {
     return FetchFunctions.fetchRawResponse(
         ref.getAnotherUserInfo(uid, authKey: authKey, brandUrl: brandUrl),
@@ -74,7 +75,7 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<FUser>> getUserInfoById(
-      {required int uid,
+      {required UserId uid,
       required String brandUrl,
       required String authKey}) async {
     return tryCatchResult<FUser>(
@@ -160,7 +161,7 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<List<Device>>> getDevices(
-      {required int uid, String? deviceIdentifier, bool? isMobile}) {
+      {required UserId uid, String? deviceIdentifier, bool? isMobile}) {
     return ref
         .getDevices(
             uid: uid, deviceIdentifier: deviceIdentifier, isMobile: isMobile)
@@ -203,7 +204,7 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<String>> deleteAccount({required int uid}) {
+  Future<FResult<String>> deleteAccount({required UserId uid}) {
     return tryCatchResult(func: () async {
       await ref.deleteUser(uid);
       return logI.sucessStr('Deleted account successfully',
@@ -232,7 +233,7 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<bool>> getAccountConcurrency(int uid,
+  Future<FResult<bool>> getAccountConcurrency(UserId uid,
       {required String deviceCode}) async {
     return ref
         .getConcurrency(uid: uid, deviceCode: deviceCode)
@@ -259,7 +260,7 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<String>> sendEmailVerifyEmail(
-      {required int uid, required String returnUrl}) {
+      {required UserId uid, required String returnUrl}) {
     return ref
         .verifyEmail(returnUrl: returnUrl, userId: uid)
         .then((value) => FResult.success('Send email verify successfully'))
@@ -268,7 +269,7 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<List<Device>>> filterDevices(
-      {required int userId, required String deviceCode}) async {
+      {required UserId userId, required String deviceCode}) async {
     final devicesResponse =
         await ref.filterDevice(userId: userId, deviceCode: deviceCode);
     return FResult.success(
@@ -292,5 +293,11 @@ class AuthRepositoryImpl extends AuthRepository {
                 .toPageModel(),
             onParse: TrackingActivity.fromJson)))
         .onError(FetchFunctions.onError);
+  }
+
+  @override
+  Future<FResult<FUser>> getMeInformation() {
+    return FetchFunctions.fetchRawResponse(ref.getMeInformation(),
+        onParse: FUser.fromJson);
   }
 }

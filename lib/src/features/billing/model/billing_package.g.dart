@@ -19,6 +19,7 @@ _$PackageImpl _$$PackageImplFromJson(Map<String, dynamic> json) =>
       code: json['code'] as String,
       name: json['name'] as String? ?? '',
       zOrder: json['zOrder'] as int? ?? 0,
+      image: json['image'] as String?,
       tags: json['tags'] as String? ?? '',
       isFree: json['isFree'] as bool,
     );
@@ -32,6 +33,7 @@ Map<String, dynamic> _$$PackageImplToJson(_$PackageImpl instance) =>
       'code': instance.code,
       'name': instance.name,
       'zOrder': instance.zOrder,
+      'image': instance.image,
       'tags': instance.tags,
       'isFree': instance.isFree,
     };
