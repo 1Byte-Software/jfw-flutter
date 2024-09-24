@@ -655,7 +655,7 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> getConcurrency({
+  Future<FetchResponse> getAccountUserAccess({
     required String uid,
     required String deviceCode,
   }) async {
@@ -674,7 +674,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/devices/check-concurrency',
+              '/devices/check-user-access',
               queryParameters: queryParameters,
               data: _data,
             )

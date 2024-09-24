@@ -28,7 +28,7 @@ const _getCurrentDevicePath = '/devices/current';
 const _updateDevicePath = '/devices/{${AppConstant.idParam}}';
 const _removeDevicePath = '/devices/{${AppConstant.idParam}}';
 const _verifyEmailSendPath = '/users/email/verify/send';
-const _checkConcurrencyPath = '/devices/check-user-access';
+const _checkUserAccessPath = '/devices/check-user-access';
 const _getTrackingEventsPath = '/tracking-events';
 const _registerPath = '/users/register';
 const _deleteUserPath = '/users/{${AppConstant.userIdParam}}';
@@ -160,8 +160,8 @@ abstract class RemoteAuth {
     @Query(AppConstant.userIdParam) required UserId userId,
   });
 
-  @GET(_checkConcurrencyPath)
-  Future<FetchResponse> getConcurrency({
+  @GET(_checkUserAccessPath)
+  Future<FetchResponse> getAccountUserAccess({
     @Query(AppConstant.userIdParam) required UserId uid,
     @Query(_deviceCodeParam) required String deviceCode,
   });

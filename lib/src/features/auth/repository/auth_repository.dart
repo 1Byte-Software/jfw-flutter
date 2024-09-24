@@ -20,7 +20,7 @@ abstract class AuthRepository {
   Future<FResult<ParsedPageModel<TrackingActivity>>> getActivities(
       {required int pageNumber, required int pageSize});
 
-  Future<FResult<bool>> getAccountConcurrency(UserId uid,
+  Future<FResult<bool>> getAccountUserAccess(UserId uid,
       {required String deviceCode});
 
   Future<FResult<String>> addDeviceAndGetDeviceId(

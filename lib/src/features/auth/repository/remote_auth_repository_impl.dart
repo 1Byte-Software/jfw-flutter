@@ -233,12 +233,12 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<bool>> getAccountConcurrency(UserId uid,
+  Future<FResult<bool>> getAccountUserAccess(UserId uid,
       {required String deviceCode}) async {
     return ref
-        .getConcurrency(uid: uid, deviceCode: deviceCode)
-        .then((concurrencyResponse) =>
-            FResult.success(concurrencyResponse.data as bool))
+        .getAccountUserAccess(uid: uid, deviceCode: deviceCode)
+        .then(
+            (checkUserAccess) => FResult.success(checkUserAccess.data as bool))
         .onError(FetchFunctions.onError);
   }
 
