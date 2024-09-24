@@ -8,8 +8,8 @@ part of 'user_config.dart';
 
 _$UserConfigImpl _$$UserConfigImplFromJson(Map<String, dynamic> json) =>
     _$UserConfigImpl(
-      id: json['id'] as int?,
-      uid: json['userId'] as int,
+      id: json['id'] as String?,
+      uid: json['hashId'] as String,
       code: json['code'] as String,
       groupCode: json['groupCode'] as String,
       value: json['value'],
@@ -19,7 +19,7 @@ _$UserConfigImpl _$$UserConfigImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$UserConfigImplToJson(_$UserConfigImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'userId': instance.uid,
+      'hashId': instance.uid,
       'code': instance.code,
       'groupCode': instance.groupCode,
       'value': instance.value,

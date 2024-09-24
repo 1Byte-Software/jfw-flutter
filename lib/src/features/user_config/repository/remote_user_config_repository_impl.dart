@@ -1,6 +1,7 @@
 import 'package:jfw_flutter/src/features/user_config/model/user_config.dart';
 import 'package:jfw_flutter/src/features/user_config/remote/remote_user_config.dart';
 import 'package:jfw_flutter/src/features/user_config/repository/remote_user_config_repository.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:utils_mobile/src/func/function.dart';
 import 'package:utils_mobile/src/services/logging/log_manager.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
@@ -11,7 +12,7 @@ class RemoteUserConfigRepositoryImpl extends RemoteUserConfigRepository {
 
   @override
   Future<FResult<List<UserConfig>>> getUserConfigs(
-      {required int uid,
+      {required UserId uid,
       required String? groupCode,
       required String? code}) async {
     // return tryCatchResult(func: () async {
@@ -24,7 +25,7 @@ class RemoteUserConfigRepositoryImpl extends RemoteUserConfigRepository {
   }
 
   @override
-  Future<FResult<String>> removeConfig(int id) {
+  Future<FResult<String>> removeConfig(UserId id) {
     return tryCatchResult(func: () async {
       await ref.removeConfiguration(id);
       return logI.sucessStr('Removed configuration $id',
@@ -34,7 +35,7 @@ class RemoteUserConfigRepositoryImpl extends RemoteUserConfigRepository {
 
   @override
   Future<FResult<String>> createConfig(
-      {required int uid,
+      {required UserId uid,
       required String groupCode,
       required String code,
       required String description,
