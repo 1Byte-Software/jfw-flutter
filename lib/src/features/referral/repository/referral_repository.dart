@@ -4,13 +4,13 @@ import 'package:utils_mobile/src/func/function.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/services/logging/log_manager.dart';
 
-abstract class ReferralReposity {
+abstract class ReferralRepository {
   Future<FResult<bool>> getStatusValidReferralCode(String referralCode);
   Future<FResult<List<FUser>>> getReferees(int uid);
   Future<FResult<bool>> applyReferral(int uid, {required String codeReferral});
 }
 
-class ReferralRepositoryImpl extends ReferralReposity {
+class ReferralRepositoryImpl extends ReferralRepository {
   ReferralRepositoryImpl({required this.ref});
   final RemoteReferral ref;
 
