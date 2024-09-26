@@ -142,7 +142,7 @@ class AuthRepositoryImpl extends AuthRepository {
       Map<String, dynamic> activityRequest) async {
     return tryCatchResult<String>(
         func: () async {
-          await ref.addActivites(activityRequest);
+          await ref.addActivities(activityRequest);
           return 'sucess-add-activity';
         },
         logErr: (ex) => logI.e(ex));

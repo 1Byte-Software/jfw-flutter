@@ -1,4 +1,4 @@
-import 'package:jfw_flutter/src/constant/app_constant.dart';
+import 'package:jfw_flutter/src/constant/pagination_constant.dart';
 import 'package:utils_mobile/src/model/fetch_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
@@ -12,6 +12,7 @@ abstract class RemoteLanguage {
 
   @GET(_getLanguagesPath)
   Future<FetchResponse> getLanguages(
-      {@Query(AppConstant.sortOrderParam) required String? sortOrder,
-      @Query(AppConstant.sortDataFieldParam) required String? sortDataField});
+      {@Query(PaginationConstant.sortOrderParam) required String? sortOrder,
+      @Query(PaginationConstant.sortDataFieldParam)
+      required String? sortDataField});
 }

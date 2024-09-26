@@ -17,7 +17,7 @@ class RemoteFirebaseRemoteConfig {
   final _introductionUrlKey = 'introductionUrl';
   final _latestVersionJFWPortKey = 'latest_version_jfw_port';
   final _latestVersionVardyTestsPortKey = 'latest_version_vardytests_port';
-  final _uidShowLogs = 'uid_show_logs';
+  // final _uidShowLogs = 'uid_show_logs';
   final _configDebugModeKey = 'config_debug_mode';
   final _configAppKey = 'configApp';
 
