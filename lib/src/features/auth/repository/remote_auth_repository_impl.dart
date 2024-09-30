@@ -207,7 +207,7 @@ class AuthRepositoryImpl extends AuthRepository {
   Future<FResult<String>> deleteAccount({required UserId uid}) {
     return tryCatchResult(func: () async {
       await ref.deleteUser(uid);
-      return logI.sucessStr('Deleted account successfully',
+      return logI.successStr('Deleted account successfully',
           tag: runtimeType.toString());
     });
   }

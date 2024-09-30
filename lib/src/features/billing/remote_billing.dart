@@ -6,8 +6,9 @@ part 'remote_billing.g.dart';
 
 // PROTOCOLS
 const _getPricesPath = '/prices';
-const _getPackagesPath = '/packages';
 const _registerServerSideAfterPaymentPath = '/payments/registration';
+const _getPackagesPath = '/packages';
+
 const _applyLicensePath = '/licenses/apply';
 const _checkValidStatusLicensePath = '/licenses/check';
 const _getCheckOutLinkPath = '/prices/{${ParamConstant.idParam}}/checkout-link';
