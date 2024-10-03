@@ -125,15 +125,12 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<FUser>> updateUserProfile(String username,
-      {required updateUserInformation,
-      required String brandUrl,
-      required String authKey}) async {
+  Future<FResult<FUser>> updateUserProfile(
+    String uid, {
+    required updateUserInformation,
+  }) async {
     return FetchFunctions.fetchRawResponse(
-        ref.updateProfile(username,
-            authKey: authKey,
-            userInformationUpdate: updateUserInformation,
-            brandUrl: brandUrl),
+        ref.updateProfile(uid, userInformationUpdate: updateUserInformation),
         onParse: FUser.fromJson);
   }
 
@@ -161,15 +158,25 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<List<Device>>> getDevices(
-      {required UserId uid, String? deviceIdentifier, bool? isMobile}) {
+      {required UserId uid,
+      String? deviceIdentifier,
+      bool? isMobile,
+      required int pageSize,
+      required int pageNumber}) {
     return ref
         .getDevices(
-            uid: uid, deviceIdentifier: deviceIdentifier, isMobile: isMobile)
-        .then((devicesResponse) => FResult.success(
-            (devicesResponse.data as List)
-                .map((deviceMap) => Device.fromJson(deviceMap))
-                .toList()))
-        .onError(FetchFunctions.onError);
+            uid: uid,
+            deviceIdentifier: deviceIdentifier,
+            isMobile: isMobile,
+            pageSize: pageSize,
+            pageNumber: pageNumber)
+        .then((devicesResponse) {
+      final devicePage =
+          PageModelV2.fromJson(devicesResponse.data, pageSize: pageSize);
+      return FResult.success((devicePage.items)
+          .map((deviceMap) => Device.fromJson(deviceMap))
+          .toList());
+    }).onError(FetchFunctions.onError);
   }
 
   @override
@@ -243,7 +250,8 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<String>> updateDevice({required int id, required deviceInfo}) {
+  Future<FResult<String>> updateDevice(
+      {required UserId id, required deviceInfo}) {
     return ref
         .updateDevice(id: id, deviceInfo: deviceInfo)
         .then((value) => FResult.success('Updated the device successfully'))
@@ -251,7 +259,7 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<String>> removeDevice({required int id}) {
+  Future<FResult<String>> removeDevice({required UserId id}) {
     return ref
         .removeDevice(id: id)
         .then((value) => FResult.success('Removed the device successfully'))

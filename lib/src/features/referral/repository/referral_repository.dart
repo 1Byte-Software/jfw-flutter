@@ -1,13 +1,15 @@
 import 'package:jfw_flutter/src/features/auth/model/user/item_response.dart';
 import 'package:jfw_flutter/src/features/referral/remote/remote_referral.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:utils_mobile/src/func/function.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/services/logging/log_manager.dart';
 
 abstract class ReferralRepository {
   Future<FResult<bool>> getStatusValidReferralCode(String referralCode);
-  Future<FResult<List<FUser>>> getReferees(int uid);
-  Future<FResult<bool>> applyReferral(int uid, {required String codeReferral});
+  Future<FResult<List<FUser>>> getReferees(UserId uid);
+  Future<FResult<bool>> applyReferral(UserId uid,
+      {required String codeReferral});
 }
 
 class ReferralRepositoryImpl extends ReferralRepository {
@@ -15,7 +17,7 @@ class ReferralRepositoryImpl extends ReferralRepository {
   final RemoteReferral ref;
 
   @override
-  Future<FResult<bool>> applyReferral(int uid,
+  Future<FResult<bool>> applyReferral(UserId uid,
       {required String codeReferral}) async {
     return tryCatchResult<bool>(
         func: () async {
@@ -26,7 +28,7 @@ class ReferralRepositoryImpl extends ReferralRepository {
   }
 
   @override
-  Future<FResult<List<FUser>>> getReferees(int uid) async {
+  Future<FResult<List<FUser>>> getReferees(UserId uid) async {
     return tryCatchResult<List<FUser>>(
         func: () async {
           final response = await ref.getRefereesOfUser(uid);

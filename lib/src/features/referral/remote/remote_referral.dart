@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:jfw_flutter/src/constant/param_constant.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:utils_mobile/src/model/fetch_response.dart';
 part 'remote_referral.g.dart';
@@ -19,12 +20,12 @@ abstract class RemoteReferral {
   factory RemoteReferral(Dio dio, {String baseUrl}) = _RemoteReferral;
   @GET(_getRefereesOfUserPath)
   Future<FetchResponse> getRefereesOfUser(
-      @Path(ParamConstant.userIdParam) int uid);
+      @Path(ParamConstant.userIdParam) UserId uid);
   @GET(_checkValidStatusReferralCodePath)
   Future<FetchResponse> checkValidStatusReferralCode(
       @Path(_referralCodeParam) String referralCode);
   @POST(_applyReferralCodeToUserPath)
   Future<FetchResponse> applyReferralCodeToUser(
-      @Path(ParamConstant.userIdParam) int uid,
+      @Path(ParamConstant.userIdParam) UserId uid,
       {@Query(_referralCodeParam) required String referralCode});
 }

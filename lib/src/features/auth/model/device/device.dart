@@ -5,17 +5,16 @@ part 'device.freezed.dart';
 
 // PARAMS
 const _idParam = 'id';
-const _deviceName = 'deviceName';
+const _deviceName = 'name';
 const _osDevice = 'osDevice';
 const _modifiedDate = 'modifiedDate';
 const _createdDateParam = 'createdDate';
-const _referralCodeParam = 'referralCode';
 const _isMobileParam = 'isMobile';
 const _imeiParam = 'imei';
 const _tagsParam = 'tags';
-const _deviceCodeParam = 'deviceCode';
+const _deviceCodeParam = 'code';
 const _appVersionNumberParam = 'appVersionNumber';
-const _deviceSessionParam = 'deviceSession';
+const _deviceSessionParam = 'session';
 
 @freezed
 class Device with _$Device {
@@ -25,7 +24,6 @@ class Device with _$Device {
     @JsonKey(name: _osDevice, defaultValue: '') required String osDevice,
     @JsonKey(name: _modifiedDate) required String modifiedDate,
     @JsonKey(name: _createdDateParam) required String createdDate,
-    @JsonKey(name: _referralCodeParam) required String? referralCode,
     @JsonKey(name: _isMobileParam, defaultValue: false) required bool isMobile,
     @JsonKey(name: _imeiParam) required String? imei,
     @JsonKey(name: _tagsParam, defaultValue: '') required String tags,

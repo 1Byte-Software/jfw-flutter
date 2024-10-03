@@ -33,7 +33,7 @@ const _checkUserAccessPath = '/devices/check-user-access';
 const _getTrackingEventsPath = '/tracking-events';
 const _registerPath = '/users/register';
 const _deleteUserPath = '/users/{${ParamConstant.userIdParam}}';
-const _updateProfilePath = '/users/{$_usernameParam}';
+const _updateProfilePath = '/users/{$_uidParam}';
 const _getMeInformation = '/v1/users/me';
 
 // PARAMS
@@ -44,6 +44,7 @@ const _firstNameParam = 'firstName';
 const _lastNameParam = 'lastName';
 const _userIdentifierParam = 'userIdentifier';
 const _usernameParam = 'username';
+const _uidParam = 'uid';
 const _authKeyParam = 'authKey';
 const _userCodeParam = 'code';
 const _isMobileParam = 'isMobile';
@@ -135,6 +136,8 @@ abstract class RemoteAuth {
     @Query(ParamConstant.userIdParam) required UserId uid,
     @Query(_isMobileParam) bool? isMobile,
     @Query(_deviceIdentifierParam) String? deviceIdentifier,
+    @Query(PaginationConstant.pageNumberParam) required int pageNumber,
+    @Query(PaginationConstant.pageSizeParam) required int pageSize,
   });
 
   @GET(_getCurrentDevicePath)
@@ -148,12 +151,12 @@ abstract class RemoteAuth {
   });
   @PATCH(_updateDevicePath)
   Future<FetchResponse> updateDevice(
-      {@Path(ParamConstant.idParam) required int id,
+      {@Path(ParamConstant.idParam) required UserId id,
       @Body() required dynamic deviceInfo});
 
   @DELETE(_removeDevicePath)
   Future<FetchResponse> removeDevice(
-      {@Path(ParamConstant.idParam) required int id});
+      {@Path(ParamConstant.idParam) required UserId id});
 
   @POST(_verifyEmailSendPath)
   Future<FetchResponse> verifyEmail({
@@ -178,9 +181,7 @@ abstract class RemoteAuth {
 
   @PUT(_updateProfilePath)
   Future<FetchResponse> updateProfile(
-    @Path(_usernameParam) String username, {
-    @Query(ParamConstant.brandUrlParam) required String brandUrl,
-    @Query(_authKeyParam) required String authKey,
+    @Path(_uidParam) String uid, {
     @Body() required Map<String, dynamic> userInformationUpdate,
   });
 }

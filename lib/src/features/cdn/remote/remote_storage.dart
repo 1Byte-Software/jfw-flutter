@@ -9,7 +9,7 @@ part 'remote_storage.g.dart';
 const _uploadFilePath = '/cdn/upload-file';
 
 // PARAMS
-const _fileParam = 'file';
+const _fileParam = 'uploadFile';
 
 @RestApi()
 abstract class RemoteStorage {
