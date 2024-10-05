@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:utils_mobile/src/model/base_reponse_v1/base_response_v1.dart';
+import 'package:utils_mobile/src/model/base_response_v1/base_response_v1.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -9,7 +9,7 @@ part 'remote_storage.g.dart';
 const _uploadFilePath = '/cdn/upload-file';
 
 // PARAMS
-const _fileParam = 'file';
+const _fileParam = 'uploadFile';
 
 @RestApi()
 abstract class RemoteStorage {

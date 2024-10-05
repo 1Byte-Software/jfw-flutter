@@ -28,7 +28,7 @@ class RemoteUserConfigRepositoryImpl extends RemoteUserConfigRepository {
   Future<FResult<String>> removeConfig(UserId id) {
     return tryCatchResult(func: () async {
       await ref.removeConfiguration(id);
-      return logI.sucessStr('Removed configuration $id',
+      return logI.successStr('Removed configuration $id',
           tag: runtimeType.toString());
     });
   }
@@ -48,7 +48,7 @@ class RemoteUserConfigRepositoryImpl extends RemoteUserConfigRepository {
       "name": code,
       "description": description,
     });
-    return FResult.success(logI.sucessStr('created config successfully',
+    return FResult.success(logI.successStr('created config successfully',
         tag: runtimeType.toString()));
     // });
   }

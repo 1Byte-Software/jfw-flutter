@@ -37,9 +37,7 @@ abstract class AuthRepository {
       required String brandUrl});
 
   Future<FResult<LoginResponse>> login(
-      {required String username,
-      required String password,
-      required String brandUrl});
+      {required String username, required String password});
 
   Future<FResult<ItemLoginResponse>> loginSocialGoogle(
       {required String brandUrl,
@@ -74,21 +72,24 @@ abstract class AuthRepository {
       required String newPass,
       required String authKey});
 
-  Future<FResult<FUser>> updateUserProfile(String username,
-      {required updateUserInformation,
-      required String brandUrl,
-      required String authKey});
+  Future<FResult<FUser>> updateUserProfile(String uid,
+      {required updateUserInformation});
 
-  Future<FResult<List<Device>>> getDevices(
-      {required UserId uid, String? deviceIdentifier, bool? isMobile});
+  Future<FResult<List<Device>>> getDevices({
+    required UserId uid,
+    String? deviceIdentifier,
+    bool? isMobile,
+    required int pageSize,
+    required int pageNumber,
+  });
   Future<FResult<Device>> getCurrentDevice();
   Future<FResult<List<Device>>> filterDevices(
       {required UserId userId, required String deviceCode});
 
   Future<FResult<String>> updateDevice(
-      {required int id, required dynamic deviceInfo});
+      {required UserId id, required dynamic deviceInfo});
 
-  Future<FResult<String>> removeDevice({required int id});
+  Future<FResult<String>> removeDevice({required UserId id});
 
   Future<FResult<String>> deleteAccount({required UserId uid});
 

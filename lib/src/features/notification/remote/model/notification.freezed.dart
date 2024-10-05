@@ -29,7 +29,7 @@ mixin _$MNotification {
   @JsonKey(name: _createdDateParam)
   String get createdDate => throw _privateConstructorUsedError;
   @JsonKey(name: _statusParam)
-  int get userReadStatus => throw _privateConstructorUsedError;
+  String get userReadStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,7 +50,7 @@ abstract class $MNotificationCopyWith<$Res> {
       @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
       String emailBody,
       @JsonKey(name: _createdDateParam) String createdDate,
-      @JsonKey(name: _statusParam) int userReadStatus});
+      @JsonKey(name: _statusParam) String userReadStatus});
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ class _$MNotificationCopyWithImpl<$Res, $Val extends MNotification>
       userReadStatus: null == userReadStatus
           ? _value.userReadStatus
           : userReadStatus // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ) as $Val);
   }
 }
@@ -112,7 +112,7 @@ abstract class _$$MNotificationImplCopyWith<$Res>
       @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
       String emailBody,
       @JsonKey(name: _createdDateParam) String createdDate,
-      @JsonKey(name: _statusParam) int userReadStatus});
+      @JsonKey(name: _statusParam) String userReadStatus});
 }
 
 /// @nodoc
@@ -152,7 +152,7 @@ class __$$MNotificationImplCopyWithImpl<$Res>
       userReadStatus: null == userReadStatus
           ? _value.userReadStatus
           : userReadStatus // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -187,7 +187,7 @@ class _$MNotificationImpl extends _MNotification {
   final String createdDate;
   @override
   @JsonKey(name: _statusParam)
-  final int userReadStatus;
+  final String userReadStatus;
 
   @override
   String toString() {
@@ -237,7 +237,7 @@ abstract class _MNotification extends MNotification {
           @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
           required final String emailBody,
           @JsonKey(name: _createdDateParam) required final String createdDate,
-          @JsonKey(name: _statusParam) required final int userReadStatus}) =
+          @JsonKey(name: _statusParam) required final String userReadStatus}) =
       _$MNotificationImpl;
   _MNotification._() : super._();
 
@@ -258,7 +258,7 @@ abstract class _MNotification extends MNotification {
   String get createdDate;
   @override
   @JsonKey(name: _statusParam)
-  int get userReadStatus;
+  String get userReadStatus;
   @override
   @JsonKey(ignore: true)
   _$$MNotificationImplCopyWith<_$MNotificationImpl> get copyWith =>

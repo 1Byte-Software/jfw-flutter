@@ -19,7 +19,7 @@ class _RemoteReferral implements RemoteReferral {
   String? baseUrl;
 
   @override
-  Future<FetchResponse> getRefereesOfUser(int uid) async {
+  Future<FetchResponse> getRefereesOfUser(String uid) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -75,7 +75,7 @@ class _RemoteReferral implements RemoteReferral {
 
   @override
   Future<FetchResponse> applyReferralCodeToUser(
-    int uid, {
+    String uid, {
     required String referralCode,
   }) async {
     final _extra = <String, dynamic>{};

@@ -9,17 +9,17 @@ part of 'notification.dart';
 _$MNotificationImpl _$$MNotificationImplFromJson(Map<String, dynamic> json) =>
     _$MNotificationImpl(
       id: json['id'] as String,
-      emailSubject: json['subject'] as String? ?? '',
-      emailBody: json['content'] as String? ?? '',
+      emailSubject: json['emailSubject'] as String? ?? '',
+      emailBody: json['emailBody'] as String? ?? '',
       createdDate: json['createdDate'] as String,
-      userReadStatus: json['status'] as int,
+      userReadStatus: json['status'] as String,
     );
 
 Map<String, dynamic> _$$MNotificationImplToJson(_$MNotificationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'subject': instance.emailSubject,
-      'content': instance.emailBody,
+      'emailSubject': instance.emailSubject,
+      'emailBody': instance.emailBody,
       'createdDate': instance.createdDate,
       'status': instance.userReadStatus,
     };

@@ -25,7 +25,7 @@ class _RemoteStorage implements RemoteStorage {
     final _headers = <String, dynamic>{};
     final _data = FormData();
     _data.files.add(MapEntry(
-      'file',
+      'uploadFile',
       MultipartFile.fromFileSync(
         attach.path,
         filename: attach.path.split(Platform.pathSeparator).last,

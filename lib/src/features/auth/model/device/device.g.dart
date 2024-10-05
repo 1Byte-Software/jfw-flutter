@@ -8,31 +8,29 @@ part of 'device.dart';
 
 _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
       id: json['id'] as String,
-      deviceName: json['deviceName'] as String,
+      deviceName: json['name'] as String,
       osDevice: json['osDevice'] as String? ?? '',
       modifiedDate: json['modifiedDate'] as String,
       createdDate: json['createdDate'] as String,
-      referralCode: json['referralCode'] as String?,
       isMobile: json['isMobile'] as bool? ?? false,
       imei: json['imei'] as String?,
       tags: json['tags'] as String? ?? '',
-      deviceCode: json['deviceCode'] as String,
+      deviceCode: json['code'] as String,
       appVersionNumber: json['appVersionNumber'] as String? ?? '',
-      deviceSession: json['deviceSession'] as String,
+      deviceSession: json['session'] as String,
     );
 
 Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'deviceName': instance.deviceName,
+      'name': instance.deviceName,
       'osDevice': instance.osDevice,
       'modifiedDate': instance.modifiedDate,
       'createdDate': instance.createdDate,
-      'referralCode': instance.referralCode,
       'isMobile': instance.isMobile,
       'imei': instance.imei,
       'tags': instance.tags,
-      'deviceCode': instance.deviceCode,
+      'code': instance.deviceCode,
       'appVersionNumber': instance.appVersionNumber,
-      'deviceSession': instance.deviceSession,
+      'session': instance.deviceSession,
     };

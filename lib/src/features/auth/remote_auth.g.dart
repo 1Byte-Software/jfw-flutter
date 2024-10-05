@@ -33,7 +33,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/authenticate',
+              '/v1/users/auth',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -190,7 +190,7 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> addActivites(dynamic activityRequest) async {
+  Future<FetchResponse> addActivities(dynamic activityRequest) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -467,15 +467,17 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<FetchResponse> getDevices({
-    required String uid,
     bool? isMobile,
     String? deviceIdentifier,
+    required int pageNumber,
+    required int pageSize,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'userId': uid,
       r'isMobile': isMobile,
       r'deviceIdentifier': deviceIdentifier,
+      r'pageNumber': pageNumber,
+      r'pageSize': pageSize,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -566,7 +568,7 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<FetchResponse> updateDevice({
-    required int id,
+    required String id,
     required dynamic deviceInfo,
   }) async {
     final _extra = <String, dynamic>{};
@@ -595,7 +597,7 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> removeDevice({required int id}) async {
+  Future<FetchResponse> removeDevice({required String id}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -769,16 +771,11 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<FetchResponse> updateProfile(
-    String username, {
-    required String brandUrl,
-    required String authKey,
+    String uid, {
     required Map<String, dynamic> userInformationUpdate,
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'brandUrl': brandUrl,
-      r'authKey': authKey,
-    };
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(userInformationUpdate);
@@ -790,7 +787,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/${username}',
+              '/users/${uid}',
               queryParameters: queryParameters,
               data: _data,
             )

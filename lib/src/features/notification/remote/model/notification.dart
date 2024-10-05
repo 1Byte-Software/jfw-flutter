@@ -7,11 +7,11 @@ part 'notification.freezed.dart';
 part 'notification.g.dart';
 
 // Notification code
-const _codeNotificationStatusUnread = 0;
-const _codeNotificationStatusRead = 1;
-const _codeNotificationStatusAccept = 2;
-const _codeNotificationStatusRejected = -1;
-const _codeNotificationStatusDeleted = -3;
+const _codeNotificationStatusUnread = 'UNREAD';
+const _codeNotificationStatusRead = 'READ';
+const _codeNotificationStatusAccept = 'ACCEPT';
+const _codeNotificationStatusRejected = 'REJECTED';
+const _codeNotificationStatusDeleted = 'DELETED';
 
 enum NotificationStatusEnum {
   read,
@@ -20,7 +20,7 @@ enum NotificationStatusEnum {
   rejected,
   deleted;
 
-  int toInt() {
+  String toCode() {
     switch (this) {
       case NotificationStatusEnum.unread:
         return _codeNotificationStatusUnread;
@@ -35,7 +35,7 @@ enum NotificationStatusEnum {
     }
   }
 
-  static NotificationStatusEnum fromInt(int status) {
+  static NotificationStatusEnum fromCode(String status) {
     switch (status) {
       case _codeNotificationStatusUnread:
         return NotificationStatusEnum.unread;
@@ -56,8 +56,8 @@ enum NotificationStatusEnum {
 
 // PARAMS
 const _idParam = 'id';
-const _subjectParam = 'subject';
-const _contentParam = 'content';
+const _subjectParam = 'emailSubject';
+const _contentParam = 'emailBody';
 const _createdDateParam = 'createdDate';
 const _statusParam = 'status';
 
@@ -75,7 +75,7 @@ class MNotification with _$MNotification {
           @JsonKey(name: _contentParam, defaultValue: _defaultValueEmptyString)
           required String emailBody,
           @JsonKey(name: _createdDateParam) required String createdDate,
-          @JsonKey(name: _statusParam) required int userReadStatus}) =
+          @JsonKey(name: _statusParam) required String userReadStatus}) =
       _MNotification;
 
   factory MNotification.fromJson(Map<String, Object?> json) =>

@@ -7,11 +7,13 @@ import '../remote_notification.dart';
 
 abstract class NotificationRepository {
   Future<FResult<PageModel>> getNotifications(UserId uid,
-      {required int? status, required int pageSize, required int pageNumber});
+      {required String? status,
+      required int pageSize,
+      required int pageNumber});
 
   Future<FResult<String>> updateStatusNotification(
       {required UserId uid,
-      required int status,
+      required String status,
       required UserId notificationId});
 }
 
@@ -21,7 +23,7 @@ class NotificationRepositoryImpl extends NotificationRepository {
   NotificationRepositoryImpl({required this.ref});
   @override
   Future<FResult<PageModel>> getNotifications(UserId uid,
-      {required int? status,
+      {required String? status,
       required int pageSize,
       required int pageNumber}) async {
     // return tryCatchResult(
@@ -43,7 +45,7 @@ class NotificationRepositoryImpl extends NotificationRepository {
   @override
   Future<FResult<String>> updateStatusNotification(
       {required UserId uid,
-      required int status,
+      required String status,
       required UserId notificationId}) async {
     return tryCatchResult<String>(
       func: () async {

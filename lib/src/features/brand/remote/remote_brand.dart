@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:jfw_flutter/src/constant/app_constant.dart';
+import 'package:jfw_flutter/src/constant/param_constant.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:utils_mobile/src/model/fetch_response.dart';
 part 'remote_brand.g.dart';
 
-const _getBrandInfoPath = '/brands/by-url/{${AppConstant.brandUrlParam}}';
+const _getBrandInfoPath = '/brands/by-url/{${ParamConstant.brandUrlParam}}';
 
 @RestApi()
 abstract class RemoteBrand {
@@ -12,6 +12,6 @@ abstract class RemoteBrand {
 
   @GET(_getBrandInfoPath)
   Future<FetchResponse> getInfo({
-    @Path(AppConstant.brandUrlParam) required String brandUrl,
+    @Path(ParamConstant.brandUrlParam) required String brandUrl,
   });
 }
