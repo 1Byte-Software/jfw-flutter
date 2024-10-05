@@ -33,7 +33,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/authenticate',
+              '/v1/users/auth',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -467,7 +467,6 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<FetchResponse> getDevices({
-    required String uid,
     bool? isMobile,
     String? deviceIdentifier,
     required int pageNumber,
@@ -475,7 +474,6 @@ class _RemoteAuth implements RemoteAuth {
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'userId': uid,
       r'isMobile': isMobile,
       r'deviceIdentifier': deviceIdentifier,
       r'pageNumber': pageNumber,

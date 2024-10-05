@@ -37,9 +37,7 @@ abstract class AuthRepository {
       required String brandUrl});
 
   Future<FResult<LoginResponse>> login(
-      {required String username,
-      required String password,
-      required String brandUrl});
+      {required String username, required String password});
 
   Future<FResult<ItemLoginResponse>> loginSocialGoogle(
       {required String brandUrl,

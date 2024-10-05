@@ -11,7 +11,7 @@ import 'request/register_request.dart';
 part 'remote_auth.g.dart';
 
 // PROTOCOLS
-const _authenticateUsernamePasswordPath = '/users/authenticate';
+const _authenticateUsernamePasswordPath = '/v1/users/auth';
 const _authenticateGooglePath = '/accounts/auth/google';
 const _authenticateApplePath = '/accounts/auth/apple';
 const _getActivitiesPath = '/tracking-activities';
@@ -133,7 +133,6 @@ abstract class RemoteAuth {
 
   @GET(_getDevicesPath)
   Future<FetchResponse> getDevices({
-    @Query(ParamConstant.userIdParam) required UserId uid,
     @Query(_isMobileParam) bool? isMobile,
     @Query(_deviceIdentifierParam) String? deviceIdentifier,
     @Query(PaginationConstant.pageNumberParam) required int pageNumber,

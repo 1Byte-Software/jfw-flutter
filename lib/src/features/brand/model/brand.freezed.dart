@@ -23,10 +23,8 @@ mixin _$FBrand {
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: _nameParam)
   String? get name => throw _privateConstructorUsedError;
-  @JsonKey(name: _logoUrlParam)
-  String? get logoUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: _faviconURLParam)
-  String? get faviconUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: _profileParam)
+  FBrandProfile get profile => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,8 +39,9 @@ abstract class $FBrandCopyWith<$Res> {
   $Res call(
       {String id,
       @JsonKey(name: _nameParam) String? name,
-      @JsonKey(name: _logoUrlParam) String? logoUrl,
-      @JsonKey(name: _faviconURLParam) String? faviconUrl});
+      @JsonKey(name: _profileParam) FBrandProfile profile});
+
+  $FBrandProfileCopyWith<$Res> get profile;
 }
 
 /// @nodoc
@@ -60,8 +59,7 @@ class _$FBrandCopyWithImpl<$Res, $Val extends FBrand>
   $Res call({
     Object? id = null,
     Object? name = freezed,
-    Object? logoUrl = freezed,
-    Object? faviconUrl = freezed,
+    Object? profile = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -72,15 +70,19 @@ class _$FBrandCopyWithImpl<$Res, $Val extends FBrand>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      logoUrl: freezed == logoUrl
-          ? _value.logoUrl
-          : logoUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      faviconUrl: freezed == faviconUrl
-          ? _value.faviconUrl
-          : faviconUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+      profile: null == profile
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as FBrandProfile,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FBrandProfileCopyWith<$Res> get profile {
+    return $FBrandProfileCopyWith<$Res>(_value.profile, (value) {
+      return _then(_value.copyWith(profile: value) as $Val);
+    });
   }
 }
 
@@ -94,8 +96,10 @@ abstract class _$$FBrandImplCopyWith<$Res> implements $FBrandCopyWith<$Res> {
   $Res call(
       {String id,
       @JsonKey(name: _nameParam) String? name,
-      @JsonKey(name: _logoUrlParam) String? logoUrl,
-      @JsonKey(name: _faviconURLParam) String? faviconUrl});
+      @JsonKey(name: _profileParam) FBrandProfile profile});
+
+  @override
+  $FBrandProfileCopyWith<$Res> get profile;
 }
 
 /// @nodoc
@@ -111,8 +115,7 @@ class __$$FBrandImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = freezed,
-    Object? logoUrl = freezed,
-    Object? faviconUrl = freezed,
+    Object? profile = null,
   }) {
     return _then(_$FBrandImpl(
       id: null == id
@@ -123,14 +126,10 @@ class __$$FBrandImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      logoUrl: freezed == logoUrl
-          ? _value.logoUrl
-          : logoUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      faviconUrl: freezed == faviconUrl
-          ? _value.faviconUrl
-          : faviconUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+      profile: null == profile
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as FBrandProfile,
     ));
   }
 }
@@ -141,8 +140,7 @@ class _$FBrandImpl implements _FBrand {
   _$FBrandImpl(
       {required this.id,
       @JsonKey(name: _nameParam) this.name,
-      @JsonKey(name: _logoUrlParam) this.logoUrl,
-      @JsonKey(name: _faviconURLParam) this.faviconUrl});
+      @JsonKey(name: _profileParam) required this.profile});
 
   factory _$FBrandImpl.fromJson(Map<String, dynamic> json) =>
       _$$FBrandImplFromJson(json);
@@ -153,15 +151,12 @@ class _$FBrandImpl implements _FBrand {
   @JsonKey(name: _nameParam)
   final String? name;
   @override
-  @JsonKey(name: _logoUrlParam)
-  final String? logoUrl;
-  @override
-  @JsonKey(name: _faviconURLParam)
-  final String? faviconUrl;
+  @JsonKey(name: _profileParam)
+  final FBrandProfile profile;
 
   @override
   String toString() {
-    return 'FBrand(id: $id, name: $name, logoUrl: $logoUrl, faviconUrl: $faviconUrl)';
+    return 'FBrand(id: $id, name: $name, profile: $profile)';
   }
 
   @override
@@ -171,14 +166,12 @@ class _$FBrandImpl implements _FBrand {
             other is _$FBrandImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.logoUrl, logoUrl) || other.logoUrl == logoUrl) &&
-            (identical(other.faviconUrl, faviconUrl) ||
-                other.faviconUrl == faviconUrl));
+            (identical(other.profile, profile) || other.profile == profile));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, logoUrl, faviconUrl);
+  int get hashCode => Object.hash(runtimeType, id, name, profile);
 
   @JsonKey(ignore: true)
   @override
@@ -198,8 +191,7 @@ abstract class _FBrand implements FBrand {
   factory _FBrand(
           {required final String id,
           @JsonKey(name: _nameParam) final String? name,
-          @JsonKey(name: _logoUrlParam) final String? logoUrl,
-          @JsonKey(name: _faviconURLParam) final String? faviconUrl}) =
+          @JsonKey(name: _profileParam) required final FBrandProfile profile}) =
       _$FBrandImpl;
 
   factory _FBrand.fromJson(Map<String, dynamic> json) = _$FBrandImpl.fromJson;
@@ -210,11 +202,8 @@ abstract class _FBrand implements FBrand {
   @JsonKey(name: _nameParam)
   String? get name;
   @override
-  @JsonKey(name: _logoUrlParam)
-  String? get logoUrl;
-  @override
-  @JsonKey(name: _faviconURLParam)
-  String? get faviconUrl;
+  @JsonKey(name: _profileParam)
+  FBrandProfile get profile;
   @override
   @JsonKey(ignore: true)
   _$$FBrandImplCopyWith<_$FBrandImpl> get copyWith =>

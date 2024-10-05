@@ -48,13 +48,10 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<LoginResponse>> login(
-      {required String username,
-      required String password,
-      required String brandUrl}) async {
+      {required String username, required String password}) async {
     return tryCatchResult(
         func: () async {
           final fetchResponse = await ref.login(LoginRequest(
-            brandUrl: brandUrl,
             password: password,
             username: username,
           ));
@@ -150,8 +147,9 @@ class AuthRepositoryImpl extends AuthRepository {
       Map<String, dynamic> deviceRequest) async {
     return tryCatchResult(
         func: () async {
-          await ref.addNewDevice(addNewDeviceRequest: deviceRequest);
-          return 'Added this device successfully';
+          final addDeviceResponse =
+              await ref.addNewDevice(addNewDeviceRequest: deviceRequest);
+          return Device.fromJson(addDeviceResponse.data).id;
         },
         logErr: (ex) => logI.e(ex));
   }
@@ -165,7 +163,6 @@ class AuthRepositoryImpl extends AuthRepository {
       required int pageNumber}) {
     return ref
         .getDevices(
-            uid: uid,
             deviceIdentifier: deviceIdentifier,
             isMobile: isMobile,
             pageSize: pageSize,
