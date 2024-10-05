@@ -8,7 +8,7 @@ part of 'billing_package.dart';
 
 _$PackageImpl _$$PackageImplFromJson(Map<String, dynamic> json) =>
     _$PackageImpl(
-      id: json['id'] as int,
+      id: json['id'] as String,
       key: json['key'] as int?,
       features: (json['features'] as List<dynamic>)
           .map((e) => PackageFeature.fromJson(e as Map<String, dynamic>))
@@ -19,7 +19,9 @@ _$PackageImpl _$$PackageImplFromJson(Map<String, dynamic> json) =>
       code: json['code'] as String,
       name: json['name'] as String? ?? '',
       zOrder: json['zOrder'] as int? ?? 0,
+      image: json['image'] as String?,
       tags: json['tags'] as String? ?? '',
+      isFree: json['isFree'] as bool,
     );
 
 Map<String, dynamic> _$$PackageImplToJson(_$PackageImpl instance) =>
@@ -31,5 +33,7 @@ Map<String, dynamic> _$$PackageImplToJson(_$PackageImpl instance) =>
       'code': instance.code,
       'name': instance.name,
       'zOrder': instance.zOrder,
+      'image': instance.image,
       'tags': instance.tags,
+      'isFree': instance.isFree,
     };

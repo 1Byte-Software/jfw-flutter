@@ -1,9 +1,9 @@
+import 'package:jfw_flutter/src/constant/param_constant.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:jfw_remote_mobile/src/constant/app_constant.dart';
 part 'get_token_request.g.dart';
 
 const _usernameParam = 'username';
-const _brandUrlParam = AppConstant.brandUrlParam;
+const _brandUrlParam = ParamConstant.brandUrlParam;
 const _authKeyParam = 'authKey';
 
 @JsonSerializable()

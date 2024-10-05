@@ -21,9 +21,9 @@ PackagePrice _$PackagePriceFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PackagePrice {
   @JsonKey(name: _idParam)
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: _packageIdParam)
-  int get packageID => throw _privateConstructorUsedError;
+  String get packageID => throw _privateConstructorUsedError;
   @JsonKey(name: _codeParam)
   String get code => throw _privateConstructorUsedError;
   @JsonKey(name: _nameParam)
@@ -46,8 +46,8 @@ abstract class $PackagePriceCopyWith<$Res> {
       _$PackagePriceCopyWithImpl<$Res, PackagePrice>;
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
-      @JsonKey(name: _packageIdParam) int packageID,
+      {@JsonKey(name: _idParam) String id,
+      @JsonKey(name: _packageIdParam) String packageID,
       @JsonKey(name: _codeParam) String code,
       @JsonKey(name: _nameParam) String name,
       @JsonKey(name: _amountParam) num amount,
@@ -78,11 +78,11 @@ class _$PackagePriceCopyWithImpl<$Res, $Val extends PackagePrice>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       packageID: null == packageID
           ? _value.packageID
           : packageID // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -112,8 +112,8 @@ abstract class _$$PackagePriceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
-      @JsonKey(name: _packageIdParam) int packageID,
+      {@JsonKey(name: _idParam) String id,
+      @JsonKey(name: _packageIdParam) String packageID,
       @JsonKey(name: _codeParam) String code,
       @JsonKey(name: _nameParam) String name,
       @JsonKey(name: _amountParam) num amount,
@@ -142,11 +142,11 @@ class __$$PackagePriceImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       packageID: null == packageID
           ? _value.packageID
           : packageID // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -184,10 +184,10 @@ class _$PackagePriceImpl extends _PackagePrice {
 
   @override
   @JsonKey(name: _idParam)
-  final int id;
+  final String id;
   @override
   @JsonKey(name: _packageIdParam)
-  final int packageID;
+  final String packageID;
   @override
   @JsonKey(name: _codeParam)
   final String code;
@@ -242,8 +242,8 @@ class _$PackagePriceImpl extends _PackagePrice {
 
 abstract class _PackagePrice extends PackagePrice {
   const factory _PackagePrice(
-          {@JsonKey(name: _idParam) required final int id,
-          @JsonKey(name: _packageIdParam) required final int packageID,
+          {@JsonKey(name: _idParam) required final String id,
+          @JsonKey(name: _packageIdParam) required final String packageID,
           @JsonKey(name: _codeParam) required final String code,
           @JsonKey(name: _nameParam) required final String name,
           @JsonKey(name: _amountParam) required final num amount,
@@ -256,10 +256,10 @@ abstract class _PackagePrice extends PackagePrice {
 
   @override
   @JsonKey(name: _idParam)
-  int get id;
+  String get id;
   @override
   @JsonKey(name: _packageIdParam)
-  int get packageID;
+  String get packageID;
   @override
   @JsonKey(name: _codeParam)
   String get code;

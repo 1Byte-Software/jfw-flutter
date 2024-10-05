@@ -1,10 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 
 part 'user_config.g.dart';
 part 'user_config.freezed.dart';
 
 // PARAMS
-const _userIdParam = 'userId';
+const _userIdParam = 'hashId';
 
 // Value String
 const _valueStringTrue = 'true';
@@ -12,8 +13,8 @@ const _valueStringTrue = 'true';
 @freezed
 class UserConfig with _$UserConfig {
   factory UserConfig(
-      {int? id,
-      @JsonKey(name: _userIdParam) required int uid,
+      {UserId? id,
+      @JsonKey(name: _userIdParam) required UserId uid,
       required String code,
       required String groupCode,
       required dynamic value,

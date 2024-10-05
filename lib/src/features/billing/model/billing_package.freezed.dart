@@ -21,7 +21,7 @@ BillingPackage _$BillingPackageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BillingPackage {
   @JsonKey(name: _idParam)
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: _keyParam)
   int? get key => throw _privateConstructorUsedError;
   @JsonKey(name: _featuresParam)
@@ -34,8 +34,12 @@ mixin _$BillingPackage {
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   int get zOrder => throw _privateConstructorUsedError;
+  @JsonKey(name: _imageParam)
+  String? get image => throw _privateConstructorUsedError;
   @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   String get tags => throw _privateConstructorUsedError;
+  @JsonKey(name: _isFreeParam)
+  bool get isFree => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,14 +54,16 @@ abstract class $BillingPackageCopyWith<$Res> {
       _$BillingPackageCopyWithImpl<$Res, BillingPackage>;
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _keyParam) int? key,
       @JsonKey(name: _featuresParam) List<PackageFeature> features,
       @JsonKey(name: _pricesParam) List<PackagePrice> prices,
       @JsonKey(name: _codeParam) String code,
       @JsonKey(name: _nameParam, defaultValue: _valueEmpty) String name,
       @JsonKey(name: _zOrderParam, defaultValue: _valueZero) int zOrder,
-      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) String tags});
+      @JsonKey(name: _imageParam) String? image,
+      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) String tags,
+      @JsonKey(name: _isFreeParam) bool isFree});
 }
 
 /// @nodoc
@@ -80,13 +86,15 @@ class _$BillingPackageCopyWithImpl<$Res, $Val extends BillingPackage>
     Object? code = null,
     Object? name = null,
     Object? zOrder = null,
+    Object? image = freezed,
     Object? tags = null,
+    Object? isFree = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -111,10 +119,18 @@ class _$BillingPackageCopyWithImpl<$Res, $Val extends BillingPackage>
           ? _value.zOrder
           : zOrder // ignore: cast_nullable_to_non_nullable
               as int,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String,
+      isFree: null == isFree
+          ? _value.isFree
+          : isFree // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -128,14 +144,16 @@ abstract class _$$PackageImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _keyParam) int? key,
       @JsonKey(name: _featuresParam) List<PackageFeature> features,
       @JsonKey(name: _pricesParam) List<PackagePrice> prices,
       @JsonKey(name: _codeParam) String code,
       @JsonKey(name: _nameParam, defaultValue: _valueEmpty) String name,
       @JsonKey(name: _zOrderParam, defaultValue: _valueZero) int zOrder,
-      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) String tags});
+      @JsonKey(name: _imageParam) String? image,
+      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) String tags,
+      @JsonKey(name: _isFreeParam) bool isFree});
 }
 
 /// @nodoc
@@ -156,13 +174,15 @@ class __$$PackageImplCopyWithImpl<$Res>
     Object? code = null,
     Object? name = null,
     Object? zOrder = null,
+    Object? image = freezed,
     Object? tags = null,
+    Object? isFree = null,
   }) {
     return _then(_$PackageImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -187,10 +207,18 @@ class __$$PackageImplCopyWithImpl<$Res>
           ? _value.zOrder
           : zOrder // ignore: cast_nullable_to_non_nullable
               as int,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String,
+      isFree: null == isFree
+          ? _value.isFree
+          : isFree // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -208,7 +236,9 @@ class _$PackageImpl implements _Package {
       @JsonKey(name: _nameParam, defaultValue: _valueEmpty) required this.name,
       @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
       required this.zOrder,
-      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) required this.tags})
+      @JsonKey(name: _imageParam) required this.image,
+      @JsonKey(name: _tagsParam, defaultValue: _valueEmpty) required this.tags,
+      @JsonKey(name: _isFreeParam) required this.isFree})
       : _features = features,
         _prices = prices;
 
@@ -217,7 +247,7 @@ class _$PackageImpl implements _Package {
 
   @override
   @JsonKey(name: _idParam)
-  final int id;
+  final String id;
   @override
   @JsonKey(name: _keyParam)
   final int? key;
@@ -249,12 +279,18 @@ class _$PackageImpl implements _Package {
   @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   final int zOrder;
   @override
+  @JsonKey(name: _imageParam)
+  final String? image;
+  @override
   @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   final String tags;
+  @override
+  @JsonKey(name: _isFreeParam)
+  final bool isFree;
 
   @override
   String toString() {
-    return 'BillingPackage(id: $id, key: $key, features: $features, prices: $prices, code: $code, name: $name, zOrder: $zOrder, tags: $tags)';
+    return 'BillingPackage(id: $id, key: $key, features: $features, prices: $prices, code: $code, name: $name, zOrder: $zOrder, image: $image, tags: $tags, isFree: $isFree)';
   }
 
   @override
@@ -269,7 +305,9 @@ class _$PackageImpl implements _Package {
             (identical(other.code, code) || other.code == code) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.zOrder, zOrder) || other.zOrder == zOrder) &&
-            (identical(other.tags, tags) || other.tags == tags));
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.tags, tags) || other.tags == tags) &&
+            (identical(other.isFree, isFree) || other.isFree == isFree));
   }
 
   @JsonKey(ignore: true)
@@ -283,7 +321,9 @@ class _$PackageImpl implements _Package {
       code,
       name,
       zOrder,
-      tags);
+      image,
+      tags,
+      isFree);
 
   @JsonKey(ignore: true)
   @override
@@ -301,7 +341,7 @@ class _$PackageImpl implements _Package {
 
 abstract class _Package implements BillingPackage {
   factory _Package(
-      {@JsonKey(name: _idParam) required final int id,
+      {@JsonKey(name: _idParam) required final String id,
       @JsonKey(name: _keyParam) final int? key,
       @JsonKey(name: _featuresParam)
       required final List<PackageFeature> features,
@@ -311,14 +351,16 @@ abstract class _Package implements BillingPackage {
       required final String name,
       @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
       required final int zOrder,
+      @JsonKey(name: _imageParam) required final String? image,
       @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
-      required final String tags}) = _$PackageImpl;
+      required final String tags,
+      @JsonKey(name: _isFreeParam) required final bool isFree}) = _$PackageImpl;
 
   factory _Package.fromJson(Map<String, dynamic> json) = _$PackageImpl.fromJson;
 
   @override
   @JsonKey(name: _idParam)
-  int get id;
+  String get id;
   @override
   @JsonKey(name: _keyParam)
   int? get key;
@@ -338,8 +380,14 @@ abstract class _Package implements BillingPackage {
   @JsonKey(name: _zOrderParam, defaultValue: _valueZero)
   int get zOrder;
   @override
+  @JsonKey(name: _imageParam)
+  String? get image;
+  @override
   @JsonKey(name: _tagsParam, defaultValue: _valueEmpty)
   String get tags;
+  @override
+  @JsonKey(name: _isFreeParam)
+  bool get isFree;
   @override
   @JsonKey(ignore: true)
   _$$PackageImplCopyWith<_$PackageImpl> get copyWith =>

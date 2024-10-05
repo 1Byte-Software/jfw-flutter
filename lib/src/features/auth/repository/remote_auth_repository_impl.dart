@@ -1,4 +1,5 @@
-import 'package:jfw_remote_mobile/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:jfw_flutter/src/features/auth/model/device_and_tracking/model/tracking_activity.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/func/function.dart';
 import '../model/device/device.dart';
@@ -22,7 +23,7 @@ class AuthRepositoryImpl extends AuthRepository {
   AuthRepositoryImpl({required this.ref});
 
   @override
-  Future<FResult<FUser>> getAnotherUserInfo(int uid,
+  Future<FResult<FUser>> getAnotherUserInfo(UserId uid,
       {required String brandUrl, required String authKey}) async {
     return FetchFunctions.fetchRawResponse(
         ref.getAnotherUserInfo(uid, authKey: authKey, brandUrl: brandUrl),
@@ -47,13 +48,10 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<LoginResponse>> login(
-      {required String username,
-      required String password,
-      required String brandUrl}) async {
+      {required String username, required String password}) async {
     return tryCatchResult(
         func: () async {
           final fetchResponse = await ref.login(LoginRequest(
-            brandUrl: brandUrl,
             password: password,
             username: username,
           ));
@@ -74,7 +72,7 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<FUser>> getUserInfoById(
-      {required int uid,
+      {required UserId uid,
       required String brandUrl,
       required String authKey}) async {
     return tryCatchResult<FUser>(
@@ -124,15 +122,12 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<FUser>> updateUserProfile(String username,
-      {required updateUserInformation,
-      required String brandUrl,
-      required String authKey}) async {
+  Future<FResult<FUser>> updateUserProfile(
+    String uid, {
+    required updateUserInformation,
+  }) async {
     return FetchFunctions.fetchRawResponse(
-        ref.updateProfile(username,
-            authKey: authKey,
-            userInformationUpdate: updateUserInformation,
-            brandUrl: brandUrl),
+        ref.updateProfile(uid, userInformationUpdate: updateUserInformation),
         onParse: FUser.fromJson);
   }
 
@@ -141,7 +136,7 @@ class AuthRepositoryImpl extends AuthRepository {
       Map<String, dynamic> activityRequest) async {
     return tryCatchResult<String>(
         func: () async {
-          await ref.addActivites(activityRequest);
+          await ref.addActivities(activityRequest);
           return 'sucess-add-activity';
         },
         logErr: (ex) => logI.e(ex));
@@ -152,23 +147,33 @@ class AuthRepositoryImpl extends AuthRepository {
       Map<String, dynamic> deviceRequest) async {
     return tryCatchResult(
         func: () async {
-          await ref.addNewDevice(addNewDeviceRequest: deviceRequest);
-          return 'Added this device successfully';
+          final addDeviceResponse =
+              await ref.addNewDevice(addNewDeviceRequest: deviceRequest);
+          return Device.fromJson(addDeviceResponse.data).id;
         },
         logErr: (ex) => logI.e(ex));
   }
 
   @override
   Future<FResult<List<Device>>> getDevices(
-      {required int uid, String? deviceIdentifier, bool? isMobile}) {
+      {required UserId uid,
+      String? deviceIdentifier,
+      bool? isMobile,
+      required int pageSize,
+      required int pageNumber}) {
     return ref
         .getDevices(
-            uid: uid, deviceIdentifier: deviceIdentifier, isMobile: isMobile)
-        .then((devicesResponse) => FResult.success(
-            (devicesResponse.data as List)
-                .map((deviceMap) => Device.fromJson(deviceMap))
-                .toList()))
-        .onError(FetchFunctions.onError);
+            deviceIdentifier: deviceIdentifier,
+            isMobile: isMobile,
+            pageSize: pageSize,
+            pageNumber: pageNumber)
+        .then((devicesResponse) {
+      final devicePage =
+          PageModelV2.fromJson(devicesResponse.data, pageSize: pageSize);
+      return FResult.success((devicePage.items)
+          .map((deviceMap) => Device.fromJson(deviceMap))
+          .toList());
+    }).onError(FetchFunctions.onError);
   }
 
   @override
@@ -203,10 +208,10 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<String>> deleteAccount({required int uid}) {
+  Future<FResult<String>> deleteAccount({required UserId uid}) {
     return tryCatchResult(func: () async {
       await ref.deleteUser(uid);
-      return logI.sucessStr('Deleted account successfully',
+      return logI.successStr('Deleted account successfully',
           tag: runtimeType.toString());
     });
   }
@@ -232,17 +237,18 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<bool>> getAccountConcurrency(int uid,
+  Future<FResult<bool>> getAccountUserAccess(UserId uid,
       {required String deviceCode}) async {
     return ref
-        .getConcurrency(uid: uid, deviceCode: deviceCode)
-        .then((concurrencyResponse) =>
-            FResult.success(concurrencyResponse.data as bool))
+        .getAccountUserAccess(uid: uid, deviceCode: deviceCode)
+        .then(
+            (checkUserAccess) => FResult.success(checkUserAccess.data as bool))
         .onError(FetchFunctions.onError);
   }
 
   @override
-  Future<FResult<String>> updateDevice({required int id, required deviceInfo}) {
+  Future<FResult<String>> updateDevice(
+      {required UserId id, required deviceInfo}) {
     return ref
         .updateDevice(id: id, deviceInfo: deviceInfo)
         .then((value) => FResult.success('Updated the device successfully'))
@@ -250,7 +256,7 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<FResult<String>> removeDevice({required int id}) {
+  Future<FResult<String>> removeDevice({required UserId id}) {
     return ref
         .removeDevice(id: id)
         .then((value) => FResult.success('Removed the device successfully'))
@@ -259,7 +265,7 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<String>> sendEmailVerifyEmail(
-      {required int uid, required String returnUrl}) {
+      {required UserId uid, required String returnUrl}) {
     return ref
         .verifyEmail(returnUrl: returnUrl, userId: uid)
         .then((value) => FResult.success('Send email verify successfully'))
@@ -268,7 +274,7 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<FResult<List<Device>>> filterDevices(
-      {required int userId, required String deviceCode}) async {
+      {required UserId userId, required String deviceCode}) async {
     final devicesResponse =
         await ref.filterDevice(userId: userId, deviceCode: deviceCode);
     return FResult.success(
@@ -292,5 +298,11 @@ class AuthRepositoryImpl extends AuthRepository {
                 .toPageModel(),
             onParse: TrackingActivity.fromJson)))
         .onError(FetchFunctions.onError);
+  }
+
+  @override
+  Future<FResult<FUser>> getMeInformation() {
+    return FetchFunctions.fetchRawResponse(ref.getMeInformation(),
+        onParse: FUser.fromJson);
   }
 }

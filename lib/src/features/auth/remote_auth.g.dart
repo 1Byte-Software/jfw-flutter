@@ -33,7 +33,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/authenticate',
+              '/v1/users/auth',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -190,7 +190,7 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> addActivites(dynamic activityRequest) async {
+  Future<FetchResponse> addActivities(dynamic activityRequest) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -251,8 +251,35 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
+  Future<FetchResponse> getMeInformation() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<FetchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/v1/users/me',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = FetchResponse.fromJson(_result.data!);
+    return _value;
+  }
+
+  @override
   Future<FetchResponse> getUserInforByUserId(
-    int uid, {
+    String uid, {
     required String brandUrl,
     required String authKey,
   }) async {
@@ -320,7 +347,7 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<FetchResponse> getAnotherUserInfo(
-    int userId, {
+    String userId, {
     required String brandUrl,
     required String authKey,
   }) async {
@@ -440,15 +467,17 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<FetchResponse> getDevices({
-    required int uid,
     bool? isMobile,
     String? deviceIdentifier,
+    required int pageNumber,
+    required int pageSize,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'userId': uid,
       r'isMobile': isMobile,
       r'deviceIdentifier': deviceIdentifier,
+      r'pageNumber': pageNumber,
+      r'pageSize': pageSize,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -505,7 +534,7 @@ class _RemoteAuth implements RemoteAuth {
   Future<FetchResponse> filterDevice({
     String? deviceCode,
     String? referralCode,
-    int? userId,
+    String? userId,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -539,7 +568,7 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<FetchResponse> updateDevice({
-    required int id,
+    required String id,
     required dynamic deviceInfo,
   }) async {
     final _extra = <String, dynamic>{};
@@ -568,7 +597,7 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> removeDevice({required int id}) async {
+  Future<FetchResponse> removeDevice({required String id}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -597,7 +626,7 @@ class _RemoteAuth implements RemoteAuth {
   @override
   Future<FetchResponse> verifyEmail({
     required String returnUrl,
-    required int userId,
+    required String userId,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -628,8 +657,8 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<FetchResponse> getConcurrency({
-    required int uid,
+  Future<FetchResponse> getAccountUserAccess({
+    required String uid,
     required String deviceCode,
   }) async {
     final _extra = <String, dynamic>{};
@@ -647,7 +676,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/devices/check-concurrency',
+              '/devices/check-user-access',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -715,7 +744,7 @@ class _RemoteAuth implements RemoteAuth {
   }
 
   @override
-  Future<dynamic> deleteUser(int uid) async {
+  Future<dynamic> deleteUser(String uid) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -742,16 +771,11 @@ class _RemoteAuth implements RemoteAuth {
 
   @override
   Future<FetchResponse> updateProfile(
-    String username, {
-    required String brandUrl,
-    required String authKey,
+    String uid, {
     required Map<String, dynamic> userInformationUpdate,
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'brandUrl': brandUrl,
-      r'authKey': authKey,
-    };
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(userInformationUpdate);
@@ -763,7 +787,7 @@ class _RemoteAuth implements RemoteAuth {
     )
             .compose(
               _dio.options,
-              '/users/${username}',
+              '/users/${uid}',
               queryParameters: queryParameters,
               data: _data,
             )

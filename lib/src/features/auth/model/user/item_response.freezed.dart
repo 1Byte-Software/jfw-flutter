@@ -21,7 +21,7 @@ FUser _$FUserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FUser {
   @JsonKey(name: _idParam)
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: _keyParam)
   int? get key => throw _privateConstructorUsedError;
   @JsonKey(name: _usernameParam)
@@ -59,9 +59,9 @@ mixin _$FUser {
   @JsonKey(name: _rolesParam)
   List<String>? get roles => throw _privateConstructorUsedError;
   @JsonKey(name: _packageIdParam)
-  int? get packageId => throw _privateConstructorUsedError;
+  String? get packageId => throw _privateConstructorUsedError;
   @JsonKey(name: _timeZoneIdParam)
-  int? get timeZoneId => throw _privateConstructorUsedError;
+  String? get timeZoneId => throw _privateConstructorUsedError;
   @JsonKey(name: _modifiedDateParam)
   String? get modifiedDate => throw _privateConstructorUsedError;
   @JsonKey(name: _createdDateParam)
@@ -69,7 +69,7 @@ mixin _$FUser {
   @JsonKey(name: _dateOfJoinParam)
   String? get dateOfJoin => throw _privateConstructorUsedError;
   @JsonKey(name: _parentUserIdParam)
-  int? get parentUserId => throw _privateConstructorUsedError;
+  String? get parentUserId => throw _privateConstructorUsedError;
   @JsonKey(name: _roleParam)
   String? get role => throw _privateConstructorUsedError;
   @JsonKey(name: _isEmailAddressVerifiedParam)
@@ -86,7 +86,7 @@ abstract class $FUserCopyWith<$Res> {
       _$FUserCopyWithImpl<$Res, FUser>;
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int? id,
+      {@JsonKey(name: _idParam) String? id,
       @JsonKey(name: _keyParam) int? key,
       @JsonKey(name: _usernameParam) String? username,
       @JsonKey(name: _roleNamesParam) List<String>? roleNames,
@@ -105,12 +105,12 @@ abstract class $FUserCopyWith<$Res> {
       @JsonKey(name: _userCodeParam) String? userCode,
       @JsonKey(name: _descriptionParam) String description,
       @JsonKey(name: _rolesParam) List<String>? roles,
-      @JsonKey(name: _packageIdParam) int? packageId,
-      @JsonKey(name: _timeZoneIdParam) int? timeZoneId,
+      @JsonKey(name: _packageIdParam) String? packageId,
+      @JsonKey(name: _timeZoneIdParam) String? timeZoneId,
       @JsonKey(name: _modifiedDateParam) String? modifiedDate,
       @JsonKey(name: _createdDateParam) String? createdDate,
       @JsonKey(name: _dateOfJoinParam) String? dateOfJoin,
-      @JsonKey(name: _parentUserIdParam) int? parentUserId,
+      @JsonKey(name: _parentUserIdParam) String? parentUserId,
       @JsonKey(name: _roleParam) String? role,
       @JsonKey(name: _isEmailAddressVerifiedParam)
       bool isEmailAddressVerified});
@@ -161,7 +161,7 @@ class _$FUserCopyWithImpl<$Res, $Val extends FUser>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -237,11 +237,11 @@ class _$FUserCopyWithImpl<$Res, $Val extends FUser>
       packageId: freezed == packageId
           ? _value.packageId
           : packageId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       timeZoneId: freezed == timeZoneId
           ? _value.timeZoneId
           : timeZoneId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       modifiedDate: freezed == modifiedDate
           ? _value.modifiedDate
           : modifiedDate // ignore: cast_nullable_to_non_nullable
@@ -257,7 +257,7 @@ class _$FUserCopyWithImpl<$Res, $Val extends FUser>
       parentUserId: freezed == parentUserId
           ? _value.parentUserId
           : parentUserId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       role: freezed == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -278,7 +278,7 @@ abstract class _$$FUserImplCopyWith<$Res> implements $FUserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int? id,
+      {@JsonKey(name: _idParam) String? id,
       @JsonKey(name: _keyParam) int? key,
       @JsonKey(name: _usernameParam) String? username,
       @JsonKey(name: _roleNamesParam) List<String>? roleNames,
@@ -297,12 +297,12 @@ abstract class _$$FUserImplCopyWith<$Res> implements $FUserCopyWith<$Res> {
       @JsonKey(name: _userCodeParam) String? userCode,
       @JsonKey(name: _descriptionParam) String description,
       @JsonKey(name: _rolesParam) List<String>? roles,
-      @JsonKey(name: _packageIdParam) int? packageId,
-      @JsonKey(name: _timeZoneIdParam) int? timeZoneId,
+      @JsonKey(name: _packageIdParam) String? packageId,
+      @JsonKey(name: _timeZoneIdParam) String? timeZoneId,
       @JsonKey(name: _modifiedDateParam) String? modifiedDate,
       @JsonKey(name: _createdDateParam) String? createdDate,
       @JsonKey(name: _dateOfJoinParam) String? dateOfJoin,
-      @JsonKey(name: _parentUserIdParam) int? parentUserId,
+      @JsonKey(name: _parentUserIdParam) String? parentUserId,
       @JsonKey(name: _roleParam) String? role,
       @JsonKey(name: _isEmailAddressVerifiedParam)
       bool isEmailAddressVerified});
@@ -351,7 +351,7 @@ class __$$FUserImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -427,11 +427,11 @@ class __$$FUserImplCopyWithImpl<$Res>
       packageId: freezed == packageId
           ? _value.packageId
           : packageId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       timeZoneId: freezed == timeZoneId
           ? _value.timeZoneId
           : timeZoneId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       modifiedDate: freezed == modifiedDate
           ? _value.modifiedDate
           : modifiedDate // ignore: cast_nullable_to_non_nullable
@@ -447,7 +447,7 @@ class __$$FUserImplCopyWithImpl<$Res>
       parentUserId: freezed == parentUserId
           ? _value.parentUserId
           : parentUserId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       role: freezed == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -501,7 +501,7 @@ class _$FUserImpl extends _FUser {
 
   @override
   @JsonKey(name: _idParam)
-  final int? id;
+  final String? id;
   @override
   @JsonKey(name: _keyParam)
   final int? key;
@@ -574,10 +574,10 @@ class _$FUserImpl extends _FUser {
 
   @override
   @JsonKey(name: _packageIdParam)
-  final int? packageId;
+  final String? packageId;
   @override
   @JsonKey(name: _timeZoneIdParam)
-  final int? timeZoneId;
+  final String? timeZoneId;
   @override
   @JsonKey(name: _modifiedDateParam)
   final String? modifiedDate;
@@ -589,7 +589,7 @@ class _$FUserImpl extends _FUser {
   final String? dateOfJoin;
   @override
   @JsonKey(name: _parentUserIdParam)
-  final int? parentUserId;
+  final String? parentUserId;
   @override
   @JsonKey(name: _roleParam)
   final String? role;
@@ -706,7 +706,7 @@ class _$FUserImpl extends _FUser {
 
 abstract class _FUser extends FUser {
   factory _FUser(
-      {@JsonKey(name: _idParam) final int? id,
+      {@JsonKey(name: _idParam) final String? id,
       @JsonKey(name: _keyParam) final int? key,
       @JsonKey(name: _usernameParam) final String? username,
       @JsonKey(name: _roleNamesParam) final List<String>? roleNames,
@@ -725,12 +725,12 @@ abstract class _FUser extends FUser {
       @JsonKey(name: _userCodeParam) final String? userCode,
       @JsonKey(name: _descriptionParam) final String description,
       @JsonKey(name: _rolesParam) final List<String>? roles,
-      @JsonKey(name: _packageIdParam) final int? packageId,
-      @JsonKey(name: _timeZoneIdParam) final int? timeZoneId,
+      @JsonKey(name: _packageIdParam) final String? packageId,
+      @JsonKey(name: _timeZoneIdParam) final String? timeZoneId,
       @JsonKey(name: _modifiedDateParam) final String? modifiedDate,
       @JsonKey(name: _createdDateParam) final String? createdDate,
       @JsonKey(name: _dateOfJoinParam) final String? dateOfJoin,
-      @JsonKey(name: _parentUserIdParam) final int? parentUserId,
+      @JsonKey(name: _parentUserIdParam) final String? parentUserId,
       @JsonKey(name: _roleParam) final String? role,
       @JsonKey(name: _isEmailAddressVerifiedParam)
       required final bool isEmailAddressVerified}) = _$FUserImpl;
@@ -740,7 +740,7 @@ abstract class _FUser extends FUser {
 
   @override
   @JsonKey(name: _idParam)
-  int? get id;
+  String? get id;
   @override
   @JsonKey(name: _keyParam)
   int? get key;
@@ -797,10 +797,10 @@ abstract class _FUser extends FUser {
   List<String>? get roles;
   @override
   @JsonKey(name: _packageIdParam)
-  int? get packageId;
+  String? get packageId;
   @override
   @JsonKey(name: _timeZoneIdParam)
-  int? get timeZoneId;
+  String? get timeZoneId;
   @override
   @JsonKey(name: _modifiedDateParam)
   String? get modifiedDate;
@@ -812,7 +812,7 @@ abstract class _FUser extends FUser {
   String? get dateOfJoin;
   @override
   @JsonKey(name: _parentUserIdParam)
-  int? get parentUserId;
+  String? get parentUserId;
   @override
   @JsonKey(name: _roleParam)
   String? get role;

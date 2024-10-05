@@ -1,4 +1,5 @@
-import 'package:jfw_remote_mobile/src/features/billing/model/billing_package.dart';
+import 'package:jfw_flutter/src/features/billing/model/billing_package.dart';
+import 'package:jfw_flutter/src/utils/type_definition.dart';
 import 'package:sembast/sembast.dart';
 import 'package:utils_mobile/src/services/local_database/base_collection_reference.dart';
 
@@ -15,7 +16,7 @@ class BillingPackageCollectionReference
           copyWithKey: (value, key) => value.copyWith(key: key),
         );
 
-  Future<BillingPackage?> getPackageById(int id) async {
+  Future<BillingPackage?> getPackageById(UserId id) async {
     const idParam = 'id';
     final finder = Finder(filter: Filter.equals(idParam, id));
     final recordSnapshots = await ref.find(await db, finder: finder);

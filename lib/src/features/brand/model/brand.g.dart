@@ -7,16 +7,14 @@ part of 'brand.dart';
 // **************************************************************************
 
 _$FBrandImpl _$$FBrandImplFromJson(Map<String, dynamic> json) => _$FBrandImpl(
-      id: json['id'] as int,
+      id: json['id'] as String,
       name: json['name'] as String?,
-      logoUrl: json['logoUrl'] as String?,
-      faviconUrl: json['faviconURL'] as String?,
+      profile: FBrandProfile.fromJson(json['profile'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$FBrandImplToJson(_$FBrandImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'logoUrl': instance.logoUrl,
-      'faviconURL': instance.faviconUrl,
+      'profile': instance.profile,
     };

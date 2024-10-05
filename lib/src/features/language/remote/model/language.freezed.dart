@@ -21,7 +21,7 @@ Language _$LanguageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Language {
   @JsonKey(name: _idParam)
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: _countryCodeParam)
   String get countryCode => throw _privateConstructorUsedError;
   @JsonKey(name: _codeParam)
@@ -41,7 +41,7 @@ abstract class $LanguageCopyWith<$Res> {
       _$LanguageCopyWithImpl<$Res, Language>;
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _countryCodeParam) String countryCode,
       @JsonKey(name: _codeParam) String languageCode,
       @JsonKey(name: _nameParam) String description});
@@ -69,7 +69,7 @@ class _$LanguageCopyWithImpl<$Res, $Val extends Language>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       countryCode: null == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -95,7 +95,7 @@ abstract class _$$LanguageImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _countryCodeParam) String countryCode,
       @JsonKey(name: _codeParam) String languageCode,
       @JsonKey(name: _nameParam) String description});
@@ -121,7 +121,7 @@ class __$$LanguageImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       countryCode: null == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -152,7 +152,7 @@ class _$LanguageImpl implements _Language {
 
   @override
   @JsonKey(name: _idParam)
-  final int id;
+  final String id;
   @override
   @JsonKey(name: _countryCodeParam)
   final String countryCode;
@@ -203,7 +203,7 @@ class _$LanguageImpl implements _Language {
 
 abstract class _Language implements Language {
   factory _Language(
-          {@JsonKey(name: _idParam) required final int id,
+          {@JsonKey(name: _idParam) required final String id,
           @JsonKey(name: _countryCodeParam) required final String countryCode,
           @JsonKey(name: _codeParam) required final String languageCode,
           @JsonKey(name: _nameParam) required final String description}) =
@@ -214,7 +214,7 @@ abstract class _Language implements Language {
 
   @override
   @JsonKey(name: _idParam)
-  int get id;
+  String get id;
   @override
   @JsonKey(name: _countryCodeParam)
   String get countryCode;

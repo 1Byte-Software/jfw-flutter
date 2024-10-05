@@ -1,3 +1,6 @@
+import 'package:jfw_flutter/src/constant/enum/config_group_enum_constant.dart';
+import 'package:jfw_flutter/src/constant/enum/mp3_user_setting_enum_constant.dart';
+
 enum UserSettingConfigGroupEnum {
   userConfig,
   mp3;
@@ -13,7 +16,7 @@ enum UserSettingEnum {
   String toCode() {
     switch (this) {
       case lastSyncDateTime:
-        return 'KEY-USER-LAST-SYNC-DATE-TIME';
+        return ConfigGroupEnumConstant.configGroupEnumLastSyncDateTime;
     }
   }
 
@@ -81,9 +84,9 @@ enum MP3UserSettingEnum {
 
   static MP3UserSettingEnum? parse(String code) {
     switch (code) {
-      case 'KEY-MP3-IS-SHUFFLE':
+      case Mp3UserSettingEnumConstant.isShuffle:
         return isShuffle;
-      case 'KEY-MP3-DELAY-SEC':
+      case Mp3UserSettingEnumConstant.delaySec:
         return delaySec;
       case 'KEY-MP3-LOOP-TIME':
         return loopTime;

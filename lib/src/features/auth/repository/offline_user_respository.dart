@@ -1,11 +1,11 @@
-import 'package:jfw_remote_mobile/src/features/auth/model/user/item_response.dart';
-import 'package:jfw_remote_mobile/src/local/collection_reference/user_ferefence.dart';
+import 'package:jfw_flutter/src/features/auth/model/user/item_response.dart';
+import 'package:jfw_flutter/src/local/collection_reference/user_reference.dart';
 import 'package:utils_mobile/src/model/fresult.dart';
 import 'package:utils_mobile/src/func/function.dart';
 import 'package:utils_mobile/src/services/logging/log_manager.dart';
 
 abstract class OfflineUserRepository {
-  Future<FResult<FUser>> getInforUser(String username);
+  Future<FResult<FUser>> getInfoUser(String username);
   Future<FResult<String>> addUser(FUser user);
   Future<FResult<String>> removeUser(String username);
 }
@@ -21,9 +21,9 @@ class OfflineUserRepositoryImpl extends OfflineUserRepository {
           bool isExist = result != null;
           if (isExist == false) {
             await ref.add(user);
-            FUser? newPackage = await ref.getUserByUsername(user.username!);
+            // FUser? newPackage = await ref.getUserByUsername(user.username!);
             return 'success add user information';
-            throw 'ERROR faild add offline user';
+            // throw 'ERROR failed add offline user';
           } else {
             throw 'ERROR not exist package';
           }
@@ -32,7 +32,7 @@ class OfflineUserRepositoryImpl extends OfflineUserRepository {
   }
 
   @override
-  Future<FResult<FUser>> getInforUser(String username) async {
+  Future<FResult<FUser>> getInfoUser(String username) async {
     return await tryCatchResult(
         func: () async {
           final user = await ref.getUserByUsername(username);

@@ -21,7 +21,7 @@ Device _$DeviceFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Device {
   @JsonKey(name: _idParam)
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: _deviceName)
   String get deviceName => throw _privateConstructorUsedError;
   @JsonKey(name: _osDevice, defaultValue: '')
@@ -30,8 +30,6 @@ mixin _$Device {
   String get modifiedDate => throw _privateConstructorUsedError;
   @JsonKey(name: _createdDateParam)
   String get createdDate => throw _privateConstructorUsedError;
-  @JsonKey(name: _referralCodeParam)
-  String? get referralCode => throw _privateConstructorUsedError;
   @JsonKey(name: _isMobileParam, defaultValue: false)
   bool get isMobile => throw _privateConstructorUsedError;
   @JsonKey(name: _imeiParam)
@@ -56,12 +54,11 @@ abstract class $DeviceCopyWith<$Res> {
       _$DeviceCopyWithImpl<$Res, Device>;
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _deviceName) String deviceName,
       @JsonKey(name: _osDevice, defaultValue: '') String osDevice,
       @JsonKey(name: _modifiedDate) String modifiedDate,
       @JsonKey(name: _createdDateParam) String createdDate,
-      @JsonKey(name: _referralCodeParam) String? referralCode,
       @JsonKey(name: _isMobileParam, defaultValue: false) bool isMobile,
       @JsonKey(name: _imeiParam) String? imei,
       @JsonKey(name: _tagsParam, defaultValue: '') String tags,
@@ -89,7 +86,6 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? osDevice = null,
     Object? modifiedDate = null,
     Object? createdDate = null,
-    Object? referralCode = freezed,
     Object? isMobile = null,
     Object? imei = freezed,
     Object? tags = null,
@@ -101,7 +97,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       deviceName: null == deviceName
           ? _value.deviceName
           : deviceName // ignore: cast_nullable_to_non_nullable
@@ -118,10 +114,6 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
               as String,
-      referralCode: freezed == referralCode
-          ? _value.referralCode
-          : referralCode // ignore: cast_nullable_to_non_nullable
-              as String?,
       isMobile: null == isMobile
           ? _value.isMobile
           : isMobile // ignore: cast_nullable_to_non_nullable
@@ -158,12 +150,11 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _deviceName) String deviceName,
       @JsonKey(name: _osDevice, defaultValue: '') String osDevice,
       @JsonKey(name: _modifiedDate) String modifiedDate,
       @JsonKey(name: _createdDateParam) String createdDate,
-      @JsonKey(name: _referralCodeParam) String? referralCode,
       @JsonKey(name: _isMobileParam, defaultValue: false) bool isMobile,
       @JsonKey(name: _imeiParam) String? imei,
       @JsonKey(name: _tagsParam, defaultValue: '') String tags,
@@ -189,7 +180,6 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? osDevice = null,
     Object? modifiedDate = null,
     Object? createdDate = null,
-    Object? referralCode = freezed,
     Object? isMobile = null,
     Object? imei = freezed,
     Object? tags = null,
@@ -201,7 +191,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       deviceName: null == deviceName
           ? _value.deviceName
           : deviceName // ignore: cast_nullable_to_non_nullable
@@ -218,10 +208,6 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
               as String,
-      referralCode: freezed == referralCode
-          ? _value.referralCode
-          : referralCode // ignore: cast_nullable_to_non_nullable
-              as String?,
       isMobile: null == isMobile
           ? _value.isMobile
           : isMobile // ignore: cast_nullable_to_non_nullable
@@ -259,7 +245,6 @@ class _$DeviceImpl implements _Device {
       @JsonKey(name: _osDevice, defaultValue: '') required this.osDevice,
       @JsonKey(name: _modifiedDate) required this.modifiedDate,
       @JsonKey(name: _createdDateParam) required this.createdDate,
-      @JsonKey(name: _referralCodeParam) required this.referralCode,
       @JsonKey(name: _isMobileParam, defaultValue: false)
       required this.isMobile,
       @JsonKey(name: _imeiParam) required this.imei,
@@ -274,7 +259,7 @@ class _$DeviceImpl implements _Device {
 
   @override
   @JsonKey(name: _idParam)
-  final int id;
+  final String id;
   @override
   @JsonKey(name: _deviceName)
   final String deviceName;
@@ -287,9 +272,6 @@ class _$DeviceImpl implements _Device {
   @override
   @JsonKey(name: _createdDateParam)
   final String createdDate;
-  @override
-  @JsonKey(name: _referralCodeParam)
-  final String? referralCode;
   @override
   @JsonKey(name: _isMobileParam, defaultValue: false)
   final bool isMobile;
@@ -311,7 +293,7 @@ class _$DeviceImpl implements _Device {
 
   @override
   String toString() {
-    return 'Device(id: $id, deviceName: $deviceName, osDevice: $osDevice, modifiedDate: $modifiedDate, createdDate: $createdDate, referralCode: $referralCode, isMobile: $isMobile, imei: $imei, tags: $tags, deviceCode: $deviceCode, appVersionNumber: $appVersionNumber, deviceSession: $deviceSession)';
+    return 'Device(id: $id, deviceName: $deviceName, osDevice: $osDevice, modifiedDate: $modifiedDate, createdDate: $createdDate, isMobile: $isMobile, imei: $imei, tags: $tags, deviceCode: $deviceCode, appVersionNumber: $appVersionNumber, deviceSession: $deviceSession)';
   }
 
   @override
@@ -328,8 +310,6 @@ class _$DeviceImpl implements _Device {
                 other.modifiedDate == modifiedDate) &&
             (identical(other.createdDate, createdDate) ||
                 other.createdDate == createdDate) &&
-            (identical(other.referralCode, referralCode) ||
-                other.referralCode == referralCode) &&
             (identical(other.isMobile, isMobile) ||
                 other.isMobile == isMobile) &&
             (identical(other.imei, imei) || other.imei == imei) &&
@@ -351,7 +331,6 @@ class _$DeviceImpl implements _Device {
       osDevice,
       modifiedDate,
       createdDate,
-      referralCode,
       isMobile,
       imei,
       tags,
@@ -375,13 +354,12 @@ class _$DeviceImpl implements _Device {
 
 abstract class _Device implements Device {
   factory _Device(
-      {@JsonKey(name: _idParam) required final int id,
+      {@JsonKey(name: _idParam) required final String id,
       @JsonKey(name: _deviceName) required final String deviceName,
       @JsonKey(name: _osDevice, defaultValue: '')
       required final String osDevice,
       @JsonKey(name: _modifiedDate) required final String modifiedDate,
       @JsonKey(name: _createdDateParam) required final String createdDate,
-      @JsonKey(name: _referralCodeParam) required final String? referralCode,
       @JsonKey(name: _isMobileParam, defaultValue: false)
       required final bool isMobile,
       @JsonKey(name: _imeiParam) required final String? imei,
@@ -396,7 +374,7 @@ abstract class _Device implements Device {
 
   @override
   @JsonKey(name: _idParam)
-  int get id;
+  String get id;
   @override
   @JsonKey(name: _deviceName)
   String get deviceName;
@@ -409,9 +387,6 @@ abstract class _Device implements Device {
   @override
   @JsonKey(name: _createdDateParam)
   String get createdDate;
-  @override
-  @JsonKey(name: _referralCodeParam)
-  String? get referralCode;
   @override
   @JsonKey(name: _isMobileParam, defaultValue: false)
   bool get isMobile;

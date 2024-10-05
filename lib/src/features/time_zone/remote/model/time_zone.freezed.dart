@@ -21,7 +21,7 @@ TimeZone _$TimeZoneFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TimeZone {
   @JsonKey(name: _idParam)
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
   String get value => throw _privateConstructorUsedError;
   @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
@@ -41,7 +41,7 @@ abstract class $TimeZoneCopyWith<$Res> {
       _$TimeZoneCopyWithImpl<$Res, TimeZone>;
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
       String value,
       @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
@@ -72,7 +72,7 @@ class _$TimeZoneCopyWithImpl<$Res, $Val extends TimeZone>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -98,7 +98,7 @@ abstract class _$$TokenResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: _idParam) int id,
+      {@JsonKey(name: _idParam) String id,
       @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
       String value,
       @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
@@ -127,7 +127,7 @@ class __$$TokenResponseImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -161,7 +161,7 @@ class _$TokenResponseImpl implements _TokenResponse {
 
   @override
   @JsonKey(name: _idParam)
-  final int id;
+  final String id;
   @override
   @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
   final String value;
@@ -211,7 +211,7 @@ class _$TokenResponseImpl implements _TokenResponse {
 
 abstract class _TokenResponse implements TimeZone {
   factory _TokenResponse(
-      {@JsonKey(name: _idParam) required final int id,
+      {@JsonKey(name: _idParam) required final String id,
       @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
       required final String value,
       @JsonKey(name: _countryCodeParam, defaultValue: _defaultValueEmptyString)
@@ -224,7 +224,7 @@ abstract class _TokenResponse implements TimeZone {
 
   @override
   @JsonKey(name: _idParam)
-  int get id;
+  String get id;
   @override
   @JsonKey(name: _valueParam, defaultValue: _defaultValueEmptyString)
   String get value;
